@@ -1,0 +1,174 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bobby Craig - Terminal</title>
+    <meta name="author" content="Bobby Craig"/>
+    <meta name="Description" content="Kind of a portfolio...not really though."/>
+    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/jquery.mousewheel-min.js"></script>
+    <script src="js/jquery.terminal-min.js"></script>
+    <link href="css/jquery.terminal.css" rel="stylesheet"/>
+  </head>
+<body>
+
+<script>
+    
+jQuery(document).ready(function($) {
+    var id = 1;
+    var dad = 0;
+    var dadArray = [
+    'Hey dad...',
+    'Yeah, I was lying about the something special not happening...',
+    'You are being dad-attacked!',
+    'There\'s something so special about the word dad...',
+    'Yes, I do realize that potential employers could be reading my dad nonsense.',
+    'I will never tire of dad jokes.',
+    'You\'ll have to refresh the page to get rid of this.',
+    'Feel the wrath of dad!',
+    'I swear nothing special will happen when dad is entered...'
+];
+    $('body').terminal(function(command, term) {
+        if (dad == 1) {
+            var randomIndex = Math.floor(Math.random() * dadArray.length); 
+            term.echo("\n" + dadArray[randomIndex] + "\n");
+        }
+        else if (command == 'help') {
+            term.echo("\nHelp? Did someone say they needed help?\n\n\
+\
+COMMAND:            DESCRIPTION:\n\
+--------            ------------\n\
+help                YOU'RE HERE RIGHT NOW!\n\
+resume [-v]         My resume in Terminal form. [-v] to view a PDF of my resume.\n\
+projects            View some of Bobby's projects!\n\
+github              Redirect to my github page.\n\
+instagram           Redirect to my Instagram.\n\
+facebook            Redirect to my Facebook.\n\
+denidoo [-cs]       Redirect to Denison University's homepage. [-cs] for Computer Science Department\n\
+js                  This terminal will work as a JavaScript shell.\n\
+about [-r] [-w]     About this page. [-r] to redirect to JQuery Terminal Emulator homepage. [-w] for about website.\n");
+        }
+        //ABOUT COMMAND
+        else if (command == 'about') {
+            term.echo("\nHow nice! You want to know about this page.\n\n\
+\
+My name is Bobby Craig. I'm a Computer Science major and Mathematics minor at Denison University in Granville, Ohio.\n\
+I really hate writing these things about myself, so if you have any question feel free to email me at bobbylcraig@gmail.com.\n");
+        }
+        //ABOUT -W COMMAND
+        else if (command == 'about -w') {
+            term.echo("\nHow nice! You want to know about this page.\n\n\
+\
+Hi, so this is my homepage. It was built using a really nifty JQuery plugin. The idea here\n\
+was to try to loosely emulate a terminal-style feel to this page but add personal flair and\n\
+obviously some self-advertisement in. I'm not a web designer, although I do dabble from time\n\
+to time. I just wanted to take this command to thank the people who designed JQuery Terminal\n\
+Emulator for letting me use their plugin! Yay open source!\n");
+        }
+        //RESUME COMMAND
+        else if (command == 'resume'){
+            term.echo("\n\
+\
+mysql> DESCRIBE education;\n\
++-----------------+-------------+------+-----+---------+----------------------+\n\
+| Field           | Type        | Null | Key | Default | Extra                |\n\
++-----------------+-------------+------+-----+---------+----------------------+\n\
+| college         | undergrad   |  YES | PRI | Denison | BSc Computer Science |\n\
+| high_school     | high_school |   NO |     |   Perry | Honors Diploma       |\n\
++-----------------+-------------+------+-----+---------+----------------------+\n\
+2 rows in set (0.00 sec)\n\
+\n\
+mysql> SELECT position_name, location, date_start, date_end FROM experience WHERE relevant = 1;\n\
++-----------------------------+-----------------+------------+----------+\n\
+| position_name               | location        | date_start | date_end |\n\
++-----------------------------+-----------------+------------+----------+\n\
+| CodeMash Intern             | Sandusky, Ohio  | 2016-01    | 2016-01  |\n\
+| Gilpatrick Center Webmaster | Granville, Ohio | 2015-09    | NULL     |\n\
++-----------------------------+-----------------+------------+----------+\n\
+2 rows in set (0.00 sec)\n\
+\n\
+mysql> SELECT project_name, date_start, date_end FROM projects;\n\
++------------------------------------------+------------+----------+\n\
+| project_name                             | date_start | date_end |\n\
++------------------------------------------+------------+----------+\n\
+| Student Government Budget Auto-Allocator | 2015-09    | NULL     |\n\
+| Speech and Debate Tournament Software    | 2015-10    | NULL     |\n\
++------------------------------------------+------------+----------+\n\
+2 rows in set (0.00 sec)\n\
+\n\
+mysql> SELECT * FROM involvement;\n\
++--------+---------------------------------------+---------------------------+\n\
+| org_id | org_name                              | leadership_position       |\n\
++--------+---------------------------------------+---------------------------+\n\
+|      1 | Denison Campus Governance Association | Senator                   |\n\
+|      2 | Venture Philanthropy Club             | Vice Chair of Outcomes    |\n\
+|      3 | Denison Programming Team              | Member                    |\n\
+|      4 | TEDxDenisonU Committee                | Executive Member          |\n\
+|      5 | Beta Theta Pi                         | Parliamentarian           |\n\
+|      6 | Interfraternity Council               | Fraternity Representative |\n\
++--------+---------------------------------------+---------------------------+\n\
+6 rows in set (0.00 sec)\n");
+        }
+        //PROJECTS COMMAND
+        else if (command == 'projects') {
+            term.echo("\nSorry, this feature isn't yet available. I'm working on it though!\n");
+        }
+        //DAD COMMAND
+        else if (command == 'dad') {
+            term.echo("\nNothing special happens when you type in dad...\n");
+            dad = 1;
+        }
+        // GITHUB COMMAND
+        else if (command == 'github'){
+            window.location = "http://www.github.com/bobbylcraig";
+        }
+        // INSTAGRAM COMMAND
+        else if (command == 'instagram'){
+            window.location = "http://instagram.com/bobbylcraig";
+        }
+        // FACEBOOK COMMAND
+        else if (command == 'facebook'){
+            window.location = "http://facebook.com/bobbylcraig";
+        }
+        // ABOUT -R COMMAND
+        else if (command == 'about -r'){
+            window.location = "http://terminal.jcubic.pl";
+        }
+        // RESUME -V COMMAND
+        else if (command == 'resume -v'){
+            window.location = "RobertCraig.pdf";
+        }
+        // DENIDOO COMMAND
+        else if (command == 'denidoo'){
+            window.location = "http://denison.edu";
+        }
+        // DENIDOO -CS COMMAND
+        else if (command == 'denidoo -cs'){
+            window.location = "http://denison.edu/academics/computer-science";
+        }
+        else if (command == "js") {
+            term.echo("WHHAAA? You wanna write some JS? Cool beans! Do so below...");
+            term.push(function(command, term) {
+                var result = window.eval(command);
+                if (result != undefined) {
+                    term.echo(String(result));
+                }
+            }, {
+                name: 'js',
+                prompt: 'js> '});
+        }
+        else {
+            term.echo(command + ": command not found");
+        }
+    }, {
+        greetings: "Welcome! I'm glad to see that you've found my website! Feel free to explore.\nTyping 'help' might be a good place to start.\n>",
+        onBlur: function() {
+            return false;
+        }
+    });
+});
+
+</script>
+</body>
