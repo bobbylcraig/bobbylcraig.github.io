@@ -41,6 +41,7 @@ jQuery(document).ready(function($) {
 COMMAND:            DESCRIPTION:\n\
 --------            ------------\n\
 help                YOU'RE HERE RIGHT NOW!\n\
+blog                A collection of thoughts and general things I found interesting.\n\
 resume [-v]         My resume in Terminal form. [-v] to view a PDF of my resume.\n\
 projects            View some of Bobby's projects!\n\
 github              Redirect to my github page.\n\
@@ -123,6 +124,10 @@ mysql> SELECT * FROM involvement;\n\
         else if (command == 'dad') {
             term.echo("\nNothing special happens when you type in dad...\n");
             dad = 1;
+        }
+        // BLOG COMMAND
+        else if (command == 'blog'){
+            window.location = "blog/index.html";
         }
         // GITHUB COMMAND
         else if (command == 'github'){
