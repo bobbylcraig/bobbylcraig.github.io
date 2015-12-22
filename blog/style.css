@@ -2885,6 +2885,14 @@ body, html {
     background-color: rgba(10, 10, 10, .5)
 }
 
+iframe {
+    margin-bottom: 10px;
+}
+
+iframe:hover {
+    box-shadow: 0 0 6px 1px rgba(33, 153, 232, .5);
+}
+
 [data-whatinput=mouse] .off-canvas {
     outline: 0
 }
