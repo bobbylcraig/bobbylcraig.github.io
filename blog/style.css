@@ -2627,10 +2627,13 @@ select[multiple] {
 	position: relative;
     background-color: #eee;
 	height:50px;
-    text-align:center;
     padding:15px;
 	bottom: 0px;
 	width: 100%;
+}
+
+.icon-spacing {
+    margin-left: 10px;
 }
 
 .label {
@@ -3823,18 +3826,21 @@ table.hover tr:nth-of-type(even):hover {
     margin-right: 1rem
 }
 
-@media screen and (min-width:40em) {
+@media screen and (min-width:45em) {
     .top-bar-left {
         float: left
     }
-
     .top-bar-right {
         float: right
     }
+    #small {
+        display: none;
+    }
+    
 }
 
-@media screen and (max-width:40em) {
-    #leftcolumn {
+@media screen and (max-width:45em) {
+    #large {
         display: none;
     }
 }
