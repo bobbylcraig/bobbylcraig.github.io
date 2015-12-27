@@ -1,60 +1,35 @@
-<?php
-    if(!isset($_POST['submit']))
-    {
-        //This page should not be accessed directly. Need to submit the form.
-        echo "error; you need to submit the form!";
-    }
-    $name = $_POST['name'];
-    $visitor_email = $_POST['email'];
-    $message = $_POST['message'];
+<?php    
+    require 'Mandrill.php';
 
-    //Validate first
-    if(empty($name)||empty($visitor_email)) 
-    {
-        echo "Name and email are mandatory!";
-        exit;
-    }
+    $mandrill = new Mandrill("a-8449aHhLw6pnmZxyumWA");
 
-    if(IsInjected($visitor_email))
-    {
-        echo "Bad email value!";
-        exit;
-    }
+    $message = array(
+        'subject' => 'Test message',
+        'from_email' => 'bobbylcraig@gmail.com',
+        'html' => '<p>this is a test message with Mandrill\'s PHP wrapper!.</p>',
+        'to' => array(array('email' => 'bobbylcraig@gmail.com', 'Bobby' => 'Recipient 1')),
+        'merge_vars' => array(array(
+            'rcpt' => 'bobbylcraig@gmail.com',
+            'vars' =>
+            array(
+                array(
+                    'name' => 'FIRSTNAME',
+                    'content' => 'Bobby'),
+                array(
+                    'name' => 'LASTNAME',
+                    'content' => 'Last name')
+        ))));
 
-    $email_from = 'me@bobbylcraig.com';//<== update the email address
-    $email_subject = "New Form submission";
-    $email_body = "You have received a new message from the user $name.\n".
-        "Here is the message:\n $message".
-        
-    $to = "bobbylcraig@gmail.com";//<== update the email address
-    $headers = "From: $email_from \r\n";
-    $headers .= "Reply-To: $visitor_email \r\n";
-    //Send the email!
-    mail($to,$email_subject,$email_body,$headers);
-    //done. redirect to thank-you page.
-    header('Location: indexSent.html');
+    $template_name = 'Stationary';
 
+    $template_content = array(
+        array(
+            'name' => 'main',
+            'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
+        array(
+            'name' => 'footer',
+            'content' => 'Copyright 2012.')
 
-    // Function to validate against any email injection attempts
-    function IsInjected($str)
-    {
-    $injections = array('(\n+)',
-                '(\r+)',
-                '(\t+)',
-                '(%0A+)',
-                '(%0D+)',
-                '(%08+)',
-                '(%09+)'
-                );
-    $inject = join('|', $injections);
-    $inject = "/$inject/i";
-    if(preg_match($inject,$str))
-        {
-        return true;
-    }
-    else
-        {
-        return false;
-    }
-    }
+    );
+    print_r($mandrill->messages->sendTemplate($template_name, $template_content, $message));
 ?>
