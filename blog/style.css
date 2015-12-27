@@ -3833,3 +3833,9 @@ table.hover tr:nth-of-type(even):hover {
     }
 }
 
+@media screen and (max-width:40em) {
+    #leftcolumn {
+        display: none;
+    }
+}
+
