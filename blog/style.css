@@ -3640,7 +3640,7 @@ table.hover tr:nth-of-type(even):hover {
     box-shadow: 0 0 0 1px rgba(10, 10, 10, .2);
     display: inline-block;
     line-height: 0;
-    width: 750px;
+    width: 800px;
     height: 300px;
     max-width: 100%;
     transition: box-shadow .2s ease-out;
