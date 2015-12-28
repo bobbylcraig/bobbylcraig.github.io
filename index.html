@@ -45,6 +45,7 @@ COMMAND:            DESCRIPTION:\n\
 --------            ------------\n\
 help                YOU'RE HERE RIGHT NOW!\n\
 blog                A collection of thoughts and general things I found interesting.\n\
+contact             You'll have to hack the system to get my contact information!\n\
 resume [-v]         My resume in Terminal form. [-v] to view a PDF of my resume.\n\
 projects            View some of Bobby's projects!\n\
 github              Redirect to my github page.\n\
@@ -75,53 +76,9 @@ Emulator for letting me use their plugin! Yay open source!\n");
         else if (command == '') {
             term.echo(" ");
         }
-        //RESUME COMMAND
-        else if (command == 'resume'){
-            term.echo("\n\
-\
-mysql> DESCRIBE education;\n\
-+-----------------+-------------+------+-----+---------+----------------------+\n\
-| Field           | Type        | Null | Key | Default | Extra                |\n\
-+-----------------+-------------+------+-----+---------+----------------------+\n\
-| college         | undergrad   |  YES | PRI | Denison | BSc Computer Science |\n\
-| high_school     | high_school |   NO |     |   Perry | Honors Diploma       |\n\
-+-----------------+-------------+------+-----+---------+----------------------+\n\
-2 rows in set (0.00 sec)\n\
-\n\
-mysql> SELECT position_name, location, date_start, date_end FROM experience WHERE relevant = 1;\n\
-+-----------------------------+-----------------+------------+----------+\n\
-| position_name               | location        | date_start | date_end |\n\
-+-----------------------------+-----------------+------------+----------+\n\
-| CodeMash Intern             | Sandusky, Ohio  | 2016-01    | 2016-01  |\n\
-| Gilpatrick Center Webmaster | Granville, Ohio | 2015-09    | NULL     |\n\
-+-----------------------------+-----------------+------------+----------+\n\
-2 rows in set (0.00 sec)\n\
-\n\
-mysql> SELECT project_name, date_start, date_end FROM projects;\n\
-+------------------------------------------+------------+----------+\n\
-| project_name                             | date_start | date_end |\n\
-+------------------------------------------+------------+----------+\n\
-| Student Government Budget Auto-Allocator | 2015-09    | NULL     |\n\
-| Speech and Debate Tournament Software    | 2015-10    | NULL     |\n\
-+------------------------------------------+------------+----------+\n\
-2 rows in set (0.00 sec)\n\
-\n\
-mysql> SELECT * FROM involvement;\n\
-+--------+---------------------------------------+---------------------------+\n\
-| org_id | org_name                              | leadership_position       |\n\
-+--------+---------------------------------------+---------------------------+\n\
-|      1 | Denison Campus Governance Association | Senator                   |\n\
-|      2 | Venture Philanthropy Club             | Vice Chair of Outcomes    |\n\
-|      3 | Denison Programming Team              | Member                    |\n\
-|      4 | TEDxDenisonU Committee                | Executive Member          |\n\
-|      5 | Beta Theta Pi                         | Parliamentarian           |\n\
-|      6 | Interfraternity Council               | Fraternity Representative |\n\
-+--------+---------------------------------------+---------------------------+\n\
-6 rows in set (0.00 sec)\n");
-        }
         //PROJECTS COMMAND
         else if (command == 'projects') {
-            term.echo("\nSorry, this feature isn't yet available. I'm working on it though!\n");
+            term.echo("\nSorry, this feature isn't yet available. Consider typing in Github to see some projects there.\n");
         }
         //DAD COMMAND
         else if (command == 'dad') {
@@ -131,6 +88,10 @@ mysql> SELECT * FROM involvement;\n\
         // BLOG COMMAND
         else if (command == 'blog'){
             window.location = "blog/index.html";
+        }
+        // CONTACT COMMAND
+        else if (command == 'contact'){
+            window.location = "contact/index.html";
         }
         // GITHUB COMMAND
         else if (command == 'github'){
@@ -149,8 +110,12 @@ mysql> SELECT * FROM involvement;\n\
             window.location = "http://terminal.jcubic.pl";
         }
         // RESUME -V COMMAND
+        else if (command == 'resume'){
+            term.echo("\nSorry, this feature isn't yet available. Sorry!\n");
+        }
+        // RESUME -V COMMAND
         else if (command == 'resume -v'){
-            window.location = "RobertCraig.pdf";
+            term.echo("\nSorry, I haven't uploaded my resume yet! Sorry!\n");
         }
         // DENIDOO COMMAND
         else if (command == 'denidoo'){
@@ -161,7 +126,7 @@ mysql> SELECT * FROM involvement;\n\
             window.location = "http://denison.edu/academics/computer-science";
         }
         else if (command == "js") {
-            term.echo("WHHAAA? You wanna write some JS? Cool beans! Do so below...");
+            term.echo("\nWHHAAA? You wanna write some JS? Cool beans! Do so below...\n");
             term.push(function(command, term) {
                 var result = window.eval(command);
                 if (result != undefined) {
