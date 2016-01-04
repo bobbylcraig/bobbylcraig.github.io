@@ -78,7 +78,7 @@ mark {
 }
 
 small {
-    font-size: 80%
+    font-size: 50%;
 }
 
 sub, sup {
@@ -104,8 +104,10 @@ sub {
 }
 
 img {
-    max-width: 100%;
+    max-width: 800px;
+    max-height: 300px;
     height: auto;
+    width: auto;
     -ms-interpolation-mode: bicubic;
     display: inline-block
 }
