@@ -101,7 +101,7 @@ hr {
 #headline-wrapper {
     display: block;
     width: 50%;
-    min-height: 76px;
+    min-height: 20px;
     margin: 0 auto;
     margin-top: 10%;
     text-align: center;
@@ -208,6 +208,10 @@ hr {
     text-align: center;
 }
 
+#article p {
+    font-size: 1em;
+}
+
 #article .byline {
     text-align: center;
 }
@@ -297,11 +301,18 @@ hr {
     }
 }
 
+@media (max-width: 800px) {
+    #headline {
+        font-size: 50px;
+}
+
 @media (max-width: 700px) {
     #binary-pane {
         font-size: 0.5em;
     }
-
+    #headline {
+        font-size: 35px;
+    }
     #statue {
        width: 50%;
     }
@@ -315,7 +326,13 @@ hr {
 
 @media (max-width: 500px) {
     #headline {
-        font-size: 45px;
+        font-size: 28px;
+    }
+    #article h1 {
+        font-size: 3em;
+    }
+    #article .byline {
+        font-size: 0.8em;
     }
     #byline {
         font-size: 0.9em;
@@ -323,7 +340,6 @@ hr {
     #headline-wrapper {
         margin-top: 25%;
     }
-
     #timeline-wrapper {
         display: none;
     }
@@ -331,7 +347,7 @@ hr {
 
 @media (max-width: 400px) {
     #headline {
-        font-size: 40px;
+        font-size: 20px;
     }
     #headline-wrapper {
         width: 60%;
@@ -339,7 +355,6 @@ hr {
     #byline {
         font-size: 0.8em;
     }
-
     #statue {
        width: 67%;
     }
@@ -356,7 +371,16 @@ hr {
         font-size: 2em;
     }
     #article .byline {
-        font-size: 0.8em;
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 350px) {
+    .icon-container {
+        display: none;
+    }
+    hr {
+        display: none;
     }
 }
 
