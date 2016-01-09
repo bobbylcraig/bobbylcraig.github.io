@@ -1,4 +1,4 @@
-var intro = false;
+var intro = true;
 $(document).ready(function() {
     $(".open-window").hide();
     if (intro) {
