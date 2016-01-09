@@ -1,162 +1,104 @@
-<!DOCTYPE HTML>
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>Bobby Craig | Terminal</title>
-    <meta name="author" content="Bobby Craig"/>
-    <meta name="Description" content="Kind of a portfolio...not really though."/>
-    <link rel="sitemap" type="application/xml" title="Sitemap" href=""/>
-    <link rel="shortcut icon" href="favicon.ico"/>
-    <script src="js/jquery-1.7.1.min.js"></script>
-    <script src="js/jquery.mousewheel-min.js"></script>
-    <script src="js/jquery.terminal-min.js"></script>
-    <link href="css/jquery.terminal.css" rel="stylesheet"/>
-  </head>
+<!--
+        ____   ___  ____  ______   __   ____ ____      _    ___ ____ 
+        | __ ) / _ \| __ )| __ ) \ / /  / ___|  _ \    / \  |_ _/ ___|
+        |  _ \| | | |  _ \|  _ \\ V /  | |   | |_) |  / _ \  | | |  _ 
+        | |_) | |_| | |_) | |_) || |   | |___|  _ <  / ___ \ | | |_| |
+        |____/ \___/|____/|____/ |_|    \____|_| \_\/_/   \_\___\____|
+
+-->
+
+<head>
+  <title>Bobby Craig | Home</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="js/fadeIn.js"></script>
+</head>
+
 <body>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-72139648-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-<script type="text/javascript">
-    if (screen.width <= 699) {
-        document.location = "blog/index.html";
-    }
+    <!-- OPENING TEXT -->
+    <div class="open-window">
+        <p class="first">Hi there.</p>
+        <p class="second">My name is Bobby.</p>
+        <p class="third">You've found my webpage.</p>
+        <p class="fourth">Go ahead and look around.</p>
+    </div>
+    <!-- END OF OPENING TEXT -->
     
-jQuery(document).ready(function($) {
-    var id = 1;
-    var dad = 0;
-    var dadArray = [
-    'Hey dad...',
-    'Yeah, I was lying about the something special not happening...',
-    'You are being dad-attacked!',
-    'There\'s something so special about the word dad...',
-    'Yes, I do realize that potential employers could be reading my dad nonsense.',
-    'I will never tire of dad jokes.',
-    'You\'ll have to refresh the page to get rid of this.',
-    'Feel the wrath of dad!',
-    'I swear nothing special will happen when dad is entered...'
-];
-    $('body').terminal(function(command, term) {
-        if (dad == 1) {
-            var randomIndex = Math.floor(Math.random() * dadArray.length); 
-            term.echo("\n" + dadArray[randomIndex] + "\n");
-        }
-        else if (command == 'help') {
-            term.echo("\nHelp? Did someone say they needed help?\n\n\
-\
-COMMAND:            DESCRIPTION:\n\
---------            ------------\n\
-help                YOU'RE HERE RIGHT NOW!\n\
-blog                A collection of thoughts and general things I found interesting.\n\
-contact             You'll have to hack the system to get my contact information!\n\
-resume [-v]         My resume in Terminal form. [-v] to view a PDF of my resume.\n\
-projects            View some of Bobby's projects!\n\
-github              Redirect to my github page.\n\
-instagram           Redirect to my Instagram.\n\
-facebook            Redirect to my Facebook.\n\
-denidoo [-cs]       Redirect to Denison University's homepage. [-cs] for Computer Science Department\n\
-js                  This terminal will work as a JavaScript shell.\n\
-about [-r] [-w]     About this page. [-r] to redirect to JQuery Terminal Emulator homepage. [-w] for about website.\n");
-        }
-        //ABOUT COMMAND
-        else if (command == 'about') {
-            term.echo("\nHow nice! You want to know about this page.\n\n\
-\
-My name is Bobby Craig. I'm a Computer Science major and Mathematics minor at Denison University in Granville, Ohio.\n\
-I really hate writing these things about myself, so if you have any question feel free to email me at bobbylcraig@gmail.com.\n");
-        }
-        //ABOUT -W COMMAND
-        else if (command == 'about -w') {
-            term.echo("\nHow nice! You want to know about this page.\n\n\
-\
-Hi, so this is my homepage. It was built using a really nifty JQuery plugin. The idea here\n\
-was to try to loosely emulate a terminal-style feel to this page but add personal flair and\n\
-obviously some self-advertisement in. I'm not a web designer, although I do dabble from time\n\
-to time. I just wanted to take this command to thank the people who designed JQuery Terminal\n\
-Emulator for letting me use their plugin! Yay open source!\n");
-        }
-        // NOTHING COMMAND
-        else if (command == '') {
-            term.echo(" ");
-        }
-        //PROJECTS COMMAND
-        else if (command == 'projects') {
-            term.echo("\nSorry, this feature isn't yet available. Consider typing in Github to see some projects there.\n");
-        }
-        //DAD COMMAND
-        else if (command == 'dad') {
-            term.echo("\nNothing special happens when you type in dad...\n");
-            dad = 1;
-        }
-        // BLOG COMMAND
-        else if (command == 'blog'){
-            window.location = "blog/index.html";
-        }
-        // CONTACT COMMAND
-        else if (command == 'contact'){
-            window.location = "contact/index.html";
-        }
-        // GITHUB COMMAND
-        else if (command == 'github'){
-            window.location = "http://www.github.com/bobbylcraig";
-        }
-        // INSTAGRAM COMMAND
-        else if (command == 'instagram'){
-            window.location = "http://instagram.com/bobbylcraig";
-        }
-        // FACEBOOK COMMAND
-        else if (command == 'facebook'){
-            window.location = "http://facebook.com/bobbylcraig";
-        }
-        // ABOUT -R COMMAND
-        else if (command == 'about -r'){
-            window.location = "http://terminal.jcubic.pl";
-        }
-        // RESUME -V COMMAND
-        else if (command == 'resume'){
-            term.echo("\nSorry, this feature isn't yet available. Sorry!\n");
-        }
-        // RESUME -V COMMAND
-        else if (command == 'resume -v'){
-            term.echo("\nSorry, I haven't uploaded my resume yet! Sorry!\n");
-        }
-        // DENIDOO COMMAND
-        else if (command == 'denidoo'){
-            window.location = "http://denison.edu";
-        }
-        // DENIDOO -CS COMMAND
-        else if (command == 'denidoo -cs'){
-            window.location = "http://denison.edu/academics/computer-science";
-        }
-        else if (command == "js") {
-            term.echo("\nWHHAAA? You wanna write some JS? Cool beans! Do so below...\n");
-            term.push(function(command, term) {
-                var result = window.eval(command);
-                if (result != undefined) {
-                    term.echo(String(result));
-                }
-            }, {
-                name: 'js',
-                prompt: 'js> '});
-        }
-        else {
-            term.echo(command + ": command not found");
-        }
-    }, {
-        greetings: "Welcome! I'm glad to see that you've found my website! Feel free to explore.\nTyping 'help' might be a good place to start.\n>",
-        onBlur: function() {
-            return false;
-        }
-    });
-});
-
-</script>
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+            
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Are you sure?</h4>
+                </div>
+                <div class="modal-body">
+                    <p style="text-align: center;">To retrieve Bobby's contact information you need to be an elite hacker. Are you sure you still want to enter?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Nope!</button>
+                    <a style="margin-left: 5px;" href="contact/index.html"><button type="button" class="btn btn-primary">Yes, I'm 1337.</button></a>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        
+        <!-- HEADER START -->
+        <div class="navbar navbar-inverse navbar-absolute-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Bobby L. Craig</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li> <a href="#">Home</a> </li>
+                        <li> <a href="blog/index.html">Blog</a> </li>
+                        <li> <a data-toggle="modal" data-target="#myModal" href="">Contact</a> </li>
+                        <li> <a href="terminal/index.html">Terminal</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- HEADER END -->
+        
+        <div class="container">
+            <div class="jumbotron">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <img id="bitBobby" src="8bitBobby.png">
+                        </div>
+                        <div class="col-sm-10">
+                            <h1>Greetings!</h1>
+                            <p>My name is Bobby Craig. Thanks for visiting my site. To learn more about me, check out my blog or visit my contact me page which are both linked above.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>I think my little 8-bit guy is pretty stinkin' cool. Other than that, I guess I'm just now realizing how boring landing pages are. Honestly...what's the purpose?! I previously didn't have a landing page. Rather, I had a faux-terminal that was pretty nifty but hard to navigate. If you'd like to see that, you can find it <a href="terminal/index.html">here</a>.</p>
+        </div>
+        
+        <!-- FOOTER START -->
+        <div class="footer">
+            <p>Crafted with <i class="fa fa-coffee"></i> by <a href="http://github.com/bobbylcraig">Bobby Craig</a>, 1995-<script type="text/javascript">document.write(new Date().getFullYear());</script></p>
+        </div>
+        <!-- FOOTER END -->
+        
+    </div>
+    
 </body>
