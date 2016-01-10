@@ -3646,6 +3646,7 @@ table.hover tr:nth-of-type(even):hover {
     display: inline-block;
     line-height: 0;
     width: 800px;
+    justify-content: center;
     height: 300px;
     max-width: 100%;
     transition: box-shadow .2s ease-out;
