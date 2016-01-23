@@ -12,16 +12,8 @@ $(document).ready(function() {
             $(".first").delay(3000).fadeOut("slow", function() {
                 $(".second").delay(1000).fadeIn("slow", function() {
                     $(".second").delay(3000).fadeOut("slow", function() {
-                        $(".third").delay(1000).fadeIn("slow", function() {
-                            $(".third").delay(3000).fadeOut("slow", function() {
-                                $(".fourth").delay(1000).fadeIn("slow", function() {
-                                    $(".fourth").delay(3000).fadeOut("slow", function() {
-                                        $(".open-window").delay(1000).fadeOut("slow", function() {
-                                            $(".main-content").fadeIn("slow");
-                                        });
-                                    });
-                                });
-                            });
+                        $(".open-window").delay(1000).fadeOut("slow", function() {
+                            $(".main-content").fadeIn("slow");
                         });
                     });
                 });
