@@ -13,15 +13,17 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title                   : Bobby Craig
-email                   : your-email@domain.com
-description             : |
-                            I'm from Canton, Ohio and attend Denison University. Contact me if you need freelance work done or just want to discuss something.
-baseurl                 : "" # the subpath of your site, e.g. /blog
-url                     : "http://example.com" # the base hostname & protocol for your site
-twitter_username        : bobbylcraig
-github_username         :  bobbylcraig
+title: Bobby Craig
+email: bobbylcraig@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Feel free to contact me if you need freelance work done, photos
+  taken, or even just want to talk about something. I can be found
+  in Ohio at Denison University or at the email to the side.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://bobbylcraig.com" # the base hostname & protocol for your site
+twitter_username: bobbylcraig
+github_username:  bobbylcraig
 
 # Build settings
-markdown                : kramdown
-theme                   : minima
+markdown: kramdown
+theme: minima
