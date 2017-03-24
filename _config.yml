@@ -13,8 +13,6 @@ markdown: kramdown
 source: .
 destination: ./_site
 permalink: /:title
-paginate: 8
-paginate_path: /page:num/
 
 # Default values
 defaults:
@@ -25,10 +23,14 @@ defaults:
     values:
       layout: "post"
 
+pagination:
+  per_page: 5
+
 # Plugins
 gems:
   - jekyll-paginate
   - jekyll-sitemap
+  - octopress-paginate
 
 # Custom variables
 version: "1.0.0"

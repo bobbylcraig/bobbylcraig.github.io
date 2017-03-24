@@ -14,14 +14,15 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-				{% for pages in site.pages %}
-			    {% if pages.layout == "page" %}
-						{% if pages.url == page.url %}<li class="active">{% else %}<li>{% endif %}
-							<a href="{% if site.baseurl == "/" %}{{ pages.url }}{% else %}{{ pages.url | prepend: site.baseurl }}{% endif %}" title="{{ pages.title }}">{{ pages.title }}
-							{% if pages.url == page.url %}<span class="sr-only">(current)</span>{% endif %}</a>
-						</li>
-					{% endif %}
-		    {% endfor %}
+        <li>
+					<a href="/pages/blog/">Blog</a>
+				</li>
+        <li>
+					<a href="/pages/photoblog/">Photo Blog</a>
+				</li>
+        <li>
+					<a href="/pages/projects/">Projects</a>
+				</li>
 				<li>
 					<a href="http://bobbyabroad.github.io/">Abroad Blog</a>
 				</li>
