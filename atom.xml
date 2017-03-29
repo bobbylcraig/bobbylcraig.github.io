@@ -4,7 +4,7 @@
  <title>Bobby L. Craig</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-03-28T00:11:56+02:00</updated>
+ <updated>2017-03-29T13:29:19+02:00</updated>
  <author>
    <name>Bobby L. Craig</name>
    <uri>https://bobbylcraig.com</uri>
@@ -19,6 +19,17 @@
    <id>http://localhost:4000/new-abroad-site-looking-good</id>
    <updated>2017-03-27T00:00:00+02:00</updated>
    <content type="html">&lt;p&gt;I’m working on a new abroad site because the traditional blog won’t work for me. I’ve had fun abroad and I want a project that matches my enjoyment. Therefore, inspired by &lt;a href=&quot;https://tympanus.net/codrops/2015/12/16/animated-map-path-for-interactive-storytelling/&quot;&gt;this&lt;/a&gt;, I decided to create an animated map to truly tell the story of my travels. The project...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>Hill Of Cards</title>
+   <link href="http://localhost:4000/hill-of-cards"/>
+   <id>http://localhost:4000/hill-of-cards</id>
+   <updated>2017-03-03T00:00:00+01:00</updated>
+   <content type="html">
+</content>
  </entry>
 
  
@@ -50,7 +61,7 @@
    <link href="http://localhost:4000/buDUget"/>
    <id>http://localhost:4000/buDUget</id>
    <updated>2017-03-03T00:00:00+01:00</updated>
-   <content type="html">&lt;p&gt;Hello! buDUget&lt;/p&gt;
+   <content type="html">&lt;p&gt;Hello there! buDUget&lt;/p&gt;
 </content>
  </entry>
 
@@ -61,7 +72,7 @@
    <link href="http://localhost:4000/Tenable-product-selector"/>
    <id>http://localhost:4000/Tenable-product-selector</id>
    <updated>2017-03-03T00:00:00+01:00</updated>
-   <content type="html">&lt;p&gt;Hello! Tenable Product Selector&lt;/p&gt;
+   <content type="html">
 </content>
  </entry>
 
@@ -72,7 +83,7 @@
    <link href="http://localhost:4000/Tenable-Product-Page"/>
    <id>http://localhost:4000/Tenable-Product-Page</id>
    <updated>2017-03-03T00:00:00+01:00</updated>
-   <content type="html">&lt;p&gt;Hello! Tenable Product Page&lt;/p&gt;
+   <content type="html">
 </content>
  </entry>
 
@@ -83,7 +94,7 @@
    <link href="http://localhost:4000/Congresstributions"/>
    <id>http://localhost:4000/Congresstributions</id>
    <updated>2017-03-03T00:00:00+01:00</updated>
-   <content type="html">&lt;p&gt;Hello! Congresstributions&lt;/p&gt;
+   <content type="html">
 </content>
  </entry>
 
@@ -105,16 +116,6 @@
    <id>http://localhost:4000/wizarding-spells-website</id>
    <updated>2016-05-09T00:00:00+02:00</updated>
    <content type="html">&lt;p&gt;I’ve not written on this blog in a &lt;strong&gt;long&lt;/strong&gt; time. However, now exams are over and I’m back to espouse more wizzydum. I saw this article on Reddit and thought it was interesting…not necessarily a great article, but it combines two things I love––Harry Potter and web stuff. Read along...</content>
- </entry>
-
- 
-
- <entry>
-   <title>Computer Science: A Liberal Art</title>
-   <link href="http://localhost:4000/cs-a-liberal-art"/>
-   <id>http://localhost:4000/cs-a-liberal-art</id>
-   <updated>2016-02-16T00:00:00+01:00</updated>
-   <content type="html">&lt;p&gt;I’m a Computer Science major at a liberal arts school…not always the most highly sought after combinations––and I don’t know why that is! After a cursory look at the linked article and a little time spent at any liberal arts school, you’ll learn just how valuable a liberal arts degree...</content>
  </entry>
 
  
