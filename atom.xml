@@ -4,12 +4,22 @@
  <title>Bobby L. Craig</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-04-04T17:41:43+02:00</updated>
+ <updated>2017-04-06T11:56:29+02:00</updated>
  <author>
    <name>Bobby L. Craig</name>
    <uri>https://bobbylcraig.com</uri>
    <email>bobbylcraig@gmail.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>I Hate This Phrase</title>
+   <link href="http://localhost:4000/hate-this-phrase"/>
+   <id>http://localhost:4000/hate-this-phrase</id>
+   <updated>2017-04-06T00:00:00+02:00</updated>
+   <content type="html">&lt;p&gt;Ok, so, this might come off as a little bit “ranty”, but I have a confession…I hate it when people utter (or type) the sentence:&lt;/p&gt; &lt;blockquote&gt;&amp;ldquo;Wow, you have too much time on your hands.&amp;rdquo;&lt;/blockquote&gt; &lt;p&gt;Ugh. UGH! Usually I hear this from people after telling them about a hobby or after...</content>
+ </entry>
 
  
 
@@ -106,16 +116,6 @@
    <id>http://localhost:4000/building-a-website-organization</id>
    <updated>2016-05-17T00:00:00+02:00</updated>
    <content type="html">&lt;p&gt;I’m currently trying to write a webapp. I’ve done a few projects before but nothing of the magnitude I’m planning for this one. That said, it’s really tough keeping all of my thoughts and decisions organized, and I’m looking for ways to do that best. While looking, I stumbled upon...</content>
- </entry>
-
- 
-
- <entry>
-   <title>Wizarding Spells: Like Websites?</title>
-   <link href="http://localhost:4000/wizarding-spells-website"/>
-   <id>http://localhost:4000/wizarding-spells-website</id>
-   <updated>2016-05-09T00:00:00+02:00</updated>
-   <content type="html">&lt;p&gt;I’ve not written on this blog in a &lt;strong&gt;long&lt;/strong&gt; time. However, now exams are over and I’m back to espouse more wizzydum. I saw this article on Reddit and thought it was interesting…not necessarily a great article, but it combines two things I love––Harry Potter and web stuff. Read along...</content>
  </entry>
 
  
