@@ -4,12 +4,22 @@
  <title>Bobby L. Craig</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-04-06T11:56:29+02:00</updated>
+ <updated>2017-05-02T21:45:41+02:00</updated>
  <author>
    <name>Bobby L. Craig</name>
    <uri>https://bobbylcraig.com</uri>
    <email>bobbylcraig@gmail.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>Taylor Room Layout</title>
+   <link href="http://localhost:4000/taylor-room-layout"/>
+   <id>http://localhost:4000/taylor-room-layout</id>
+   <updated>2017-05-02T00:00:00+02:00</updated>
+   <content type="html">&lt;p&gt;Here at Jacobs, boredom does interesting things to me. One of those things happens to be that it makes me think of the future—specifically, my time at Denison. I’m rooming with Oliver next year and figured I’d give a try at creating our room layout (of course nowhere near what...</content>
+ </entry>
 
  
 
@@ -106,16 +116,6 @@
    <updated>2017-03-03T00:00:00+01:00</updated>
    <content type="html">
 </content>
- </entry>
-
- 
-
- <entry>
-   <title>Building A Website: Organization Required</title>
-   <link href="http://localhost:4000/building-a-website-organization"/>
-   <id>http://localhost:4000/building-a-website-organization</id>
-   <updated>2016-05-17T00:00:00+02:00</updated>
-   <content type="html">&lt;p&gt;I’m currently trying to write a webapp. I’ve done a few projects before but nothing of the magnitude I’m planning for this one. That said, it’s really tough keeping all of my thoughts and decisions organized, and I’m looking for ways to do that best. While looking, I stumbled upon...</content>
  </entry>
 
  
