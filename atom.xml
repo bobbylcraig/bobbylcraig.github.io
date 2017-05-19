@@ -4,12 +4,23 @@
  <title>Bobby L. Craig</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-05-02T21:45:41+02:00</updated>
+ <updated>2017-05-19T16:16:25+02:00</updated>
  <author>
    <name>Bobby L. Craig</name>
    <uri>https://bobbylcraig.com</uri>
    <email>bobbylcraig@gmail.com</email>
  </author>
+
+ 
+
+ <entry>
+   <title>Cool Story About Recent Ransomware Attack</title>
+   <link href="http://localhost:4000/accidentally-stopping-major-ransomware-attack"/>
+   <id>http://localhost:4000/accidentally-stopping-major-ransomware-attack</id>
+   <updated>2017-05-19T00:00:00+02:00</updated>
+   <content type="html">&lt;p&gt;Just check out the link below. Pretty interesting/funny stuff… not exactly so “accidental”.&lt;/p&gt;
+</content>
+ </entry>
 
  
 
@@ -102,17 +113,6 @@
    <title>Tenable Product Page</title>
    <link href="http://localhost:4000/Tenable-Product-Page"/>
    <id>http://localhost:4000/Tenable-Product-Page</id>
-   <updated>2017-03-03T00:00:00+01:00</updated>
-   <content type="html">
-</content>
- </entry>
-
- 
-
- <entry>
-   <title>Congresstributions</title>
-   <link href="http://localhost:4000/Congresstributions"/>
-   <id>http://localhost:4000/Congresstributions</id>
    <updated>2017-03-03T00:00:00+01:00</updated>
    <content type="html">
 </content>
