@@ -4,7 +4,7 @@
  <title>Bobby L. Craig</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-05-19T16:16:25+02:00</updated>
+ <updated>2017-05-24T21:45:41+02:00</updated>
  <author>
    <name>Bobby L. Craig</name>
    <uri>https://bobbylcraig.com</uri>
@@ -99,20 +99,20 @@
  
 
  <entry>
-   <title>Tenable Product Selector</title>
-   <link href="http://localhost:4000/Tenable-product-selector"/>
-   <id>http://localhost:4000/Tenable-product-selector</id>
+   <title>Abroad Blog</title>
+   <link href="http://localhost:4000/abroad-blog"/>
+   <id>http://localhost:4000/abroad-blog</id>
    <updated>2017-03-03T00:00:00+01:00</updated>
-   <content type="html">
+   <content type="html">&lt;p&gt;I plan on eventually writing a how-to blog post on how this project was created. Until then, feels free to check it out &lt;a href=&quot;http://bobbyabroad.github.io/&quot;&gt;here&lt;/a&gt; or on &lt;a href=&quot;http://github.com/bobbylcraig&quot;&gt;my Github&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
 
  
 
  <entry>
-   <title>Tenable Product Page</title>
-   <link href="http://localhost:4000/Tenable-Product-Page"/>
-   <id>http://localhost:4000/Tenable-Product-Page</id>
+   <title>Tenable Product Selector</title>
+   <link href="http://localhost:4000/Tenable-product-selector"/>
+   <id>http://localhost:4000/Tenable-product-selector</id>
    <updated>2017-03-03T00:00:00+01:00</updated>
    <content type="html">
 </content>
