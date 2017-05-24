@@ -46,7 +46,7 @@
   padding: 0; }
 
 .modal-body--banner {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/SwaseyObservatoryChapelDenisonUniversity.jpg");
+  background-image: url("/img/main-img/contact-header.jpg");
   background-size: cover;
   width: 100%;
   height: 350px;
