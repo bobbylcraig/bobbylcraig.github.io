@@ -4,7 +4,7 @@
  <title>Bobby L. Craig</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-05-24T21:52:51+02:00</updated>
+ <updated>2017-06-05T22:01:33-04:00</updated>
  <author>
    <name>Bobby L. Craig</name>
    <uri>https://bobbylcraig.com</uri>
@@ -14,10 +14,20 @@
  
 
  <entry>
+   <title>I Have Moved Into Atlanta</title>
+   <link href="http://localhost:4000/moved-into-atlanta"/>
+   <id>http://localhost:4000/moved-into-atlanta</id>
+   <updated>2017-06-04T00:00:00-04:00</updated>
+   <content type="html">&lt;p&gt;I have officially moved into Atlanta. I’m interning with MailChimp this summer, and I’m super excited to get started. The weather is rather warm and humid here, but I’m sure it won’t take me too long to get adjusted. I can’t wait to meet the other interns—my roommate Garrett seems...</content>
+ </entry>
+
+ 
+
+ <entry>
    <title>Cool Story About Recent Ransomware Attack</title>
    <link href="http://localhost:4000/accidentally-stopping-major-ransomware-attack"/>
    <id>http://localhost:4000/accidentally-stopping-major-ransomware-attack</id>
-   <updated>2017-05-19T00:00:00+02:00</updated>
+   <updated>2017-05-19T00:00:00-04:00</updated>
    <content type="html">&lt;p&gt;Just check out the link below. Pretty interesting/funny stuff… not exactly so “accidental”.&lt;/p&gt;
 </content>
  </entry>
@@ -28,7 +38,7 @@
    <title>Taylor Room Layout</title>
    <link href="http://localhost:4000/taylor-room-layout"/>
    <id>http://localhost:4000/taylor-room-layout</id>
-   <updated>2017-05-02T00:00:00+02:00</updated>
+   <updated>2017-05-02T00:00:00-04:00</updated>
    <content type="html">&lt;p&gt;Here at Jacobs, boredom does interesting things to me. One of those things happens to be that it makes me think of the future—specifically, my time at Denison. I’m rooming with Oliver next year and figured I’d give a try at creating our room layout (of course nowhere near what...</content>
  </entry>
 
@@ -38,7 +48,7 @@
    <title>I Hate This Phrase</title>
    <link href="http://localhost:4000/hate-this-phrase"/>
    <id>http://localhost:4000/hate-this-phrase</id>
-   <updated>2017-04-06T00:00:00+02:00</updated>
+   <updated>2017-04-06T00:00:00-04:00</updated>
    <content type="html">&lt;p&gt;Ok, so, this might come off as a little bit “ranty”, but I have a confession…I hate it when people utter (or type) the sentence:&lt;/p&gt; &lt;blockquote&gt;&amp;ldquo;Wow, you have too much time on your hands.&amp;rdquo;&lt;/blockquote&gt; &lt;p&gt;Ugh. UGH! Usually I hear this from people after telling them about a hobby or after...</content>
  </entry>
 
@@ -48,7 +58,7 @@
    <title>New Abroad Site...Lookin' Good!</title>
    <link href="http://localhost:4000/new-abroad-site-looking-good"/>
    <id>http://localhost:4000/new-abroad-site-looking-good</id>
-   <updated>2017-03-27T00:00:00+02:00</updated>
+   <updated>2017-03-27T00:00:00-04:00</updated>
    <content type="html">&lt;p&gt;I’m working on a new abroad site because the traditional blog won’t work for me. I’ve had fun abroad and I want a project that matches my enjoyment. Therefore, inspired by &lt;a href=&quot;https://tympanus.net/codrops/2015/12/16/animated-map-path-for-interactive-storytelling/&quot;&gt;this&lt;/a&gt;, I decided to create an animated map to truly tell the story of my travels. The project...</content>
  </entry>
 
@@ -58,7 +68,7 @@
    <title>Hill Of Cards</title>
    <link href="http://localhost:4000/hill-of-cards"/>
    <id>http://localhost:4000/hill-of-cards</id>
-   <updated>2017-03-03T00:00:00+01:00</updated>
+   <updated>2017-03-03T00:00:00-05:00</updated>
    <content type="html">
 </content>
  </entry>
@@ -69,7 +79,7 @@
    <title>Denison Subreddit Retheme</title>
    <link href="http://localhost:4000/denison-subreddit-retheme"/>
    <id>http://localhost:4000/denison-subreddit-retheme</id>
-   <updated>2017-03-03T00:00:00+01:00</updated>
+   <updated>2017-03-03T00:00:00-05:00</updated>
    <content type="html">&lt;p&gt;Hello! Denison Subreddit Reskin.&lt;/p&gt;
 </content>
  </entry>
@@ -80,7 +90,7 @@
    <title>Catering Calendar</title>
    <link href="http://localhost:4000/catering-calendar"/>
    <id>http://localhost:4000/catering-calendar</id>
-   <updated>2017-03-03T00:00:00+01:00</updated>
+   <updated>2017-03-03T00:00:00-05:00</updated>
    <content type="html">&lt;p&gt;Hello! Catering Calendar&lt;/p&gt;
 </content>
  </entry>
@@ -91,7 +101,7 @@
    <title>Buduget</title>
    <link href="http://localhost:4000/buDUget"/>
    <id>http://localhost:4000/buDUget</id>
-   <updated>2017-03-03T00:00:00+01:00</updated>
+   <updated>2017-03-03T00:00:00-05:00</updated>
    <content type="html">&lt;p&gt;Hello there! buDUget&lt;/p&gt;
 </content>
  </entry>
@@ -102,19 +112,8 @@
    <title>Abroad Blog</title>
    <link href="http://localhost:4000/abroad-blog"/>
    <id>http://localhost:4000/abroad-blog</id>
-   <updated>2017-03-03T00:00:00+01:00</updated>
+   <updated>2017-03-03T00:00:00-05:00</updated>
    <content type="html">&lt;p&gt;I plan on eventually writing a how-to blog post on how this project was created. Until then, feels free to check it out &lt;a href=&quot;http://bobbyabroad.github.io/&quot;&gt;here&lt;/a&gt; or on &lt;a href=&quot;http://github.com/bobbylcraig&quot;&gt;my Github&lt;/a&gt;.&lt;/p&gt;
-</content>
- </entry>
-
- 
-
- <entry>
-   <title>Tenable Product Selector</title>
-   <link href="http://localhost:4000/Tenable-product-selector"/>
-   <id>http://localhost:4000/Tenable-product-selector</id>
-   <updated>2017-03-03T00:00:00+01:00</updated>
-   <content type="html">
 </content>
  </entry>
 
