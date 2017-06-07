@@ -4,7 +4,7 @@
  <title>Bobby L. Craig</title>
  <link href="http://localhost:4000/atom.xml" rel="self"/>
  <id>http://localhost:4000</id>
- <updated>2017-06-05T22:01:33-04:00</updated>
+ <updated>2017-06-07T19:25:56-04:00</updated>
  <author>
    <name>Bobby L. Craig</name>
    <uri>https://bobbylcraig.com</uri>
@@ -14,11 +14,41 @@
  
 
  <entry>
+   <title>Four Days In Atlanta</title>
+   <link href="http://localhost:4000/4-days-here"/>
+   <id>http://localhost:4000/4-days-here</id>
+   <updated>2017-06-07T00:00:00-04:00</updated>
+   <content type="html">&lt;p&gt;It’s Wednesday. I’ve been in Atlanta for four days, and I’m absolutely loving my time here. MailChimp is a really great company—I’m really missing my co-workers from Tenable though… I’m hoping to make relationships at MailChimp like I made at Tenable. I came in a little later than most of...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>Mostly Done With Abroad Blog</title>
+   <link href="http://localhost:4000/mostly-done-with-abroad-blog"/>
+   <id>http://localhost:4000/mostly-done-with-abroad-blog</id>
+   <updated>2017-06-06T00:00:00-04:00</updated>
+   <content type="html">&lt;p&gt;So, it’s not entirely official, but I’ve sent out the link to a few people for my abroad blog. I’ve mostly finished the writing (aside from some editing because I’m a bit too lazy to read my own writing…it takes a long while) and the design is mostly done. I’m...</content>
+ </entry>
+
+ 
+
+ <entry>
    <title>I Have Moved Into Atlanta</title>
    <link href="http://localhost:4000/moved-into-atlanta"/>
    <id>http://localhost:4000/moved-into-atlanta</id>
    <updated>2017-06-04T00:00:00-04:00</updated>
    <content type="html">&lt;p&gt;I have officially moved into Atlanta. I’m interning with MailChimp this summer, and I’m super excited to get started. The weather is rather warm and humid here, but I’m sure it won’t take me too long to get adjusted. I can’t wait to meet the other interns—my roommate Garrett seems...</content>
+ </entry>
+
+ 
+
+ <entry>
+   <title>I Deleted My Social Media</title>
+   <link href="http://localhost:4000/deleted-social-media"/>
+   <id>http://localhost:4000/deleted-social-media</id>
+   <updated>2017-05-30T00:00:00-04:00</updated>
+   <content type="html">&lt;p&gt;In a (probably) impulsive fashion, I decided to delete practically all of my social media (I kept Facebook because I need it for groups). This means that I deleted Twitter, Instagram, Snapchat, and anything else I deemed necessary. I did this for several reasons.&lt;/p&gt; &lt;ol&gt; &lt;li&gt;It's distracting. Although I still...</content>
  </entry>
 
  
@@ -81,39 +111,6 @@
    <id>http://localhost:4000/denison-subreddit-retheme</id>
    <updated>2017-03-03T00:00:00-05:00</updated>
    <content type="html">&lt;p&gt;Hello! Denison Subreddit Reskin.&lt;/p&gt;
-</content>
- </entry>
-
- 
-
- <entry>
-   <title>Catering Calendar</title>
-   <link href="http://localhost:4000/catering-calendar"/>
-   <id>http://localhost:4000/catering-calendar</id>
-   <updated>2017-03-03T00:00:00-05:00</updated>
-   <content type="html">&lt;p&gt;Hello! Catering Calendar&lt;/p&gt;
-</content>
- </entry>
-
- 
-
- <entry>
-   <title>Buduget</title>
-   <link href="http://localhost:4000/buDUget"/>
-   <id>http://localhost:4000/buDUget</id>
-   <updated>2017-03-03T00:00:00-05:00</updated>
-   <content type="html">&lt;p&gt;Hello there! buDUget&lt;/p&gt;
-</content>
- </entry>
-
- 
-
- <entry>
-   <title>Abroad Blog</title>
-   <link href="http://localhost:4000/abroad-blog"/>
-   <id>http://localhost:4000/abroad-blog</id>
-   <updated>2017-03-03T00:00:00-05:00</updated>
-   <content type="html">&lt;p&gt;I plan on eventually writing a how-to blog post on how this project was created. Until then, feels free to check it out &lt;a href=&quot;http://bobbyabroad.github.io/&quot;&gt;here&lt;/a&gt; or on &lt;a href=&quot;http://github.com/bobbylcraig&quot;&gt;my Github&lt;/a&gt;.&lt;/p&gt;
 </content>
  </entry>
 
