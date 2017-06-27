@@ -102,7 +102,7 @@ class ContactLinks extends React.Component {
       <div className="contact-links">
         <span><a href="mailto:bobbylcraig@gmail.com">bobbylcraig@gmail.com</a></span>
         <span><a href="https://www.linkedin.com/in/bobbylcraig">LinkedIn</a></span>
-        <span><a href="https://github.com/bobbylcraig">github</a></span>
+        <span><a href="https://github.com/bobbylcraig">Github</a></span>
       </div>
     );
   }
@@ -241,7 +241,22 @@ class ProjectLinks extends React.Component {
 
 class ProjectLink extends React.Component {
   render() {
-    const buttonText = (this.props.site === 'github') ? 'view code' : 'explore demo';
+    var buttonText = "";
+    switch (this.props.site) {
+      case 'github':
+      case 'codepen':
+        buttonText = "View Code";
+        break;
+      case 'demo':
+        buttonText = "Explore Demo";
+        break;
+      case 'preview':
+        buttonText = "See Project";
+        break;
+      default:
+        buttonText = "Open";
+    }
+    // const buttonText = (this.props.site === 'github') ? 'view code' : 'explore demo';
     return (
       <a href={this.props.link} className="project-link">{buttonText}</a>
     );
