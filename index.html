@@ -7,50 +7,9 @@ paginate:
   per_page: 4
 ---
 
-<div class="jumbotron hidden-sm hidden-xs" style="border-radius: 4em">
-  <div class="row">
-    <div class="col-md-3">
-      <img width="100%" style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/8980594?v=3&s=460" alt="Photo of Bobby">
-    </div>
-    <div class="col-md-9">
-      <h1>Welcome!</h1>
-      <p>Read all about Bobby's most recent endeavors and projects.</p>
-      <hr>
-      <a onclick="randomRedirect();" class="btn btn-primary random-page">Go To Random Page Of Bobby's Choosing</a>
-      <script type="text/javascript">
-      function randomRedirect() {
-        var links = [
-          'http://stibitz.denison.edu/index.html',
-          'http://www.tenable.com',
-          'https://votesmart.org',
-          'https://fivethirtyeight.com',
-          'https://www.reddit.com/r/books/comments/1lxk5q/this_was_the_guilt_list_they_handed_out_at_my/',
-          'http://imgur.com/a/7OzGJ',
-          'http://www.running2win.com/index.asp',
-          'https://mailchimp.com',
-          'https://github.com/bobbylcraig',
-          'https://codepen.io',
-          'http://www.codemash.org',
-          'https://bobbyabroad.github.io',
-          'https://code.org',
-          'http://www.elated.com/articles/cms-in-an-afternoon-php-mysql/',
-          'http://www.travmonkey.com/101-things-to-do-around-the-world',
-          'https://imgur.com/gallery/vqUQ5',
-          'https://denison.edu',
-          'https://www.youtube.com/watch?v=bqzMSV-hT1E',
-          'https://www.catchafire.org/',
-          'https://www.youtube.com/watch?v=rS00xWnqwvI',
-          'https://www.youtube.com/watch?v=4LZo9ugJTWQ',
-        ];
-        var link = links[Math.floor(Math.random() * links.length)];
-        window.location.href = link;
-      }
-      </script>
-    </div>
-  </div>
-</div>
-
+<h2>Welcome. Navigate to the different sections of the site.</h2>
 <hr>
+
 {% for post in paginator.posts %}
   {% if post.tags contains "textblog" %}
     {% if post.img %}
