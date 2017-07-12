@@ -1,7 +1,7 @@
 ---
 name: Tenable Product Page
 order: 4
-ext-link: "http://www.tenable.com/products"
+ext-link: "//www.tenable.com/products"
 project-date: June 2016 - August 2016
 photo-link: /img/projects/productspage.png
 photo-text: Tenable Product Page

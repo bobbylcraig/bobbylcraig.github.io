@@ -1,7 +1,7 @@
 ---
 name: Denison Subreddit Reskin
 order: 6
-ext-link: "http://reddit.com/r/Denison"
+ext-link: "//reddit.com/r/Denison"
 project-date: July 2016
 photo-link: /img/projects/denisonsubreddit.png
 photo-text: Denison Subreddit Reskin
