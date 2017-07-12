@@ -1,16 +1,11 @@
 # Site settings
 title: Bobby L. Craig
 description: "Online Portfolio"
-url: "//www.bobbylcraig.com/"
+url: "https://bobbylcraig.com/"
 author:
   name: "Bobby L. Craig"
   email: "bobbylcraig@gmail.com"
   url: "https://bobbylcraig.com"
-
-# Build settings
-baseurl: /
-markdown: kramdown
-permalink: /:title
 
 # Default values
 defaults:
