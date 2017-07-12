@@ -1,0 +1,54 @@
+---
+layout: page
+title: Photo Blog
+author: Bobby L. Craig
+paginate: true
+paginate:
+  tag: 'photoblog'
+  per_page: 4
+  permalink:    /photo-blog/page:num/     # pagination path (relative to template page)
+  title_suffix: " - Page :num" # Append to template's page title
+---
+
+<p>Just for you, I've selected some photos I've taken or enjoyed to post right here. I may add a little something-something in the description to talk about it...I might just leave the photo untainted to you. In order to make the page load quicker, only 5 photos are included. However, if you'd like to go back further click the last photo and then from there browse further back. Enjoy!</p>
+<hr>
+
+{% for post in paginator.posts %}
+  <div class="row">
+    <div class="col-md-3">
+      <a href="{{ post.url | prepend: site.baseurl }}"><h1>{{ post.title }}</h1></a>
+      <p class="post-date"><em>{{ post.date | date: '%B %d, %Y' }}</em></p>
+      <p>
+        {{ post.content | strip_html | truncatewords: 50 }}
+      </p>
+    </div>
+    <div class="col-md-9">
+      <div class="text-center">
+        <a href="{{ post.url }}">
+          <img class="img-thumbnail" style="width: 100%;" src="{{ post.img }}"/>
+        </a>
+      </div>
+    </div>
+  </div>
+  <hr>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<div class="row">
+  <div class="col-md-12 text-center">
+    {% if paginator.previous_page %}
+    <a class="btn btn-primary" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    {% else %}
+    <a style="opacity: 0.2;" class="btn btn-primary disabled" href="#" disabled><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    {% endif %}
+
+    <a class="btn btn-default disabled" href="#" disabled>{{ paginator.page }}/{{ paginator.total_pages }}</a>
+
+    {% if paginator.next_page %}
+    <a class="btn btn-primary" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    {% else %}
+    <a style="opacity: 0.2;" class="btn btn-primary disabled" href="#" disabled><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
