@@ -8,4 +8,4 @@ links:
   - link: ['Preview', 'https://bobbyabroad.github.io/']
 ---
 
-This was a semester-long project. It started off as a normal blog like the one on this site, but it eventually grew to much more.
+This was a semester-long project. It started off as a normal blog with simple posts and photos, but it eventually grew to be much more interactive.
