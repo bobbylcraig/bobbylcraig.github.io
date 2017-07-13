@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="446px" height="316px" viewBox="0 0 446 316" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12081) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="project-background-white" sketch:type="MSLayerGroup">
+            <g id="Welcome" sketch:type="MSShapeGroup">
+                <g id="project-backgrounds">
+                    <g id="white">
+                        <path d="M274.549054,316 L446,316 L446,0 L79.7781697,0 L51.9613134,111.30701 L103.098108,316 L274.549054,316 L274.549054,316 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                        <path d="M24.1510925,1.36424205e-12 L79.8489075,1.36424205e-12 L51.9600233,111.320984 L24.1510925,1.36424205e-12 Z" id="Rectangle-19" opacity="0.556838768" fill="#2980b9"></path>
+                        <path d="M51.9603119,111.318024 L51.9603119,111.318024 L103.109539,316 L0.797981856,316 L51.9603119,111.318024 Z" id="Rectangle" opacity="0.52660779" fill="#34495e"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

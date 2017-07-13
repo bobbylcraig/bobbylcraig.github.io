@@ -1,17 +1,5 @@
 ---
 layout: default
 ---
-<article id="post-page">
-	<h2>{%if page.header %}{{ page.header }}{% elsif page.name %}{{ page.name }}{% else %}{{ page.title }}{% endif %}</h2>
-	<time class="by-line">{%if page.project-date %}{{ page.project-date }}{% else %}{{ page.date | date_to_string }}{% endif %}</time>
-	<div class="content">
-		<hr>
-		{% if page.short-intro %}<p><em>{{ page.short-intro }}</em></p>{% endif %}
-		<p>{{ content }}</p>
-		<hr>
-		{% if page.ext-link %}
-		  <a class="btn btn-primary" href="{{ page.ext-link }}">External Link</a>
-		{% endif %}
 
-	</div>
-</article>
+{{ content }}

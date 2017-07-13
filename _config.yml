@@ -1,34 +1,55 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
 # Site settings
-title: Bobby L. Craig
-description: "Online Portfolio"
-url: "https://bobbylcraig.com/"
-author:
-  name: "Bobby L. Craig"
-  email: "bobbylcraig@gmail.com"
-  url: "https://bobbylcraig.com"
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Bobby Craig
+email: bobbylcraig@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://bobbylcraig.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Default values
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+twitter: bobbylcraig
+github:  bobbylcraig
+instagram: bobbylcraig
+medium: bobbylcraig
+facebook: bobbylcraig
+linkedin: bobbylcraig
+codepen: bobbylcraig
 
-pagination:
-  per_page: 5
+# Code for Google Analytics
+analyticsCode: UA-102169476-1
 
-# Plugins
-gems:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - octopress-paginate
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
 
-# Custom variables
-version: "1.0.0"
+collections:
+  - posts
+  - projects
 
-# Options
-custom_header: false
-custom_nav_footer: false
-reverse: false
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
