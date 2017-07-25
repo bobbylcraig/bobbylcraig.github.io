@@ -40,12 +40,16 @@ a {
     .top-background {
       height: 500px; } }
 
+.shrink-width {
+  max-width: 1100px;
+  margin: 0 auto; }
+
 .top-container {
   width: 85%;
   margin: 4em auto; }
   .top-container .introduction {
     line-height: 1.75;
-    width: 60%; }
+    width: 80%; }
     @media (max-width: 767px) {
       .top-container .introduction {
         width: 100%; } }
