@@ -37,6 +37,7 @@ analyticsCode: UA-102169476-1
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
 
 collections:
   - posts
