@@ -8,4 +8,4 @@ links:
   - link: ['Preview', 'http://denisonbandersnatch.com/']
 ---
 
-Helping contribute and maintain site reliability for coffeehouse point-of-sale web application. App sees wide usage among the student body and has improved coffeeshop's profitability in year active. 
+I'm helping contribute and maintain the site reliability for this coffeehouse point-of-sale web application. It sees wide usage among the student body and has improved coffeeshop's profitability in the single year active. 
