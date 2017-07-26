@@ -7,4 +7,4 @@ links:
   - link: ['Github','https://github.com/bobbylcraig/buDUget/']
 ---
 
-buDUget is a budgeting platform built specifically for Denison University's budgeting needs. Being a part of Denison's finance committee, Bobby built the tool to help streamline the budgeting process.
+buDUget is a budgeting platform built specifically for Denison University's budgeting needs. Being part of Denison's finance committee, I built the tool to help streamline the budgeting process. Unfortunately, I did so before I discovered just how easy frameworks make things!
