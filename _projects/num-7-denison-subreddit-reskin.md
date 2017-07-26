@@ -7,4 +7,4 @@ links:
   - link: ['Preview','https://reddit.com/r/Denison']
 ---
 
-This was a quick afternoon project. The Denison subreddit was rather barren, so I decided to make it reminiscent of Denison's website!
+This was a quick afternoon project. The Denison subreddit was rather barren, so I decided to give it some Big Red branding!
