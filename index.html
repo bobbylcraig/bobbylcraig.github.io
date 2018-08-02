@@ -1,55 +1,53 @@
 ---
-layout: page
+title: Home
+layout: default
+show_in_nav: true
 ---
 
 <div class="shrink-width">
-  <div class="top-container">
-    <h1>{{ site.title }}</h1>
-    <div class="introduction">
-      <p>Hello! I'm Bobby, a senior at <a target="_blank" href="//denison.edu/">Denison University</a> in Granville, Ohio. I feel that I should warn you...this website isn't complete. I still have many writing/design projects to add...and all of the dev projects I have completed lately. To be continued...</p>
-    </div>
-  </div>
-
-  <div class="projects-container">
-    {% for project in site.projects %}
-    <style>
-      .projects-container [name={{ project.slug }}].project-card .project-screenshot {
-        background: url("/img/{{ project.img }}");
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-    </style>
-    <div class="project-card" name="{{ project.slug }}">
-      <div class="project-screenshot" ref="screenshot"></div>
-      <div class="project-background"></div>
-      <div class="project-content">
-        <h3>{{ project.project-name }}</h3>
-        <p>{{ project.content }}</p>
-        <!-- <div class="project-skills">
-          {% for skill in project.skills %}
-            <span class="project-skill">{{ skill }}</span>
-          {% endfor %}
-        </div> -->
-        <div class="project-links">
-          {% for item in project.links %}
-            <a target="_blank" href="{{ item['link'][1] }}" class="project-link">{{ item['link'][0] }}</a>
-          {% endfor %}
+    <div class="top-container">
+        <p class="text-center">Notice: This whole page is under construction. Please check back later for updated links to pages.</p>
+        <div class="business-card">
+            <section class="side-section-1">
+                <div><a href="https://about.me/bobbylcraig">About</a></div>
+            </section>
+            <section class="side-section-2">
+                <div><a href="/projects">Projects</a></div>
+            </section>
+            <section class="side-section-3">
+                <div><a href="https://medium.com/@bobbylcraig">Writing</a></div>
+            </section>
+            <section class="side-section-4">
+                <div><a href="https://www.flickr.com/photos/132034388@N02/">Photography</a></div>
+            </section>
+            <section class="side-section-5">
+                <div>Art</div>
+            </section>
+            <section class="side-section-6">
+                <div><a href="https://open.spotify.com/user/bobbylcraig?si=n-0JvgU1TTSkEAPQsnoiWw">Playlists</a></div>
+            </section>
+            <section class="name">
+                <div>Bobby Craig</div>
+            </section>
+            <section class="location">
+                <div>Oakland, CA</div>
+            </section>
+            <section class="occupation">
+                <div>Software Engineer</div>
+            </section>
         </div>
-      </div>
     </div>
-    {% endfor %}
-  </div>
 
-  <footer>
-    <div class="social-icons">
-      {% if site.github %}<a target="_blank" href="//github.com/{{ site.github }}"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a>{% endif %}
-      {% if site.instagram %}<a target="_blank" href="//instagram.com/{{ site.instagram }}"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>{% endif %}
-      {% if site.medium %}<a target="_blank" href="//medium.com/@{{ site.medium }}"><i class="fa fa-lg fa-medium" aria-hidden="true"></i></a>{% endif %}
-      {% if site.twitter %}<a target="_blank" href="//twitter.com/{{ site.twitter }}"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a>{% endif %}
-      {% if site.facebook %}<a target="_blank" href="//facebook.com/{{ site.facebook }}"><i class="fa fa-lg fa-facebook" aria-hidden="true"></i></a>{% endif %}
-      {% if site.codepen %}<a target="_blank" href="//codepen.io/{{ site.codepen }}"><i class="fa fa-lg fa-codepen" aria-hidden="true"></i></a>{% endif %}
-      {% if site.linkedin %}<a target="_blank" href="//linkedin.com/in/{{ site.linkedin }}"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a>{% endif %}
-    </div>
-    <p class="copyright">&copy; {{ site.title }}</p>
-  </footer>
+    <footer>
+        <div class="social-icons">
+            <a target="_blank" href="//github.com/bobbylcraig"><i class="fa fa-lg fa-github" aria-hidden="true"></i></a>
+            <a target="_blank" href="//instagram.com/bobbylcraig"><i class="fa fa-lg fa-instagram" aria-hidden="true"></i></a>
+            <a target="_blank" href="//medium.com/@bobbylcraig"><i class="fa fa-lg fa-medium" aria-hidden="true"></i></a>
+            <a target="_blank" href="//twitter.com/bobbylcraig"><i class="fa fa-lg fa-twitter" aria-hidden="true"></i></a>
+
+            <a target="_blank" href="//codepen.io/bobbylcraig"><i class="fa fa-lg fa-codepen" aria-hidden="true"></i></a>
+            <a target="_blank" href="//linkedin.com/in/bobbylcraig"><i class="fa fa-lg fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <p class="copyright">&copy; Bobby L. Craig</p>
+    </footer>
 </div>

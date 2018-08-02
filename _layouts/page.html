@@ -2,4 +2,20 @@
 layout: default
 ---
 
+<header class="header-nav">
+  <ul>
+      {% for intpage in site.pages %}
+          {% if intpage.show_in_nav %}
+              <li>{{ intpage.hidden }}
+              {% if page.url == intpage.url %}
+                  <strong>{{ intpage.title }}</strong>
+              {% else %}
+                  <a href="{{ intpage.url }}">{{ intpage.title }}</a>
+              {% endif %}
+              </li>
+          {% endif %}
+      {% endfor %}
+  </ul>
+</header>
+
 {{ content }}

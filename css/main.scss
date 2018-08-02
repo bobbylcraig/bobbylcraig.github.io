@@ -45,6 +45,10 @@ a {
   }
 }
 
+.text-center {
+    text-align: center;
+}
+
 .top-background {
   position: absolute;
   top: 0;
@@ -63,6 +67,34 @@ a {
 .shrink-width {
   max-width: 1100px;
   margin: 0 auto;
+}
+
+.header-nav {
+    color: $neutral;
+    text-align: center;
+    position: relative;
+    margin-top: 3em;
+    margin-bottom: -1em;
+    
+    a {
+        color: $neutral;
+        transition: 0.2s opacity;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    
+    ul {
+        padding: 0;
+        list-style-type: none;
+        
+        li {
+            display: inline;
+            padding: 0 1.5em;
+            cursor: default;
+        }
+    }
 }
 
 .top-container {
@@ -105,4 +137,5 @@ footer {
   }
 }
 
+@import "_BusinessCard";
 @import "_Projects";
