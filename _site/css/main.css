@@ -94,6 +94,9 @@ footer {
     margin-top: 3em;
     opacity: 0.5; }
 
+.no-pointer {
+  cursor: default; }
+
 .business-card {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;

@@ -137,5 +137,9 @@ footer {
   }
 }
 
+.no-pointer {
+    cursor: default;
+}
+
 @import "_BusinessCard";
 @import "_Projects";
