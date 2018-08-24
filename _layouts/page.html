@@ -3,8 +3,9 @@ layout: default
 ---
 
 <header class="header-nav">
-  <ul>
-      {% for intpage in site.pages %}
+    <ul>
+        <li><a href="/">Home</a></li>
+        {% for intpage in site.pages %}
           {% if intpage.show_in_nav %}
               <li>{{ intpage.hidden }}
               {% if page.url == intpage.url %}
@@ -14,8 +15,8 @@ layout: default
               {% endif %}
               </li>
           {% endif %}
-      {% endfor %}
-  </ul>
+        {% endfor %}
+    </ul>
 </header>
 
 {{ content }}
