@@ -8,4 +8,4 @@ links:
   - link: ['Preview','https://chrome.google.com/webstore/detail/congresstributions/pilhmclmlbcgdanljcmiolfcbeogejpd?hl=en-US']
 ---
 
-Congresstributions was a fun little tool to keep Congresspeople accountable by placing their largest contributors after their names so readers had an idea about their history. Unfortunately, the API costs money to use so names have been hard-coded and the project will soon be wildly out-of-date.
+Simple Chrome extension that reminds you of Congresspeople's top campaign contributors when seeing their name in text.

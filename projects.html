@@ -5,8 +5,10 @@ show_in_nav: true
 ---
 
 <div class="shrink-width">
-  
+
   <div class="top-container"></div>
+
+  <p class="white-text text-center">This list is <strong>by no means</strong> exhaustive. Please check my GitHub for a more complete look at <em>technical</em> projects.</p>
 
   <div class="projects-container">
     {% for project in site.projects %}
@@ -15,19 +17,14 @@ show_in_nav: true
         background: url("/img/{{ project.img }}");
         background-size: cover;
         background-repeat: no-repeat;
+        box-shadow: -200px 0px 100px -100px #fff inset;
       }
     </style>
     <div class="project-card" name="{{ project.slug }}">
       <div class="project-screenshot" ref="screenshot"></div>
-      <div class="project-background"></div>
       <div class="project-content">
         <h3>{{ project.project-name }}</h3>
         <p>{{ project.content }}</p>
-        <!-- <div class="project-skills">
-          {% for skill in project.skills %}
-            <span class="project-skill">{{ skill }}</span>
-          {% endfor %}
-        </div> -->
         <div class="project-links">
           {% for item in project.links %}
             <a target="_blank" href="{{ item['link'][1] }}" class="project-link">{{ item['link'][0] }}</a>

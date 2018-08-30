@@ -1,10 +1,10 @@
 ---
 layout: project
-project-name: Denison Sub-Reddit Reskin
+project-name: /r/Denison Reskin
 img: subredditredesign.png
 skills: ['CSS', 'Photoshop']
 links:
-  - link: ['Preview','https://reddit.com/r/Denison']
+  - link: ['View','https://reddit.com/r/Denison']
 ---
 
 This was a quick afternoon project. The Denison subreddit was rather barren, so I decided to give it some Big Red branding!
