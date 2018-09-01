@@ -4,7 +4,7 @@ project-name: Abroad Blog
 img: abroadblog.png
 skills: ['Jekyll', 'JavaScript', 'HTML', 'CSS', 'Disqus']
 links:
-  - link: ['Github', 'https://github.com/bobbylcraig/im-ausland']
+  - link: ['GitHub', 'https://github.com/bobbylcraig/im-ausland']
   - link: ['Guide', 'https://medium.com/@bobbylcraig/interactive-map-blog-study-abroad-project-ef87e3e938fb']
   - link: ['View', 'https://bobbylcraig.com/im-ausland/']
 ---
