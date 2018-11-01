@@ -1,7 +1,6 @@
 ---
 title: Im Ausland
 subtitle: A European Adventure
-date: 2017-07-14
 featured_image: '/images/projects/im-ausland/main.png'
 links:
   - link: ['GitHub', 'https://github.com/bobbylcraig/im-ausland']
