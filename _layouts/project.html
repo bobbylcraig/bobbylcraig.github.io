@@ -2,4 +2,27 @@
 layout: default
 ---
 
-{{ content }}
+<section class="intro">
+
+	<div class="wrap">
+
+		<h1>{{ page.title }}</h1>
+		<p>{{ page.subtitle }}</p>
+
+	</div>
+
+</section>
+
+<section class="single">
+
+	{{ page.content }}
+	
+	{% if page.links %}
+	<p>
+		{% for item in page.links %}
+		<a target="_blank" href="{{ item['link'][1] }}" class="button mr">{{ item['link'][0] }}</a>
+		{% endfor %}
+	</p>
+	{% endif %}
+
+</section>
