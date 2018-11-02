@@ -10,4 +10,6 @@ links:
 
 ![](/images/projects/data-visualizations/swipe-viz.png)
 
-This project description is in progress.
+<!-- I found their stories boring...when I ready data journalism I want to interact with my data like FiveThirtyEight and the Upshot allow me to do. -->
+
+---

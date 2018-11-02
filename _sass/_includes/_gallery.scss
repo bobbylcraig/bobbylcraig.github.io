@@ -8,15 +8,7 @@
 	visibility: hidden;
 	position: relative;
 	max-width: 90%;
-	margin: 20px auto;
-
-	@include mq(tabletp) {
-		margin: 30px auto;
-	}
-
-	@include mq(laptop) {
-		margin: 40px auto;
-	}
+	margin: 0 auto;
 
 	&:first-child {
 		margin-top: 0;
@@ -98,7 +90,7 @@
 	
 	.gallery__item {
 		float: left;
-		width: 50%;
+		width: 100%;
 		padding: $grid-spacing/2;
 	}
 
