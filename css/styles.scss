@@ -1,0 +1,96 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+@import "_reset";
+@import "_mixins";
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+$background: #ffffff;
+$main-text-color: #222;
+$accent-color: #124182;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    font-family: "Lato", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    color: $main-text-color;
+    background: $background;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 0 auto;
+    max-width: 684px;
+    padding-bottom: 4px;
+
+    strong {
+        font-weight: 400;
+    }
+}
+
+h3 {
+    font-size: 1em;
+    font-weight: 400;
+    padding-bottom: 4px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 64px auto 44px;
+    width: 64px;
+}
+
+.content {
+    padding: 2em 0;
+}
+
+ul.socials {
+    padding: 40px 0 24px;
+    margin: 0 auto;
+    width: calc(40px * {{ site.social.size }});
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+
+    li {
+        float: left;
+        padding: 0 10px;
+        width: 40px;
+        text-align: center;
+
+        a {
+            color: $main-text-color;
+            opacity: 0.6;
+            transition: 0.4s;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

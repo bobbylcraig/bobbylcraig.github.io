@@ -1,58 +1,34 @@
-site: Bobby Craig Portfolio
+site_name: "Bobby Craig | Portfolio"
+site_image: /images/site-image.jpg
+favicon: /images/favicon.png
 
 collections:
-  pages:
-    output: true
-    permalink: /:name
-  posts:
-    output: true
-    permalink: /blog/:slug
-  projects:
-    output: true
-    permalink: /project/:slug
-
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default"
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-  -
-    scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
-
-markdown: kramdown
-
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  
-sass:
-  style: compressed
+    projects:
+        output: true
+        permalink: /project/:slug
 
 plugins:
-  - jekyll-sitemap
+    - jekyll-feed
 
-gallery_types:
-  carousel: Carousel
-  grid: Grid
-grid_columns:
-  two: Two
-  three: Three
-  four: Four
-  
+social:
+    -
+        fa: twitter
+        link: https://twitter.com/bobbylcraig
+    -
+        fa: linkedin
+        link: https://linkedin.com/in/bobbylcraig
+    -
+        fa: github
+        link: https://github.com/bobbylcraig
+    -
+        fa: dribbble
+        link: https://dribbble.com/bobbylcraig
+    -
+        fa: codepen
+        link: https://codepen.io/bobbylcraig
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+analytics_code: "UA-72139648-1"
