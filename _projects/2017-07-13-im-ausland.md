@@ -1,7 +1,8 @@
 ---
 title: Im Ausland
-subtitle: A European Adventure
+subtitle: A European Adventure Blog
 featured_image: '/images/projects/im-ausland/main.png'
+link: https://bobbylcraig.com/im-ausland/
 links:
   - link: ['GitHub', 'https://github.com/bobbylcraig/im-ausland']
   - link: ['Guide', 'https://medium.com/@bobbylcraig/interactive-map-blog-study-abroad-project-ef87e3e938fb']

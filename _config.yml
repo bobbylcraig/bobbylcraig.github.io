@@ -1,6 +1,7 @@
 site_name: "Bobby Craig | Portfolio"
 site_image: /images/site-image.jpg
 favicon: /images/favicon.png
+description:
 
 collections:
     projects:

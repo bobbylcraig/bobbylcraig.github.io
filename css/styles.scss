@@ -23,13 +23,17 @@ html {
 
 body {
     margin: 0;
-    padding: 0;
-    font-size: 1em;
+    padding: 0 0 5em 0;
+    font-size: 16px;
     font-family: "Lato", sans-serif;
     font-style: normal;
     font-weight: 300;
     color: $main-text-color;
     background: $background;
+}
+
+ul, ol {
+    list-style: none;
 }
 
 h1 {
@@ -66,14 +70,56 @@ h3 {
 }
 
 .content {
-    padding: 2em 0;
+    padding: 1em 0;
+    width: 100%;
+
+    font-size: 14px;
+
+    .content-class {
+        padding: 1em 0;
+    }
+
+    h3 {
+        font-size: 0.9em;
+        opacity: 0.7;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+    }
+
+    &.row {
+        display: flex;
+    }
+
+    .column {
+        flex: 50%;
+    }
+
+    ul {
+        opacity: 0.9;
+
+        li {
+            padding: 5px 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            a {
+                color: $main-text-color;
+
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+        }
+    }
 }
 
 ul.socials {
     padding: 40px 0 24px;
     margin: 0 auto;
     width: calc(40px * {{ site.social.size }});
-    list-style: none;
     text-align: center;
     font-size: 18px;
 
