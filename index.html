@@ -6,7 +6,7 @@ layout: main
 
 <div class="hr">&nbsp;</div>
 
-<h1>Hi, I'm <strong>Bobby Craig</strong>, an engineer currently living in the San Francisco Bay Area.</h1>
+<h1>Hi, I'm <strong>Bobby Craig</strong>, an engineer currently writing cool software at Mailchimp.</h1>
 
 <ul class="socials">
     {% for item in site.social %}
@@ -66,7 +66,9 @@ layout: main
             <ul>
                 {% for project in site.projects %}
                 <li>
-                    <h4><a href="{{ project.link }}">{{ project.title }}</a></h4>
+                    <h4>
+                        <a href="{{ project.url }}">{{ project.title }}</a>
+                    </h4>
                     <p>{{ project.subtitle }}</p>
                 </li>
                 {% endfor %}

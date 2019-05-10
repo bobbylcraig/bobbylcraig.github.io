@@ -6,7 +6,7 @@ description:
 collections:
     projects:
         output: true
-        permalink: /project/:slug
+        permalink: /projects/:slug
 
 plugins:
     - jekyll-feed

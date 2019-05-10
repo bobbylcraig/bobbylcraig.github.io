@@ -10,6 +10,7 @@
 $background: #ffffff;
 $main-text-color: #222;
 $accent-color: #124182;
+$link-color: #0E3F84;
 
 * {
     box-sizing: border-box;
@@ -52,6 +53,11 @@ h3 {
     font-size: 1em;
     font-weight: 400;
     padding-bottom: 4px;
+
+    &.subtitle {
+        opacity: 0.7;
+        text-transform: uppercase;
+    }
 }
 
 .container {
@@ -60,12 +66,16 @@ h3 {
     padding: 0 15px;
 }
 
+.intro {
+    padding: 50px 0;
+}
+
 .hr {
     border: 0;
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    margin: 64px auto 44px;
+    margin: 64px auto 40px;
     width: 64px;
 }
 
@@ -113,6 +123,47 @@ h3 {
                 }
             }
         }
+    }
+}
+
+.project {
+    p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 10px;
+
+        a {
+            color: $link-color;
+            border-bottom: $link-color solid 1px;
+            transition: 0.4s padding-bottom;
+
+            &:hover {
+                padding-bottom: 2px;
+            }
+        }
+    }
+}
+
+.home-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+
+    a {
+        color: $link-color;
+        border-bottom: $link-color solid 1px;
+        transition: 0.4s padding-bottom;
+
+        &:hover {
+            padding-bottom: 2px;
+        }
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .home-button li {
+        float: left;
+        margin-right: 15px;
     }
 }
 
