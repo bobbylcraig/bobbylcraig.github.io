@@ -67,7 +67,12 @@ layout: main
                 {% for project in site.projects %}
                 <li>
                     <h4>
-                        <a href="{{ project.url }}">{{ project.title }}</a>
+                        {% assign currcontent = project.content | strip_newlines %}
+                        {% if currcontent != "" %}
+                            <a href="{{ project.url }}">{{ project.title }}</a>
+                        {% else %}
+                            <p>{{ project.title }}</p>
+                        {% endif %}
                     </h4>
                     <p>{{ project.subtitle }}</p>
                 </li>

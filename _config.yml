@@ -13,9 +13,6 @@ plugins:
 
 social:
     -
-        fa: twitter
-        link: https://twitter.com/bobbylcraig
-    -
         fa: linkedin
         link: https://linkedin.com/in/bobbylcraig
     -
