@@ -37,7 +37,7 @@ Like it or not, coding is just as much an art as it is a science. I've even hear
 
 <br />
 
-Perhaps it's the former Liberal Arts College student in me, but I don't think we need more Code Monkeys. In fact, while it's important to have developers that know the ins and outs of parallel computing and designing operating systems, I also think it's important to have more philosophers and classicists that are developers––more artists and historians. Development needs folks who care about accessibility and optimization, and I think pulling from a wider audience might help that (sound familiar?). Maybe this would remedy the issue?
+Perhaps it's the former Liberal Arts College student in me, but I don't think we need more Code Monkeys. In fact, while it's important to have developers that know the ins and outs of parallel computing and designing operating systems, I also think it's important to have more philosophers and classicists that are developers––more artists and historians. Development needs folks who care about accessibility and optimization, and I think pulling from a wider audience might help that (sound familiar?). Maybe this would remedy the issue? Until then, we're stuck in a Code Monkey's world with folks grinding on LeetCode and groaning when asked for help.
 
 
 <div class="hr">&nbsp;</div>
