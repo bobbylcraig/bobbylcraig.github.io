@@ -33,11 +33,11 @@ While I surely value quiet and focus at work as much as the next person, it's im
 
 ### Code Monkeys Suck The Creativity Out Of Development
 
-Code monkeys remove the creativity and art from coding.
+Like it or not, coding is just as much an art as it is a science. I've even heard of folks who programmatically generate art with code (how cool is that?!?!). While `print('hello world!')` will always do what you'd expect, it's painfully evident that poorly constructed systems were poorly constructed once you start working with them. My intention isn't to malign those whom occasionally use ✨ Stack Overflow ✨ (because, surprise surprise, we all do), but for each developer I've heard that's excited to work on a greenfield project and architect something from top to bottom there's another developer that "just wants to be told what to do". _Yawn_.
 
 <br />
 
-Perhaps it's the former Liberal Arts College student in me, but I don't think we need more Code Monkeys. In fact, while it's important to have developers that know the ins and outs of parallel computing and designing operating systems, I also think it's important to have more philosophers and classicists that are developers––more artists and historians. Maybe this would remedy the issue?
+Perhaps it's the former Liberal Arts College student in me, but I don't think we need more Code Monkeys. In fact, while it's important to have developers that know the ins and outs of parallel computing and designing operating systems, I also think it's important to have more philosophers and classicists that are developers––more artists and historians. Development needs folks who care about accessibility and optimization, and I think pulling from a wider audience might help that (sound familiar?). Maybe this would remedy the issue?
 
 
 <div class="hr">&nbsp;</div>
