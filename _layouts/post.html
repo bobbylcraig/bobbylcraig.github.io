@@ -1,0 +1,37 @@
+---
+layout: main
+---
+
+<div class="intro">
+    <div class="intro-container">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.subtitle }}</p>
+    </div>
+</div>
+
+<div class="content post">
+    <ul class="home-button">
+        <li><a href="/">Home</a></li>
+        {% for link in page.links %}
+        <li><a href="{{ link.link[1] }}">{{ link.link[0] }}</a></li>
+        {% endfor %}
+    </ul>
+
+    {{content}}
+
+    {% if page.previous or page.next %}
+    <div class="hr">&nbsp;</div>
+    {% if page.next %}<p>Read Next: <a href="{{ page.next.url }}">{{ page.next.title }}</a></p>{% endif %}
+    {% if page.previous %}<p>Read Previous: <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></p>{% endif %}
+    {% endif %}
+
+    <ul class="socials">
+        {% for item in site.social %}
+        <li>
+            <a target="_blank" href="{{ item.link }}" class="fab fa-{{ item.fa }}"></a>
+        </li>
+        {% endfor %}
+        <p style="margin-top: 40px; opacity: 0.7;">&copy; Bobby Craig</p>
+    </ul>
+
+</div

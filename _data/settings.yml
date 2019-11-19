@@ -11,20 +11,3 @@ experience:
         company: Denison University
         company_link: https://denison.edu/
         title: Student Web Developer
-
-writings:
-    -
-        title: Building An Interactive Map Blog
-        link: https://medium.com/@bobbylcraig/interactive-map-blog-study-abroad-project-ef87e3e938fb
-        medium: Medium
-        date: 14 July 2017
-    -
-        title: Raspberry Pi Door Notifier
-        link: https://www.instructables.com/id/Raspberry-Pi-Door-Notifier/
-        medium: Instructables
-        date: 30 April 2018
-    -
-        title: A Case For Bigger Pockets
-        link: https://www.linkedin.com/pulse/case-bigger-pockets-bobby-craig/
-        medium: LinkedIn
-        date: 1 December 2017

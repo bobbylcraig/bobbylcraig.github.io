@@ -7,11 +7,17 @@ collections:
     projects:
         output: true
         permalink: /projects/:slug
+    posts:
+        output: true
+        permalink: /blog/:slug
 
 plugins:
     - jekyll-feed
 
 social:
+    -
+        fa: twitter
+        link: https://twitter.com/bobbylcraig
     -
         fa: linkedin
         link: https://linkedin.com/in/bobbylcraig
