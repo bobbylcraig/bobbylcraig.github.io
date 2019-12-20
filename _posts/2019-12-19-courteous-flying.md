@@ -5,7 +5,9 @@ subtitle: Please don't be an inconsiderate jerk.
 medium: Blog
 ---
 
-Now that I live 2000 miles away from my hometown and my company's HQ, I find myself flying rather frequently for both business and leisure. This year alone I had upwards of 20 flights, and for seasoned flying businessfolk, that's a number to scoff at. Yet I know I get frustrated by the inconsiderate folks and the things they do on flights. So, I decided to compile a rant-y list of things you should and shouldn't do when flying commercial.
+Now that I live 2000 miles away from my hometown and my company's HQ, I find myself flying rather frequently for both business, family, and leisure. This year alone I had upwards of 20 flights, and for seasoned flying businessfolk, that's a number to scoff at. Yet I know I get frustrated by the inconsiderate folks and the things they do on flights. So, I decided to compile a rant-y list of things you should and shouldn't do when flying commercial.
+
+### Dos and Don'ts of Courteous Flying
 
 - **Don’t** yank on the seat in front of you to get up.
 - **Do** give the person in the middle seat the arm rests.
@@ -23,5 +25,7 @@ Now that I live 2000 miles away from my hometown and my company's HQ, I find mys
 - **Don't** use your neighbors’ shoulders as pillows.
 - **Don’t** bring greasy fast food onto the plane to eat during taxi. Salad: fine, sure. Odiferous food: please no.
 - **Don't** break the rules of escalators and moving walkways. Stand right, walk left.
+
+<br />
 
 That's it. Rant over. tl;dr don't be an inconsiderate jerkface.
