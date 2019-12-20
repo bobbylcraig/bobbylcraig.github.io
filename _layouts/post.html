@@ -10,14 +10,16 @@ layout: main
 </div>
 
 <div class="content post">
-    <ul class="home-button">
+    <ul class="home-button post-navigation">
         <li><a href="/">Home</a></li>
         {% for link in page.links %}
         <li><a href="{{ link.link[1] }}">{{ link.link[0] }}</a></li>
         {% endfor %}
     </ul>
 
-    {{content}}
+    <article>
+        {{content}}
+    </article>
 
     {% if page.previous or page.next %}
     <div class="hr">&nbsp;</div>
