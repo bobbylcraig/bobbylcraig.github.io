@@ -28,4 +28,6 @@ Now that I live 2000 miles away from my hometown and my company's HQ, I find mys
 
 <br />
 
-That's it. Rant over. tl;dr don't be an inconsiderate jerkface.
+That's it. Rant over.
+
+tl;dr don't be an inconsiderate jerkface.
