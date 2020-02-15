@@ -5,12 +5,12 @@ layout: main
 <div class="intro">
     <div class="intro-container">
         <h1>{{ page.title }}</h1>
-        <p>{{ page.subtitle }}</p>
+        <h2>{{ page.subtitle }}</h2>
     </div>
 </div>
 
 <div class="content project">
-    <ul class="home-button">
+    <ul class="home-button post-navigation">
         <li><a href="/">Home</a></li>
         {% for link in page.links %}
         <li><a href="{{ link.link[1] }}">{{ link.link[0] }}</a></li>
@@ -18,14 +18,5 @@ layout: main
     </ul>
 
     {{content}}
-
-    <ul class="socials">
-        {% for item in site.social %}
-        <li>
-            <a target="_blank" href="{{ item.link }}" class="fab fa-{{ item.fa }}"></a>
-        </li>
-        {% endfor %}
-        <p style="margin-top: 40px; opacity: 0.7;">&copy; Bobby Craig</p>
-    </ul>
 
 </div

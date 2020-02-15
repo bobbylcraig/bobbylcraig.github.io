@@ -3,20 +3,16 @@ layout: main
 ---
 
 <div class="intro">
+    <h1>Bobby Craig</h1>
 
-<div class="hr">&nbsp;</div>
+    <ul class="socials">
+        {% for item in site.social %}
+        <li>
+            <a target="_blank" href="{{ item.link }}" class="fab fa-{{ item.fa }}" alt="{{ item.fa }}"></a>
+        </li>
+        {% endfor %}
+    </ul>
 
-<h1>Hi, I'm <strong>Bobby Craig</strong>, an engineer currently writing cool software at Mailchimp.</h1>
-
-<ul class="socials">
-    {% for item in site.social %}
-    <li>
-        <a target="_blank" href="{{ item.link }}" class="fab fa-{{ item.fa }}" alt="{{ item.fa }}"></a>
-    </li>
-    {% endfor %}
-</ul>
-
-<div class="hr">&nbsp;</div>
 </div>
 
 <div class="content row">
@@ -38,7 +34,7 @@ layout: main
 
         <!-- Begin Projects -->
         <div class="content-class">
-            <h3>Projects</h3>
+            <h3>Select Projects</h3>
             <ul class="main-navigation">
                 {% for project in site.projects %}
                 <li>
@@ -54,7 +50,6 @@ layout: main
                 </li>
                 {% endfor %}
             </ul>
-            <p style="margin-top: 1em;">More to be added to site...</p>
         </div>
         <!-- End Projects -->
 

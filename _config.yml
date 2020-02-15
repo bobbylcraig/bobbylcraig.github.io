@@ -24,13 +24,6 @@ social:
     -
         fa: github
         link: https://github.com/bobbylcraig
-    -
-        fa: dribbble
-        link: https://dribbble.com/bobbylcraig
-    -
-        fa: codepen
-        link: https://codepen.io/bobbylcraig
-
 sass:
     style: compressed
     sass_dir: _sass
