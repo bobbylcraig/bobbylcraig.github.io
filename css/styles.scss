@@ -92,6 +92,10 @@ h3 {
     width: 64px;
 }
 
+.no-m {
+  margin: 0;
+}
+
 .content {
     padding: 1em 0;
     width: 100%;
@@ -192,6 +196,14 @@ h3 {
 
     .right {
         margin-left: auto;
+    }
+
+    a {
+        color: $main-text-color;
+
+        &:hover {
+            color: $accent-color;
+        }
     }
 }
 
