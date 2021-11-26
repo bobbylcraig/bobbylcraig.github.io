@@ -1,8 +1,12 @@
 experience:
     -
+        company: Intuit
+        company_link: https://intuit.com/
+        title: Senior Software Engineer
+    -
         company: Mailchimp
         company_link: https://mailchimp.com/
-        title: Software Engineer
+        title: Senior Software Engineer
     -
         company: Tenable
         company_link: https://tenable.com/
