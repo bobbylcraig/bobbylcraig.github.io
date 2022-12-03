@@ -17,9 +17,10 @@ layout: main
 
 <div class="content row">
     <div class="column">
+      <p>I'm a programmer who currently works at <a rel="noreferrer noopener" href="https://mailchimp.com">Intuit Mailchimp</a> on <a rel="noreferrer noopener" href="https://mailchimp.com/help/about-customer-journeys/">Customer Journeys.</a></p>
 
         <!-- Begin Experience -->
-        <div class="content-class">
+        <!-- <div class="content-class">
             <h3>Experience</h3>
             <ul class="main-navigation">
                 {% for job in site.data.settings.experience %}
@@ -29,29 +30,8 @@ layout: main
                 </li>
                 {% endfor %}
             </ul>
-        </div>
+        </div> -->
         <!-- End Experience -->
-
-        <!-- Begin Projects -->
-        <div class="content-class">
-            <h3>Select Projects</h3>
-            <ul class="main-navigation">
-                {% for project in site.projects %}
-                <li>
-                    <h4>
-                        {% assign currcontent = project.content | strip_newlines %}
-                        {% if currcontent != "" %}
-                            <a href="{{ project.url }}">{{ project.title }}</a>
-                        {% else %}
-                            <p>{{ project.title }}</p>
-                        {% endif %}
-                    </h4>
-                    <p>{{ project.subtitle }}</p>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <!-- End Projects -->
 
         <!-- Begin Talks -->
         <!-- <div class="content-class">
