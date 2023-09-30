@@ -13,8 +13,8 @@ plugins:
 
 social:
     -
-        fa: twitter
-        link: https://twitter.com/bobbylcraig
+        fa: threads
+        link: https://threads.net/@bobbylcraig
     -
         fa: linkedin
         link: https://linkedin.com/in/bobbylcraig
