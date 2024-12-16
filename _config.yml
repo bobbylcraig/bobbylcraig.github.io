@@ -13,8 +13,8 @@ plugins:
 
 social:
     -
-        fa: threads
-        link: https://threads.net/@bobbylcraig
+        fa: bluesky
+        link: https://bsky.app/profile/bobbylcraig.bsky.social
     -
         fa: linkedin
         link: https://linkedin.com/in/bobbylcraig
