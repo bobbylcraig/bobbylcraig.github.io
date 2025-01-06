@@ -15,8 +15,8 @@ layout: default
   </head>
   <header class="post-header">
     <div class="post-back">
-      <a class="black-link" href="{{ site.url | relative_url }}">
-        ← {{ site.moving.back_to }}
+      <a class="black-link" href="{% link blog.md %}">
+        ← Blog
       </a>
     </div>
 
@@ -48,7 +48,7 @@ layout: default
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span class="p-author h-card" itemprop="name">
           {%- if page.author == "Bobby Craig" -%}
-          <a href="{% link about.md %}">{{ page.author | escape }}</a>
+          <a href="{% link index.md %}">{{ page.author | escape }}</a>
           {%- else -%}
           {{ page.author | escape }}
           {%- endif -%}
