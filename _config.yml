@@ -1,28 +1,49 @@
-site_name: "Bobby Craig"
-site_image: /images/site-image.jpg
-favicon: /images/favicon.png
-description:
+title: Blog
+author: Bobby L Craig
+email: # your email shown in the footer
+url: https://bobbylcraig.com/ # this is your site's root address.
+description: 
+favicon: "./favicon.png" # set the favicon of the site
+show_excerpts: false # set to true to show excerpts on the homepage
 
-collections:
-    posts:
-        output: true
-        permalink: /blog/:slug
+# Moving date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+moving:
+  avatar_url: "https://gravatar.com/avatar/8e05ffa0bb356e16a25292dee04b4536?size=256" # avatar in about page
+  about_you: 
+  date_format: "%b %d" # date format of posts in home page
+  back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
+
+  # generate social links in about page.
+  social_links:
+    # twitter:
+    github: bobbylcraig
+    rss: RSS
+    # dribbble: bobbylcraig
+    # facebook:
+    # flickr:
+    # instagram:
+    linkedin: bobbylcraig
+    # pinterest:
+    # youtube:
+    # youtube_channel:
+    # youtube_channel_name:
+    # telegram:
+    # googleplus:
+    # microdotblog:
+    # reddit:
+    bluesky: bobbylcraig
+
+    # Mastodon instances
+    # mastodon:
+    # - username:
+    #   instance:
+    # - username:
+    #   instance:
+
+# Build settings
+remote_theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
 
 plugins:
-    - jekyll-feed
-
-social:
-    -
-        fa: bluesky
-        link: https://bsky.app/profile/bobbylcraig.bsky.social
-    -
-        fa: linkedin
-        link: https://linkedin.com/in/bobbylcraig
-    -
-        fa: github
-        link: https://github.com/bobbylcraig
-sass:
-    style: compressed
-    sass_dir: _sass
-
-analytics_code: "UA-72139648-1"
+  - jekyll-feed
+  - jekyll-seo-tag

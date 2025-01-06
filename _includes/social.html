@@ -1,0 +1,35 @@
+{%- assign social = site.moving.social_links -%}
+
+<ul class="social-media-list">
+  {%- if social.github -%}
+  <li>
+    <a href="https://github.com/{{ social.github | cgi_escape | escape }}" class="black-link fab fa-github" alt="github" aria-hidden="true"></a>
+  </li>
+  {%- endif -%}
+  {%- if social.instagram -%}
+  <li>
+    <a
+      class="black-link"
+      href="https://www.instagram.com/{{
+        social.instagram | cgi_escape | escape
+      }}"
+      >[Instagram]</a
+    >
+  </li>
+  {%- endif -%}
+  {%- if social.bluesky -%}
+  <li>
+    <a href="https://bsky.app/profile/{{ social.bluesky | cgi_escape | escape }}.bsky.social" class="black-link fab fa-bluesky" alt="bluesky" aria-hidden="true"></a>
+  </li>
+  {%- endif -%}
+  {%- if social.linkedin -%}
+  <li>
+    <a href="https://linkedin.com/in/{{ social.linkedin | cgi_escape | escape }}" class="black-link fab fa-linkedin" alt="linkedin" aria-hidden="true"></a>
+  </li>
+  {%- endif -%}
+  {%- if social.rss -%}
+  <li>
+    <a href="{{ 'feed.xml' | relative_url }}" class="black-link fas fa-rss" alt="rss" aria-hidden="true"></a>
+  </li>
+  {%- endif -%}
+</ul>

@@ -1,33 +1,66 @@
 ---
-layout: main
+layout: default
 ---
 
-<div class="intro">
-    <div class="intro-container">
-        <h1>{{ page.title }}</h1>
-        <h2>{{ page.subtitle }}</h2>
-    </div>
-    <span class="date">{{ page.date | date: "%-d %B %Y" }}</span>
-</div>
-
-<div class="content post">
-    <ul class="home-button post-navigation">
-        <li><a href="/">Home</a></li>
-        {% for link in page.links %}
-        <li><a href="{{ link.link[1] }}">{{ link.link[0] }}</a></li>
-        {% endfor %}
-    </ul>
-
-    <article>
-        {{content}}
-    </article>
-
-    {% if page.previous or page.next %}
-    <div class="hr">&nbsp;</div>
-    <div class="post-nav">
-        {% if page.next %}&#8592;&nbsp;<a class="left" href="{{ page.next.url }}">{{ page.next.title }}</a>{% endif %}
-        {% if page.previous %}<a class="right" href="{{ page.previous.url }}">{{ page.previous.title }}</a>&nbsp;&#8594;{% endif %}
-        {% endif %}
+<article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <head>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <title>{{ page.title }}</title>
+  </head>
+  <header class="post-header">
+    <div class="post-back">
+      <a class="black-link" href="{{ site.url | relative_url }}">
+        ← {{ site.moving.back_to }}
+      </a>
     </div>
 
-</div
+    <h1 class="post-title p-name" itemprop="name headline">
+      {{ page.title | escape }}
+    </h1>
+    <p class="post-meta">
+      <time
+        class="dt-published"
+        datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished"
+      >
+        {%- assign date_format = "%b %-d, %Y" -%}
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.updated_at -%}
+      • Updated on
+      <time
+        class="dt-published"
+        datetime="{{ page.date | date_to_xmlschema }}"
+        itemprop="datePublished"
+      >
+        {%- assign date_format = "%b %-d, %Y" -%}
+        {{ page.updated_at | date: date_format }}
+      </time>
+      {%- endif -%}
+      {%- if page.author -%}
+      •
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-author h-card" itemprop="name">
+          {%- if page.author == "Bobby Craig" -%}
+          <a href="{% link about.md %}">{{ page.author | escape }}</a>
+          {%- else -%}
+          {{ page.author | escape }}
+          {%- endif -%}
+        </span>
+      </span>
+      {%- endif -%}
+    </p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>

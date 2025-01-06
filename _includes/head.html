@@ -1,0 +1,30 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ site.site_name }}">
+  <meta name="twitter:description" content="{{ site.description }}">
+  <meta name="twitter:image:src" content="{{ site.url }}{{ site.site_image }}">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:title" content="{{ site.site_name }}" />
+  <meta property="og:description" content="{{ site.description }}" />
+  <meta property="og:image" content="{{ site.url }}{{ site.site_image }}" />
+
+  {%- seo title=false -%}
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}?" />
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/agate.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+  <script src="https://kit.fontawesome.com/fa98edd90b.js" crossorigin="anonymous"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+  {%- include google-analytics.html -%}
+  {%- endif -%}
+</head>
