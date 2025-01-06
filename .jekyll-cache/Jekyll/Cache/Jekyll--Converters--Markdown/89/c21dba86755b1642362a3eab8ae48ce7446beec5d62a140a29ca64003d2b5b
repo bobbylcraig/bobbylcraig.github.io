@@ -1,4 +1,4 @@
-I"�<blockquote>
+I"� <blockquote>
   <p>⚠️ I realize this has been re-hashed time and time again. Please bear with past me.</p>
 </blockquote>
 
@@ -71,7 +71,7 @@
 
 <h3 id="conclusion">Conclusion</h3>
 
-<p>The best code isn’t the cleverest—it’s the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in “Clean Code”[^6]:</p>
+<p>The best code isn’t the cleverest—it’s the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in “Clean Code”<sup id="fnref:5"><a href="#fn:5" class="footnote" rel="footnote" role="doc-noteref">5</a></sup>:</p>
 
 <blockquote>
   <p>“Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. [Therefore,] making it easy to read makes it easier to write.”</p>
@@ -96,6 +96,9 @@
     </li>
     <li id="fn:4">
       <p>Brian Kernighan. (1974). The Elements of Programming Style, 2nd Edition. <a href="#fnref:4" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:5">
+      <p>Robert Martin. (2008). Clean Code: A Handbook of Agile Software Craftsmanship. <a href="#fnref:5" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

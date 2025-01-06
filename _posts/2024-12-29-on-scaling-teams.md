@@ -20,17 +20,17 @@ Consider this example: You’re hosting a dinner party for six people. Halfway t
 
 In software development, the dynamics are similar. New team members need to be brought up to speed on the project, which takes time and pulls existing team members away from their work. A study by Dr. Laurie Williams and colleagues at North Carolina State University found that onboarding a new developer can take anywhere from two weeks to several months, depending on the complexity of the project[^2].
 
-There’s also the challenge of splitting tasks. Some work simply doesn’t parallelize well. You can’t have nine women produce a baby in one month, as Brooks famously quipped. Similarly, you can’t have nine developers write a single, cohesive feature without significant coordination. Research from the Standish Group’s CHAOS report highlights that communication overhead is a leading cause of project delays in software development[^3].
+There’s also the challenge of splitting tasks. Some work simply doesn’t parallelize well. You can’t have nine women produce a baby in one month, as Brooks famously quipped. Similarly, you can’t have nine developers write a single, cohesive feature without significant coordination.
 
 ## When Is Adding People Worth It?
 
 To be fair, Brooks’ Law isn’t an ironclad rule. Adding people *can* work under certain conditions:
 
-1. **Early in the Project:** When the team is still ramping up, there’s more time for new members to integrate and contribute meaningfully. A survey by VersionOne found that agile teams with early-stage scaling are more effective at integrating new members[^4].
+1. **Early in the Project:** When the team is still ramping up, there’s more time for new members to integrate and contribute meaningfully. A survey by VersionOne found that agile teams with early-stage scaling are more effective at integrating new members[^3].
    
-2. **With Clear Divisions of Work:** If tasks can be cleanly separated and assigned, new members can contribute with minimal disruption. For instance, DevOps automation tools can help isolate tasks and improve parallelization[^5].
+2. **With Clear Divisions of Work:** If tasks can be cleanly separated and assigned, new members can contribute with minimal disruption.
    
-3. **In Non-Critical Roles:** Bringing in support for documentation, testing, or other peripheral tasks can free up the core team to focus on critical work. Data from Orange Lead Consulting suggests that peripheral task delegation reduces core team burnout signicantly[^6].
+3. **In Non-Critical Roles:** Bringing in support for documentation, testing, or other peripheral tasks can free up the core team to focus on critical work. Data from Orange Lead Consulting suggests that peripheral task delegation reduces core team burnout signicantly[^4].
 
 But if your project is already behind schedule and your tasks resemble a tangled plate of spaghetti code? Adding more people is like handing everyone another fork. Good luck with that.
 
@@ -54,7 +54,5 @@ So, the next time someone suggests adding more people to a late project, remembe
 
 [^1]: Fred Brooks. (1975). The Mythical Man-Month.
 [^2]: Laurie Williams & Robert Kessler. (2003). Pair Programming Illuminated.
-[^3]: The Standish Group. (2020). CHAOS Report.
-[^4]: VersionOne. (2022). "State of Agile Report."
-[^5]: David Farley & Jez Humble. (2010). Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.
-[^6]: Orange Leaf Consulting. (2024). [The Delegation Dilemma: How to Build Trust and Reduce Burnout](https://orangeleafconsulting.com/delegation-dilemma/) ([Archived](https://archive.is/yX97u)).
+[^3]: VersionOne. (2022). "State of Agile Report."
+[^4]: Orange Leaf Consulting. (2024). [The Delegation Dilemma: How to Build Trust and Reduce Burnout](https://orangeleafconsulting.com/delegation-dilemma/) ([Archived](https://archive.is/yX97u)).

@@ -72,7 +72,7 @@ If you answer "no" to any of these, reconsider your approach.
 
 ### Conclusion
 
-The best code isn't the cleverest—it's the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in "Clean Code"[^6]:
+The best code isn't the cleverest—it's the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in "Clean Code"[^5]:
 
 >"Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. [Therefore,] making it easy to read makes it easier to write."
 
