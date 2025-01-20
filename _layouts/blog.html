@@ -26,9 +26,11 @@ layout: default
         <span class="post-meta">
           {{ post.date | date: date_format }}
         </span>
-        <a class="black-link post-link-layout" href="{{ post.url | relative_url }}">
-          {{ post.title | escape }}
-        </a>
+        <span class="post-link-layout">
+          <a class="black-link" href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </span>
       </li>
     {% endfor %}
     </ul>
