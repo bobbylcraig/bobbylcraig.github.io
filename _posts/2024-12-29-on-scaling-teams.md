@@ -1,7 +1,7 @@
 ---
 layout: post
 title: >
-  The Myth of "Adding Manpower"
+  On scaling teams
 author: Bobby Craig
 published: true
 ---

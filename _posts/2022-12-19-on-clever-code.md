@@ -1,7 +1,7 @@
 ---
 layout: post
 title: >
-  The Hidden Costs of Clever Code
+  On clever code
 updated_at: Dec 29, 2024
 author: Bobby Craig
 published: true
@@ -15,11 +15,11 @@ In software engineering, there's a seductive trap that catches even the most sea
 
 Every line of code is a liability on your balance sheet. Industry research bears this out: studies have shown that developers spend 70% of their time reading and understanding existing code but only 5% of their time editing it[^1]. The more clever and intricate your code, the steeper this cost becomes.
 
-Consider a real-world example from the world of finance. In 1987, a software bug in the Vancouver Stock Exchange's trading system triggered a market crash. The bug, a result of a "clever" but poorly tested optimization, caused the system to miscalculate stock prices, leading to a cascade of sell orders and ultimately shutting down trading[^2].
+Consider a real-world example from the world of finance. In 1987, [a software bug in the Vancouver Stock Exchange's trading system triggered a market crash](https://www.cio.com/article/274523/it-organization-remembering-black-monday-when-computers-traded-too-many-stocks-and-wall-street-cras.html). The bug, a result of a "clever" but poorly tested optimization, caused the system to miscalculate stock prices, leading to a cascade of sell orders and ultimately shutting down trading.
 
 ### The Cognitive Load Problem
 
-Clever code creates what cognitive scientists call "extraneous cognitive load"—mental effort that doesn't contribute to understanding the underlying problem[^3]. When you write:
+Clever code creates what [cognitive scientists call "extraneous cognitive load"](https://rpeszek.github.io/posts/2022-08-30-code-cognitiveload.html)—mental effort that doesn't contribute to understanding the underlying problem. When you write:
 
 ```python
 result = {x['id']: x for x in data if any(k in x['tags'] for k in filters)}
@@ -46,7 +46,7 @@ There are legitimate cases for clever code. In performance-critical paths where 
 2. The obvious optimization, and only then...
 3. Consider clever alternatives—and only if you have metrics proving you need them
 
-Kernighan's law applies here[^4]...
+Kernighan's law applies here[^2]...
 
 >Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?
 
@@ -72,7 +72,7 @@ If you answer "no" to any of these, reconsider your approach.
 
 ### Conclusion
 
-The best code isn't the cleverest—it's the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in "Clean Code"[^5]:
+The best code isn't the cleverest—it's the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in "Clean Code"[^3]:
 
 >"Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. [Therefore,] making it easy to read makes it easier to write."
 
@@ -84,12 +84,6 @@ Save your brilliance for the problems that truly demand it. For everything else,
 
 [^1]: R. Minelli, A. Mocci and M. Lanza, "I Know What You Did Last Summer - An Investigation of How Developers Spend Their Time," 2015 IEEE 23rd International Conference on Program Comprehension, Florence, Italy, 2015, pp. 25-35, doi: 10.1109/ICPC.2015.12.
 
-[^2]: C.G. Lynch. (2007). [Remembering Black Monday, When Computers Traded Too Many Stocks and Wall Street Crashed](https://www.cio.com/article/274523/it-organization-remembering-black-monday-when-computers-traded-too-many-stocks-and-wall-street-cras.html).
+[^2]: Brian Kernighan. (1974). The Elements of Programming Style, 2nd Edition.
 
-[^3]: Robert Peszek. (2002). [Cognitive Loads in Programming](https://rpeszek.github.io/posts/2022-08-30-code-cognitiveload.html).
-
-[^4]: Brian Kernighan. (1974). The Elements of Programming Style, 2nd Edition.
-
-[^5]: MacLeod, L., Greiler, M., Storey, M., Bird, C., & Czerwonka, J. (2015). "Characteristics of Useful Code Reviews: An Empirical Study at Microsoft." *IEEE Transactions on Software Engineering*.
-
-[^5]: Robert Martin. (2008). Clean Code: A Handbook of Agile Software Craftsmanship.
+[^3]: Robert Martin. (2008). Clean Code: A Handbook of Agile Software Craftsmanship.
