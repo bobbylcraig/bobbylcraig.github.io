@@ -18,7 +18,7 @@ At its core, Brooks’ Law is about the inherent complexity of collaboration. Wh
 
 Consider this example: You’re hosting a dinner party for six people. Halfway through cooking, you realize you’re running out of time. So, you invite three more friends over to help. Suddenly, your kitchen is packed, everyone’s asking where the spatula is, and someone insists on making an artisanal salad instead of sticking to your plan. Instead of speeding things up, you’ve turned your cooking into a logistical nightmare.
 
-In software development, the dynamics are similar. New team members need to be brought up to speed on the project, which takes time and pulls existing team members away from their work. A s[tudy by Dr. Laurie Williams and colleagues at North Carolina State University](https://archive.org/details/pairprogrammingi0000will) found that onboarding a new developer can take anywhere from two weeks to several months, depending on the complexity of the project.
+In software development, the dynamics are similar. New team members need to be brought up to speed on the project, which takes time and pulls existing team members away from their work. A [study by Dr. Laurie Williams and colleagues at North Carolina State University](https://archive.org/details/pairprogrammingi0000will) found that onboarding a new developer can take anywhere from two weeks to several months, depending on the complexity of the project.
 
 There’s also the challenge of splitting tasks. Some work simply doesn’t parallelize well. You can’t have nine women produce a baby in one month, as Brooks famously quipped. Similarly, you can’t have nine developers write a single, cohesive feature without significant coordination.
 
@@ -26,7 +26,7 @@ There’s also the challenge of splitting tasks. Some work simply doesn’t para
 
 To be fair, Brooks’ Law isn’t an ironclad rule. Adding people *can* work under certain conditions:
 
-1. **Early in the Project:** When the team is still ramping up, there’s more time for new members to integrate and contribute meaningfully. A survey by VersionOne found that agile teams with early-stage scaling are more effective at integrating new members[^1].
+1. **Early in the Project:** When the team is still ramping up, there’s more time for new members to integrate and contribute meaningfully. A [survey by VersionOne](https://info.digital.ai/rs/981-LQX-968/images/RE-SA-17th-Annual-State-Of-Agile-Report.pdf?version=0) found that agile teams with early-stage scaling are more effective at integrating new members.
    
 2. **With Clear Divisions of Work:** If tasks can be cleanly separated and assigned, new members can contribute with minimal disruption.
    
@@ -47,9 +47,3 @@ The irony? Those new developers ended up being fantastic contributors—*after* 
 Brooks’ Law is a reminder that effort doesn’t scale linearly. In fact, sometimes less is more. Instead of throwing more people at a late project, consider other strategies: prioritizing ruthlessly, cutting scope, or improving processes. As counterintuitive as it may seem, slowing down to focus can often get you to the finish line faster than speeding up.
 
 So, the next time someone suggests adding more people to a late project, remember Brooks’ Law. Then politely suggest they read *The Mythical Man-Month.* Or, if they’re more of a hands-on learner, invite them to your next chaotic dinner party.
-
----
-
-### References:
-
-[^1]: VersionOne. (2022). "State of Agile Report."
