@@ -7,13 +7,11 @@ author: Bobby Craig
 published: true
 ---
 
-> ⚠️ I realize this has been re-hashed time and time again. Please bear with past me.
-
-In software engineering, there's a seductive trap that catches even the most seasoned developers: the allure of clever code. You know the kind—the byzantine one-liner that replaces a hundred lines of procedural code, the perfectly-crafted regex that parses your entire data format, or the finely-tuned algorithm that makes your benchmarks sing. These clever solutions feel like victories, tiny monuments to our mastery of the craft. But like all things that glitter, clever code extracts a price—usually one we can't afford to pay.
+In software engineering, there's a seductive trap that catches even the most seasoned developers: the allure of clever code. You know the kind... the byzantine one-liner that replaces a hundred lines of procedural code, the perfectly-crafted regex that parses your entire data format, or the finely-tuned algorithm that makes your benchmarks sing. These clever solutions feel like victories, tiny monuments to our mastery of the craft. But like all things that glitter, clever code extracts a price—usually one we can't afford to pay.
 
 ### The Economics of Code Maintenance
 
-Every line of code is a liability on your balance sheet. Industry research bears this out: studies have shown that developers spend 70% of their time reading and understanding existing code but only 5% of their time editing it[^1]. The more clever and intricate your code, the steeper this cost becomes.
+Every line of code is a long-term investment, often a liability that grows with its complexity. It's a widely accepted industry observation that developers spend a disproportionate amount of their time (far more than they spend writing new code) on reading, understanding, and navigating existing codebases. The more intricate or "clever" your code, the steeper this ongoing cost of comprehension becomes.
 
 Consider a real-world example from the world of finance. In 1987, [a software bug in the Vancouver Stock Exchange's trading system triggered a market crash](https://www.cio.com/article/274523/it-organization-remembering-black-monday-when-computers-traded-too-many-stocks-and-wall-street-cras.html). The bug, a result of a "clever" but poorly tested optimization, caused the system to miscalculate stock prices, leading to a cascade of sell orders and ultimately shutting down trading.
 
@@ -46,7 +44,7 @@ There are legitimate cases for clever code. In performance-critical paths where 
 2. The obvious optimization, and only then...
 3. Consider clever alternatives—and only if you have metrics proving you need them
 
-Kernighan's law applies here[^2]...
+Kernighan's law applies here...
 
 >Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?
 
@@ -72,18 +70,8 @@ If you answer "no" to any of these, reconsider your approach.
 
 ### Conclusion
 
-The best code isn't the cleverest—it's the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in "Clean Code"[^3]:
+The best code isn't the cleverest... it's the code that disappears into the background, quietly and reliably doing its job. As Robert C. Martin puts it in "Clean Code":
 
 >"Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. [Therefore,] making it easy to read makes it easier to write."
 
 Save your brilliance for the problems that truly demand it. For everything else, embrace the understated elegance of simplicity. Your future self—and your teammates—will thank you.
-
----
-
-### References
-
-[^1]: R. Minelli, A. Mocci and M. Lanza, "I Know What You Did Last Summer - An Investigation of How Developers Spend Their Time," 2015 IEEE 23rd International Conference on Program Comprehension, Florence, Italy, 2015, pp. 25-35, doi: 10.1109/ICPC.2015.12.
-
-[^2]: Brian Kernighan. (1974). The Elements of Programming Style, 2nd Edition.
-
-[^3]: Robert Martin. (2008). Clean Code: A Handbook of Agile Software Craftsmanship.

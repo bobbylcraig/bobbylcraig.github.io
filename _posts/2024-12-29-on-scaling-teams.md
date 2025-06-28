@@ -26,11 +26,11 @@ There’s also the challenge of splitting tasks. Some work simply doesn’t para
 
 To be fair, Brooks’ Law isn’t an ironclad rule. Adding people *can* work under certain conditions:
 
-1. **Early in the Project:** When the team is still ramping up, there’s more time for new members to integrate and contribute meaningfully. A [survey by VersionOne](https://info.digital.ai/rs/981-LQX-968/images/RE-SA-17th-Annual-State-Of-Agile-Report.pdf?version=0) found that agile teams with early-stage scaling are more effective at integrating new members.
+1. **Early in the Project:** When your team's just getting started and still finding its feet, adding new folks can actually be a good thing. There's more breathing room for them to jump in, learn the ropes, and really start pulling their weight. It just makes the whole scaling-up process a lot smoother.
    
 2. **With Clear Divisions of Work:** If tasks can be cleanly separated and assigned, new members can contribute with minimal disruption.
    
-3. **In Non-Critical Roles:** Bringing in support for documentation, testing, or other peripheral tasks can free up the core team to focus on critical work. [Data from Orange Lead Consulting](https://orangeleafconsulting.com/delegation-dilemma/) suggest that peripheral task delegation reduces core team burnout signicantly.
+3. **In Non-Critical Roles:** Bringing in some extra hands for stuff like writing docs, running tests, or other side tasks can be a real game-changer. It takes the load off your main crew, letting them focus on the truly critical stuff. Think of it as freeing up your core team to do what they do best, making the whole project run way more efficiently.
 
 But if your project is already behind schedule and your tasks resemble a tangled plate of spaghetti code? Adding more people is like handing everyone another fork. Good luck with that.
 

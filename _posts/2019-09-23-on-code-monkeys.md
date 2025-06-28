@@ -3,7 +3,7 @@ layout: post
 published: true
 ---
 
-As a developer at Mailchimp (we're hiring 😉), I often find myself on the receiving end of lighthearted "code monkey" jokes from friends in the industry. While these comments are usually made in jest, they touch on a stereotype that still lingers about the role of developers. The idea that a "code monkey" simply churns out code without much thought or creativity has been around for a while. But in my experience, nothing could be further from the truth—at least not at Mailchimp, where communication, innovation, and growth are at the heart of what we do.
+As a developer at Mailchimp, I often find myself on the receiving end of lighthearted "code monkey" jokes from friends in the industry. While these comments are usually made in jest, they touch on a stereotype that still lingers about the role of developers. The idea that a "code monkey" simply churns out code without much thought or creativity has been around for a while. But in my experience, nothing could be further from the truth—at least not at Mailchimp, where communication, innovation, and growth are at the heart of what we do.
 
 That said, I'll admit these "code monkey" comments can sting a bit. It's frustrating because the best engineers I've worked with stand out not just for their coding skills (though they're certainly strong in that area) but for their ability to communicate effectively—both technically and interpersonally. Unfortunately, this crucial skill set is often overlooked in an industry that sometimes prizes technical prowess above all else.
 
