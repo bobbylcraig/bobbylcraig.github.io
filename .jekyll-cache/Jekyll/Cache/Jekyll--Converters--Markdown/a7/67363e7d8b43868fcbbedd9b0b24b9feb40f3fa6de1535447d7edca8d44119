@@ -1,0 +1,50 @@
+I"�<p>When a project starts slipping behind, the instinct is to react fast. The team’s stretched thin, the clock’s ticking, and you’re looking for a quick fix. Enter the classic solution: adding more people. But if you’ve been in the trenches long enough, you might already know that this move often backfires. Fred Brooks, in The Mythical Man-Month, captured this paradox perfectly:</p>
+
+<blockquote>
+  <p>“Adding manpower to a late software project makes it later.”</p>
+</blockquote>
+
+<p>It’s a tough pill to swallow, but one that’s rooted in the messy reality of collaboration, deadlines, and the complexities that arise when you try to scale up too quickly.</p>
+
+<h2 id="why-does-brooks-law-hold-true">Why Does Brooks’ Law Hold True?</h2>
+
+<p>At its core, Brooks’ Law is about the inherent complexity of collaboration. When you add new people to a project, you’re not just increasing the number of hands on deck; you’re increasing the number of communication channels, onboarding tasks, and potential misunderstandings.</p>
+
+<p>Consider this example: You’re hosting a dinner party for six people. Halfway through cooking, you realize you’re running out of time. So, you invite three more friends over to help. Suddenly, your kitchen is packed, everyone’s asking where the spatula is, and someone insists on making an artisanal salad instead of sticking to your plan. Instead of speeding things up, you’ve turned your cooking into a logistical nightmare.</p>
+
+<p>In software development, the dynamics are similar. New team members need to be brought up to speed on the project, which takes time and pulls existing team members away from their work. A <a href="https://archive.org/details/pairprogrammingi0000will">study by Dr. Laurie Williams and colleagues at North Carolina State University</a> found that onboarding a new developer can take anywhere from two weeks to several months, depending on the complexity of the project.</p>
+
+<p>There’s also the challenge of splitting tasks. Some work simply doesn’t parallelize well. You can’t have nine women produce a baby in one month, as Brooks famously quipped. Similarly, you can’t have nine developers write a single, cohesive feature without significant coordination.</p>
+
+<h2 id="when-is-adding-people-worth-it">When Is Adding People Worth It?</h2>
+
+<p>To be fair, Brooks’ Law isn’t an ironclad rule. Adding people <em>can</em> work under certain conditions:</p>
+
+<ol>
+  <li>
+    <p><strong>Early in the Project:</strong> When your team’s just getting started and still finding its feet, adding new folks can actually be a good thing. There’s more breathing room for them to jump in, learn the ropes, and really start pulling their weight. It just makes the whole scaling-up process a lot smoother.</p>
+  </li>
+  <li>
+    <p><strong>With Clear Divisions of Work:</strong> If tasks can be cleanly separated and assigned, new members can contribute with minimal disruption.</p>
+  </li>
+  <li>
+    <p><strong>In Non-Critical Roles:</strong> Bringing in some extra hands for stuff like writing docs, running tests, or other side tasks can be a real game-changer. It takes the load off your main crew, letting them focus on the truly critical stuff. Think of it as freeing up your core team to do what they do best, making the whole project run way more efficiently.</p>
+  </li>
+</ol>
+
+<p>But if your project is already behind schedule and your tasks resemble a tangled plate of spaghetti code? Adding more people is like handing everyone another fork. Good luck with that.</p>
+
+<h2 id="lessons-learned-the-hard-way">Lessons Learned (the Hard Way)</h2>
+
+<p>I’ll admit, I’ve fallen into the “just add more people” trap before. I was working on a high-stakes project that was slipping through our fingers. The team was stretched thin, and the pressure was mounting. Our solution? Bring in a few contractors.</p>
+
+<p>What followed was two weeks of chaos. We spent more time explaining the project than working on it. The new developers—through no fault of their own—introduced bugs that, frankly, are still being discovered. And by the time they were fully ramped up, the deadline had passed and the main team just had to pull long hours to meet it (WHICH I DO NOT RECOMMEND).</p>
+
+<p>The irony? Those new developers ended up being fantastic contributors—<em>after</em> the deadline and <em>after</em> building context in less high-stakes environments. Once the pressure was off, they had the space to learn, innovate, and improve the project. But in the heat of the moment, their addition only made things worse.</p>
+
+<h2 id="the-takeaway">The Takeaway</h2>
+
+<p>Brooks’ Law is a reminder that effort doesn’t scale linearly. In fact, sometimes less is more. Instead of throwing more people at a late project, consider other strategies: prioritizing ruthlessly, cutting scope, or improving processes. As counterintuitive as it may seem, slowing down to focus can often get you to the finish line faster than speeding up.</p>
+
+<p>So, the next time someone suggests adding more people to a late project, remember Brooks’ Law. Then politely suggest they read <em>The Mythical Man-Month.</em> Or, if they’re more of a hands-on learner, invite them to your next chaotic dinner party.</p>
+:ET
