@@ -2,7 +2,7 @@
 layout: about
 ---
 
-I'm a programmer who currently works at <a rel="noreferrer noopener" href="https://mailchimp.com">Intuit Mailchimp</a> on <a rel="noreferrer noopener" href="https://mailchimp.com/help/about-customer-journeys/">Customer Journeys.</a>
+I'm a programmer who currently works at <a rel="noreferrer noopener" href="https://mailchimp.com">Intuit Mailchimp</a> on automation.
 
 Sometimes [I write]({% link blog.md %}).
 
