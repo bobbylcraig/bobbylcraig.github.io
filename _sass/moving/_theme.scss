@@ -70,18 +70,14 @@ a:focus-visible {
   }
 
   hr {
-    background: -webkit-linear-gradient(
-      left,
-      transparent,
-      rgba(255, 255, 255, 0.35),
-      transparent
-    );
-    background: linear-gradient(
-      left,
-      transparent,
-      rgba(255, 255, 255, 0.35),
-      transparent
-    );
+    background: -webkit-linear-gradient(left,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent);
+    background: linear-gradient(left,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent);
   }
 
   .home-heading {
@@ -127,23 +123,6 @@ a:focus-visible {
     }
   }
 
-  .site-header {
-    border-top-color: $dark-border;
-    border-bottom-color: $dark-border;
-  }
-
-  .site-nav {
-    background-color: $dark-bg;
-    border-color: $dark-border;
-
-    .menu-icon > svg path {
-      fill: $dark-muted;
-    }
-
-    .page-link {
-      color: $dark-text;
-    }
-  }
 
   .about-page .about-header .about-avatar {
     border-color: $dark-border;

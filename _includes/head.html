@@ -4,8 +4,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style id="critical-site-shell">
-    html { color-scheme: light dark; }
-    *, *::before, *::after { box-sizing: border-box; }
+    @font-face {
+      font-family: 'Bitter';
+      font-style: normal;
+      font-weight: 100 900;
+      font-display: swap;
+      src: url('/assets/fonts/bitter-latin.woff2') format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+
+    html {
+      color-scheme: light dark;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0 2%;
@@ -17,17 +34,30 @@
       background: #fdfdfd;
       -webkit-text-size-adjust: 100%;
     }
+
     @media screen and (min-width: 600px) {
       body {
         padding: 0 5%;
         font: 400 15px/1.5 "Bitter", Georgia, "Times New Roman", serif;
       }
     }
+
     @media (prefers-color-scheme: dark) {
-      body { color: #e8e8ea; background: #141414; }
+      body {
+        color: #e8e8ea;
+        background: #141414;
+      }
     }
-    main { display: block; flex: 1 0 auto; }
-    .page-content { padding: 30px 0; }
+
+    main {
+      display: block;
+      flex: 1 0 auto;
+    }
+
+    .page-content {
+      padding: 30px 0;
+    }
+
     .wrapper {
       max-width: -webkit-calc(800px - 30px);
       max-width: calc(800px - 30px);
@@ -36,6 +66,7 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+
     @media screen and (min-width: 800px) {
       .wrapper {
         max-width: -webkit-calc(800px - 60px);
@@ -57,13 +88,14 @@
   <meta property="og:description" content="{{ site.description }}" />
   <meta property="og:image" content="{{ site.url }}{{ site.site_image }}" />
 
+  <title>{{ page.title | default: site.title | escape }}</title>
+  <link rel="preload" href="/assets/fonts/bitter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  {%- if page.layout == 'about' and site.moving.avatar_url -%}
+  <link rel="preload" as="image" href="{{ site.moving.avatar_url }}" fetchpriority="high" />
+  {%- endif -%}
   {%- seo title=false -%}
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <meta name="color-scheme" content="light dark" />
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
-  <!-- One weight each for body (400) and headings (700/1000 → 700); avoids an extra 600 file from gstatic -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css?v={{ site.time | date: '%Y%m%d%H%M' }}" />
   <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}?" />
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' -%}
