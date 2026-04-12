@@ -3,6 +3,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <style id="critical-site-shell">
+    html { color-scheme: light dark; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0 2%;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font: 400 12.75px/1.4 "Bitter", Georgia, "Times New Roman", serif;
+      color: #111;
+      background: #fdfdfd;
+      -webkit-text-size-adjust: 100%;
+    }
+    @media screen and (min-width: 600px) {
+      body {
+        padding: 0 5%;
+        font: 400 15px/1.5 "Bitter", Georgia, "Times New Roman", serif;
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8ea; background: #141414; }
+    }
+    main { display: block; flex: 1 0 auto; }
+    .page-content { padding: 30px 0; }
+    .wrapper {
+      max-width: -webkit-calc(800px - 30px);
+      max-width: calc(800px - 30px);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    @media screen and (min-width: 800px) {
+      .wrapper {
+        max-width: -webkit-calc(800px - 60px);
+        max-width: calc(800px - 60px);
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
+  </style>
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ site.site_name }}">
@@ -15,14 +58,13 @@
   <meta property="og:image" content="{{ site.url }}{{ site.site_image }}" />
 
   {%- seo title=false -%}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="color-scheme" content="light dark" />
   <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
+  <!-- One weight each for body (400) and headings (700/1000 → 700); avoids an extra 600 file from gstatic -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" />
   <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}?" />
-  <link rel="stylesheet" href="{{ site.url }}/assets/css/agate.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
-  <script src="https://kit.fontawesome.com/fa98edd90b.js" crossorigin="anonymous"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
   {%- feed_meta -%}
   {%- if jekyll.environment == 'production' -%}
   {%- include google-analytics.html -%}

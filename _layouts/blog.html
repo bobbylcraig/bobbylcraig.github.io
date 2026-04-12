@@ -7,9 +7,6 @@ layout: default
     <a class="black-link" href="{{ site.url | relative_url }}"> ← {{ site.moving.back_to }} </a>
   </div>
 
-  <head>
-      <title>{{ site.title }}</title>
-  </head>
   <div class="home-title">
     <p class="home-heading">{{ site.title }}</p>
     <p class="home-sub-heading">{{- site.description | escape -}}</p>
@@ -33,7 +30,6 @@ layout: default
         </span>
       </li>
     {% endfor %}
-    </ul>
   </ul>
   {%- else -%}
   NO POSTS HERE

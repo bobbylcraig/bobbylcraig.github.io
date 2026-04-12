@@ -1,0 +1,161 @@
+/**
+ * Focus visibility (keyboard)
+ */
+a:focus-visible {
+  outline: 2px solid $brand-color;
+  outline-offset: 2px;
+}
+
+/**
+ * Dark mode (system preference)
+ */
+@media (prefers-color-scheme: dark) {
+  $dark-text: #e8e8ea;
+  $dark-bg: #141414;
+  $dark-muted: #a8a8b0;
+  $dark-border: #3a3a3f;
+  $social-icon-hover-dark: darken($dark-text, 22%);
+
+  html {
+    color-scheme: dark;
+    background-color: $dark-bg;
+  }
+
+  body {
+    color: $dark-text;
+    background-color: $dark-bg;
+  }
+
+  a:not(.black-link) {
+    color: lighten($brand-color, 12%);
+
+    &:hover {
+      color: lighten($brand-color, 22%);
+    }
+  }
+
+  .black-link {
+    color: $dark-text;
+
+    &:not(.social-icon):hover {
+      color: lighten($dark-text, 12%);
+      text-decoration: underline;
+    }
+
+    &.social-icon {
+      color: $dark-text;
+
+      path {
+        fill: $dark-text;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: $social-icon-hover-dark;
+
+          path {
+            fill: $social-icon-hover-dark;
+          }
+        }
+      }
+
+      &:focus-visible {
+        color: $social-icon-hover-dark;
+
+        path {
+          fill: $social-icon-hover-dark;
+        }
+      }
+    }
+  }
+
+  hr {
+    background: -webkit-linear-gradient(
+      left,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+    background: linear-gradient(
+      left,
+      transparent,
+      rgba(255, 255, 255, 0.35),
+      transparent
+    );
+  }
+
+  .home-heading {
+    color: lighten($dark-text, 6%);
+  }
+
+  .home-sub-heading,
+  .post-meta,
+  .post-back {
+    color: $dark-muted;
+  }
+
+  .post-year {
+    color: lighten($dark-text, 6%);
+  }
+
+  blockquote {
+    color: $dark-muted;
+    border-left-color: $dark-border;
+  }
+
+  pre,
+  code {
+    border-color: $dark-border;
+    background-color: mix($dark-bg, $dark-text, 92%);
+  }
+
+  table {
+    color: lighten($dark-text, 10%);
+    border-color: $dark-border;
+
+    tr:nth-child(even) {
+      background-color: mix($dark-bg, $dark-text, 94%);
+    }
+
+    th {
+      background-color: mix($dark-bg, $dark-text, 90%);
+      border-color: $dark-border;
+    }
+
+    td {
+      border-color: $dark-border;
+    }
+  }
+
+  .site-header {
+    border-top-color: $dark-border;
+    border-bottom-color: $dark-border;
+  }
+
+  .site-nav {
+    background-color: $dark-bg;
+    border-color: $dark-border;
+
+    .menu-icon > svg path {
+      fill: $dark-muted;
+    }
+
+    .page-link {
+      color: $dark-text;
+    }
+  }
+
+  .about-page .about-header .about-avatar {
+    border-color: $dark-border;
+    filter: grayscale(1) contrast(1.05);
+  }
+
+  .about-page .about-header .about-description {
+    color: $dark-muted;
+  }
+
+  a:focus-visible,
+  .black-link:focus-visible {
+    outline-color: lighten($brand-color, 12%);
+  }
+}

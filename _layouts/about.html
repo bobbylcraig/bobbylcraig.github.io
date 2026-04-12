@@ -3,24 +3,24 @@ layout: default
 ---
 
 <div class="about-page">
-  <head>
-    <title>{{ site.author }}</title>
-  </head>
-  <div class="about-header">
+  <header class="about-header" {% if site.author %}aria-labelledby="about-heading"{% endif %}>
     {%- if site.moving.avatar_url -%}
-    <img class="about-avatar" src="{{ site.moving.avatar_url }}" />
-    {%- endif -%} {%- if site.author -%}
+    <img class="about-avatar" src="{{ site.moving.avatar_url }}" alt="" width="160" height="160" />
+    {%- endif -%}
     <div class="about-info">
-      <div class="about-your-name">
+      {%- if site.author -%}
+      <div class="about-your-name" id="about-heading">
         {{ site.author | escape }}
       </div>
-      {%- endif -%} {%- if site.moving.about_you -%}
+      {%- endif -%}
+      {%- if site.moving.about_you -%}
       <p class="about-description">
         {{ site.moving.about_you | escape }}
       </p>
-      {%- endif -%} {%- include social.html -%}
+      {%- endif -%}
+      {%- include social.html -%}
     </div>
-  </div>
+  </header>
 
   <div class="about-content e-content" itemprop="articleBody">
     {{ content }}

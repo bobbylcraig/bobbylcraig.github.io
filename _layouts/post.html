@@ -7,12 +7,6 @@ layout: default
   itemscope
   itemtype="http://schema.org/BlogPosting"
 >
-  <head>
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    <title>{{ page.title }}</title>
-  </head>
   <header class="post-header">
     <div class="post-back">
       <a class="black-link" href="{% link blog.md %}">
@@ -36,8 +30,8 @@ layout: default
       • Updated on
       <time
         class="dt-published"
-        datetime="{{ page.date | date_to_xmlschema }}"
-        itemprop="datePublished"
+        datetime="{{ page.updated_at | date_to_xmlschema }}"
+        itemprop="dateModified"
       >
         {%- assign date_format = "%b %-d, %Y" -%}
         {{ page.updated_at | date: date_format }}

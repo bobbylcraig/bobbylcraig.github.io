@@ -221,16 +221,51 @@
   color: $text-color;
   text-decoration: none;
 
-  &:hover {
+  &:not(.social-icon):hover {
     color: $text-color;
     text-decoration: underline;
   }
 
-  &.fab,.fas {
+  &.social-icon {
+    // Stronger than lighten(...): near-black → mid-gray so hover reads clearly on white
+    $icon-hover: mix(#ffffff, $text-color, 52%);
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+    transition: color 0.15s ease;
 
-    &:hover {
-      color: lighten($text-color, 25%);
+    svg {
+      display: block;
+      width: 1em;
+      height: 1em;
+      flex-shrink: 0;
+    }
+
+    path {
+      fill: $text-color;
+      transition: fill 0.15s ease;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: $icon-hover;
+
+        path {
+          fill: $icon-hover;
+        }
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid $brand-color;
+      outline-offset: 2px;
+      color: $icon-hover;
+
+      path {
+        fill: $icon-hover;
+      }
     }
   }
 }
