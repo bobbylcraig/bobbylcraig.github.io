@@ -1,8 +1,8 @@
 title: Bobby's Homepage
-author: Bobby L Craig
+author: Bobby Craig
 email: # your email shown in the footer
 url: https://bobbylcraig.com/ # this is your site's root address.
-description: 
+description: This is the homepage of Bobby Craig.
 favicon: "./favicon.webp" # set the favicon of the site
 show_excerpts: false # set to true to show excerpts on the homepage
 
