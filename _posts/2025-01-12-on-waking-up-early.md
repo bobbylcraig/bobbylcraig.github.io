@@ -27,7 +27,7 @@ The bonus? I get to finish my workday earlier too. It's a game-changer. While mo
 
 ## Science Behind Early Mornings
 
-There's something about those early hours that just feels different. Studies suggest that waking up early can be linked to improved productivity and mental clarity. A study published in *The Journal of Applied Social Psychology* found that early risers tend to be more proactive and better at organizing their day, whereas night owls often procrastinate and feel more sluggish. This is partly due to the body's circadian rhythm, which plays a significant role in how we feel at different times of the day.
+There's something about those early hours that just feels different—for me, at least. I wake up with fewer tabs open in my brain. The house is quiet, the feeds are quiet, and the "what should I react to first?" problem hasn't started yet. I don't have a tidy study to wave around here; I just notice that the first hour or two tends to be when I do my clearest thinking and my least embarrassing writing.
 
 When I wake up early, I feel mentally sharp and ready to tackle important tasks. And let's not forget the peace and solitude that comes with it. Without the noise of the world rushing around, I can think more clearly and focus more deeply.
 
@@ -35,13 +35,13 @@ When I wake up early, I feel mentally sharp and ready to tackle important tasks.
 
 It's hard not to notice how much the world around us has changed. In a society that's constantly connected and moving at a fast pace, the idea of waking up early has become somewhat countercultural. Many people often sleep in until 10 am. While that works for some, I find that I feel more productive and peaceful when I wake up early. Early mornings give me the space I need to think, reflect, and get a head start on the day.
 
-It's not just about getting ahead, though. Waking up early can offer a sense of calm. There's something about those quiet hours that feels almost sacred. It's a time for personal reflection, for setting the tone of the day before the world rushes in. And it's not just me who thinks this way. Thomas Jefferson, one of the earliest advocates of an early start, once wrote to his friend Peter Carr, "The most valuable of all talents is that of never using two words when one will do." This succinct way of thinking is something I've come to appreciate in my own early mornings—fewer distractions, more clarity.
+It's not just about getting ahead, though—at least not for me. Waking up early can offer a sense of calm. There's something about those quiet hours that feels almost sacred. It's a time for personal reflection, for setting the tone of the day before the world rushes in.
 
 ## Waking Up Early as a Cultural Shift
 
 As I look around, though, I can't help but think about how waking up early fits into a larger cultural context. The pressure to be productive and efficient has never been greater. Social media, online articles, and gurus preaching productivity hacks fill our feeds, making us feel as though we should always be maximizing every second of our day. There's a certain rush to it all, but waking up early can offer a counterbalance to that constant push. It's an opportunity to slow down before the world catches up.
 
-That said, it's important to note that not everyone benefits from waking up early. For adolescents, early school start times have been linked to poor performance, weight gain, and even increased alcohol consumption, according to the American Academy of Pediatrics. While I'm not in a position to argue the nuances of this study, I do think it's a reminder that waking up early isn't a one-size-fits-all solution.
+That said, people also aren't interchangeable. Teenagers, in particular, often get run through early start times that don't line up well with how they sleep—and organizations like the [American Academy of Pediatrics](https://www.aap.org/) have argued for later school start times with health and performance in mind. I'm not here to litigate school policy; I just think it's a useful reminder that "wake up earlier" isn't a universal moral imperative.
 
 ## Finding Your Own Rhythm
 

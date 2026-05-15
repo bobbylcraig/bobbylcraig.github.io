@@ -7,7 +7,7 @@ published: true
 description: After Intuit acquired Mailchimp, how much of the original company remains? A Ship-of-Theseus reflection on culture, scale, and identity.
 ---
 
-When Intuit acquired Mailchimp for $12 billion in 2021[^1], I found myself asking a question I hadn't revisited since college: how many pieces of a ship can you replace before it's no longer the same ship? The thought experiment, the Ship of Theseus, first intrigued me when I role-played as the fictional Lithicles of Scambonidae, a master stonemason turned aspiring tyrant, in an Ancient Greece simulation. Back then, I wielded it as rhetorical flair to justify rebuilding Athens' walls (and yes, I made _"Build the Wall" jokes_ at the time 🤦🏻‍♂️). Decades later, the metaphor took on new weight as I watched my workplace transform under Intuit's stewardship.
+When Intuit acquired Mailchimp for $12 billion in 2021—[Intuit's announcement](https://mailchimp.com/newsroom/intuit-completes-mailchimp-acquisition/) has the official summary; [archived](https://archive.is/C2rnA) in case it moves—I found myself asking a question I hadn't revisited since college: how many pieces of a ship can you replace before it's no longer the same ship? The thought experiment, the Ship of Theseus, first intrigued me when I role-played as the fictional Lithicles of Scambonidae, a master stonemason turned aspiring tyrant, in an Ancient Greece simulation. Back then, I wielded it as rhetorical flair to justify rebuilding Athens' walls (and yes, I made _"Build the Wall" jokes_ at the time 🤦🏻‍♂️). Decades later, the metaphor took on new weight as I watched my workplace transform under Intuit's stewardship.
 
 To set the stage, here's a refresher on the Ship of Theseus. Imagine a ship docked for decades. Over time, its planks rot and are replaced, one by one, until none of the original wood remains. Philosophers then ask: is it still the Ship of Theseus? Or has it become something entirely different? The experiment probes identity—of objects, people, and, as I've come to appreciate, companies.
 
@@ -19,11 +19,11 @@ Then came the acquisition. Intuit—the maker of TurboTax, QuickBooks, and other
 
 ## The Planks Begin to Shift
 
-The immediate changes were logistical. Payroll and HR moved to Intuit's system. A year later, we slowly started to adopt their tech stack and compliance processes. Soon thereafter, cultural shifts started to emerge. And... of course... the layoff[^2]. Mailchimp's offbeat humor was tempered to align with Intuit's more buttoned-up brand. Decisions that once took hours now required weeks of cross-departmental approvals. Teams expanded—a welcome relief in some cases, but also a harbinger of bureaucracy.
+The immediate changes were logistical. Payroll and HR moved to Intuit's system. A year later, we slowly started to adopt their tech stack and compliance processes. Soon thereafter, cultural shifts started to emerge. And... of course... [the layoffs](https://www.paved.com/blog/whats-next-for-intuit-mailchimp/) that followed ([archived](https://archive.is/VCkQf)). Mailchimp's offbeat humor was tempered to align with Intuit's more buttoned-up brand. Decisions that once took hours now required weeks of cross-departmental approvals. Teams expanded—a welcome relief in some cases, but also a harbinger of bureaucracy.
 
 Yet these changes weren't inherently bad. Intuit's resources brought stability and perks we could only dream of as an independent company. There was funding for ambitious projects and a more mature technical foundation, better benefits, and access to world-class talent. The "ship" was sturdier than ever, even if its design felt unfamiliar.
 
-Here's where the Ship of Theseus metaphor starts to creak under the weight of complexity. Unlike a static ship, companies aren't inert objects; they're dynamic organisms shaped by the people who inhabit them. The Mailchimp I joined in 2017 was already different from the Mailchimp of 2010... and the Mailchimp of 2020. In the years leading up to the acquisition, we'd launched a marketing CRM, a website builder, and were (for some reason) sending postcards[^3]—transformations as significant as replacing a hull or sail. The question, then, isn't just about what changes, but who decides what the ship's purpose should be.
+Here's where the Ship of Theseus metaphor starts to creak under the weight of complexity. Unlike a static ship, companies aren't inert objects; they're dynamic organisms shaped by the people who inhabit them. The Mailchimp I joined in 2017 was already different from the Mailchimp of 2010... and the Mailchimp of 2020. In the years leading up to the acquisition, we'd launched a marketing CRM, a website builder, and were (for some reason) [sending physical postcards](https://www.modernostrategies.com/blog/mailchimp-direct-mail-postcards-first-look/)—yes, really ([archived](https://archive.is/VjXjK))—transformations as significant as replacing a hull or sail. The question, then, isn't just about what changes, but who decides what the ship's purpose should be.
 
 As Lithicles might have argued in Athens, rebuilding isn't inherently bad—unless you're the one plotting to overthrow the government while rebuilding the city's walls. For Mailchimp, the "rebuild" under Intuit raised similar stakes. Could we retain our commitment to small businesses while navigating Intuit's vast ecosystem? Or would we, like Athens, find ourselves subsumed by forces larger than we anticipated? The stakes may not have involved democracy or tyrants, but they certainly felt monumental in their own way.
 
@@ -46,11 +46,3 @@ Reflecting on this, I'm reminded of my game as Lithicles. Athens' walls were reb
 So, is Mailchimp still the same ship? Maybe the better question is: What do we, as the crew, want it to become? For now, I'm still aboard, steering where I can, and watching the horizon with optimism.
 
 The Ship of Theseus might never answer whether the planks make the ship. But it reminds us to ask: What's worth preserving, and what's worth rebuilding—in fictional Athens and in software.
-
----
-
-## References
-
-[^1]: Mailchimp. (2021). [Intuit Completes Acquisition of Mailchimp](https://mailchimp.com/newsroom/intuit-completes-mailchimp-acquisition/) ([Archived](https://archive.is/C2rnA)).
-[^2]: Paved Blog. (2024). [What's next for Intuit Mailchimp?](https://www.paved.com/blog/whats-next-for-intuit-mailchimp/) ([Archived](https://archive.is/VCkQf)).
-[^3]: ModernoStrategies. (2018). [Will MailChimp Direct Mail Postcards Improve Your Marketing?](https://www.modernostrategies.com/blog/mailchimp-direct-mail-postcards-first-look/) ([Archived](https://archive.is/VjXjK)).

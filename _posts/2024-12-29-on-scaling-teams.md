@@ -11,7 +11,7 @@ When a project starts slipping behind, the instinct is to react fast. The team's
 
 >"Adding manpower to a late software project makes it later."
 
-It's a tough pill to swallow, but one that's rooted in the messy reality of collaboration, deadlines, and the complexities that arise when you try to scale up too quickly[^1].
+It's a tough pill to swallow, but one that's rooted in the messy reality of collaboration, deadlines, and the complexities that arise when you try to scale up too quickly.
 
 ## Why Does Brooks' Law Hold True?
 
@@ -19,7 +19,7 @@ At its core, Brooks' Law is about the inherent complexity of collaboration. When
 
 Consider this example: You're hosting a dinner party for six people. Halfway through cooking, you realize you're running out of time. So, you invite three more friends over to help. Suddenly, your kitchen is packed, everyone's asking where the spatula is, and someone insists on making an artisanal salad instead of sticking to your plan. Instead of speeding things up, you've turned your cooking into a logistical nightmare.
 
-In software development, the dynamics are similar. New team members need to be brought up to speed on the project, which takes time and pulls existing team members away from their work. A study by Dr. Laurie Williams and colleagues at North Carolina State University found that onboarding a new developer can take anywhere from two weeks to several months, depending on the complexity of the project[^2].
+In software development, the dynamics are similar. New team members need to be brought up to speed on the project, which takes time and pulls existing team members away from their work. In practice, ramp-up is rarely measured in days—think weeks to months, depending on how gnarly the codebase and product surface area really are.
 
 There's also the challenge of splitting tasks. Some work simply doesn't parallelize well. You can't have nine women produce a baby in one month, as Brooks famously quipped. Similarly, you can't have nine developers write a single, cohesive feature without significant coordination.
 
@@ -27,11 +27,11 @@ There's also the challenge of splitting tasks. Some work simply doesn't parallel
 
 To be fair, Brooks' Law isn't an ironclad rule. Adding people *can* work under certain conditions:
 
-1. **Early in the Project:** When the team is still ramping up, there's more time for new members to integrate and contribute meaningfully. A survey by VersionOne found that agile teams with early-stage scaling are more effective at integrating new members[^3].
+1. **Early in the Project:** When the team is still ramping up, there's more time for new members to integrate and contribute meaningfully before deadlines compress everything.
    
 2. **With Clear Divisions of Work:** If tasks can be cleanly separated and assigned, new members can contribute with minimal disruption.
    
-3. **In Non-Critical Roles:** Bringing in support for documentation, testing, or other peripheral tasks can free up the core team to focus on critical work. Data from Orange Lead Consulting suggests that peripheral task delegation reduces core team burnout significantly[^4].
+3. **In Non-Critical Roles:** Bringing in support for documentation, testing, or other peripheral tasks can free up the core team to focus on critical work.
 
 But if your project is already behind schedule and your tasks resemble a tangled plate of spaghetti code? Adding more people is like handing everyone another fork. Good luck with that.
 
@@ -48,12 +48,3 @@ The irony? Those new developers ended up being fantastic contributors—*after* 
 Brooks' Law is a reminder that effort doesn't scale linearly. In fact, sometimes less is more. Instead of throwing more people at a late project, consider other strategies: prioritizing ruthlessly, cutting scope, or improving processes. As counterintuitive as it may seem, slowing down to focus can often get you to the finish line faster than speeding up.
 
 So, the next time someone suggests adding more people to a late project, remember Brooks' Law. Then politely suggest they read *The Mythical Man-Month.* Or, if they're more of a hands-on learner, invite them to your next chaotic dinner party.
-
----
-
-### References
-
-[^1]: Fred Brooks. (1975). The Mythical Man-Month.
-[^2]: Laurie Williams & Robert Kessler. (2003). Pair Programming Illuminated.
-[^3]: VersionOne. (2022). "State of Agile Report."
-[^4]: Orange Leaf Consulting. (2024). [The Delegation Dilemma: How to Build Trust and Reduce Burnout](https://orangeleafconsulting.com/delegation-dilemma/) ([Archived](https://archive.is/yX97u)).

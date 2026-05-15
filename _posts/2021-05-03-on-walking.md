@@ -12,9 +12,9 @@ When I tell people that walking is one of my hobbies, they usually give me a puz
 
 ## The Problem with Always Optimizing
 
-As software engineers, we're trained to optimize everything. We spend our days fine-tuning algorithms, reducing latency, and streamlining processes. Inevitably, this mindset seeps into our personal lives. We track our steps, monitor our heart rates, and try to quantify every aspect of our existence. But what if some activities are valuable precisely because they resist optimization?[^1]
+As software engineers, we're trained to optimize everything. We spend our days fine-tuning algorithms, reducing latency, and streamlining processes. Inevitably, this mindset seeps into our personal lives. We track our steps, monitor our heart rates, and try to quantify every aspect of our existence. But some activities are valuable precisely because they resist optimization (maybe four years at a liberal arts school left me unusually sympathetic to that idea).
 
-I'm not the first person to find clarity in aimless walking. Charles Darwin built a dedicated "thinking path" called the Sandwalk where he'd take three 45-minute walks each day. Steve Jobs was famous for his walking meetings – a practice that spread through Silicon Valley and remains common today (I'll often go outside and walk during my 1-on-1 with my manager!). There's actually some interesting research backing this up: Stanford researchers found that people come up with significantly more creative ideas while walking compared to sitting, and this boost continues even after they return to their desks[^2].
+I'm not the first person to find clarity in aimless walking. Charles Darwin built a dedicated "thinking path" called the Sandwalk where he'd take three 45-minute walks each day. Steve Jobs was famous for his walking meetings – a practice that spread through Silicon Valley and remains common today (I'll often go outside and walk during my 1-on-1 with my manager!). There's also solid evidence that walking helps creativity: in [a Stanford study](https://news.stanford.edu/2014/04/24/walking-vs-sitting-042414/), people generated more novel ideas while walking than while sitting, and the effect lingered after they sat back down.
 
 ## Finding My Way
 
@@ -25,11 +25,3 @@ The irony is that by removing all purpose from walking, I often find its greates
 In an industry obsessed with optimization, choosing to walk without purpose feels almost subversive. When every moment is supposed to be productive, doing something deliberately purposeless becomes its own kind of rebellion. That race condition I mentioned? The solution came to me halfway through my walk. Not because I was thinking about the problem, but precisely because I wasn't.
 
 So the next time you're stuck, try this: close the laptop, step outside, and just walk. No destination. No tracking. No purpose. You might be surprised at what your mind does when you stop trying to optimize it.
-
----
-
-## References
-
-[^1]: Did I spend too much time at a liberal arts university? Heh
-
-[^2]: Marily Oppezzo & Daniel Schwartz. (2014). [Give Your Ideas Some Legs: The Positive Effect of Walking on Creative Thinking](https://news.stanford.edu/2014/04/24/walking-vs-sitting-042414/).

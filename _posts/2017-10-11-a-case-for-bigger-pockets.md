@@ -14,7 +14,7 @@ description: A data analysis of lost-item posts in Denison University's student 
   <figcaption>A typical lost-item post in the Denison Student Body group.</figcaption>
 </figure>
 
-If you're a Denisonian, you've probably seen something similar once or twice. It's likely you glanced at the post, scoffed at the author's inferiority, and went on your merry way to scroll endlessly through an old News Feed. Losing something is a laughable mistake…until it happens to you. Luckily, One Twenty Seven has compiled a list of all the lost/found posts in Denison's Student Body Facebook group, and we've found that it's not nearly as "random" as some might lead you to believe[^1].
+If you're a Denisonian, you've probably seen something similar once or twice. It's likely you glanced at the post, scoffed at the author's inferiority, and went on your merry way to scroll endlessly through an old News Feed. Losing something is a laughable mistake…until it happens to you. Luckily, One Twenty Seven has compiled a list of all the lost/found posts in the [Denison University Student Body](https://www.facebook.com/groups/383883561772259/) Facebook group (December 7, 2014 through October 9, 2017—nothing newer is reflected in the charts below), and we've found that it's not nearly as "random" as some might lead you to believe.
 
 First, it's important to note that students post a lot in the student body group. In fact, in the less than three years that it has existed, the group has garnered an impressive 2600+ posts…that's roughly 900 posts a year or almost three posts a day. The topics range a great deal (see Figure 2 below). Some students post about events on campus, others ask to be swiped into the dining halls, some post stories promoting this very blog, and then there are those students who, usually begrudgingly, admit that they have lost something. Those posts account for about 10.37% of all posts. In less than three years, that's almost 300 items lost, and those are just the items that students admit to losing on Facebook.
 
@@ -47,9 +47,3 @@ Another trend seemed to present itself in these data. While posters are evenly s
 Is this because more women than men venture into the "dimly lit, incredibly loud" spaces that Lopez mentioned earlier? Unlikely. This gap may be caused by something One Twenty Seven has never discussed before: fashion. Women's pockets are notoriously smaller than men's. Yet, we all still need to carry our phone around, maybe some extra cash, and surely everyone will need their ID at some point. So because women's pockets are so much smaller, they're forced to hold everything in their hands––even while inebriated and in a dark, humid room. What's the eventual outcome? You guessed it: more lost items. Meanwhile, the phones and swipes of men happily survive the night in the spacious protection of their (adequately sized) pockets.
 
 In the end, it's probably not as effective to post about lost items as you may have thought. Lost item posts earn an average of four fewer likes than others, so it likely won't get much interaction. It's probably not effective, as a negligible amount of posters report back that their search was successful. And, simply put, it's no fun admitting to the student body that you lost something. Does this mean we should stop posting? No! It does work for some students. But it's undeniable that these posts––all of these lost items––tell us a great deal about our campus culture and, apparently, fashion.
-
----
-
-## References
-
-[^1]: All posts were pulled from the [Denison University Student Body](https://www.facebook.com/groups/383883561772259/) group with post ranging from December 7, 2014 to October 9, 2017. No posts after this period are reflected above.
