@@ -1,275 +1,312 @@
 /**
- * Site footer
+ * Site shell — sidebar + main column
  */
-.site-footer {
-  padding: $spacing-unit / 1.5 0;
-}
+.site {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 1024px;
+  margin: 0 auto;
 
-.footer-heading {
-  @include relative-font-size(1.125);
-  margin-bottom: $spacing-unit / 2;
-}
-
-.p-name {
-  @media (max-width: 500px) {
-    @include relative-font-size(0.9);
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    align-items: stretch;
+    padding-top: 60px;
   }
 }
 
-.u-email {
-  @media (max-width: 500px) {
-    @include relative-font-size(0.9);
+.sidebar {
+  padding: 20px 0 4px;
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+    flex-shrink: 0;
+    align-self: flex-start;
+    padding: 0 24px 0 0;
+    position: sticky;
+    top: 60px;
   }
 }
 
-.contact-list,
-.social-media-list {
-  list-style: none;
-  margin-left: 0;
+.wordmark {
+  display: inline-block;
+  font-family: $chrome-font-family;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  margin-bottom: 0.55rem;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--brand);
+  }
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    margin-bottom: 1.75rem;
+  }
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+  }
+
+  a {
+    position: relative;
+    font-family: $chrome-font-family;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding-left: 12px;
+
+    &:hover {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    &[aria-current="page"] {
+      color: var(--text);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--brand);
+      }
+    }
+  }
 }
 
 /**
- * Page content
+ * Main column — flex column so footer pins to bottom
  */
 .page-content {
-  padding: $spacing-unit 0;
-  flex: 1 0 auto;
-}
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0 0;
 
-.page-heading {
-  @include relative-font-size(2);
-}
-
-.home-title {
-  margin-top: -10px;
-}
-
-.home-heading {
-  font-weight: 1000;
-  color: lighten($text-color, 15%);
-
-  @media (max-width: 500px) {
-    margin-top: 20px;
-    @include relative-font-size(1.7);
+  @media screen and (min-width: 768px) {
+    padding: 0;
+    min-height: calc(100vh - 60px);
+    min-height: calc(100dvh - 60px);
   }
 
-  @include relative-font-size(2.2);
-}
-
-.home-sub-heading {
-  margin-top: -0.6rem;
-  color: lighten($text-color, 25%);
-
-  @media (max-width: 500px) {
-    @include relative-font-size(0.8);
+  > main {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
-  @include relative-font-size(1);
+  .wrapper {
+    width: 100%;
+    min-width: 0;
+    padding-bottom: 2rem;
+  }
 }
 
+/**
+ * Footer
+ */
+.site-footer {
+  margin-top: 4rem;
+  padding: 1rem 0 1.5rem;
+  font-family: $chrome-font-family;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 720px;
+}
+
+/**
+ * Writing index — flat reverse-chron list
+ */
 .post-list {
-  margin-top: 2.5rem;
-  margin-left: 0;
+  margin: 1.5rem 0 0;
+  padding: 0;
   list-style: none;
 
   li {
     display: flex;
-    margin-bottom: $spacing-unit / 12;
+    flex-direction: column;
+    margin-bottom: 0.75rem;
+
+    @media screen and (min-width: 600px) {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 1rem;
+    }
+  }
+
+  a {
+    font-size: 1rem;
+    flex: 1 1 auto;
+  }
+
+  time {
+    font-family: $chrome-font-family;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+
+    @media screen and (min-width: 600px) {
+      text-align: right;
+      min-width: 110px;
+    }
   }
 }
 
-.post-year {
-  margin-top: 2rem;
+/**
+ * Post header
+ */
+.post-header {
   margin-bottom: 0.25rem;
+}
+
+.post-title {
+  font-family: $chrome-font-family;
+  font-size: 1.6rem;
   font-weight: 700;
-  color: lighten($text-color, 15%);
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin: 0 0 0.25rem;
 
-  @media (max-width: 500px) {
-    @include relative-font-size(1.2);
-  }
-
-  @include relative-font-size(1.5);
-}
-
-.post-meta {
-  display: inline-block;
-  min-width: 130px;
-  margin-top: 3px;
-
-  @media (max-width: 500px) {
-    @include relative-font-size(0.8);
-    min-width: 85px;
-  }
-
-  @include relative-font-size(1);
-  color: lighten($text-color, 25%);
-}
-
-.post-link-layout {
-  margin-left: 8%;
-  display: inline;
-
-  @media (max-width: 500px) {
-    @include relative-font-size(1);
-  }
-
-  @include relative-font-size(1.2);
-}
-
-.black-link {
-  color: $text-color;
-  text-decoration: none;
-
-  &:not(.social-icon):hover {
-    color: $text-color;
-    text-decoration: underline;
-  }
-
-  &.social-icon {
-    // Stronger than lighten(...): near-black → mid-gray so hover reads clearly on white
-    $icon-hover: mix(#ffffff, $text-color, 40%);
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: $text-color;
-    transition: color 0.15s ease;
-
-    svg {
-      display: block;
-      width: 1em;
-      height: 1em;
-      flex-shrink: 0;
-    }
-
-    path {
-      fill: $text-color;
-      transition: fill 0.15s ease;
-    }
-
-    @media (hover: hover) {
-      &:hover {
-        color: $icon-hover;
-
-        path {
-          fill: $icon-hover;
-        }
-      }
-    }
-
-    &:focus-visible {
-      outline: 2px solid $brand-color;
-      outline-offset: 2px;
-      color: $icon-hover;
-
-      path {
-        fill: $icon-hover;
-      }
-    }
+  @media screen and (min-width: 600px) {
+    font-size: 1.9rem;
   }
 }
 
-.post-back {
-  margin-bottom: 20px;
-  color: lighten($text-color, 25%);
+.post-meta-dates {
+  font-family: $chrome-font-family;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
 }
 
-.post-title,
-.post-content h1 {
-  @include relative-font-size(2.2);
-  line-height: 1.3;
-  font-weight: 1000;
-  margin-top: -0.5rem;
-
-  @media (max-width: 500px) {
-    @include relative-font-size(1.8);
-  }
-
-  @media screen and (min-width: $on-large) {
-    @include relative-font-size(2.2);
-  }
+.post-meta-sep {
+  color: var(--rule-soft);
 }
 
 .post-content {
   margin-bottom: $spacing-unit;
 
   h2 {
-    @include relative-font-size(1.75);
-
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(2);
-    }
+    font-size: 1.4em;
+    margin-top: 2.25rem;
   }
 
   h3 {
-    @include relative-font-size(1.375);
-
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(1.625);
-    }
+    font-size: 1.2em;
+    margin-top: 2rem;
   }
 
   h4 {
-    @include relative-font-size(1.125);
-
-    @media screen and (min-width: $on-large) {
-      @include relative-font-size(1.25);
-    }
+    font-size: 1.05em;
+    margin-top: 1.75rem;
   }
 }
-
-.social-media-list {
-  display: flex;
-  @include relative-font-size(1);
-
-  li {
-    margin-left: 3px;
-
-    a {
-      padding-right: $spacing-unit / 5;
-    }
-  }
-}
-
 
 /**
- * About Page
+ * Callout / aside note inside post content
  */
-.about-page {
-  display: inline-block;
+.note {
+  font-family: $chrome-font-family;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--note-bg);
+  border-left: 3px solid var(--brand);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  margin: 0 0 1.5rem;
+}
 
-  .about-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+/**
+ * Social icons (footer)
+ */
+.social-media-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 
-    .about-avatar {
-      padding: 1px;
-      border: 1px solid $grey-color-light;
-      width: 10rem;
-      height: 10rem;
-      margin: 0 2rem 0 0;
-    }
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
 
-    .about-info {
-      align-self: center;
-
-      .about-your-name {
-        display: flex;
-        flex-direction: row;
-        margin-top: 1rem;
-        @include relative-font-size(1.5);
-      }
-
-      .about-description {
-        margin-top: -0.6rem;
-        @include relative-font-size(1);
-        color: lighten($text-color, 25%);
-      }
+    @media (pointer: coarse) {
+      width: 2.75rem;
+      height: 2.75rem;
     }
   }
+}
 
-  .about-content {
-    margin-top: 2rem;
+.black-link {
+  color: var(--text);
+  text-decoration: none;
+
+  &:not(.social-icon):hover {
+    color: var(--text);
+    text-decoration: underline;
+  }
+
+  &.social-icon {
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+
+    svg {
+      display: block;
+      width: 1.1em;
+      height: 1.1em;
+      flex-shrink: 0;
+    }
+
+    path {
+      fill: currentColor;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        color: var(--text);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+      color: var(--text);
+    }
   }
 }

@@ -1,44 +1,49 @@
 @charset "utf-8";
 
-// Define defaults for each variable.
+$base-font-family: "Bitter", Georgia, "Times New Roman", serif;
+$chrome-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-$base-font-family: "Bitter", 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', "Bitter", sans-serif;
-$base-font-size: 15px !default;
-$base-font-weight: 400 !default;
-$small-font-size: $base-font-size * 0.85 !default;
-$base-line-height: 1.5 !default;
-$small-line-height: 1.4 !default;
+$base-font-size: 15px;
+$base-font-weight: 400;
+$base-line-height: 1.5;
+$small-line-height: 1.4;
 
-$spacing-unit: 30px !default;
+$spacing-unit: 30px;
 
-$text-color: #111 !default;
-$background-color: #fdfdfd !default;
-$brand-color: #1b69d1 !default;
+:root {
+  --text: #111;
+  --text-muted: #494949;
+  --text-soft: #6a6a6a;
+  --bg: #fdfdfd;
+  --brand: #1b69d1;
+  --brand-link: #1b69d1;
+  --border: #d0d0d0;
+  --border-strong: #c4c4c4;
+  --rule-soft: #9d9d9d;
+  --code-bg: #f2f2f2;
+  --code-border: #d8d8d8;
+  --pre-bg: #f6f8fa;
+  --table-stripe: #f4f4f4;
+  --note-bg: #e5effc;
+}
 
-$grey-color: #707070 !default;
-$grey-color-light: lighten($grey-color, 40%) !default;
-$grey-color-dark: darken($grey-color, 25%) !default;
-$orange-color: #f66a0a !default;
-$table-text-align: left !default;
-
-// Width of the content area
-$content-width: 800px !default;
-
-$on-palm: 600px !default;
-$on-laptop: 800px !default;
-
-$on-medium: $on-palm !default;
-$on-large: $on-laptop !default;
-
-@mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e8e8ea;
+    --text-muted: #a8a8b0;
+    --text-soft: #a8a8b0;
+    --bg: #141414;
+    --brand: #4389e7;
+    --brand-link: #4389e7;
+    --border: #3a3a3f;
+    --border-strong: #3a3a3f;
+    --rule-soft: #6d6d72;
+    --code-bg: #1f1f1f;
+    --code-border: #3a3a3f;
+    --pre-bg: #0d1117;
+    --table-stripe: #1c1c1c;
+    --note-bg: #15253a;
   }
 }
 
-@mixin relative-font-size($ratio) {
-  font-size: $base-font-size * $ratio;
-}
-
-// Import partials.
 @import "moving/base", "moving/layout", "moving/theme";

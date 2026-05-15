@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<h1 class="post-title">{{ page.title | default: "Writing" }}</h1>
+
+{% if site.posts.size > 0 %}
+<ul class="post-list">
+  {% for post in site.posts %}
+    {% if post.external_url %}
+      {% assign post_href = post.external_url %}
+    {% else %}
+      {% assign post_href = post.url | relative_url %}
+    {% endif %}
+    <li>
+      <a href="{{ post_href }}"{% if post.external_url %} rel="noopener noreferrer"{% endif %}>{{ post.title | escape }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Nothing here yet.</p>
+{% endif %}

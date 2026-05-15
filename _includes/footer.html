@@ -1,10 +1,8 @@
-<footer class="site-footer h-card" aria-label="Site footer">
-    <data class="u-url" href="{{ "/" | relative_url }}"></data>
-    <div class="wrapper">
-      <div class="footer-col-wrapper">
-        <div class="footer-col">
-          &#169; 2013-{{ 'now' | date: "%Y" }} &middot; <a class="black-link" href="{% link index.md %}">{{ site.author | escape }}</a> 
-        </div>
-      </div>
-    </div>
-  </footer>
+<footer class="site-footer h-card">
+  {%- comment -%} h-card microformat anchor — gives IndieWeb parsers a u-url; intentionally invisible. {%- endcomment -%}
+  <a class="u-url" href="{{ "/" | relative_url }}" aria-hidden="true" tabindex="-1"></a>
+  <div class="footer-inner">
+    <span>&#169; 2013-{{ 'now' | date: "%Y" }} &middot; <a class="black-link" href="{% link index.md %}">{{ site.author.name | escape }}</a></span>
+    {%- include social.html -%}
+  </div>
+</footer>

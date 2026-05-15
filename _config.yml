@@ -1,10 +1,31 @@
 title: Bobby's Homepage
-author: Bobby Craig
+author:
+  name: Bobby Craig
 email: # your email shown in the footer
-url: https://bobbylcraig.com/ # this is your site's root address.
-description: This is the homepage of Bobby Craig.
-favicon: "./favicon.webp" # set the favicon of the site
+url: https://bobbylcraig.com # this is your site's root address.
+description: Bobby Craig is a programmer at Intuit Mailchimp. This is his personal site and writing archive.
+favicon: "favicon.webp" # set the favicon of the site
 show_excerpts: false # set to true to show excerpts on the homepage
+lang: en
+
+feed:
+  excerpt_only: true
+
+# Default OG image + frontmatter applied to all pages and posts
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/images/bobby.webp
+        alt: "Bobby Craig"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      image:
+        path: /assets/images/bobby.webp
+        alt: "Bobby Craig"
 
 # Moving date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
@@ -18,7 +39,7 @@ moving:
   social_links:
     # twitter:
     github: bobbylcraig
-    # rss: RSS
+    rss: RSS
     # dribbble: bobbylcraig
     # facebook:
     # flickr:
@@ -44,9 +65,9 @@ moving:
 # Build settings
 sass:
   style: compressed # minify compiled main.css
-
-remote_theme: huangyz0918/moving # note, please use huangyz0918/moving if you want to publish to Github Pages.
+  sourcemap: never # no .map files in production
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
