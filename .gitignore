@@ -6,3 +6,8 @@ vendor/cache/
 .ruby-lsp
 .bundle
 .DS_Store
+.claude
+.ruby-version
+*.gem
+node_modules
+.jekyll-cache

@@ -5,7 +5,7 @@
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)" />
-  <style>{{ '@use "theme";' | scssify }}{%- if page.content contains "<pre" -%}{{ '@use "theme/syntax";' | scssify }}{%- endif -%}</style>
+  <style>{{ '@import "theme";' | scssify }}{%- if page.content contains "<pre" -%}{{ '@import "theme/syntax";' | scssify }}{%- endif -%}</style>
   <link rel="shortcut icon" type="image/webp" href="/{{ site.favicon }}" />
   {%- feed_meta -%}
   {%- if jekyll.environment == "production" -%}{%- include google-analytics.html -%}{%- endif -%}
