@@ -1,0 +1,107 @@
+:root {
+  --hl-bg:      #f8f8f8;
+  --hl-fg:      inherit;
+  --hl-comment: #999988;
+  --hl-preproc: #999999;
+  --hl-keyword: #000000;
+  --hl-type:    #445588;
+  --hl-num:     #009999;
+  --hl-str:     #d14;
+  --hl-regex:   #009926;
+  --hl-sym:     #990073;
+  --hl-name:    #0086b3;
+  --hl-class:   #445588;
+  --hl-const:   #008080;
+  --hl-func:    #990000;
+  --hl-tag:     #000080;
+  --hl-var:     #008080;
+  --hl-op:      #000000;
+  --hl-ws:      #bbbbbb;
+  --hl-err-fg:  #a61717;
+  --hl-err-bg:  #e3d2d2;
+  --hl-del-bg:  #ffdddd;
+  --hl-ins-bg:  #ddffdd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hl-bg:      #49483e;
+    --hl-fg:      #f8f8f2;
+    --hl-comment: #75715e;
+    --hl-preproc: #75715e;
+    --hl-keyword: #66d9ef;
+    --hl-type:    #66d9ef;
+    --hl-num:     #ae81ff;
+    --hl-str:     #e6db74;
+    --hl-regex:   #e6db74;
+    --hl-sym:     #e6db74;
+    --hl-name:    #f8f8f2;
+    --hl-class:   #a6e22e;
+    --hl-const:   #66d9ef;
+    --hl-func:    #a6e22e;
+    --hl-tag:     #f92672;
+    --hl-var:     #f8f8f2;
+    --hl-op:      #f92672;
+    --hl-ws:      #f8f8f2;
+    --hl-err-fg:  #960050;
+    --hl-err-bg:  #1e0010;
+    --hl-del-bg:  #493131;
+    --hl-ins-bg:  #324932;
+  }
+}
+
+.highlight {
+  background-color: var(--hl-bg);
+  color: var(--hl-fg);
+
+  table td { padding: 5px; }
+  table pre { margin: 0; }
+
+  // Comments
+  .c, .ch, .cd, .cpf, .cm, .c1 { color: var(--hl-comment); font-style: italic; }
+  .cp, .cs                      { color: var(--hl-preproc); font-weight: bold; }
+  .cs                           { font-style: italic; }
+
+  // Errors
+  .err { color: var(--hl-err-fg); background-color: var(--hl-err-bg); }
+
+  // Generic diff/output
+  .gd   { background-color: var(--hl-del-bg); }
+  .gi   { background-color: var(--hl-ins-bg); }
+  .ge   { font-style: italic; }
+  .gs   { font-weight: bold; }
+  .gh   { color: #999999; }
+  .gu   { color: #aaaaaa; }
+  .go   { color: #888888; }
+  .gp   { color: #555555; }
+  .gr, .gt { color: #aa0000; }
+
+  // Keywords
+  .k, .kv, .kc, .kd, .kp, .kr, .kt { color: var(--hl-keyword); font-weight: bold; }
+  .kn                                { color: var(--hl-op); font-weight: bold; }
+
+  // Numbers
+  .m, .mb, .mx, .mf, .mh, .il, .mi, .mo { color: var(--hl-num); }
+
+  // Strings
+  .s, .dl, .sb, .sc, .sd, .s2, .se, .sh, .si, .sx, .s1, .ss { color: var(--hl-str); }
+  .sr                                                           { color: var(--hl-regex); }
+  .sa                                                           { color: var(--hl-keyword); font-weight: bold; }
+
+  // Names
+  .na          { color: var(--hl-const); }
+  .nb, .bp     { color: var(--hl-name); }
+  .nc          { color: var(--hl-class); font-weight: bold; }
+  .no          { color: var(--hl-const); }
+  .nd          { color: var(--hl-func); font-weight: bold; }
+  .ni          { color: var(--hl-sym); }
+  .ne          { color: var(--hl-func); font-weight: bold; }
+  .nf, .fm, .nl { color: var(--hl-func); font-weight: bold; }
+  .nn          { color: #555555; }
+  .nt          { color: var(--hl-tag); }
+  .nv, .vm, .vc, .vg, .vi { color: var(--hl-var); }
+
+  // Operators / whitespace
+  .ow, .o { color: var(--hl-op); font-weight: bold; }
+  .w      { color: var(--hl-ws); }
+}

@@ -11,7 +11,7 @@ lang: en
 feed:
   excerpt_only: true
 
-# Default OG image + frontmatter applied to all pages and posts
+# Default OG image applied to all pages and posts
 defaults:
   - scope:
       path: ""
@@ -19,48 +19,19 @@ defaults:
       image:
         path: /assets/images/bobby.webp
         alt: "Bobby Craig"
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      image:
-        path: /assets/images/bobby.webp
-        alt: "Bobby Craig"
 
-# Moving date format
-# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
-moving:
+# Date format for posts — refer to https://shopify.github.io/liquid/filters/date/ to customize
+theme_config:
   avatar_url: "/assets/images/bobby.webp" # avatar in about page
   about_you: 
   date_format: "%b %d" # date format of posts in home page
   back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
 
-  # generate social links in about page.
   social_links:
-    # twitter:
     github: bobbylcraig
-    rss: RSS
-    # dribbble: bobbylcraig
-    # facebook:
-    # flickr:
-    # instagram:
     linkedin: bobbylcraig
-    # pinterest:
-    # youtube:
-    # youtube_channel:
-    # youtube_channel_name:
-    # telegram:
-    # googleplus:
-    # microdotblog:
-    # reddit:
     bluesky: bobbylcraig
-
-    # Mastodon instances
-    # mastodon:
-    # - username:
-    #   instance:
-    # - username:
-    #   instance:
+    rss: true
 
 # Build settings
 sass:

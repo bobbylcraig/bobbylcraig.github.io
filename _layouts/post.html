@@ -1,27 +1,13 @@
 ---
 layout: default
 ---
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ page.title | jsonify }},
-  "datePublished": "{{ page.date | date_to_xmlschema }}",
-  {% if page.last_modified_at %}"dateModified": "{{ page.last_modified_at | date_to_xmlschema }}",{% else %}"dateModified": "{{ page.date | date_to_xmlschema }}",{% endif %}
-  "author": {"@type": "Person", "name": {{ site.author.name | jsonify }}},
-  "url": "{{ page.url | absolute_url }}",
-  "description": {{ page.description | default: page.excerpt | strip_html | strip_newlines | jsonify }}
-}
-</script>
-
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title | escape }}</h1>
-    <div class="post-meta-dates">
+    <div class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
       {%- if page.last_modified_at and page.last_modified_at != page.date -%}
-      <span class="post-meta-sep">·</span>
+      <span class="sep">·</span>
       <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">Updated {{ page.last_modified_at | date: "%b %-d, %Y" }}</time>
       {%- endif -%}
     </div>

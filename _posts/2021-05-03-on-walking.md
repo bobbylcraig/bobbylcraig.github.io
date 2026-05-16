@@ -2,7 +2,7 @@
 layout: post
 title: >
   The Art of Walking
-published: true
+published: false
 description: On unmeasured walking as an antidote to engineer-brain optimization — and why the best ideas tend to arrive when you stop looking for them.
 ---
 

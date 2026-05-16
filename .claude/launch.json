@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "jekyll",
-      "runtimeExecutable": "/Users/bcraig/.gem/ruby/2.6.0/bin/bundle",
-      "runtimeArgs": ["exec", "jekyll", "serve", "--port", "4000"],
-      "port": 4000
+      "runtimeExecutable": "/Users/bcraig/.rbenv/shims/bundle",
+      "runtimeArgs": ["exec", "jekyll", "serve", "--port", "4002", "--trace"],
+      "port": 4002
     }
   ]
 }

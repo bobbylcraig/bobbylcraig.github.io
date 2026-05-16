@@ -1,10 +1,7 @@
-{%- assign url = page.url -%}
 {%- assign writing_active = false -%}
-{%- if url contains "/writing" or page.layout == "post" -%}
-  {%- assign writing_active = true -%}
-{%- endif -%}
-<a class="wordmark" href="/">{{ site.author.name | escape }}</a>
+{%- if page.url contains "/writing" or page.layout == "post" -%}{%- assign writing_active = true -%}{%- endif -%}
+<a class="wordmark" href="/" aria-label="Home">{{ site.author.name | escape }}</a>
 <nav class="site-nav" aria-label="Primary">
-  <a href="/"{% if url == "/" %} aria-current="page"{% endif %}>About</a>
-  <a href="/writing/"{% if writing_active %} aria-current="page"{% endif %}>Writing</a>
+  <a href="/"{% if page.url == "/" %} aria-current="page"{% endif %}><span class="crumb" aria-hidden="true"></span>About</a>
+  <a href="/writing/"{% if writing_active %} aria-current="page"{% endif %}><span class="crumb" aria-hidden="true"></span>Writing</a>
 </nav>

@@ -3,7 +3,7 @@ layout: post
 title: >
   The Hidden Costs of Clever Code
 author: Bobby Craig
-published: true
+published: false
 description: Clever code feels like a win until you're the one maintaining it. On the long-term tax of one-liners, regex tricks, and over-tuned abstractions.
 ---
 

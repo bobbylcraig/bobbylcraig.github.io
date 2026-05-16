@@ -3,7 +3,7 @@ layout: post
 title: >
   The Myth of "Adding Manpower"
 author: Bobby Craig
-published: true
+published: false
 description: Why throwing more engineers at a slipping project usually makes it worse — Brooks' Law revisited through the lens of modern team dynamics.
 ---
 

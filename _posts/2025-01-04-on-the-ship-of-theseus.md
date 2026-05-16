@@ -3,7 +3,7 @@ layout: post
 title: >
     Of Stonemasons and SaaS
 author: Bobby Craig
-published: true
+published: false
 description: After Intuit acquired Mailchimp, how much of the original company remains? A Ship-of-Theseus reflection on culture, scale, and identity.
 ---
 

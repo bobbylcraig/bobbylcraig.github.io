@@ -2,7 +2,7 @@
 layout: post
 title: >
   Beyond the "Code Monkey"
-published: true
+published: false
 description: Why the best engineers are great communicators — and how LeetCode-style interviewing misses what actually matters in software work.
 ---
 
