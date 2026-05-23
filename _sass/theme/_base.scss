@@ -96,6 +96,34 @@ blockquote {
   > :last-child { margin-bottom: 0; }
 }
 
+/* Twitter/X embeds: opt out of the prose blockquote styling above and
+   center the widget in the column. widgets.js replaces the blockquote
+   with an iframe; both states need to be centered. */
+blockquote.twitter-tweet {
+  color: inherit;
+  border-left: 0;
+  padding-left: 0;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 550px;
+}
+
+/* After widgets.js runs, the blockquote is replaced by a wrapper div
+   that holds an iframe. Center the wrapper and clip the corner halo with
+   a white background (matching Twitter's light embed). */
+.twitter-tweet.twitter-tweet-rendered {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background: #fff !important;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+iframe[id^="twitter-widget"] {
+  background: #fff !important;
+  border-radius: 12px;
+}
+
 code {
   font-family: var(--mono);
   font-size: 0.875em;

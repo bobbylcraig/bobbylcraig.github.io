@@ -2,50 +2,24 @@
 layout: post
 title: "On Waking Up Early"
 date: 2025-01-12
+description: I did not become a morning person because I discovered discipline.
 published: false
-description: How becoming a morning person — Americano in hand, world still asleep — quietly reshaped the way I work, write, and think.
 ---
 
-It's 7:30 am on a Sunday right now. I'm sitting in a coffee shop with nearly no one around, living my best life with my Americano and banana nut bread. I'm most productive in writing when no one else is even remotely near and there's little online that can distract me—such is the plight of the age of social media.
+It's 7:30 AM on a Sunday right now. I'm sitting in a coffee shop with nearly no one around, Americano and banana nut bread situation fully locked in. I write best when nobody else is remotely near and there's nothing online pulling at my attention... which, in the age of everything-is-a-notification, basically means dawn or the apocalypse.
 
-I haven't always enjoyed waking up early. In fact, there are still days when you might find me tossing things at my alarm clock, begging for just a few more minutes of sleep. It's not always easy, and it certainly doesn't come naturally to everyone. But over the years, I've come to appreciate the quiet power of waking up early, especially when the world around me is still asleep.
+I did not become a morning person because I discovered discipline. I became a morning person because calendars are a distributed denial-of-service attack, and 6:30 AM is the only time nobody has figured out how to schedule over yet.
 
-## A Shift
+I wasn't always like this. For a long time... most of college, most of my twenties... I was a committed night owl. Staying up until 2 AM, very confident that this was fine and sustainable and not at all a problem. There's a certain romance to the late-night work session: everyone's asleep, the world is quiet, and you feel like you're getting away with something. I wrote a lot of bad code between midnight and 3 AM that I was very proud of until morning.
 
-For a long time, I was a night owl. I'd stay up late working or hanging out with friends, then struggle to get up in the morning. But as I got older, something shifted. I began to notice how much more productive I felt when I was up early, especially when the world around me was still asleep. Early mornings became a time when I could focus without distractions, and I started to enjoy the solitude that came with being awake when most others were still in bed.
+I have fond memories of waking up early at my grandparents' house, though, so maybe the seeds were always there. On mornings I spent there, I'd wake up around 6:00 AM, long before anyone else stirred. I'd make my way to the kitchen, the smell of freshly brewed coffee filling the air. I didn't drink it then. But I think that's where the association started... quiet house, early light, the day not yet claimed by anyone.
 
-I have fond memories of waking up early at my grandparents' house. On the mornings I spent there, I would often wake up around 6:00 am, long before anyone else stirred. I'd make my way to the kitchen, the smell of freshly brewed coffee filling the air. I didn't know it at the time, but those early mornings helped shape my love for coffee and the peace I'd come to associate with waking up early.
+In college, I figured out a minor exploit: schedule the earliest classes available. Most people avoided 8 AM sections like the plague, which meant better selection and smaller rooms. I'd get my classes out of the way, head to the dining hall, grab a coffee, and sit down while my friends were still waking up. Quiet table, no competition for the good seats, and a head start on whatever needed doing. It became a routine that set the tone for the rest of the day. I didn't have a name for it then. I just knew I liked mornings better than I expected to.
 
-## Scheduling Early
+Now I live in California and work for an East Coast company. The time zone math means I start around 7:00 AM Pacific, which sounds brutal, but it has one useful property: nobody is around yet. The West Coast is still asleep. Slack is quiet. Nobody is asking me to join a sync to discuss the sync. I get two or three hours where it's just me and whatever I actually need to think about. By the time the Bay Area comes online, I've already done the hard thinking and I'm ready for the part of the day that's mostly meetings and Slack threads and context-switching. And... the real bonus... I get to finish my workday earlier, too. While most people here are still heads-down at 5:00 PM, I've been done for an hour. More time outside, more time for whatever else. It's a good trade.
 
-In college, I discovered that I had an advantage when I scheduled the earliest classes available. Most people avoided 8 am classes like the plague, but I found that they gave me a head start on the day. Not only did I get my classes out of the way early, but I also had more options when it came to course selection. Plus, after my early classes, I'd head to the dining hall, grab a coffee, and sit down with friends. They were just waking up, so I'd have the chance to chat and work in peace, soaking in the quiet energy of the morning. It became a routine that set the tone for the rest of the day.
+The difference I didn't appreciate when I was a night owl: late-night quiet is what's left after everything winds down. Early-morning quiet is what you get before everything spins up. The second kind doesn't get interrupted by a 4 PM "quick question" that turns into a 45-minute architecture review. Late at night, I'd get deep into something and then a roommate would come home, or I'd check my phone, or I'd suddenly realize it was 2:30 AM and tomorrow was going to be a disaster. Morning focus doesn't have that failure mode. The world intrudes eventually, but on a schedule, and by then you've already done the thing.
 
-## Work Arbitrage
+I wake up with fewer tabs open in my brain. The feeds are quiet, the "what should I react to first?" problem hasn't started yet. I don't have a study to cite here... the Stanford walking study was convenient, this one I'm just going on feel... but the first hour or two tends to be when I do my clearest thinking and my least embarrassing writing.
 
-Now, I live in California for an East Coast-based company. This setup has turned into what I like to call a fun little "time-zone arbitrage." Since my company operates on East Coast hours, I wake up early to sync with their time zone. That means I'm up around 7:00 am, hitting the ground running before the West Coast even really starts its day.
-
-The bonus? I get to finish my workday earlier too. It's a game-changer. While most people here are still waking up, I've already checked off a bunch of important tasks and am free to enjoy the rest of my day. I have more time to unwind, get outside, or dive into a hobby. It's an opportunity to make the most of those early hours, and I've found that it really sets a positive tone for the rest of the day.
-
-## Science Behind Early Mornings
-
-There's something about those early hours that just feels different—for me, at least. I wake up with fewer tabs open in my brain. The house is quiet, the feeds are quiet, and the "what should I react to first?" problem hasn't started yet. I don't have a tidy study to wave around here; I just notice that the first hour or two tends to be when I do my clearest thinking and my least embarrassing writing.
-
-When I wake up early, I feel mentally sharp and ready to tackle important tasks. And let's not forget the peace and solitude that comes with it. Without the noise of the world rushing around, I can think more clearly and focus more deeply.
-
-## The Case for Waking Up Early
-
-It's hard not to notice how much the world around us has changed. In a society that's constantly connected and moving at a fast pace, the idea of waking up early has become somewhat countercultural. Many people often sleep in until 10 am. While that works for some, I find that I feel more productive and peaceful when I wake up early. Early mornings give me the space I need to think, reflect, and get a head start on the day.
-
-It's not just about getting ahead, though—at least not for me. Waking up early can offer a sense of calm. There's something about those quiet hours that feels almost sacred. It's a time for personal reflection, for setting the tone of the day before the world rushes in.
-
-## Waking Up Early as a Cultural Shift
-
-As I look around, though, I can't help but think about how waking up early fits into a larger cultural context. The pressure to be productive and efficient has never been greater. Social media, online articles, and gurus preaching productivity hacks fill our feeds, making us feel as though we should always be maximizing every second of our day. There's a certain rush to it all, but waking up early can offer a counterbalance to that constant push. It's an opportunity to slow down before the world catches up.
-
-That said, people also aren't interchangeable. Teenagers, in particular, often get run through early start times that don't line up well with how they sleep—and organizations like the [American Academy of Pediatrics](https://www.aap.org/) have argued for later school start times with health and performance in mind. I'm not here to litigate school policy; I just think it's a useful reminder that "wake up earlier" isn't a universal moral imperative.
-
-## Finding Your Own Rhythm
-
-So, what does all of this mean? For me, waking up early has become a way of reclaiming my day. It's a time when I can be productive without the distractions of the world, a chance to work on projects and ideas that are important to me. But I also recognize that waking up early isn't for everyone. It's about finding your own rhythm and figuring out what works best for you. Whether you're an early riser or a night owl, the key is to find a routine that allows you to thrive.
-
-In the end, waking up early is more than just a productivity hack. It's about finding peace in the quiet hours before the world wakes up. It's a time to reflect, think, and start the day on your own terms. It's a habit that has shaped my life in ways I didn't expect, and I'm grateful for the early mornings that allow me to be my best self. So, if you're an early riser or just trying to make the most of your mornings, I encourage you to embrace the quiet power of waking up early. It might just be the best decision you make all day.
+I'm not going to tell you to wake up early. Sleep schedules are personal and teenagers in particular get a raw deal from early school start times... the [American Academy of Pediatrics](https://www.aap.org/) has been saying this for years, and they're right. "Wake up earlier" is not a universal moral imperative. But if you happen to work across time zones, the dead zone before your collaborators come online is just sitting there. You don't have to be disciplined. You just have to be in the wrong time zone.

@@ -1,50 +1,31 @@
 ---
 layout: post
-title: >
-  The Myth of "Adding Manpower"
-author: Bobby Craig
-published: false
-description: Why throwing more engineers at a slipping project usually makes it worse — Brooks' Law revisited through the lens of modern team dynamics.
+title: "On Scaling Teams"
+date: 2024-12-29
+description: Brooks' Law remains undefeated. Throwing people at a late project just makes it later.
+published: true
 ---
 
-When a project starts slipping behind, the instinct is to react fast. The team's stretched thin, the clock's ticking, and you're looking for a quick fix. Enter the classic solution: adding more people. But if you've been in the trenches long enough, you might already know that this move often backfires. Fred Brooks, in The Mythical Man-Month, captured this paradox perfectly:
+The fastest way to make a late project later is to invite six helpful strangers into the codebase on a Monday morning and call it ✨ acceleration ✨.
 
->"Adding manpower to a late software project makes it later."
+I've been the person doing the explaining. I know where some of the bodies are buried. I've also been the one who buried a few... unrealistic deadline, tight scope, "we'll come back and clean this up" (we did not come back).
 
-It's a tough pill to swallow, but one that's rooted in the messy reality of collaboration, deadlines, and the complexities that arise when you try to scale up too quickly.
+Fred Brooks called it in [*The Mythical Man-Month*](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) almost fifty years ago: "Adding manpower to a late software project makes it later." Yes, I'm citing Brooks' Law in a blog post about team scaling. It's a cliché. It's a cliché that everyone in software has heard and nobody in management seems to have internalized, which is maybe the definition of a cliché that still needs saying.
 
-## Why Does Brooks' Law Hold True?
+The ramp doesn't happen in a vacuum. It happens at the expense of the people who already know what's going on. All of that context transfer... every "don't touch that," every "oh, that's not actually how it works"... comes out of the existing team's bandwidth. It's exhausting.
 
-At its core, Brooks' Law is about the inherent complexity of collaboration. When you add new people to a project, you're not just increasing the number of hands on deck; you're increasing the number of communication channels, onboarding tasks, and potential misunderstandings. 
+Communication overhead is the part that's hardest to see from the outside. Two people have one communication channel. Three have three. Ten have forty-five. Brooks did this math in the '70s and it hasn't gotten better. A former Mailchimp-Oakland engineer I massively respect, Coda Hale, wrote a piece called [*"Work Is Work"*](https://codahale.com/work-is-work/) that I think about constantly: coherence costs grow quadratically as you add people, even though your work capacity grows linearly at best. Coda was at Mailchimp for a few years before Intuit acquired and shut down the Oakland office, and I'm fairly sure he wrote it as a reaction to the organizational dynamics most of the ICs (including me!) there were dealing with at the time. Worth reading in full if you want the math behind why your twelve-person standup accomplishes nothing.
 
-Consider this example: You're hosting a dinner party for six people. Halfway through cooking, you realize you're running out of time. So, you invite three more friends over to help. Suddenly, your kitchen is packed, everyone's asking where the spatula is, and someone insists on making an artisanal salad instead of sticking to your plan. Instead of speeding things up, you've turned your cooking into a logistical nightmare.
+And it's not like Slack helps. Forty-five communication channels turns into forty-five threads, twelve of which are in channels nobody monitors, three of which contain decisions that'll surprise someone in two weeks, and fifteen backchannel DMs you may or may not be part of because who needs open communication anyway.
 
-In software development, the dynamics are similar. New team members need to be brought up to speed on the project, which takes time and pulls existing team members away from their work. In practice, ramp-up is rarely measured in days—think weeks to months, depending on how gnarly the codebase and product surface area really are.
+We had a project to build an AI-powered automation template. Internally we call these PBJs 🍞 (pre-built journeys... and yes, the acronym _and emoji use_ is real). The mandate came down from leadership, fully formed, without much input from the people who'd actually be writing the code. This is how it goes... someone three or four levels up decides it's a priority and it lands on your sprint board and now it's your problem.
 
-There's also the challenge of splitting tasks. Some work simply doesn't parallelize well. You can't have nine women produce a baby in one month, as Brooks famously quipped. Similarly, you can't have nine developers write a single, cohesive feature without significant coordination.
+The issue wasn't headcount. We had enough engineers. The issue was that everyone needed to write code in the same small part of the codebase at the same time, and the deadline was yesterday. An absurd amount of work for the timeline and the codespace. That's an organizational failure, not an engineering one. When you put that kind of critical mass on a tight area of code with a short fuse, people stop building within abstractions. They stop reading the existing patterns. They (or their AI IDE) just start throwing spaghetti at the wall. Of course they do. Nobody gave them the time to do it right.
 
-## When Is Adding People Worth It?
+Merge conflicts everywhere. Conditionals nesting inside conditionals. Someone accidentally reverts a change from a PR that merged two hours ago because there's no time to review properly and nobody can keep track of what landed where. You open a PR and it's 400 lines of diff across files that three other open PRs also touch and you just... stare at it. I'm fairly certain all of this tech debt still exists too.
 
-To be fair, Brooks' Law isn't an ironclad rule. Adding people *can* work under certain conditions:
+By the time things stabilized, the deadline had passed and everyone was quietly exhausted. The people who'd been pulled onto the project ended up being solid contributors... *after* the pressure dropped, *after* they'd had time to build context organically. The ramp worked. It just didn't work on the timeline that mattered.
 
-1. **Early in the Project:** When the team is still ramping up, there's more time for new members to integrate and contribute meaningfully before deadlines compress everything.
-   
-2. **With Clear Divisions of Work:** If tasks can be cleanly separated and assigned, new members can contribute with minimal disruption.
-   
-3. **In Non-Critical Roles:** Bringing in support for documentation, testing, or other peripheral tasks can free up the core team to focus on critical work.
+There are situations where adding people can help. Early in a project, when tasks split cleanly, when you're adding capacity for peripheral work that frees the core team. But those are almost never the conditions under which someone decides to "add headcount." By the time you're adding headcount in a panic the project is already behind and the tasks are already tangled.
 
-But if your project is already behind schedule and your tasks resemble a tangled plate of spaghetti code? Adding more people is like handing everyone another fork. Good luck with that.
-
-## Lessons Learned (the Hard Way)
-
-I'll admit, I've fallen into the "just add more people" trap before. I was working on a high-stakes project that was slipping through our fingers. The team was stretched thin, and the pressure was mounting. Our solution? Bring in a few contractors.
-
-What followed was two weeks of chaos. We spent more time explaining the project than working on it. The new developers—through no fault of their own—introduced bugs that, frankly, are still being discovered. And by the time they were fully ramped up, the deadline had passed and the main team just had to pull long hours to meet it (WHICH I DO NOT RECOMMEND).
-
-The irony? Those new developers ended up being fantastic contributors—*after* the deadline and *after* building context in less high-stakes environments. Once the pressure was off, they had the space to learn, innovate, and improve the project. But in the heat of the moment, their addition only made things worse.
-
-## The Takeaway
-
-Brooks' Law is a reminder that effort doesn't scale linearly. In fact, sometimes less is more. Instead of throwing more people at a late project, consider other strategies: prioritizing ruthlessly, cutting scope, or improving processes. As counterintuitive as it may seem, slowing down to focus can often get you to the finish line faster than speeding up.
-
-So, the next time someone suggests adding more people to a late project, remember Brooks' Law. Then politely suggest they read *The Mythical Man-Month.* Or, if they're more of a hands-on learner, invite them to your next chaotic dinner party.
+Sometimes the right move when a project is late is to cut scope and protect the people who can fix it from the people who want to help. That's a hard sell in a room full of people who believe effort is fungible... or when you truly don't have a say in the deadline or scope and you're just set up for failure. But Brooks was right in 1975 and he's right now. You can't have nine women produce a baby in one month (his metaphor, not mine... and no, it hasn't aged well), but the underlying math hasn't changed. You can throw more people at it. Their time will be spent on everything except the thing that matters. The PBJ will not ship faster.
