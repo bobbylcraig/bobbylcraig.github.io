@@ -9,7 +9,7 @@ show_excerpts: false # set to true to show excerpts on the homepage
 lang: en
 
 feed:
-  excerpt_only: true
+  excerpt_only: false
 
 # Default OG image applied to all pages and posts
 defaults:
