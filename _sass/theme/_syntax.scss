@@ -25,10 +25,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --hl-bg:      #49483e;
-    --hl-fg:      #f8f8f2;
-    --hl-comment: #75715e;
-    --hl-preproc: #75715e;
+    // Match the site's own code-block background so <pre> blocks don't read as a
+    // foreign olive island, and lift comments to a legible grey (was #75715e,
+    // which was muddy against the old olive bg).
+    --hl-bg:      var(--pre-bg);
+    --hl-fg:      #e6edf3;
+    --hl-comment: #8b949e;
+    --hl-preproc: #8b949e;
     --hl-keyword: #66d9ef;
     --hl-type:    #66d9ef;
     --hl-num:     #ae81ff;

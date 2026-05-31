@@ -20,6 +20,13 @@ $spacing-unit: 30px;
   --pre-bg: #f6f8fa;
   --table-stripe: #f4f4f4;
   --note-bg: #e5effc;
+
+  /* data-viz series + semantic accents (shared design tokens) */
+  --viz-naive: #9aa0a6;
+  --viz-sphere: var(--brand);
+  --viz-chain: #e0823d;
+  --viz-up: #1a9d5a;
+  --viz-down: #d1495b;
 }
 
 %focus-ring {

@@ -10,6 +10,9 @@
   {%- if page.content contains "<pre" -%}
   <link rel="stylesheet" href="{{ '/assets/syntax.css' | relative_url }}" />
   {%- endif -%}
+  {%- if page.viz -%}
+  <link rel="stylesheet" href="{{ '/assets/viz.css' | relative_url }}" />
+  {%- endif -%}
   <link rel="shortcut icon" type="image/webp" href="/{{ site.favicon }}" />
   {%- feed_meta -%}
   {%- if jekyll.environment == "production" -%}{%- include google-analytics.html -%}{%- endif -%}
