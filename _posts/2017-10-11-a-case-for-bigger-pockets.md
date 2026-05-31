@@ -11,7 +11,7 @@ viz: true
 
 <blockquote class="cx-post">
   <p class="cx-post-body">I lost my denim jacket on A quad on Friday. Think I might have left it in Fellows. It keeps me warm and I wore it on my first solo international trip so it has special memories for me. Please let me know if you find it! Thanks.</p>
-  <p class="cx-post-meta"><span class="cx-post-author">A Denison student</span><span>Denison Student Body</span></p>
+  <p class="cx-post-meta"><span class="cx-post-author">A Denison student</span><span>Denison Student Body Facebook Group</span></p>
 </blockquote>
 
 If you're a Denisonian, you've probably seen something similar once or twice. It's likely you glanced at the post, scoffed at the author's inferiority, and went on your merry way to scroll endlessly through an old News Feed. Losing something is a laughable mistake…until it happens to you. Luckily, One Twenty Seven has compiled a list of all the lost/found posts in the [Denison University Student Body](https://www.facebook.com/groups/383883561772259/) Facebook group (December 7, 2014 through October 9, 2017—nothing newer is reflected in the charts below), and we've found that it's not nearly as "random" as some might lead you to believe.
