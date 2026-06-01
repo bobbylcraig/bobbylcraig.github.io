@@ -1,5 +1,0 @@
-current directory: /Users/bcraig/ghe/bobbylcraig.github.io/vendor/bundle/ruby/3.3.0/gems/sass-embedded-1.69.5/ext/sass
-/Users/bcraig/.rbenv/versions/3.3.11/bin/ruby -rrubygems /Users/bcraig/ghe/bobbylcraig.github.io/vendor/bundle/ruby/3.3.0/gems/rake-13.4.2/exe/rake RUBYARCHDIR\=/Users/bcraig/ghe/bobbylcraig.github.io/vendor/bundle/ruby/3.3.0/extensions/arm64-darwin-24/3.3.0/sass-embedded-1.69.5 RUBYLIBDIR\=/Users/bcraig/ghe/bobbylcraig.github.io/vendor/bundle/ruby/3.3.0/extensions/arm64-darwin-24/3.3.0/sass-embedded-1.69.5
-gem install --force --install-dir /Users/bcraig/ghe/bobbylcraig.github.io/vendor/bundle/ruby/3.3.0/gems/sass-embedded-1.69.5/ext/sass/ruby --no-document --ignore-dependencies --platform arm64-darwin --version 1.69.5 sass-embedded
-cp -r /Users/bcraig/ghe/bobbylcraig.github.io/vendor/bundle/ruby/3.3.0/gems/sass-embedded-1.69.5/ext/sass/ruby/gems/sass-embedded-1.69.5-arm64-darwin/ext/sass/dart-sass dart-sass
-rm -rf /Users/bcraig/ghe/bobbylcraig.github.io/vendor/bundle/ruby/3.3.0/gems/sass-embedded-1.69.5/ext/sass/ruby
