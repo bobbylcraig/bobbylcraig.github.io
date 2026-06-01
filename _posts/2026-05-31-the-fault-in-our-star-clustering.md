@@ -71,7 +71,7 @@ k-means has one personality trait: it carves space into round, evenly-sized blob
 
 That's the clue. **Humans didn't draw constellations from the faint stars. We drew them from the bright ones.** Nobody selected the saddest, faintest, unnamed star for Orion... they connected Betelgeuse and Rigel and the three bright stars of the belt. The faint stars are noise we *added* to the catalog later with telescopes. While the idea of including all stars visible to the human eye was good in theory, it added way too much noise to produce a good signal for constellations.
 
-So I changed two things. First, restrict to brighter and brighter stars and watch what happens. Second, swap k-means for average-linkage agglomerative clustering, which grows groups by *chaining* nearby stars together instead of forcing round blobs. Exactly the long, thin shapes k-means refused to make. With scikit-learn the whole comparison is three estimators on the same sphere vectors:
+So I changed two things. First, restrict to brighter and brighter stars and watch what happens. Second, swap k-means for average-linkage agglomerative clustering, which grows groups by *chaining* nearby stars together instead of forcing round blobs like k-means. Luckily, scikit-learn makes it pretty easy-peasy:
 
 ```python
 from sklearn.cluster import KMeans, AgglomerativeClustering
