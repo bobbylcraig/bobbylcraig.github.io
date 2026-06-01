@@ -269,18 +269,37 @@
   // ---- figure 2: sphere (healed) -----------------------------------------
   // Color mode is the top-level control: real constellations vs the algorithm's
   // groups. Nested under "the algorithm's groups" is the clustering method —
-  // flat k-means vs sphere k-means, the two full-sky all-88 methods that are
-  // directly comparable (linkage lives in figure 3 with its bright-star cut).
+  // the recreated 2016 pipeline (flat k-means with the seam-wrapping
+  // constellations deleted, scored on the survivors, exactly as the paper did)
+  // vs sphere k-means on all 88. That's the honest before/after: same flat
+  // geometry the paper used, against the spherical fix. (Linkage lives in
+  // figure 3 with its bright-star cut.)
   function buildSphere(node, d) {
     const step = 0; // all naked-eye stars
+    // Recreated 2016 pipeline block (flat RA/dec + dropped seam constellations).
+    const naive2016 = d.naive2016 || d.naive2017;
+    if (!naive2016) {
+      console.error("stars.json is missing naive2016 (recreated 2016 pipeline labels)");
+    }
     let view = "con"; // "con" | "cluster"
     let method = "sphere"; // "naive" | "sphere" — nested under the cluster view
     let hoverGroup = -1; // group under the cursor (real con OR cluster); -1 = none
     let conColors = [], clusterColors = [];
-    function activeLabs() { return d.labels[method][step]; }
+    // Flat k-means here is the *recreated 2016 pipeline*: the seam-wrapping
+    // constellations were deleted (label -1), and only the survivors were
+    // clustered and scored — exactly what the paper did. Sphere k-means keeps
+    // all 88. So "flat" reads a different label source than the per-step arrays.
+    function activeLabs() {
+      return method === "naive" ? naive2016.labels : d.labels[method][step];
+    }
     // The group a star belongs to *in the current view* — so hover isolates
-    // whatever is being colored: the real constellation, or the algorithm's cluster.
-    function groupOf(i) { return view === "con" ? d.con[i] : activeLabs()[i]; }
+    // whatever is being colored: the real constellation, or the algorithm's
+    // cluster. Stars deleted by the 2016 pipeline (-1) belong to no group.
+    function groupOf(i) {
+      if (view === "con") return d.con[i];
+      const l = activeLabs()[i];
+      return l < 0 ? -1 : l;
+    }
     function rebuildColors() {
       const dark = isDark();
       conColors = d.constellations.map((_, i) => catColor(i, dark));
@@ -288,6 +307,8 @@
       const maxc = labs.reduce((m, v) => Math.max(m, v), 0) + 1;
       clusterColors = Array.from({ length: Math.max(1, maxc) }, (_, i) => catColor(i, dark));
     }
+    // Greyed-out fill for stars the 2016 pipeline deleted (flat method only).
+    function deletedColor() { return isDark() ? "hsla(0 0% 55% / 0.45)" : "hsla(0 0% 45% / 0.4)"; }
     rebuildColors();
 
     const sky = makeSky(node, {
@@ -301,13 +322,15 @@
         drawGrid(ctx, W, H, dark);
         for (let pass = 0; pass < 2; pass++) {
           for (let i = 0; i < labs.length; i++) {
-            const color = view === "con" ? conColors[d.con[i]] : clusterColors[labs[i]];
-            const dim = hoverGroup >= 0 && groupOf(i) !== hoverGroup;
+            const deleted = view === "cluster" && labs[i] < 0;
+            const color = deleted ? deletedColor()
+              : view === "con" ? conColors[d.con[i]] : clusterColors[labs[i]];
+            const dim = (hoverGroup >= 0 && groupOf(i) !== hoverGroup) || deleted;
             const [x, y] = project(W, H, d.ra[i], d.dec[i]);
             const r = magRadius(d.mag[i]);
-            ctx.globalAlpha = dim ? 0.12 : 1;
+            ctx.globalAlpha = deleted ? 0.4 : dim ? 0.12 : 1;
             if (pass === 0) {
-              if (d.mag[i] > 3.2 || dim) continue; // no glow on dimmed stars
+              if (d.mag[i] > 3.2 || dim) continue; // no glow on dimmed/deleted stars
               const g = ctx.createRadialGradient(x*DPR, y*DPR, 0, x*DPR, y*DPR, r*3.4);
               g.addColorStop(0, color); g.addColorStop(1, "transparent");
               ctx.fillStyle = g;
@@ -333,25 +356,28 @@
       <div class="cx-field cx-field-nested" data-nested hidden>
         <span class="cx-field-label">…drawn by</span>
         <div class="cx-seg" role="group" aria-label="Clustering method">
-          <button data-method="naive" aria-pressed="false">Flat k-means</button>
+          <button data-method="naive" aria-pressed="false">The 2016 way</button>
           <button data-method="sphere" aria-pressed="true">Sphere k-means</button>
         </div>
       </div>`;
     const nested = sky.controls.querySelector("[data-nested]");
-    function methodNmi(c) { return c[method + "_nmi"]; }
-    function methodAri(c) { return c[method + "_ari"]; }
+    // Flat reads the recreated-2016 block (deleted subset, its own score);
+    // sphere reads the all-88 curve row for this step.
+    function methodNmi() { return method === "naive" ? naive2016.nmi : d.curve[step].sphere_nmi; }
+    function methodAri() { return method === "naive" ? naive2016.ari : d.curve[step].sphere_ari; }
+    function methodK()   { return method === "naive" ? naive2016.k   : d.curve[step].k; }
+    function methodN()   { return method === "naive" ? naive2016.n   : d.curve[step].n; }
     function setScore() {
-      const c = d.curve[step];
       // The real constellations are the ground truth — there's nothing to score
       // them against (NMI with itself is trivially 1.0), so hide the readout.
       if (view === "con") { sky.scoreEl.hidden = true; return; }
       sky.scoreEl.hidden = false;
-      sky.scoreNum.textContent = methodNmi(c).toFixed(2);
+      sky.scoreNum.textContent = methodNmi().toFixed(2);
       sky.scoreArrow.textContent = "";
-      sky.scoreSub.textContent = `ARI ${methodAri(c).toFixed(2)} · ${c.n.toLocaleString()} stars · k=${c.k}`;
+      sky.scoreSub.textContent =
+        `ARI ${methodAri().toFixed(2)} · ${methodN().toLocaleString()} stars · k=${methodK()}`;
     }
     function setCaption() {
-      const c = d.curve[step];
       if (view === "con") {
         sky.cap.innerHTML =
           `The real constellations on the healed sphere — same projection as method 1, ` +
@@ -361,14 +387,17 @@
         sky.cap.innerHTML =
           `Sphere k-means clustered on the 3D unit vectors: 88 groups, colored ` +
           `independently. It agrees with the real constellations at <b>NMI ` +
-          `${c.sphere_nmi.toFixed(2)}</b>. Switch to <b>flat k-means</b> to see the ` +
+          `${d.curve[step].sphere_nmi.toFixed(2)}</b>. Switch to <b>the 2016 way</b> to see the ` +
           `version that pretends the sky is a sheet of paper.`;
       } else {
+        const dropped = naive2016.dropped.length;
         sky.cap.innerHTML =
-          `Flat k-means clustered on raw (RA, dec) — the 2016 approach, but here on the ` +
-          `same all-88 sky for a fair comparison. Its score, <b>NMI ${c.naive_nmi.toFixed(2)}</b>, ` +
-          `is within a hair of the sphere's <b>${c.sphere_nmi.toFixed(2)}</b>: fixing the ` +
-          `geometry I agonized over barely moved the needle.`;
+          `The actual 2016 pipeline, recreated: flat k-means on raw (RA, dec), with the ` +
+          `<b>${dropped}</b> seam-wrapping constellations deleted (greyed out) and scored only ` +
+          `on what's left — exactly the shortcut from the paper. Its score, <b>NMI ` +
+          `${naive2016.nmi.toFixed(2)}</b>, is within a hair of the sphere's <b>` +
+          `${d.curve[step].sphere_nmi.toFixed(2)}</b>: fixing the geometry I agonized over barely ` +
+          `moved the needle.`;
       }
     }
     sky.controls.querySelectorAll("[data-view]").forEach((b) =>
