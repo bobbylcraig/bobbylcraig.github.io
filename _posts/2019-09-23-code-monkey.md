@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On Code Monkeys"
+title: "Code Monkey"
 date: 2019-09-23
 description: You can invert a binary tree on a whiteboard. Great. Can you talk to a product manager?
 published: true

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On the Ship of Theseus"
+title: "Whose Ship Is It Anyway?"
 date: 2025-01-04
 description: Your feature got carved into three microservices. At least one has a name from a two-hour naming meeting.
 published: true

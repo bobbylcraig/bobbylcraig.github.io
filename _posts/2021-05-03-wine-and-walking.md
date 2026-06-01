@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On Walking"
+title: "Wine and Walking"
 date: 2021-05-03
 description: I have solved more bugs while walking away from my laptop than while staring at it.
 published: true

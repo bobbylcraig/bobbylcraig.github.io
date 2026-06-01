@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On Waking Up Early"
+title: "Waking Up Early"
 date: 2025-01-12
 description: I did not become a morning person because I discovered discipline.
 published: false

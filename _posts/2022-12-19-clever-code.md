@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "On Clever Code"
+title: "Clever Code"
 date: 2022-12-19
 description: Code is a liability. Clever code is a tax you levy on your future self.
 published: true
