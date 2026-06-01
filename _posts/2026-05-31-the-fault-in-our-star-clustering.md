@@ -22,7 +22,7 @@ That was the idea. I ran k-means on the star data coordinates, compared its grou
 
 I dug the paper back up recently. Reading your own old work is... something. The programming was in MATLAB because we didn't really have a choice (I have made my peace with the one-based indexing... mostly). The core of the whole thing was maybe 20 lines: sweep through different values of *k*, run k-means a few times at each one, keep the best result.
 
-Quick aside if k-means is unfamiliar: you tell the algorithm "I think there are *k* groups in this data," and it tries to find them. It picks *k* random center points, assigns every data point to its nearest center, scoots the centers to the middle of their new groups, and repeats until nothing moves. It's simple, it's fast, and it has one big personality quirk I'll come back to... it really wants its groups to be round.
+Quick aside if k-means is unfamiliar: you tell the algorithm "I think there are *k* groups in this data," and it tries to find them. It picks *k* random center points, assigns every data point to its nearest center, scoots the centers to the middle of their new groups, and repeats until nothing moves. It's simple!
 
 Anyway, the clustering loop itself was fine. The problem was never the loop. It was the two things I fed into it and the question I asked of what came out. Two real problems, and they're different *kinds* of wrong.
 
