@@ -6,13 +6,11 @@ published: true
 viz: true
 ---
 
-<aside class="note" role="note">This started as a college project in 2016. I dug it back up, found the methodology had a couple of quiet problems, and rebuilt it from scratch. The original conclusion sort of survived... but only after I changed the question I was actually asking.</aside>
-
 In college I took an astronomy class with Dr. Doty, a wildly entertaining professor known for his half-inch-thick glasses, boundless energy, and habit of explaining the universe through baseball metaphors (as one does). His final project was fantastically liberal arts: write your paper about astronomy, but through the lens of *your* major. A chemistry friend of mine did something with stellar spectra and emission lines. There was, I'm fairly sure, at least one person who turned in a literal book of poems. You get the idea. Sneakily hard, too... you can't hide behind a rubric, because everyone's rubric is different.
 
 I was a CS major, one course shy of both a math minor and a classics minor. Small liberal-arts school. So that still left me with options. I had to pick which version of myself was writing the paper.
 
-I picked the CS major. I was also taking an artificial intelligence class at the same time (mind you, this is pre-LLM AI... what most people now call "data science" for clarity instead) and I had just learned about clustering, and I was a tired college junior looking for an easy win before heading off abroad. I already had clustering code from the AI class, so re-using it with minor adjustments for the astronomy paper was "basically free". So my paper was going to be about clustering. Specifically: **if you wiped the slate clean and started over, would humanity draw the same constellations?**
+I picked the CS major (but with a Classics flair because I can't help myself). I was also taking an artificial intelligence class at the same time (mind you, this is pre-LLM AI... what most people now call "data science" for clarity instead) and I had just learned about clustering, and I was a tired college junior looking for an easy win before heading off abroad. I already had clustering code from the AI class, so re-using it with minor adjustments for the astronomy paper was "basically free". So my paper was going to be about clustering. Specifically: **if you wiped the slate clean and started over, would humanity draw the same constellations?**
 
 It's a genuinely fun question. A constellation is a story people agreed to tell about some dots. The Greeks named their constellations, the Chinese named theirs independently, and the two systems carved up some of the *same* regions even though nobody compared notes. So are constellations discovered or invented? If they trace something real in the sky, an algorithm that knows nothing about Greek myth should rediscover them just from where the stars sit, right?
 
@@ -92,7 +90,9 @@ nmi = normalized_mutual_info_score(true_constellations, linkage)
 ari = adjusted_rand_score(true_constellations, linkage)
 ```
 
-You can *see* the difference in temperament. Where naive k-means draws round territories, linkage threads the bright stars together like beads. Much closer to how a person traces a figure. This is the figure to actually play with: drag the slider toward the bright end and watch the reproducibility score climb as the faint noise falls away, or search for a constellation you know to see how intact it came back.
+You can *see* the difference. k-means draws round blobs... linkage weaves paths. Much closer to how a person traces a figure.
+
+This is the figure to actually play with: drag the slider toward the bright end and watch the reproducibility score climb as the faint noise falls away, or search for a constellation you know to see how intact it came back.
 
 <div class="cx cx-fig" data-fig="chain" data-src="/assets/data/2026-05-31-on-whether-the-stars-cluster/stars.json"></div>
 
@@ -102,15 +102,13 @@ Push the slider all the way to the bright end and the score jumps. Here's that s
   <div id="cx-chart" data-src="/assets/data/2026-05-31-on-whether-the-stars-cluster/stars.json"></div>
 </div>
 
-Three lines, all climbing as you keep only the brighter stars. The chain-following method (orange) pulls ahead once the shapes start to matter. Down at the brightest cut, naked-eye-prominent stars only, reproducibility hits **NMI ≈ 0.92**, and the harder pairwise metric (Adjusted Rand Index, which asks whether pairs of stars that are together in real life land together in the clustering) climbs from a middling 0.4 to **0.65**. That's not the question answering itself. Hand the algorithm only the stars a human would actually have looked at, and it draws something close to the human map.
+All three clustering methods improve when you only include brighter stars. The chain-following method (orange) pulls ahead once the shapes start to matter. This method moves us from a measly NMI of 0.76 to **0.92**! And the ARI (Adjusted Rand Index, which asks whether pairs of stars that are together in real life land together in the clustering) climbs from a middling 0.4 to **0.65**. Given the right input (bright stars), the algorithm actually draws something close to the map that humans drew thousands of years ago.
 
-My original hypothesis ("the stars cluster into constellations") was too vague to be either true or false. The *true* hypothesis (**the *bright* stars cluster into constellations, and you need a method that follows chains to see it**) is the one the data actually supports. I didn't find the answer in 2016 because I wasn't asking a question that *had* one. And, frankly, I wasn't all that concerned about whether it did.
+My original hypothesis ("the stars cluster into constellations") was too vague to be either true or false. The *true* hypothesis (**the *bright* stars cluster into constellations, and you need a method that follows chains to see it**) is the one the data actually supports. I didn't find the answer in 2016 because I wasn't asking a question that *had* one.
 
 ## So, are constellations real?
 
-The numbers tell a consistent story, and I think it's a good one. Among the bright anchor stars, the clustering recovers the human map surprisingly well. The constellations aren't arbitrary scribbles, they trace real clumps of bright stars, which is why distant cultures kept landing on overlapping regions. But the exact borders aren't inevitable. Search for **Eridanus** in the chain-following figure above (recovered about 25% intact) versus **Crux** or **Lyra** (basically perfect): the compact, bright figures are reproducible; the sprawling chains a culture chose to *narrate* as one thing are not.
-
-Which is the most human answer possible. The raw material is real, if imperfect. Orion's bright stars really do huddle together up there. But the hunter, the belt, the sword, the dog at his heel? We brought those. Some future stargazer with no Greek in their education would look at the same bright knot and see something else entirely, and they wouldn't be wrong.
+The numbers tell a consistent story, and I think it's a good one. Of course, it's not perfect. But among the bright anchor stars, the clustering recovers the human map surprisingly well. The constellations aren't arbitrary scribbles, they trace real clumps of bright stars, which is likely why distant cultures kept landing on overlapping regions all those years ago. But the exact borders aren't *inevitable*. Search for **Eridanus** in the chain-following figure above (recovered about 25% intact) versus **Crux** or **Lyra** (basically perfect). Which is the most human answer possible. The raw material is real, if imperfect. Orion's bright stars really do huddle together up there. But the hunter, the belt, the sword, the dog at his heel? Human creativity and randomness at its finest. It's likely some future stargazer with no Greek in their education would look at the exact same bright shape and see something else *entirely*... and that's okay!
 
 The bright stars *do* cluster. The stories we drew around them don't quite match. I think that's better than a clean yes. And it's a much better answer than the one I turned in to Dr. Doty.
 
