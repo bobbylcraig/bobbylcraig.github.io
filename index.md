@@ -5,10 +5,8 @@ title: About
 
 # About
 
-I'm a programmer who currently works at <a rel="noreferrer noopener" href="https://mailchimp.com">Intuit Mailchimp</a> on automation.
+I'm a programmer living in New York City.
 
-## Places I've worked
+I've written cool software at [Intuit](https://www.intuit.com/), [Mailchimp](https://mailchimp.com/) and [Tenable](https://www.tenable.com/).
 
-- [Intuit](https://intuit.com/): 2021 - 2026
-- [Mailchimp](https://mailchimp.com/) (err, MailChimp?): 2017 - [2021](https://archive.is/6NPml)
-- [Tenable](https://www.tenable.com/): 2016 - 2017
+Happy to chat if you drop me a line.
