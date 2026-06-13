@@ -37,7 +37,7 @@
   // hands the caller a `paint(ctx, W, H, reveal)` to fill. Mirrors makeSky.
   function makeChart(node, opts) {
     if (opts.title) {
-      const t = el("p", "cx-figure-title");
+      const t = el("p", "vz-figure-title");
       t.textContent = opts.title;
       node.appendChild(t);
     }
@@ -51,7 +51,7 @@
       node.appendChild(legend);
     }
     if (opts.caption) {
-      const cap = el("p", "cx-caption");
+      const cap = el("p", "vz-caption");
       cap.textContent = opts.caption;
       node.appendChild(cap);
     }
@@ -256,7 +256,7 @@
   function buildGender(node, d) {
     const f = d.gender.f, m = d.gender.m, total = f + m;
 
-    const title = el("p", "cx-figure-title");
+    const title = el("p", "vz-figure-title");
     title.textContent = "Figure 4 · who posts about lost items";
     node.appendChild(title);
 
@@ -273,7 +273,7 @@
     frame.appendChild(bar);
     node.appendChild(frame);
 
-    const cap = el("p", "cx-caption");
+    const cap = el("p", "vz-caption");
     cap.textContent =
       `${total} lost-item posts: ${f} from women, ${m} from men ` +
       `(${d.headline.gender_ratio}×), though the group skews even overall.`;
@@ -294,6 +294,6 @@
     const build = BUILDERS[node.dataset.chart];
     if (!build) return;
     load(src).then((d) => build(node, d))
-      .catch((e) => { node.innerHTML = '<p class="cx-caption">Couldn’t load the data.</p>'; console.error(e); });
+      .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load the data.</p>'; console.error(e); });
   });
 })();

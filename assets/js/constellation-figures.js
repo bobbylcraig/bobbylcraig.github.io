@@ -75,7 +75,7 @@
     ];
     const max = c.total;
 
-    const tag = el("span", "cx-figure-title");
+    const tag = el("span", "vz-figure-title");
     tag.textContent = "the data · how little of the sky is naked-eye visible";
     node.appendChild(tag);
 
@@ -95,7 +95,7 @@
     });
     frame.appendChild(wrap);
     node.appendChild(frame);
-    const cap = el("p", "cx-caption");
+    const cap = el("p", "vz-caption");
     const pct = ((c.naked_eye / c.total) * 100).toFixed(1);
     cap.textContent =
       `The HYG catalog lists ${c.total.toLocaleString()} stars. Only ` +
@@ -109,7 +109,7 @@
   // Builds the tag + stage(canvas + optional score + tip) + caption, plus a
   // controls row the caller fills. Returns the pieces and a draw-scheduler.
   function makeSky(node, opts) {
-    const tag = el("span", "cx-figure-title");
+    const tag = el("span", "vz-figure-title");
     tag.textContent = opts.tag;
     node.appendChild(tag);
 
@@ -131,10 +131,10 @@
     if (opts.tip) { tip = el("div", "cx-tip"); stage.appendChild(tip); }
     node.appendChild(stage);
 
-    const controls = el("div", "cx-controls");
+    const controls = el("div", "vz-controls");
     node.appendChild(controls);
 
-    const cap = el("p", "cx-caption");
+    const cap = el("p", "vz-caption");
     node.appendChild(cap);
 
     const ctx = canvas.getContext("2d");
@@ -221,9 +221,9 @@
 
     // control: the 2016 shortcut toggle
     sky.controls.innerHTML = `
-      <div class="cx-field">
-        <span class="cx-field-label">The 2016 shortcut</span>
-        <label class="cx-toggle">
+      <div class="vz-field">
+        <span class="vz-field-label">The 2016 shortcut</span>
+        <label class="vz-toggle">
           <input type="checkbox" class="cx-aside" /> Set aside the wrapping constellations
         </label>
       </div>`;
@@ -346,16 +346,16 @@
     });
 
     sky.controls.innerHTML = `
-      <div class="cx-field">
-        <span class="cx-field-label">Color stars by</span>
-        <div class="cx-seg" role="group" aria-label="Color stars by">
+      <div class="vz-field">
+        <span class="vz-field-label">Color stars by</span>
+        <div class="vz-seg" role="group" aria-label="Color stars by">
           <button data-view="con" aria-pressed="true">Real constellations</button>
           <button data-view="cluster" aria-pressed="false">The algorithm's groups</button>
         </div>
       </div>
-      <div class="cx-field cx-field-nested" data-nested hidden>
-        <span class="cx-field-label">…drawn by</span>
-        <div class="cx-seg" role="group" aria-label="Clustering method">
+      <div class="vz-field vz-field-nested" data-nested hidden>
+        <span class="vz-field-label">…drawn by</span>
+        <div class="vz-seg" role="group" aria-label="Clustering method">
           <button data-method="naive" aria-pressed="false">The 2016 way</button>
           <button data-method="sphere" aria-pressed="true">Sphere k-means</button>
         </div>
@@ -534,16 +534,16 @@
     });
 
     sky.controls.innerHTML = `
-      <div class="cx-field">
-        <span class="cx-field-label">Faintest stars shown</span>
-        <div class="cx-slider-wrap">
-          <input class="cx-slider" type="range" min="0" max="7" step="1" value="7"
+      <div class="vz-field">
+        <span class="vz-field-label">Faintest stars shown</span>
+        <div class="vz-slider-wrap">
+          <input class="vz-slider" type="range" min="0" max="7" step="1" value="7"
                  aria-label="Magnitude limit" />
-          <span class="cx-slider-val"></span>
+          <span class="vz-slider-val"></span>
         </div>
       </div>
-      <div class="cx-field">
-        <span class="cx-field-label">Find a constellation</span>
+      <div class="vz-field">
+        <span class="vz-field-label">Find a constellation</span>
         <div class="cx-combo">
           <input class="cx-combo-input" type="text" role="combobox" autocomplete="off"
                  aria-expanded="false" aria-controls="cx-combo-list" aria-autocomplete="list"
@@ -587,8 +587,8 @@
       sky.cap.textContent = s;
     }
 
-    const slider = sky.controls.querySelector(".cx-slider");
-    const sliderVal = sky.controls.querySelector(".cx-slider-val");
+    const slider = sky.controls.querySelector(".vz-slider");
+    const sliderVal = sky.controls.querySelector(".vz-slider-val");
     function syncSlider() {
       sliderVal.innerHTML = `mag ≤ <b>+${d.meta.mag_steps[step].toFixed(1)}</b>`;
     }
@@ -692,11 +692,11 @@
     const build = BUILDERS[node.dataset.fig];
     if (!build) return;
     whenVisible(node, () => load(src).then((d) => build(node, d))
-      .catch((e) => { node.innerHTML = '<p class="cx-caption">Couldn’t load the star data.</p>'; console.error(e); }));
+      .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load the star data.</p>'; console.error(e); }));
   });
   cleans.forEach((node) => {
     const src = node.dataset.src || "stars.json";
     whenVisible(node, () => load(src).then((d) => buildClean(node, d))
-      .catch((e) => { node.innerHTML = '<p class="cx-caption">Couldn’t load data.</p>'; console.error(e); }));
+      .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load data.</p>'; console.error(e); }));
   });
 })();

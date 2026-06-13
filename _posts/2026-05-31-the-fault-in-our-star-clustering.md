@@ -12,7 +12,9 @@ I was a CS major, one course shy of both a math minor and a classics minor. Smal
 
 I picked the CS major (but with a Classics flair because I can't help myself). I was also taking an artificial intelligence class at the same time (mind you, this is pre-LLM AI... what most people now call "data science" for clarity instead) and I had just learned about clustering, and I was a tired college junior looking for an easy win before heading off abroad. I already had clustering code from the AI class, so re-using it with minor adjustments for the astronomy paper was "basically free". So my paper was going to be about clustering. Specifically: **if you wiped the slate clean and started over, would humanity draw the same constellations?**
 
-It's a genuinely fun question. A constellation is a story people agreed to tell about some dots. The Greeks named their constellations, the Chinese named theirs independently, and the two systems carved up some of the *same* regions even though nobody compared notes. So are constellations discovered or invented? If they trace something real in the sky, an algorithm that knows nothing about Greek myth should rediscover them just from where the stars sit, right?
+And yes, *duh*: constellations are going to cluster together to some extent. I knew that going in. That was sort of the point... head already abroad, I was deliberately picking a question I was pretty sure I already knew the answer to, because "pretty sure I know the answer" is exactly the kind of question a lazy student wants on a deadline.
+
+Buried under that lazy framing, though, is a genuinely fun question. A constellation is a story people agreed to tell about some dots. The Greeks named their constellations, the Chinese named theirs independently, and the two systems carved up some of the *same* regions even though nobody compared notes. So are constellations discovered or invented? If they trace something real in the sky, an algorithm that knows nothing about Greek myth should rediscover them just from where the stars sit, right?
 
 That was the idea. I ran k-means on the star data coordinates, compared its groups to the real constellations, wrote up my findings, and got my (okay) grade.
 
@@ -28,9 +30,9 @@ The first is that **I took an easy shortcut with the geometry.** Stars get locat
 
 <div class="cx cx-fig" data-fig="naive" data-src="/assets/data/2026-05-31-on-whether-the-stars-cluster/stars.json"></div>
 
-The second problem is more subtle, and it took me longer to see. **The question wasn't exactly scientific.** "Do the stars in a constellation cluster spatially?" Well... a constellation is a group of stars that look close together. What does "they group together" even mean without a threshold? Of course constellations cluster together *somewhat*. That's nearly the definition. I probably asked it because it was easy, and because I already knew it would give me something to write about. But the results were weirdly mediocre anyway, which should've been a clue that I was missing nuance. The more interesting question, the one I should've been asking, is whether an algorithm would (or could?) carve the sky into the *same* partition a human would: same boundaries, same number of groups, same membership. That version can actually be wrong, which is what makes it worth asking.
+The second problem is more subtle, and it took me longer to see. **The question wasn't exactly scientific.** A constellation is, more or less by definition, a bunch of stars that look close together, so "do the stars in a constellation cluster spatially?" is nearly asking whether nearby things are nearby. That's the *duh* from earlier, except here it stops being a self-deprecating aside and quietly becomes the flaw baked into the whole experiment. And the answer came back weirdly mediocre anyway, which should've been a clue that I was missing nuance. The more interesting question, the one I should've been asking, is whether an algorithm would (or could?) carve the sky into the *same* partition a human would: same boundaries, same number of groups, same membership. That version can actually be wrong, which is what makes it worth asking.
 
-## Rebuilding it without the trapdoors
+---
 
 The fix for the geometry is to put these points on a sphere, not a flat space. Once the points are on a sphere, you can cluster from there. Luckily, Python makes this easier than MATLAB did... and it's a better solution:
 
@@ -61,13 +63,17 @@ Flip from the real constellations to the algorithm's groups and watch how little
 
 That was deflating. I'd "fixed" the experiment and barely moved the score. Same mediocre answer, fancier math. The engineering equivalent of refactoring a service for two weeks and deploying it with identical behavior. If the story ended here it would be a pretty good cautionary tale about looking busy, and not much else.
 
-## Changing the question
+---
 
 So I did the thing you're supposed to do when the data won't cooperate: I went back and looked at what the algorithm was actually getting wrong, instead of what I wanted it to get right.
 
 k-means has one personality trait: it carves space into round, evenly-sized blobs, because that's what "nearest centroid" produces. But a real constellation can be a long thin chain (Eridanus, the river) or a fat sprawl (Hydra). Shapes k-means structurally cannot want. And when I looked at *which* constellations it mangled, they were almost all the big sprawling ones. The compact, bright ones (Crux, Lyra, Gemini) it nailed.
 
 That's the clue. **Humans didn't draw constellations from the faint stars. We drew them from the bright ones.** Nobody selected the saddest, faintest, unnamed star for Orion... they connected Betelgeuse and Rigel and the three bright stars of the belt. The faint stars are noise we *added* to the catalog later with telescopes. While the idea of including all stars visible to the human eye was good in theory, it added way too much noise to produce a good signal for constellations.
+
+And again, *duh*: of course the bright stars are the ones that make up the constellations, and of course they're the ones sitting close enough together to get connected into a figure in the first place. Past me could've told you that without writing a line of code.
+
+But the win was in the journey, not the destination. And given the anticlimax I just walked you through (the careful geometry fix that changed almost nothing), maybe the "duh" answers aren't as straightforward as we'd choose to believe. Knowing the answer and being able to *show* it turn out to be very different things.
 
 So I changed two things. First, restrict to brighter and brighter stars and watch what happens. Second, swap k-means for average-linkage agglomerative clustering, which grows groups by *chaining* nearby stars together instead of forcing round blobs like k-means. Luckily, scikit-learn makes it pretty easy-peasy:
 

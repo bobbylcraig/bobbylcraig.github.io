@@ -22,7 +22,8 @@
     { key: "linkage_nmi", label: "Chain-following", color: () => "#e0823d" },
   ];
 
-  let curve = null, W = 0, H = 0, reveal = 0, rafId = null;
+  let curve = null, W = 0, H = 0, reveal = 0, rafId = null, lastTs = null;
+  let resizeTimer = null;
 
   function cssVar(n, f) {
     return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || f;
@@ -37,12 +38,22 @@
     draw();
   }
 
-  function draw() {
+  const REVEAL_DURATION_MS = 650;
+
+  function draw(ts) {
     if (!curve) return;
-    const dark = isDark();
+    const dark = window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
     const text = cssVar("--text", dark ? "#e8e8ea" : "#111");
     const soft = cssVar("--text-soft", "#6a6a6a");
     const grid = cssVar("--border", dark ? "#3a3a3f" : "#d0d0d0");
+
+    // Advance reveal by wall-clock time so it's frame-rate independent.
+    if (reveal < 1 && ts != null) {
+      if (lastTs == null) lastTs = ts;
+      reveal = Math.min(1, reveal + (ts - lastTs) / REVEAL_DURATION_MS);
+      lastTs = ts;
+    }
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.save(); ctx.scale(DPR, DPR);
 
@@ -50,10 +61,14 @@
     const plotW = W - padL - padR, plotH = H - padT - padB;
     // x = magnitude limit (reverse: faint left -> bright right, matching "keep brighter")
     const mags = curve.map((c) => c.mag);
-    const xmin = Math.min(...mags), xmax = Math.max(...mags);
+    const xmin = mags.reduce((a, b) => Math.min(a, b));
+    const xmax = mags.reduce((a, b) => Math.max(a, b));
     const ymin = 0.7, ymax = 0.95;
     const X = (m) => padL + (1 - (m - xmin) / (xmax - xmin)) * plotW;
     const Y = (v) => padT + (1 - (v - ymin) / (ymax - ymin)) * plotH;
+
+    // Resolve colors once per draw — avoids repeated getComputedStyle per dot.
+    const colors = SERIES.map((s) => s.color());
 
     // y gridlines + labels
     ctx.font = "11px " + cssVar("--chrome", "sans-serif");
@@ -76,11 +91,13 @@
       W / 2, H - 14);
 
     // lines (revealed left-to-right via clip on reveal fraction)
+    // The clip rect is in post-scale (CSS-pixel) space, matching X/Y helpers.
     const cut = padL + plotW * reveal;
     ctx.save();
     ctx.beginPath(); ctx.rect(0, 0, cut, H); ctx.clip();
-    SERIES.forEach((s) => {
-      ctx.strokeStyle = s.color(); ctx.lineWidth = 2.4; ctx.lineJoin = "round";
+    SERIES.forEach((s, si) => {
+      const col = colors[si];
+      ctx.strokeStyle = col; ctx.lineWidth = 2.4; ctx.lineJoin = "round";
       ctx.beginPath();
       curve.forEach((c, i) => {
         const x = X(c.mag), y = Y(c[s.key]);
@@ -88,23 +105,17 @@
       });
       ctx.stroke();
       // endpoint dots
+      ctx.fillStyle = col;
       curve.forEach((c) => {
-        ctx.fillStyle = s.color();
-        ctx.beginPath(); ctx.arc(X(c.mag), Y(c[s.key]), 2.6, 0, 6.2832); ctx.fill();
+        ctx.beginPath(); ctx.arc(X(c.mag), Y(c[s.key]), 2.6, 0, Math.PI * 2); ctx.fill();
       });
     });
     ctx.restore();
     ctx.restore();
 
     if (reveal < 1) {
-      reveal = Math.min(1, reveal + 0.04);
       rafId = requestAnimationFrame(draw);
     }
-  }
-
-  function isDark() {
-    return window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
   }
 
   function buildLegend() {
@@ -116,7 +127,10 @@
     });
   }
 
-  window.addEventListener("resize", () => { resize(); });
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 100);
+  });
   if (window.matchMedia)
     window.matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", () => { buildLegend(); draw(); });
@@ -127,8 +141,8 @@
     buildLegend();
     resize();
     const io = new IntersectionObserver((es) => {
-      es.forEach((e) => { if (e.isIntersecting) { reveal = 0; draw(); io.disconnect(); } });
+      es.forEach((e) => { if (e.isIntersecting) { reveal = 0; lastTs = null; rafId = requestAnimationFrame(draw); io.disconnect(); } });
     }, { threshold: 0.35 });
     io.observe(root);
-  }).catch((e) => { root.innerHTML = '<p class="cx-caption">Couldn’t load data.</p>'; console.error(e); });
+  }).catch((e) => { root.innerHTML = '<p class="vz-caption">Couldn’t load data.</p>'; console.error(e); });
 })();
