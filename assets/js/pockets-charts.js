@@ -12,6 +12,7 @@
   if (!nodes.length) return;
 
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const REDUCED = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 
   const cache = {};
   function load(src) {
@@ -42,6 +43,10 @@
       node.appendChild(t);
     }
     const canvas = el("canvas", "cx-bars");
+    canvas.setAttribute("role", "img");
+    if (opts.ariaLabel || opts.title) {
+      canvas.setAttribute("aria-label", opts.ariaLabel || opts.title);
+    }
     const ctx = canvas.getContext("2d");
     node.appendChild(canvas);
 
@@ -80,6 +85,7 @@
       opts.paint(ctx, W, H, reveal);
     }
     function animate() {
+      if (REDUCED) { reveal = 1; draw(); return; }   // paint final state, no tween
       reveal = 0;
       (function step() {
         reveal = Math.min(1, reveal + 0.045);

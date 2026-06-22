@@ -25,6 +25,7 @@
   if (!figs.length && !cleans.length) return;
 
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const REDUCED = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
   const FULL = window.CX_CON_NAMES || {};
 
   // One fetch per unique source, shared across every figure on the page.
@@ -115,6 +116,9 @@
 
     const stage = el("div", "cx-stage");
     const canvas = el("canvas", "cx-canvas");
+    canvas.setAttribute("role", "img");
+    canvas.setAttribute("aria-label",
+      opts.ariaLabel || `Sky map of clustered stars (${opts.tag}); the reproducibility score and caption below summarize the result.`);
     stage.appendChild(canvas);
     let scoreEl, scoreNum, scoreSub, scoreArrow, tip;
     if (opts.score) {
@@ -559,7 +563,10 @@
       const c = d.curve[step];
       const target = c.linkage_nmi;
       if (rafScore) cancelAnimationFrame(rafScore);
-      (function anim() {
+      if (REDUCED) {                                  // no count-up tween
+        displayed = target;
+        sky.scoreNum.textContent = target.toFixed(2);
+      } else (function anim() {
         const diff = target - displayed;
         if (Math.abs(diff) < 0.0015) displayed = target;
         else { displayed += diff * 0.2; rafScore = requestAnimationFrame(anim); }

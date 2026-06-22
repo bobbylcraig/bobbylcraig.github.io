@@ -183,10 +183,12 @@ pre {
 }
 
 table {
-  display: block;
+  // A real table (display: table) so columns size to their content and the
+  // borders collapse cleanly — the old display:block + overflow-x:auto left a
+  // phantom full-width border to the right of the cells. Horizontal overflow is
+  // handled by wrapping the table in .table-scroll (below) instead.
   width: 100%;
   max-width: 100%;
-  overflow-x: auto;
   margin-bottom: $spacing-unit;
   border: 1px solid var(--border);
   border-collapse: collapse;
@@ -201,6 +203,18 @@ table {
     background: var(--table-stripe);
     font-weight: 600;
   }
+}
+// Opt-in horizontal scroller for wide tables (e.g. the isolation-level matrix on
+// narrow screens). The wrapper owns the bottom margin + the scroll; the table
+// drops to its natural content width so there's something to scroll, and its
+// cells stop wrapping so columns don't crush down to one word per line.
+.table-scroll {
+  overflow-x: auto;
+  margin-bottom: $spacing-unit;
+  -webkit-overflow-scrolling: touch;   // momentum scroll on iOS
+
+  table { width: auto; min-width: 100%; margin-bottom: 0; }
+  th, td { white-space: nowrap; }
 }
 
 .skip-link {

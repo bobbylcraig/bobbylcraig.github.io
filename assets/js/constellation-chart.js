@@ -6,9 +6,14 @@
   const root = document.getElementById("cx-chart");
   if (!root) return;
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  const REDUCED = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 
   const canvas = document.createElement("canvas");
   canvas.className = "cx-chart";
+  canvas.setAttribute("role", "img");
+  canvas.setAttribute("aria-label",
+    "Line chart: clustering reproducibility (NMI) for all three methods rises as " +
+    "fainter stars are dropped, with the chain-following method climbing highest.");
   const ctx = canvas.getContext("2d");
   root.appendChild(canvas);
 
@@ -141,7 +146,12 @@
     buildLegend();
     resize();
     const io = new IntersectionObserver((es) => {
-      es.forEach((e) => { if (e.isIntersecting) { reveal = 0; lastTs = null; rafId = requestAnimationFrame(draw); io.disconnect(); } });
+      es.forEach((e) => {
+        if (!e.isIntersecting) return;
+        if (REDUCED) { reveal = 1; draw(); }   // no tween; paint final state at once
+        else { reveal = 0; lastTs = null; rafId = requestAnimationFrame(draw); }
+        io.disconnect();
+      });
     }, { threshold: 0.35 });
     io.observe(root);
   }).catch((e) => { root.innerHTML = '<p class="vz-caption">Couldn’t load data.</p>'; console.error(e); });

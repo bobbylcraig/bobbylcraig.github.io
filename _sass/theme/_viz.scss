@@ -7,6 +7,20 @@
 // — importing theme/vars here would duplicate its :root{} block into viz.css.
 @mixin focus-ring { outline: 2px solid var(--brand); outline-offset: 2px; }
 
+// Screen-reader-only text: present to assistive tech, removed from visual flow.
+// Used to voice non-color cues (e.g. the locking status tone) without showing
+// redundant text to sighted readers.
+.vz-sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 // Shared framed-surface fill: a faint top-down glow over the pre/code surface.
 // Every framed figure (stage, clean-frame, split-frame, the locking stage) sits
 // on it, so it lives in one place — borders / radius / padding stay per-element.
@@ -195,8 +209,6 @@
     --cat: var(--viz-cat-#{$i});
   }
 }
-.vz-cat-fill { background: var(--cat, var(--brand)); }
-.vz-cat-text { color: var(--cat, var(--brand)); }
 .vz-cat-dot {
   display: inline-block; width: 8px; height: 8px; border-radius: 50%;
   background: var(--cat, var(--brand));
@@ -663,4 +675,697 @@
   .cx-score-val { font-size: 1.2rem; }
   .cx-clean-row { grid-template-columns: 6.5rem 1fr auto; }
   .cx-split-frame { padding: 1.1rem 1rem; }
+  // Drop the inline bar on narrow screens; rank + phrase + score still read.
+  .wb-coll-row { grid-template-columns: 1.4rem 1fr auto; }
+  .wb-coll-track { display: none; }
+  .wb-coll-inner { padding: 1rem 0.9rem; }
+  // Tighten the chip chrome further on phones.
+  .wb-coll-frame .vz-seg--attached button { padding: 0.55rem 0.2rem; font-size: 0.7rem; }
+}
+
+// ====================================================================
+//  Time-zone post (tz-*)
+//  "The 9am Wave": a strip of ~two dozen world cities, one per row, with a
+//  send-time marker that sweeps across a UTC timeline. Switching scenario
+//  (Samoa jumps the line, EU drops DST, the spring gap, the fall double-tap)
+//  re-forms the wave. The stage reuses %framed-surface + .cx-tip; the controls
+//  reuse the vz-* design system. Only the framed canvas, the replay button,
+//  and the seg's responsive label swap are post-specific.
+// ====================================================================
+.tz {
+  font-family: var(--chrome);
+  margin: 2rem 0;
+  // A small reserve so an unbuilt figure isn't a zero-height box (the lazy-load
+  // observer needs something to detect, and it avoids a layout jump). Kept
+  // modest — the figures build instantly, and over-reserving leaves a dead gap
+  // beneath the shorter (clock) figure once it populates.
+  min-height: 6rem;
+}
+.tz-stage { @extend %vz-stage; }
+.tz-canvas { display: block; width: 100%; }
+
+// Wave verdict tally + replay: a right-aligned group in the controls row, NOT a
+// floating overlay. The wave's diagonal of markers plus its right-edge UTC times
+// leave no stage corner clear, so any on-canvas badge covers something; sitting
+// in the controls row beside the scenario seg states the stakes cleanly and
+// keeps replay where controls belong. margin-left:auto pushes it to the right.
+// A normal label-on-top field (so its "What happens" label lines up with the
+// scenario seg's label and the two top-align), pushed to the right edge of the
+// controls row. The verdict tally + replay sit on one row beneath the label.
+// The figure column tops out around 538px, so the wide scenario seg + this field
+// never fit side by side: it always wraps to its own line. Keep it left-aligned
+// there (a full-width row under the seg, sharing the seg's left edge) rather than
+// margin:auto, which would strand the wrapped field at the right edge on a level
+// of its own.
+.tz-wave-meta {
+  width: 100%;
+}
+.tz-wave-meta-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  // Match the seg's button height so the verdict/replay row sits at the same
+  // baseline as the scenario buttons beneath their shared label.
+  min-height: 1.85rem;
+}
+// The wave's caption swaps text per scenario, and those blurbs differ in length
+// (Samoa's is the longest). Reserve room for the tallest so switching scenarios
+// doesn't reflow everything below it. Sized to the longest blurb at this width;
+// the narrow breakpoint reserves more, since the same text wraps to more lines.
+.tz-wave .vz-caption { min-height: 5rem; }
+.tz-badge-verdict {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+
+  b { color: var(--text); font-weight: 700; }
+  .tz-bad { color: var(--viz-down); font-weight: 700; }
+}
+.tz-replay { @extend %vz-chip-button; }
+
+.tz-clock-stage .tz-canvas { cursor: ew-resize; }
+
+// The clock verdict is an on-viz badge in the BOTTOM-RIGHT corner — the strip
+// (track + pill) leaves that corner clear, so this is the single place the
+// outcome is stated (no duplicate UTC row in the canvas, no flow block below).
+// It borrows .lx-status's colour rail but overrides the lx positioning (which
+// pins top-right and stretches edge-to-edge on mobile). Two stacked lines: a
+// bold verdict + a muted UTC sub-line.
+.tz-clock-status.lx-status {
+  position: absolute;
+  top: auto;
+  bottom: 12px;
+  right: 12px;
+  left: auto;
+  // Fixed width so the box never resizes — and so its right-anchored edge never
+  // jumps — as the verdict text changes between "doesn't exist today",
+  // "07:00Z & 08:00Z", and a bare "08:00Z". Sized to the widest sub-line.
+  width: 12.5rem;
+  max-width: calc(100% - 24px);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.05rem;
+  // FIXED height (not min) sized to the tallest verdict — "Never fires" whose
+  // sub-line wraps to two lines at this width. Shorter verdicts (a single UTC
+  // time) sit top-aligned in the same box, so the badge never changes size as
+  // the job moves between gap / fold / normal slots.
+  height: 3.75rem;
+  margin: 0;
+  transform: none;
+  opacity: 1;
+  padding: 0.4rem 0.7rem;
+
+  .lx-status-text b { display: block; font-size: 0.82rem; line-height: 1.2; }
+  .lx-status-text b.tz-bad { color: var(--viz-down); }
+}
+.tz-status-sub {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+// Scenario / transition switchers: titles can be long, so opt these segs into
+// the shared short-label swap on narrow screens (wave markup carries both
+// labels; the clock seg labels are already short).
+@media (max-width: 620px) {
+  .tz-seg {
+    .vz-seg-full { display: none; }
+    .vz-seg-short { display: inline; }
+  }
+  // On phones the seg goes FULL WIDTH for the largest touch targets — each chip
+  // shares the row evenly (fingers, not cursors). Same treatment the locking
+  // post gives its isolation toggle on mobile. Targets BOTH tz segs (the wave's
+  // scenario switcher and the clock's transition toggle) so neither leaves the
+  // field stretched full-width with content-sized buttons stranded on the left.
+  .tz .vz-field { width: 100%; }
+  .tz .vz-seg { display: flex; width: 100%; }
+  .tz .vz-seg button { flex: 1 1 0; min-width: 0; padding-left: 0.3rem; padding-right: 0.3rem; }
+  // Captions wrap to more lines on a narrow column, so reserve more height for
+  // the tallest scenario blurb to keep the switch from reflowing the page.
+  .tz-wave .vz-caption { min-height: 9rem; }
+  // The clock's on-viz verdict badge tucks tighter to the corner on phones, and
+  // narrows so it doesn't reach back across the strip into the region label
+  // beneath the track (the sub-line just wraps to a second line — still a fixed
+  // box, so it never jumps between verdicts).
+  .tz-clock-status.lx-status {
+    bottom: 8px;
+    right: 8px;
+    padding: 0.3rem 0.55rem;
+    width: 9.5rem;
+    height: 3.55rem;
+  }
+}
+
+// ====================================================================
+//  Locking post (lx-*)
+//  A static data grid (a `users` table, like a SQL-client result) ordered
+//  by its PK `id`. The id sequence jumps from 3 to 8, leaving a wide EMPTY
+//  region. Record locks (on existing rows) and the gap lock (over the empty
+//  region) are drawn as DISTINCT things: a record lock tints a real row +
+//  lights a blue rail; the gap lock fills the empty region itself in red.
+//  T2's inserted row materializes INSIDE that region. Plus a two-transaction
+//  race sim. All reusable design components (controls, fields, seg, etc.)
+//  live in the vz-* section above.
+//
+//  Hard rule: nothing changes height. The empty gap-region is a real flow
+//  element of fixed height (it doubles as the gap-lock band and hosts the
+//  inserted row), so no absolute positioning or offset math is needed and only
+//  color / opacity animate, on one shared easing curve.
+// ====================================================================
+.lx {
+  --lx-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --lx-dur: 0.28s;
+  --lx-rowh: 2.5rem;
+  --lx-headh: 2rem;
+  --lx-r: 8px;                 // ONE corner radius, used everywhere
+  --lx-rail: 3px;              // width of the lock accent rail
+  --lx-stage-padx: 0.7rem;     // stage horizontal padding (the gap band bleeds to it)
+  // grid shared by header + rows: id | fname | lock-label
+  --lx-cols: 3.4rem 1fr auto;
+  --lx-padx: 0.95rem;
+  font-family: var(--chrome);
+  margin: 2rem 0;
+}
+
+// ---- framed stage (matches .cx-stage so both posts share one surface) ----
+.lx-stage {
+  @extend %vz-stage;
+  border-radius: var(--lx-r);                       // namespace's own corner token
+  padding: 0.5rem var(--lx-stage-padx) 0.65rem;     // the locking grid needs inner pad
+}
+
+// ---- the static grid: every row is identical in size + shape ----
+// Real rows and ghost gap-slots share ONE row style, so the gap reads as "space
+// for several real rows", not a special widget. Fixed height; only color animates.
+.lx-grid { width: 100%; font-family: var(--mono); }
+.lx-row {
+  display: grid;
+  grid-template-columns: var(--lx-cols);
+  align-items: center;
+  column-gap: 0.8rem;
+  height: var(--lx-rowh);
+  padding: 0 0.7rem 0 var(--lx-padx);
+  border-radius: var(--lx-r);
+  // a left accent rail (transparent until a lock lights it), inset so it can't
+  // shift layout
+  box-shadow: inset var(--lx-rail) 0 0 transparent;
+  transition: background var(--lx-dur) var(--lx-ease), box-shadow var(--lx-dur) var(--lx-ease);
+}
+.lx-row + .lx-row { margin-top: 1px; }
+
+// header
+.lx-head {
+  height: var(--lx-headh);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3px;
+  box-shadow: none;
+  border-radius: 0;
+  .lx-c { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--text-soft); font-weight: 600; font-family: var(--chrome); }
+}
+
+// cells — id right-aligned tabular, fname left, lock label right
+.lx-c { font-size: 0.86rem; color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.lx-c-id   { text-align: right; color: var(--text-soft); }
+.lx-c-name { text-align: left; font-weight: 700; }
+.lx-c-lock { text-align: right; font-family: var(--chrome); justify-self: end; }
+
+// faint zebra on existing data rows
+.lx-row:not(.lx-head):nth-of-type(even) { background: color-mix(in srgb, var(--table-stripe) 55%, transparent); }
+
+// record lock (on a row that exists): blue rail + tint
+.lx-row.is-hot,
+.lx-row.is-locked-rec {
+  background: color-mix(in srgb, var(--brand) 12%, transparent);
+  box-shadow: inset var(--lx-rail) 0 0 var(--brand);
+}
+
+// ---- the gap: a full-width BAND of open space the rows sit between ----
+// It bleeds past the rows' horizontal padding to span the whole stage (so a
+// normal-width row fits inside it), is deliberately taller than a row, and has
+// only top + bottom rules + no rounded corners — so it reads as a horizontal
+// zone across the table, not a card aligned with the rows. Hatched = open,
+// lockable space. Fixed height, so the page never shifts.
+.lx-gapregion {
+  position: relative;
+  height: calc(var(--lx-rowh) * 2.3);     // visibly taller than a single row
+  // bleed out to the full stage width (cancel the stage's side padding)
+  margin: 6px calc(-1 * var(--lx-stage-padx));
+  border-top: 1px solid color-mix(in srgb, var(--rule-soft) 35%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--rule-soft) 35%, transparent);
+  background:
+    repeating-linear-gradient(-45deg,
+      color-mix(in srgb, var(--rule-soft) 16%, transparent) 0 1px,
+      transparent 1px 9px);
+  transition: background-color var(--lx-dur) var(--lx-ease), border-color var(--lx-dur) var(--lx-ease);
+}
+// label + note share one top band, each a flex box of the same height so their
+// text centers on the same line despite different font sizes
+.lx-gapregion-label,
+.lx-gapregion-note {
+  position: absolute;
+  top: 0.5rem;
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+.lx-gapregion-label {
+  // align with the row content (region is bled out by --lx-stage-padx)
+  left: calc(var(--lx-stage-padx) + var(--lx-padx));
+  font-family: var(--chrome);
+  font-size: 0.66rem;
+  font-style: italic;
+  color: var(--text-soft);
+  transition: color var(--lx-dur) var(--lx-ease);
+}
+.lx-gapregion-note { right: calc(var(--lx-stage-padx) + 0.7rem); }
+
+// gap lock: the open band washes red (red hatch tint + red top/bottom rules).
+// No left rail — the band has no left edge — so it stays clearly "a locked zone
+// across the table", distinct from the blue record-locked rows' left rails.
+.lx-gapregion.is-hot,
+.lx-gapregion.is-locked-gap {
+  border-top-color: color-mix(in srgb, var(--viz-down) 50%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--viz-down) 50%, transparent);
+  background:
+    linear-gradient(color-mix(in srgb, var(--viz-down) 9%, transparent),
+                    color-mix(in srgb, var(--viz-down) 9%, transparent)),
+    repeating-linear-gradient(-45deg,
+      color-mix(in srgb, var(--viz-down) 22%, transparent) 0 1px,
+      transparent 1px 9px);
+  .lx-gapregion-label { color: var(--viz-down); font-weight: 600; font-style: normal; }
+}
+
+// the inserted row: a REAL row that appears inside the band, aligned to the same
+// width + left edge as every other row, sitting at the bottom of the open space
+// (hatched gap remains above it). Opaque, so it covers the hatch it sits on.
+.lx-gaprow {
+  position: absolute;
+  // the region bleeds out by --lx-stage-padx on each side; inset the row by that
+  // same amount so it lines up flush with every other row in the table
+  left: var(--lx-stage-padx); right: var(--lx-stage-padx);
+  bottom: 0.6rem;                  // lifted off the bottom edge for breathing room
+  height: var(--lx-rowh);
+  margin: 0;
+  background: var(--bg);
+  border-radius: var(--lx-r);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--rule-soft) 45%, transparent),
+              inset var(--lx-rail) 0 0 var(--rule-soft);
+  opacity: 0;
+  transform: translateY(0.4rem);
+  transition: opacity var(--lx-dur) var(--lx-ease), transform var(--lx-dur) var(--lx-ease),
+              background var(--lx-dur) var(--lx-ease), box-shadow var(--lx-dur) var(--lx-ease);
+}
+.lx-gapregion.has-insert .lx-gaprow { opacity: 1; transform: none; }
+.lx-gaprow.is-timeout {
+  background: color-mix(in srgb, var(--viz-down) 14%, var(--bg));
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--viz-down) 30%, transparent),
+              inset var(--lx-rail) 0 0 var(--viz-down);
+  .lx-c-name { color: var(--viz-down); }
+}
+.lx-gaprow.is-done {
+  background: color-mix(in srgb, var(--viz-up) 14%, var(--bg));
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--viz-up) 30%, transparent),
+              inset var(--lx-rail) 0 0 var(--viz-up);
+}
+.lx-gaprow.is-shake { animation: lx-shake 0.32s var(--lx-ease) both; }
+@keyframes lx-shake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-4px); }
+  55%  { transform: translateX(3px); }
+  80%  { transform: translateX(-1px); }
+  100% { transform: translateX(0); }
+}
+
+// quiet inline lock labels (uppercase micro-text)
+.lx-tag {
+  font-family: var(--chrome);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.lx-tag-rec  { color: var(--brand); }
+.lx-tag-gap  { color: var(--viz-down); }
+.lx-tag-wait { color: var(--text-soft); }
+.lx-tag-bad  { color: var(--viz-down); }
+.lx-tag-good { color: var(--viz-up); }
+
+// ---- floating status badge (over the stage, like .cx-score). Text-only: the
+//      left border color carries the tone, so no redundant dot. ----
+.lx-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 6;
+  max-width: min(56%, 21rem);
+  // flex-center the text so one- and two-line states both sit visually centered
+  // (line-height leading otherwise makes multi-line text look top-heavy)
+  display: flex;
+  align-items: center;
+  min-height: 2.2rem;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-left-width: var(--lx-rail);
+  border-radius: var(--lx-r);
+  padding: 0.4rem 0.7rem;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity var(--lx-dur) var(--lx-ease), transform var(--lx-dur) var(--lx-ease),
+              border-color var(--lx-dur) var(--lx-ease);
+
+  &.is-shown { opacity: 1; transform: none; }
+  &.is-good { border-left-color: var(--viz-up);
+    .lx-status-icon { color: var(--viz-up); } }
+  &.is-bad  { border-left-color: var(--viz-down);
+    .lx-status-icon { color: var(--viz-down); } }
+  &.is-info { border-left-color: var(--brand);
+    .lx-status-icon { color: var(--brand); } }
+}
+.lx-status-text {
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: var(--text-muted);
+  b { color: var(--text); font-weight: 700; }
+}
+// A non-color tone cue (✓ / ✕ / ⓘ) so good/bad/info reads without relying on the
+// left-border color alone. Color reinforces, the glyph carries.
+.lx-status-icon {
+  font-weight: 700;
+  margin-right: 0.4rem;
+  font-size: 0.85em;
+}
+
+// ---- the isolation-level seg overrides vz-seg's default font with mono caps
+//      to echo the SQL keywords it sets ----
+.lx-seg button { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.02em; }
+
+// ---- timeline: breadcrumbs (fixed geometry; the per-step detail lives in the
+//      caption + status badge, not in the control). prev/next chevrons flank. ----
+.lx-field-tl { flex: 1 1 24rem; min-width: 15rem; }
+.lx-timeline { display: flex; align-items: center; gap: 0.4rem; }
+.lx-timeline > button {
+  flex: none;
+  width: 2rem; height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--lx-r);
+  background: var(--bg);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.14s ease, border-color 0.14s ease, color 0.14s ease;
+
+  &:hover:not(:disabled) { background: var(--table-stripe); border-color: var(--rule-soft); }
+  &:disabled { opacity: 0.35; cursor: default; }
+  &:focus-visible { @include focus-ring; }
+
+  // Touch devices get a 44px tap target (WCAG 2.5.5) without enlarging the
+  // compact desktop chevrons.
+  @media (pointer: coarse) { width: 2.75rem; height: 2.75rem; }
+}
+.lx-crumbs {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  // Distribute the steps across the full track so the breadcrumbs reach the
+  // right chevron instead of leaving dead space after the last step.
+  justify-content: space-between;
+  gap: 0.1rem;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--lx-r);
+  background: var(--bg);
+  padding: 0.18rem 0.3rem;
+  overflow: hidden;
+}
+.lx-crumb {
+  flex: 0 1 auto;
+  min-width: 0;
+  font: inherit;
+  font-size: 0.7rem;
+  color: var(--text-soft);
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--lx-r) - 3px);
+  padding: 0.28rem 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: color 0.16s ease, background 0.16s ease;
+
+  &:hover { color: var(--text-muted); }
+  &:focus-visible { @include focus-ring; }
+  &.is-done { color: var(--text-muted); }
+  &.is-current {
+    color: #fff;
+    background: var(--brand);
+    font-weight: 600;
+    flex-shrink: 0;        // never truncate the active step
+  }
+}
+.lx-crumb-sep { flex: none; color: var(--rule-soft); font-size: 0.7rem; padding: 0 0.05rem; }
+// the step number shows only on narrow screens (where text labels won't fit)
+.lx-crumb-num { display: none; }
+
+// ---- two-column SQL transcript ----
+.lx-sql {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.95rem;
+}
+.lx-sql-col {
+  border: 1px solid var(--border);
+  border-radius: var(--lx-r);
+  overflow: hidden;
+  background: var(--pre-bg);
+  transition: border-color var(--lx-dur) var(--lx-ease);
+
+  &[data-state="bad"] { border-color: color-mix(in srgb, var(--viz-down) 60%, var(--border)); }
+  &[data-state="good"] { border-color: color-mix(in srgb, var(--viz-up) 55%, var(--border)); }
+}
+.lx-sql-head {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  padding: 0.5rem 0.7rem 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+.lx-sql-body {
+  margin: 0;
+  padding: 0.6rem 0.7rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  line-height: 1.5;
+  color: var(--text);
+  white-space: pre-wrap;
+  word-break: break-word;
+  // FIXED height sized for the tallest content (T1 under READ COMMITTED at the
+  // resolution step: the long SET TRANSACTION line wraps, giving ~7 visual lines:
+  // SET (×2) / BEGIN / SELECT / WHERE / FOR UPDATE / COMMIT). Both columns share
+  // it, so stepping never shifts the page.
+  height: 9.6rem;
+  background: none;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .lx { --lx-rowh: 2.7rem; }
+  .lx-sql { grid-template-columns: 1fr; }
+  // the badge flows above the table on mobile (no absolute overlay). When it has
+  // nothing to say it collapses out of flow entirely, so it leaves no empty slot.
+  .lx-status {
+    position: static;
+    max-width: none;
+    margin: 0 0 0.5rem;
+    transform: none;
+    &:not(.is-shown) { display: none; }
+  }
+
+  // both control fields go full width and stack
+  .lx .vz-field { width: 100%; }
+  // isolation toggle fills the row, each option taking half
+  .lx .lx-seg { display: flex; width: 100%; }
+  .lx .lx-seg button { flex: 1; }
+
+  // timeline: text labels won't fit, so number the steps instead. Each crumb is
+  // an equal-width numbered cell; the chevrons stay at the ends.
+  .lx-timeline { width: 100%; }
+  .lx-crumbs { flex: 1; justify-content: space-between; gap: 0.25rem; padding: 0.2rem; }
+  .lx-crumb {
+    flex: 1;
+    justify-content: center;
+    padding: 0.3rem 0;
+    text-align: center;
+  }
+  .lx-crumb-text { display: none; }
+  .lx-crumb-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4rem; height: 1.4rem;
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+  }
+  .lx-crumb.is-current { background: transparent; }
+  .lx-crumb.is-current .lx-crumb-num { background: var(--brand); color: #fff; }
+  .lx-crumb.is-done .lx-crumb-num { background: color-mix(in srgb, var(--brand) 18%, transparent); color: var(--brand); }
+  .lx-crumb-sep { font-size: 0.65rem; padding: 0; }
+}
+
+// ====================================================================
+//  Coastline post ("The Two-Week Coastline") — cl-* namespace
+//  Two figures: the ruler-walk on a fractal coast (with the coastline /
+//  software-estimate dual labeling), and Richardson's log-log plot whose
+//  slope is the fractal dimension. Both sit on the shared %vz-stage and
+//  drive their controls from the shared vz-* design system; only the
+//  on-canvas readouts/badges are post-specific. Colors are theme tokens,
+//  so dark/light tracks automatically.
+// ====================================================================
+// The figure block, like .cx / .tz: symmetric vertical breathing room so the
+// figure (and its caption) doesn't crowd the body paragraphs above and below.
+.cl {
+  font-family: var(--chrome);
+  margin: 2rem 0;
+}
+.cl-stage { @extend %vz-stage; }
+.cl-canvas { display: block; width: 100%; }
+
+// Big climbing readout, floated over the coast's empty top-left corner.
+.cl-readout {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  transition: border-color 0.2s ease;
+
+  // when reading as a software estimate, tint the chrome toward the chain hue
+  &.is-estimate { border-color: color-mix(in srgb, var(--viz-chain) 55%, var(--border)); }
+}
+.cl-readout-val {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.cl-readout-unit { font-size: 0.8rem; color: var(--text-soft); font-weight: 600; }
+
+// slider end-caps ("coarse"/"fine") flanking the shared vz-slider
+.cl-slider-end {
+  font-size: 0.66rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+// ---- Richardson plot: the fractal-dimension badge over the stage ----
+.cl-dim-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  text-align: right;
+  min-width: 130px;
+
+  &.is-flat { border-color: color-mix(in srgb, var(--viz-up) 55%, var(--border)); }
+  &.is-steep { border-color: color-mix(in srgb, var(--viz-down) 55%, var(--border)); }
+}
+.cl-dim-label {
+  display: block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+}
+.cl-dim-val {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+
+  .cl-dim-badge.is-flat & { color: var(--viz-up); }
+  .cl-dim-badge.is-steep & { color: var(--viz-down); }
+}
+.cl-dim-sub {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+  margin-top: 1px;
+}
+
+// The three coastline names ("A pathological codebase" etc.) are long enough to
+// overflow the narrow figure column. Below this width, swap to the short labels
+// and let the seg fill the row with evenly-shrinking buttons so nothing clips.
+@media (max-width: 560px) {
+  .cl-rich-seg {
+    display: flex;
+    width: 100%;
+    .vz-seg-full { display: none; }
+    .vz-seg-short { display: inline; }
+    button { flex: 1 1 0; min-width: 0; padding-left: 0.3rem; padding-right: 0.3rem; }
+  }
+  // Make the seg's field take the full row so the full-width seg has room.
+  .cl-richardson .vz-field { width: 100%; }
+}
+
+@media (max-width: 520px) {
+  .cl-readout-val, .cl-dim-val { font-size: 1.35rem; }
+  .cl-dim-badge { min-width: 108px; padding: 0.4rem 0.55rem; }
+}
+
+// ====================================================================
+//  Regression figures — "Regression to the Mean"
+//  (the variance plot: surviving category spread over time, human vs AI)
+// ====================================================================
+.rg {
+  font-family: var(--chrome);
+  margin: 2rem 0;
+}
+.rg-stage { @extend %vz-stage; }
+.rg-canvas { display: block; width: 100%; }
+
+// slider end-caps ("few"/"many") flanking the shared vz-slider
+.rg-slider-end {
+  font-size: 0.66rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+// Reserve the caption's tallest height so dragging the pressure slider (which
+// rewrites the caption to a different length) doesn't shift the page. Same
+// approach as .tz-wave .vz-caption.
+.rg-variance .vz-caption { min-height: 3.5rem; }
+@media (max-width: 600px) {
+  .rg-variance .vz-caption { min-height: 5.5rem; }
 }
