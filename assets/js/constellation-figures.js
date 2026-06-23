@@ -100,7 +100,7 @@
     const pct = ((c.naked_eye / c.total) * 100).toFixed(1);
     cap.textContent =
       `The HYG catalog lists ${c.total.toLocaleString()} stars. Only ` +
-      `${c.naked_eye.toLocaleString()} — about ${pct}% — are bright enough to ` +
+      `${c.naked_eye.toLocaleString()} (~${pct}%) are bright enough to ` +
       `see with the naked eye (magnitude ≤ +6). Those are the only stars anyone ` +
       `could have drawn a constellation from, so they're the only ones we keep.`;
     node.appendChild(cap);
@@ -235,12 +235,10 @@
       const names = wrapIds.map((id) => FULL[d.constellations[id]] || d.constellations[id]).sort();
       sky.cap.innerHTML = setAside
         ? `Set aside: the <b>${wrapIds.length}</b> constellations that straddle the ` +
-          `seam (${names.join(", ")}) are greyed out and dropped from the analysis — ` +
-          `exactly the 2016 shortcut. The tear is gone, but only because I looked away from it.`
+          `seam (${names.join(", ")}) are greyed out and dropped from the analysis`
         : `Right ascension wraps at 24h = 0h, but a flat map doesn't: stars either ` +
           `side of that seam (dashed) look maximally far apart, so flat k-means tears ` +
-          `any constellation crossing it. <b>${wrapIds.length}</b> of them do. Toggle the ` +
-          `shortcut to make them disappear the way I did in 2016.`;
+          `any constellation crossing it. <b>${wrapIds.length}</b> of them do.`;
     }
     sky.controls.querySelector(".cx-aside").addEventListener("change", (e) => {
       setAside = e.target.checked; setCaption(); sky.requestDraw();
@@ -384,24 +382,20 @@
     function setCaption() {
       if (view === "con") {
         sky.cap.innerHTML =
-          `The real constellations on the healed sphere — same projection as method 1, ` +
-          `but nothing torn and nothing set aside, all 88 kept. Flip to <b>the algorithm's ` +
+          `The real constellations on the healed sphere for reference. Flip to <b>the algorithm's ` +
           `groups</b> to see what k-means drew when asked for 88 of its own.`;
       } else if (method === "sphere") {
         sky.cap.innerHTML =
-          `Sphere k-means clustered on the 3D unit vectors: 88 groups, colored ` +
-          `independently. It agrees with the real constellations at <b>NMI ` +
-          `${d.curve[step].sphere_nmi.toFixed(2)}</b>. Switch to <b>the 2016 way</b> to see the ` +
-          `version that pretends the sky is a sheet of paper.`;
+          `Sphere k-means clustered on the 3D unit vectors: all 88 groups, colored ` +
+          `independently. It aligns with the real constellations at <b>NMI ` +
+          `${d.curve[step].sphere_nmi.toFixed(2)}</b>.`;
       } else {
         const dropped = naive2016.dropped.length;
         sky.cap.innerHTML =
-          `The actual 2016 pipeline, recreated: flat k-means on raw (RA, dec), with the ` +
-          `<b>${dropped}</b> seam-wrapping constellations deleted (greyed out) and scored only ` +
-          `on what's left — exactly the shortcut from the paper. Its score, <b>NMI ` +
-          `${naive2016.nmi.toFixed(2)}</b>, is within a hair of the sphere's <b>` +
-          `${d.curve[step].sphere_nmi.toFixed(2)}</b>: fixing the geometry I agonized over barely ` +
-          `moved the needle.`;
+          `How I did things in 2016 with the <b>${dropped}</b> seam-wrapping constellations deleted ` +
+          `(greyed out here) and clustered on what's left. The score, <b>NMI ` +
+          `${naive2016.nmi.toFixed(2)}</b>, is unfortunately within a hair of the sphere's <b>` +
+          `${d.curve[step].sphere_nmi.toFixed(2)}</b>.`;
       }
     }
     sky.controls.querySelectorAll("[data-view]").forEach((b) =>
@@ -583,13 +577,11 @@
       const c = d.curve[step];
       let s = `Showing stars down to magnitude +${mag.toFixed(1)} (${c.n.toLocaleString()} of ` +
         `${d.ra.length.toLocaleString()}). Lines chain each star to its nearest in-cluster ` +
-        `neighbor — the long, thin shapes k-means could never make. Agreement with the real ` +
-        `map: NMI ${c.linkage_nmi.toFixed(2)}.`;
+        `neighbor. Alignment with the real map: NMI ${c.linkage_nmi.toFixed(2)}.`;
       if (spotlight >= 0) {
         const name = d.constellations[spotlight];
         const rec = d.recovery[name];
-        s += ` Spotlight: ${FULL[name] || name}` +
-          (rec != null ? ` — recovered ${Math.round(rec*100)}% intact among the bright stars.` : ".");
+        s += `${FULL[name] || name}` + (rec != null ? ` recovered ${Math.round(rec*100)}% intact among the bright stars.` : ".");
       }
       sky.cap.textContent = s;
     }
