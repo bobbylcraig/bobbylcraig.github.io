@@ -1,0 +1,45 @@
+title: Bobby's Homepage
+author:
+  name: Bobby Craig
+email: # your email shown in the footer
+url: https://bobbylcraig.com # this is your site's root address.
+description: Bobby Craig is a programmer at Intuit Mailchimp. This is his personal site and writing archive.
+favicon: "favicon.webp" # set the favicon of the site
+show_excerpts: false # set to true to show excerpts on the homepage
+lang: en
+
+feed:
+  excerpt_only: false
+
+# Default OG image applied to all pages and posts
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:
+        path: /assets/images/bobby.webp
+        alt: "Bobby Craig"
+
+# Date format for posts — refer to https://shopify.github.io/liquid/filters/date/ to customize
+theme_config:
+  avatar_url: "/assets/images/bobby.webp" # avatar in about page
+  about_you: 
+  date_format: "%b %d" # date format of posts in home page
+  back_to: "Home" # In the post page, you have a back button above the title, you can custom the text by yourself.
+
+  social_links:
+    github: bobbylcraig
+    linkedin: bobbylcraig
+    bluesky: bobbylcraig
+    letterboxd: bobbylcraig
+    rss: true
+
+# Build settings
+sass:
+  style: compressed # minify compiled main.css
+  sourcemap: never # no .map files in production
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap

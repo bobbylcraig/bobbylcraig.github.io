@@ -1,0 +1,19 @@
+{%- assign social = site.theme_config.social_links -%}
+<ul class="social-list">
+  {%- for item in site.data.socials -%}
+    {%- assign handle = social[item.key] -%}
+    {%- if handle or item.url_static -%}
+      {%- if item.url_static -%}
+        {%- assign href = item.url_static | relative_url -%}
+      {%- else -%}
+        {%- assign href = item.url_prefix | append: handle -%}
+        {%- if item.url_suffix -%}{%- assign href = href | append: item.url_suffix -%}{%- endif -%}
+      {%- endif -%}
+  <li>
+    <a href="{{ href }}" aria-label="{{ item.label }}">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true" focusable="false">{{ item.svg }}</svg>
+    </a>
+  </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>

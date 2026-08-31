@@ -1,0 +1,13 @@
+_site
+.sass-cache
+.jekyll-metadata
+.jekyll-cache
+vendor/
+.ruby-lsp
+.bundle
+.DS_Store
+.claude
+.ruby-version
+*.gem
+node_modules
+.jekyll-cache

@@ -1,0 +1,6 @@
+---
+---
+// Tokens (--brand, --viz-*) come from main.css, which always loads first. This
+// sheet is additive and only ships on posts that opt in via `viz: true` front
+// matter (see _includes/head.html).
+@import "theme/viz";

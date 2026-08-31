@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "writings": 59,
+    "pulled": "2017-10-30",
+    "ngrams": "bigrams, trigrams, quadgrams"
+  },
+  "categories": {
+    "advice": {
+      "label": "Advice to students",
+      "short": "Advice"
+    },
+    "recruit": {
+      "label": "Recruiting & strategy",
+      "short": "Recruiting"
+    },
+    "values": {
+      "label": "Mission & values",
+      "short": "Mission"
+    },
+    "hard": {
+      "label": "Serious issues",
+      "short": "Serious"
+    }
+  },
+  "collocations": [
+    {
+      "rank": 1,
+      "phrase": "lost almost 300 games",
+      "pmi": 9.61,
+      "cat": "advice"
+    },
+    {
+      "rank": 2,
+      "phrase": "Austin E. Knowlton Center",
+      "pmi": 9.42,
+      "cat": "recruit"
+    },
+    {
+      "rank": 3,
+      "phrase": "trusted adult advisor",
+      "pmi": 8.6,
+      "cat": "values"
+    },
+    {
+      "rank": 4,
+      "phrase": "discerning moral agents",
+      "pmi": 8.27,
+      "cat": "values"
+    },
+    {
+      "rank": 5,
+      "phrase": "outside your comfort zone",
+      "pmi": 7.99,
+      "cat": "advice"
+    },
+    {
+      "rank": 6,
+      "phrase": "weave disparate ideas into",
+      "pmi": 7.81,
+      "cat": "values"
+    },
+    {
+      "rank": 7,
+      "phrase": "long run must find",
+      "pmi": 7.67,
+      "cat": "advice"
+    },
+    {
+      "rank": 8,
+      "phrase": "always shows care",
+      "pmi": 7.57,
+      "cat": "values"
+    },
+    {
+      "rank": 9,
+      "phrase": "close mentoring relationship",
+      "pmi": 7.47,
+      "cat": "values"
+    },
+    {
+      "rank": 10,
+      "phrase": "wide variety of puzzles",
+      "pmi": 7.3,
+      "cat": "advice"
+    },
+    {
+      "rank": 11,
+      "phrase": "Columbus metropolitan region",
+      "pmi": 7.11,
+      "cat": "recruit"
+    },
+    {
+      "rank": 12,
+      "phrase": "discount rate",
+      "pmi": 6.81,
+      "cat": "recruit"
+    },
+    {
+      "rank": 13,
+      "phrase": "son or daughter",
+      "pmi": 6.56,
+      "cat": "recruit"
+    },
+    {
+      "rank": 14,
+      "phrase": "Gallup-Purdue Index",
+      "pmi": 6.47,
+      "cat": "recruit"
+    },
+    {
+      "rank": 15,
+      "phrase": "sitting alone",
+      "pmi": 6.31,
+      "cat": "advice"
+    },
+    {
+      "rank": 16,
+      "phrase": "comfort zone",
+      "pmi": 6.31,
+      "cat": "advice"
+    },
+    {
+      "rank": 17,
+      "phrase": "foundational element",
+      "pmi": 6.27,
+      "cat": "values"
+    },
+    {
+      "rank": 18,
+      "phrase": "executive order",
+      "pmi": 6.23,
+      "cat": "hard"
+    },
+    {
+      "rank": 19,
+      "phrase": "sexual assault",
+      "pmi": 6.17,
+      "cat": "hard"
+    },
+    {
+      "rank": 20,
+      "phrase": "classmate struggling",
+      "pmi": 6.01,
+      "cat": "hard"
+    }
+  ],
+  "crew": {
+    "hub": "Weinberg",
+    "photo": "/assets/images/posts/2017-12-01-weinbergisms/weinberg.webp",
+    "url": "https://en.wikipedia.org/wiki/Adam_S._Weinberg",
+    "authors": [
+      {
+        "name": "Dan Chambliss",
+        "work": "How College Works",
+        "cat": "values",
+        "url": "https://www.hamilton.edu/academics/our-faculty/directory/faculty-detail/daniel-chambliss",
+        "photo": "/assets/images/posts/2017-12-01-weinbergisms/chambliss.webp"
+      },
+      {
+        "name": "Christopher Takacs",
+        "work": "How College Works",
+        "cat": "values",
+        "url": "https://www.hup.harvard.edu/books/9780674979802",
+        "photo": "/assets/images/posts/2017-12-01-weinbergisms/takacs.webp"
+      },
+      {
+        "name": "William Cronon",
+        "work": "“Only Connect…”",
+        "cat": "advice",
+        "url": "https://en.wikipedia.org/wiki/William_Cronon",
+        "photo": "/assets/images/posts/2017-12-01-weinbergisms/cronon.webp"
+      },
+      {
+        "name": "Harry Boyte",
+        "work": "public-work scholarship",
+        "cat": "recruit",
+        "url": "https://www.hhh.umn.edu/directory/harry-boyte",
+        "photo": "/assets/images/posts/2017-12-01-weinbergisms/boyte.webp"
+      },
+      {
+        "name": "Alexis de Tocqueville",
+        "work": "Democracy in America",
+        "cat": "hard",
+        "url": "https://en.wikipedia.org/wiki/Alexis_de_Tocqueville",
+        "photo": "/assets/images/posts/2017-12-01-weinbergisms/tocqueville.webp"
+      }
+    ]
+  }
+}

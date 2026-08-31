@@ -1,0 +1,64 @@
+$base-font-size: 15px;
+$base-line-height: 1.5;
+$small-line-height: 1.4;
+$spacing-unit: 30px;
+
+:root {
+  --serif: Charter, "Iowan Old Style", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --chrome: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --text: #111;
+  --text-muted: #494949;
+  --text-soft: #6a6a6a;
+  --bg: #fdfdfd;
+  --brand: #1b69d1;
+  --border: #d0d0d0;
+  --rule-soft: #9d9d9d;
+  --code-bg: #f2f2f2;
+  --code-border: #d8d8d8;
+  --pre-bg: #f6f8fa;
+  --table-stripe: #f4f4f4;
+  --note-bg: #e5effc;
+
+  /* data-viz series + semantic accents (shared design tokens) */
+  --viz-naive: #9aa0a6;
+  --viz-sphere: var(--brand);
+  --viz-chain: #e0823d;
+  --viz-up: #1a9d5a;
+  --viz-down: #d1495b;
+
+  /* categorical palette — four distinguishable hues for grouping/legend use */
+  --viz-cat-1: hsl(211 64% 46%); /* blue   */
+  --viz-cat-2: hsl(152 64% 38%); /* green  */
+  --viz-cat-3: hsl(32 64% 46%);  /* orange */
+  --viz-cat-4: hsl(354 64% 50%); /* red    */
+}
+
+%focus-ring {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e8e8ea;
+    --text-muted: #a8a8b0;
+    --text-soft: #8c8c96;
+    --bg: #141414;
+    --brand: #4389e7;
+    --border: #3a3a3f;
+    --rule-soft: #6d6d72;
+    --code-bg: #1f1f1f;
+    --code-border: #3a3a3f;
+    --pre-bg: #0d1117;
+    --table-stripe: #1c1c1c;
+    --note-bg: #15253a;
+
+    /* categorical palette, lightened for legibility on the dark surface */
+    --viz-cat-1: hsl(211 68% 62%);
+    --viz-cat-2: hsl(152 60% 55%);
+    --viz-cat-3: hsl(32 68% 60%);
+    --viz-cat-4: hsl(354 70% 65%);
+  }
+}
