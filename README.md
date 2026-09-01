@@ -4,14 +4,19 @@ Bobby Craig's personal site and writing archive.
 
 ## Local Development
 
-To run the site locally, ensure you have Ruby and Bundler installed, then run:
+Use the pinned Ruby toolchain to build the production site:
 
 ```bash
-bundle install
-bundle exec jekyll serve
+mise x ruby@3.3.11 -- bundle exec jekyll serve
 ```
 
 The site will be available at `http://localhost:4000`.
+
+Browser checks use the pinned Node toolchain:
+
+```bash
+mise x node@24.10.0 -- npm test
+```
 
 ## Deployment
 
@@ -19,6 +24,7 @@ This site is automatically built and deployed to GitHub Pages via GitHub Actions
 
 ## Built With
 
-- [Jekyll](https://jekyllrb.com/) (v4.3)
-- [Sass](https://sass-lang.com/) (using `sass-embedded`)
+- [Jekyll](https://jekyllrb.com/) (v4.4)
+- [Sass](https://sass-lang.com/) (using `sass-embedded` and Sass modules)
+- [Playwright](https://playwright.dev/) for production-output browser checks
 - GitHub Actions for CI/CD

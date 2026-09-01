@@ -74,8 +74,7 @@ pre {
 }
 
 /* These prose primitives can appear in the first viewport. Keeping their
-   geometry in the inline sheet lets main.css load asynchronously without a
-   visible restyle. */
+   geometry in the inline sheet keeps first paint stable. */
 figure { margin: 1.75rem 0; }
 figure > img {
   border: 1px solid var(--border);

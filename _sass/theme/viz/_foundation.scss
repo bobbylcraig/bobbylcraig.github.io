@@ -3,11 +3,6 @@
 // toggle: everything tracks dark/light through the shared custom properties.
 // Aesthetic target: clean editorial data-viz (Upshot / 538).
 
-// `assets/viz-*.scss` chooses the route-specific namespaces it needs. The
-// default retains the full sheet for an unpublished or newly-authored post that
-// has not yet declared its component list.
-$viz-components: all !default;
-
 // Route-only tokens. Ordinary pages do not pay to parse or inline these.
 :root {
   --viz-naive: #9aa0a6;
@@ -29,10 +24,6 @@ $viz-components: all !default;
     --viz-cat-4: hsl(354 70% 65%);
   }
 }
-@function has-viz-component($component) {
-  @return $viz-components == all or index($viz-components, $component);
-}
-
 // Local focus ring (mirrors theme/vars %focus-ring) so this sheet stays additive
 // — importing theme/vars here would duplicate its :root{} block into viz.css.
 @mixin focus-ring { outline: 2px solid var(--brand); outline-offset: 2px; }
