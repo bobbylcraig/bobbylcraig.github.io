@@ -31,27 +31,17 @@
   const FULL = window.CX_CON_NAMES || {};
 
   // ---- Shared runtime helpers -------------------------------------------
-  // The page's small bootstrap script owns the data cache so this file and the
-  // score chart consume one shared stars.json request.
-  const load = window.CX_LOAD_JSON;
-  function isDark() {
-    return window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-  }
-  function cssVar(n, f) {
-    return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || f;
-  }
+  // The build-composed route runtime owns the data cache, so the figures and
+  // score chart consume one stars.json request without a global bootstrap.
+  const load = vizRuntime.loadJSON;
+  const isDark = vizRuntime.isDark;
+  const cssVar = vizRuntime.cssVar;
   function hue(i) { return (i * 137.508) % 360; }
   function catColor(i, dark, a) {
     return `hsla(${hue(i).toFixed(1)} ${dark ? 68 : 64}% ${dark ? 63 : 47}% / ${a == null ? 1 : a})`;
   }
-  function el(tag, cls) { const e = document.createElement(tag); if (cls) e.className = cls; return e; }
-  function whenVisible(node, cb) {
-    const io = new IntersectionObserver((es) => {
-      es.forEach((e) => { if (e.isIntersecting) { cb(); io.disconnect(); } });
-    }, { threshold: 0.2 });
-    io.observe(node);
-  }
+  const el = vizRuntime.el;
+  const whenVisible = vizRuntime.whenVisible;
 
   // Constellations whose stars straddle the RA 0/24h seam — the ones 2016-me
   // set aside. Computed from the data, not hardcoded.

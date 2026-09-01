@@ -21,18 +21,6 @@ $spacing-unit: 30px;
   --table-stripe: #f4f4f4;
   --note-bg: #e5effc;
 
-  /* data-viz series + semantic accents (shared design tokens) */
-  --viz-naive: #9aa0a6;
-  --viz-sphere: var(--brand);
-  --viz-chain: #e0823d;
-  --viz-up: #1a9d5a;
-  --viz-down: #d1495b;
-
-  /* categorical palette — four distinguishable hues for grouping/legend use */
-  --viz-cat-1: hsl(211 64% 46%); /* blue   */
-  --viz-cat-2: hsl(152 64% 38%); /* green  */
-  --viz-cat-3: hsl(32 64% 46%);  /* orange */
-  --viz-cat-4: hsl(354 64% 50%); /* red    */
 }
 
 %focus-ring {
@@ -55,10 +43,5 @@ $spacing-unit: 30px;
     --table-stripe: #1c1c1c;
     --note-bg: #15253a;
 
-    /* categorical palette, lightened for legibility on the dark surface */
-    --viz-cat-1: hsl(211 68% 62%);
-    --viz-cat-2: hsl(152 60% 55%);
-    --viz-cat-3: hsl(32 68% 60%);
-    --viz-cat-4: hsl(354 70% 65%);
   }
 }

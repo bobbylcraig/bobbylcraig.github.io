@@ -19,7 +19,7 @@ If you're a Denisonian, you've probably seen something similar once or twice. It
 
 First, it's important to note that students post a lot in the student body group. In fact, in the less than three years that it has existed, the group has garnered an impressive 2600+ posts…that's roughly 900 posts a year or almost three posts a day. The topics range a great deal (see Figure 2 below). Some students post about events on campus, others ask to be swiped into the dining halls, some post stories promoting this very blog, and then there are those students who, usually begrudgingly, admit that they have lost something. Those posts account for about 10.37% of all posts. In less than three years, that's almost 300 items lost, and those are just the items that students admit to losing on Facebook.
 
-{% include viz-mount.html class="cx cx-figure" reserve="pockets-timeseries" chart="timeseries" src="/assets/data/2017-10-11-a-case-for-bigger-pockets/pockets.json" %}
+{% include viz-mount.html class="cx cx-figure" reserve="pockets-timeseries" chart="timeseries" src="/assets/data/2017-10-11-a-case-for-bigger-pockets/pockets.json" title="Figure 1 · all posts vs. lost-item posts, by month" caption="2,591 posts, 2014-12 to 2017-10. Lost items (10.34%) track the group's rhythm: busy in semesters, quiet over summer. Each series uses its own scale so lost-item swings aren't flattened against all posts." %}
 
 Students didn't hesitate much when the group was first created in December 2014 (see Figure 1 above)––they quickly set out to ensure that their fellow students knew of their lost belongings. However, there is a difference throughout the week when students are posting. Items are typically reported missing on Sundays, Thursdays, and Saturdays (see Figure 3). It probably isn't coincidence that these days just so happen to follow party nights.
 
@@ -28,13 +28,13 @@ Students didn't hesitate much when the group was first created in December 2014 
   <img src="/assets/images/posts/2017-10-11-a-case-for-bigger-pockets/lost-item-infographic-jpg.webp" alt="Infographic breaking down the most commonly lost items by category" width="624" height="312" loading="lazy" />
 </figure>
 
-{% include viz-mount.html class="cx cx-figure" reserve="pockets-byday" chart="byday" src="/assets/data/2017-10-11-a-case-for-bigger-pockets/pockets.json" %}
+{% include viz-mount.html class="cx cx-figure" reserve="pockets-byday" chart="byday" src="/assets/data/2017-10-11-a-case-for-bigger-pockets/pockets.json" title="Figure 3 · posts by day of the week" caption="Lost-item posts climb into the weekend. The two series sit on separate scales so each fills the chart; the days don't line up." %}
 
 Contrastingly, there are very few posts on the weekends overall. While it's unclear why there is a stark difference between all posts and "lost item posts", Allison Lopez '18 seems to think she knows why. Lopez is in the 98th percentile of "lost item post" posters, so she likely knows what she's talking about. Lopez asserts that it's "easier to lose items without noticing" when you're in "dimly lit, incredibly loud" parties on weekends. She goes on to state, "If the majority of parties were held on Tuesday nights, then I would expect that my trend would change from losing more items on weekends to losing more items on Tuesdays." Of course, that's conjecture and there's no way to know for sure, but Lopez seems very convinced.
 
 Another trend seemed to present itself in these data. While posters are evenly split by gender, those posting about lost items were almost three times more likely to be women.
 
-{% include viz-mount.html class="cx cx-figure" reserve="pockets-gender" chart="gender" src="/assets/data/2017-10-11-a-case-for-bigger-pockets/pockets.json" %}
+{% include viz-mount.html class="cx cx-figure" reserve="pockets-gender" chart="gender" src="/assets/data/2017-10-11-a-case-for-bigger-pockets/pockets.json" title="Figure 4 · who posts about lost items" caption="268 lost-item posts: 199 from women, 69 from men (2.88×), though the group skews even overall." %}
 
 Is this because more women than men venture into the "dimly lit, incredibly loud" spaces that Lopez mentioned earlier? Unlikely. This gap may be caused by something One Twenty Seven has never discussed before: fashion. Women's pockets are notoriously smaller than men's. Yet, we all still need to carry our phone around, maybe some extra cash, and surely everyone will need their ID at some point. So because women's pockets are so much smaller, they're forced to hold everything in their hands––even while inebriated and in a dark, humid room. What's the eventual outcome? You guessed it: more lost items. Meanwhile, the phones and swipes of men happily survive the night in the spacious protection of their (adequately sized) pockets.
 

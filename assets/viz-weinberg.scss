@@ -1,5 +1,6 @@
 ---
 ---
-// Weinberg reuses the shared cx scaffolding that originated with the star post.
-$viz-components: star weinberg;
-@import "theme/viz";
+@import "theme/viz/foundation";
+@import "theme/viz/star";
+@import "theme/viz/weinberg";
+@import "theme/viz/responsive";

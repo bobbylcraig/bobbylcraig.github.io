@@ -125,6 +125,4 @@ The bright stars *do* cluster. The stories we drew around them don't quite match
 
 <aside class="note" role="note">The re-analysis is a few hundred lines of Python (scikit-learn this time, instead of MATLAB-by-force).</aside>
 
-<script src="/assets/js/constellation-names.js"></script>
-<script src="/assets/js/constellation-figures.js" defer></script>
-<script src="/assets/js/constellation-chart.js" defer></script>
+<script src="/assets/js/constellation.js" defer></script>

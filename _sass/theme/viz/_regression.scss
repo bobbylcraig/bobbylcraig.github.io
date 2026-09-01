@@ -1,0 +1,21 @@
+.rg {
+  font-family: var(--chrome);
+  margin: 2rem 0;
+}
+.rg-stage { @extend %vz-stage; }
+.rg-canvas { display: block; width: 100%; }
+
+// slider end-caps ("few"/"many") flanking the shared vz-slider
+.rg-slider-end {
+  font-size: 0.66rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+// Reserve the caption's tallest height so dragging the pressure slider (which
+// rewrites the caption to a different length) doesn't shift the page. Same
+// approach as .tz-wave .vz-caption.
+.rg-variance .vz-caption { min-height: 3.5rem; }
+@media (max-width: 600px) {
+  .rg-variance .vz-caption { min-height: 5.5rem; }
+}

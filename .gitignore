@@ -11,4 +11,5 @@ vendor/
 .ruby-version
 *.gem
 node_modules
+test-results/
 .jekyll-cache

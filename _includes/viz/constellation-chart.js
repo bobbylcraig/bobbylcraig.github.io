@@ -5,8 +5,8 @@
 (function () {
   const root = document.getElementById("cx-chart");
   if (!root) return;
-  const DPR = Math.min(window.devicePixelRatio || 1, 2);
-  const REDUCED = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
+  const DPR = vizRuntime.dpr;
+  const REDUCED = vizRuntime.reducedMotion;
 
   const canvas = document.createElement("canvas");
   canvas.className = "cx-chart";
@@ -30,9 +30,7 @@
   let curve = null, W = 0, H = 0, reveal = 0, rafId = null, lastTs = null;
   let resizeTimer = null;
 
-  function cssVar(n, f) {
-    return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || f;
-  }
+  const cssVar = vizRuntime.cssVar;
 
   function resize() {
     const rect = root.getBoundingClientRect();
@@ -141,19 +139,12 @@
       .addEventListener("change", () => { buildLegend(); draw(); });
 
   const src = root.dataset.src || "stars.json";
-  window.CX_LOAD_JSON(src).then((d) => {
+  vizRuntime.whenVisible(root, () => vizRuntime.loadJSON(src).then((d) => {
     curve = d.curve;
     buildLegend();
     resize();
     root.dataset.vizReady = "true";
-    const io = new IntersectionObserver((es) => {
-      es.forEach((e) => {
-        if (!e.isIntersecting) return;
-        if (REDUCED) { reveal = 1; draw(); }   // no tween; paint final state at once
-        else { reveal = 0; lastTs = null; rafId = requestAnimationFrame(draw); }
-        io.disconnect();
-      });
-    }, { threshold: 0.35 });
-    io.observe(root);
-  }).catch((e) => { root.innerHTML = '<p class="vz-caption">Couldn’t load data.</p>'; console.error(e); });
+    if (REDUCED) { reveal = 1; draw(); }
+    else { reveal = 0; lastTs = null; rafId = requestAnimationFrame(draw); }
+  }).catch((e) => { root.innerHTML = '<p class="vz-caption">Couldn’t load data.</p>'; console.error(e); }));
 })();

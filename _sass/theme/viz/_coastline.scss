@@ -1,0 +1,107 @@
+.cl {
+  font-family: var(--chrome);
+  margin: 2rem 0;
+}
+.cl-stage { @extend %vz-stage; }
+.cl-canvas { display: block; width: 100%; }
+
+// Big climbing readout, floated over the coast's empty top-left corner.
+.cl-readout {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  transition: border-color 0.2s ease;
+
+  // when reading as a software estimate, tint the chrome toward the chain hue
+  &.is-estimate { border-color: color-mix(in srgb, var(--viz-chain) 55%, var(--border)); }
+}
+.cl-readout-val {
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.cl-readout-unit { font-size: 0.8rem; color: var(--text-soft); font-weight: 600; }
+
+// slider end-caps ("coarse"/"fine") flanking the shared vz-slider
+.cl-slider-end {
+  font-size: 0.66rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+// ---- Richardson plot: the fractal-dimension badge over the stage ----
+.cl-dim-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  text-align: right;
+  min-width: 130px;
+
+  &.is-flat { border-color: color-mix(in srgb, var(--viz-up) 55%, var(--border)); }
+  &.is-steep { border-color: color-mix(in srgb, var(--viz-down) 55%, var(--border)); }
+}
+.cl-dim-label {
+  display: block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+}
+.cl-dim-val {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+
+  .cl-dim-badge.is-flat & { color: var(--viz-up); }
+  .cl-dim-badge.is-steep & { color: var(--viz-down); }
+}
+.cl-dim-sub {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--text-soft);
+  font-variant-numeric: tabular-nums;
+  margin-top: 1px;
+}
+
+// The three coastline names ("A pathological codebase" etc.) are long enough to
+// overflow the narrow figure column. Below this width, swap to the short labels
+// and let the seg fill the row with evenly-shrinking buttons so nothing clips.
+@media (max-width: 560px) {
+  .cl-rich-seg {
+    display: flex;
+    width: 100%;
+    .vz-seg-full { display: none; }
+    .vz-seg-short { display: inline; }
+    button { flex: 1 1 0; min-width: 0; padding-left: 0.3rem; padding-right: 0.3rem; }
+  }
+  // Make the seg's field take the full row so the full-width seg has room.
+  .cl-richardson .vz-field { width: 100%; }
+}
+
+@media (max-width: 520px) {
+  .cl-readout-val, .cl-dim-val { font-size: 1.35rem; }
+  .cl-dim-badge { min-width: 108px; padding: 0.4rem 0.55rem; }
+}
+

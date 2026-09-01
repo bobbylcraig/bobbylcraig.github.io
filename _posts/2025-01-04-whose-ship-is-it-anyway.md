@@ -14,8 +14,10 @@ I've been thinking about Lithicles recently because of the Ship of Theseus... th
 
 Mailchimp was, in a lot of ways, a genuinely weird company. Founded in 2001, bootstrapped the entire way, no board of directors (though there WAS a [board room](https://www.heraldtribune.com/story/business/briefs/2016/10/10/path-to-tech-success-far-from-silicon-valley/25233849007/)... walls covered floor-to-ceiling in vintage skateboards that Dan collected):
 
-<blockquote class="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Visiting <a href="https://twitter.com/Mailchimp?ref_src=twsrc%5Etfw">@Mailchimp</a> HQ and I found where they keep all the good boards <a href="https://t.co/mz5K9xgCpZ">pic.twitter.com/mz5K9xgCpZ</a></p>&mdash; Tony Hawk (@tonyhawk) <a href="https://twitter.com/tonyhawk/status/974708239911804928?ref_src=twsrc%5Etfw">March 16, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote>
+  <p>Visiting <a href="https://twitter.com/Mailchimp">@Mailchimp</a> HQ and I found where they keep all the good boards.</p>
+  <p>— Tony Hawk, <a href="https://twitter.com/tonyhawk/status/974708239911804928">March 16, 2018</a></p>
+</blockquote>
 
 No investors to please, so we could plan more than one quarter ahead. When I joined in 2017, the independence was tangible. People were heavily invested in the company, the brand, the customers. We weren't always great at serving large customers who'd outgrown us (I'm pretty sure Ben once just told a company that had outgrown Mandrill to go find another transactional email provider) but the people who built the product genuinely cared about the small businesses using it. Things were lax. The vibe was quirky. It was occasionally chaotic. But it was ours. We launched a marketing CRM, a website builder, and at one point we were [sending physical postcards](https://www.modernostrategies.com/blog/mailchimp-direct-mail-postcards-first-look/)... yes, actual paper postcards in the mail.
 

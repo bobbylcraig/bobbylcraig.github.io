@@ -1,0 +1,141 @@
+.cx-stage { @extend %vz-stage; }
+.cx-canvas { display: block; width: 100%; }
+
+.cx-tip {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -135%);
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.74rem;
+  font-weight: 500;
+  padding: 0.28rem 0.5rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  z-index: 6;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+
+  &[data-show="1"] { opacity: 1; }
+  small { opacity: 0.7; font-weight: 400; }
+}
+
+// ---- Score badge (over the sky, top-left) ----
+.cx-score {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  min-width: 156px;
+}
+.cx-score-label {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-soft);
+  margin: 0 0 1px;
+}
+.cx-score-val {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+
+  .cx-arrow { font-size: 0.8rem; font-weight: 600; margin-left: 0.3rem; vertical-align: 0.18em; }
+}
+.cx-up { color: var(--viz-up); }
+.cx-down { color: var(--viz-down); }
+.cx-score-sub {
+  font-size: 0.68rem;
+  color: var(--text-soft);
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+// ---- Searchable constellation dropdown (combobox) ----
+.cx-combo { position: relative; width: 190px; }
+.cx-combo-input {
+  font: inherit; font-size: 0.82rem;
+  width: 100%;
+  padding: 0.4rem 1.7rem 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+
+  &:focus-visible { @include focus-ring; outline-offset: 1px; }
+}
+.cx-combo-caret {
+  position: absolute; right: 0.55rem; top: 50%;
+  transform: translateY(-50%); pointer-events: none;
+  color: var(--text-soft); font-size: 0.7rem;
+}
+.cx-combo-list {
+  position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; right: 0;
+  max-height: 230px; overflow-y: auto;
+  margin: 0; padding: 0.25rem; list-style: none;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+
+  &[hidden] { display: none; }
+}
+.cx-combo-opt {
+  padding: 0.34rem 0.5rem;
+  border-radius: 5px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex; justify-content: space-between; gap: 0.6rem;
+
+  small { color: var(--text-soft); font-variant-numeric: tabular-nums; }
+  &[aria-selected="true"], &:hover { background: var(--table-stripe); color: var(--text); }
+  &.cx-combo-empty { color: var(--text-soft); cursor: default; background: none; }
+}
+
+// ---- Per-method figure (one focused interactive per method) ----
+.cx-fig { margin: 1.5rem 0; }
+.cx-fig .cx-stage { border-radius: 8px; }
+
+// ---- Score-vs-magnitude line chart ----
+.cx-chart { width: 100%; display: block; margin: 0.5rem 0; }
+.cx-legend {
+  display: flex; gap: 1.1rem; flex-wrap: wrap;
+  font-size: 0.76rem; color: var(--text-muted); margin-top: 0.3rem;
+
+  span { display: inline-flex; align-items: center; gap: 0.35rem; }
+  i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+}
+
+// ---- Data-cleaning bar (catalog vs naked-eye) ----
+.cx-clean-frame {
+  @extend %framed-surface;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.4rem 1.5rem;
+}
+.cx-clean-inner { display: flex; flex-direction: column; gap: 0.85rem; }
+.cx-clean-row { display: grid; grid-template-columns: 8.5rem 1fr auto; align-items: center; gap: 0.7rem; }
+.cx-clean-label { font-size: 0.78rem; color: var(--text-muted); }
+.cx-clean-track {
+  position: relative; height: 1.5rem; border-radius: 4px;
+  background: var(--table-stripe); overflow: hidden;
+}
+.cx-clean-fill {
+  position: absolute; inset: 0 auto 0 0; width: 0;
+  border-radius: 4px;
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cx-clean-fill.is-all { background: var(--viz-naive); }
+.cx-clean-fill.is-eye { background: var(--brand); }
+.cx-clean-num { font-size: 0.78rem; font-variant-numeric: tabular-nums; color: var(--text); min-width: 4.5rem; text-align: right; }
