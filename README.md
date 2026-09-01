@@ -25,6 +25,6 @@ This site is automatically built and deployed to GitHub Pages via GitHub Actions
 ## Built With
 
 - [Jekyll](https://jekyllrb.com/) (v4.4)
-- [Sass](https://sass-lang.com/) (using `sass-embedded` and Sass modules)
+- [Sass](https://sass-lang.com/) (using `sass-embedded` in private CI)
 - [Playwright](https://playwright.dev/) for production-output browser checks
 - GitHub Actions for CI/CD
