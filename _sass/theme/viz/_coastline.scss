@@ -1,3 +1,5 @@
+@use "foundation" as *;
+
 .cl {
   font-family: var(--chrome);
   margin: 2rem 0;
@@ -104,4 +106,3 @@
   .cl-readout-val, .cl-dim-val { font-size: 1.35rem; }
   .cl-dim-badge { min-width: 108px; padding: 0.4rem 0.55rem; }
 }
-

@@ -1,5 +1,5 @@
 @charset "utf-8";
 
-@import "critical";
-@import "theme/base";
-@import "theme/layout";
+@use "critical";
+@use "theme/base";
+@use "theme/layout";

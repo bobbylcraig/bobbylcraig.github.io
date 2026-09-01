@@ -1,3 +1,5 @@
+@use "vars" as *;
+
 /* Three-dot section divider, scoped so footnotes aren't affected. */
 .wrapper hr {
   border: 0;
