@@ -13,9 +13,11 @@
  *                 figure with an SVG flow layer, no raster image.
  */
 (function () {
-  const nodes = [...document.querySelectorAll(".cx-fig[data-chart]")];
-  if (!nodes.length) return;
+  const chartNodes = [...document.querySelectorAll(".cx-fig[data-chart]")];
+  if (!chartNodes.length) return;
 
+  // ---- Shared runtime helpers -------------------------------------------
+  // Data loading and small DOM helpers stay outside the two distinct figures.
   const cache = {};
   function load(src) {
     if (!cache[src]) cache[src] = fetch(src).then((r) => r.json());
@@ -36,6 +38,10 @@
     const order = Object.keys(d.categories);
     return (key) => order.indexOf(key) + 1;
   }
+
+  // ====================================================================
+  //  Figure builders — collocations leaderboard and influence funnel
+  // ====================================================================
 
   // ---- Fig 1: top-20 collocations leaderboard ----------------------------
   // Rank · phrase · bar (length = PMI, color = theme) · score. The attached
@@ -236,11 +242,21 @@
 
   const BUILDERS = { collocations: buildCollocations, crew: buildCrew };
 
-  nodes.forEach((node) => {
-    const src = node.dataset.src || "weinberg.json";
-    const build = BUILDERS[node.dataset.chart];
-    if (!build) return;
-    load(src).then((d) => { build(node, d); node.dataset.vizReady = "true"; })
-      .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load the data.</p>'; console.error(e); });
-  });
+  // ---- Page lifecycle --------------------------------------------------
+  function mountCharts(nodes) {
+    nodes.forEach((node) => {
+      const buildChart = BUILDERS[node.dataset.chart];
+      if (!buildChart) return;
+      const src = node.dataset.src || "weinberg.json";
+      load(src).then((data) => {
+        buildChart(node, data);
+        node.dataset.vizReady = "true";
+      }).catch((error) => {
+        node.innerHTML = '<p class="vz-caption">Couldn’t load the data.</p>';
+        console.error(error);
+      });
+    });
+  }
+
+  mountCharts(chartNodes);
 })();

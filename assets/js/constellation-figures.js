@@ -20,20 +20,20 @@
  * paints only once it scrolls into view.
  */
 (function () {
-  const figs = [...document.querySelectorAll(".cx-fig[data-fig]")];
-  const cleans = [...document.querySelectorAll(".cx-clean[data-src]")];
-  if (!figs.length && !cleans.length) return;
+  // Focused clustering figures and the catalog-cleaning explainer have distinct
+  // builders, but share the same post-level loading lifecycle below.
+  const figureNodes = [...document.querySelectorAll(".cx-fig[data-fig]")];
+  const cleaningNodes = [...document.querySelectorAll(".cx-clean[data-src]")];
+  if (!figureNodes.length && !cleaningNodes.length) return;
 
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
   const REDUCED = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
   const FULL = window.CX_CON_NAMES || {};
 
-  // One fetch per unique source, shared across every figure on the page.
-  const cache = {};
-  function load(src) {
-    if (!cache[src]) cache[src] = fetch(src).then((r) => r.json());
-    return cache[src];
-  }
+  // ---- Shared runtime helpers -------------------------------------------
+  // The page's small bootstrap script owns the data cache so this file and the
+  // score chart consume one shared stars.json request.
+  const load = window.CX_LOAD_JSON;
   function isDark() {
     return window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -67,7 +67,9 @@
     return set; // { conId: true }
   }
 
-  // ---- data-cleaning bar -------------------------------------------------
+  // ====================================================================
+  //  Catalog-cleaning figure
+  // ====================================================================
   function buildClean(node, d) {
     const c = d.cleaning;
     const rows = [
@@ -106,7 +108,9 @@
     node.appendChild(cap);
   }
 
-  // ---- shared sky-figure scaffold ----------------------------------------
+  // ====================================================================
+  //  Shared sky-figure scaffold
+  // ====================================================================
   // Builds the tag + stage(canvas + optional score + tip) + caption, plus a
   // controls row the caller fills. Returns the pieces and a draw-scheduler.
   function makeSky(node, opts) {
@@ -181,6 +185,10 @@
       ctx.beginPath(); ctx.moveTo(0, y * DPR); ctx.lineTo(ctx.canvas.width, y * DPR); ctx.stroke(); }
     ctx.globalAlpha = 1;
   }
+
+  // ====================================================================
+  //  Figure builders — naive, sphere, and chain-following
+  // ====================================================================
 
   // ---- figure 1: naive (flat) --------------------------------------------
   function buildNaive(node, d) {
@@ -685,17 +693,25 @@
 
   const BUILDERS = { naive: buildNaive, sphere: buildSphere, chain: buildChain };
 
-  // ---- wire it up --------------------------------------------------------
-  figs.forEach((node) => {
-    const src = node.dataset.src || "stars.json";
-    const build = BUILDERS[node.dataset.fig];
-    if (!build) return;
-    whenVisible(node, () => load(src).then((d) => { build(node, d); node.dataset.vizReady = "true"; })
-      .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load the star data.</p>'; console.error(e); }));
-  });
-  cleans.forEach((node) => {
-    const src = node.dataset.src || "stars.json";
-    whenVisible(node, () => load(src).then((d) => { buildClean(node, d); node.dataset.vizReady = "true"; })
-      .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load data.</p>'; console.error(e); }));
-  });
+  // ---- Page lifecycle --------------------------------------------------
+  // Keep loading and failure handling out of builders. A builder only needs to
+  // create its final synchronous scaffold; this marks that reserve as ready.
+  function mountWhenVisible(nodes, resolveBuilder, fallback) {
+    nodes.forEach((node) => {
+      const buildFigure = resolveBuilder(node);
+      if (!buildFigure) return;
+      const src = node.dataset.src || "stars.json";
+      whenVisible(node, () => load(src).then((data) => {
+        buildFigure(node, data);
+        node.dataset.vizReady = "true";
+      }).catch((error) => {
+        node.innerHTML = `<p class="vz-caption">${fallback}</p>`;
+        console.error(error);
+      }));
+    });
+  }
+
+  mountWhenVisible(figureNodes, (node) => BUILDERS[node.dataset.fig],
+    "Couldn’t load the star data.");
+  mountWhenVisible(cleaningNodes, () => buildClean, "Couldn’t load data.");
 })();

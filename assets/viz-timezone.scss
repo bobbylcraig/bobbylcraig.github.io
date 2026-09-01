@@ -1,0 +1,5 @@
+---
+---
+// The time-zone figures reuse the constellation tooltip and lock-status badge.
+$viz-components: star timezone locks;
+@import "theme/viz";

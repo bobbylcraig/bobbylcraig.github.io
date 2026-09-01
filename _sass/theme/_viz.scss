@@ -292,6 +292,13 @@ $viz-components: all !default;
 [data-viz-reserve="pockets-gender"] { --viz-reserve-block: 149px; }
 [data-viz-reserve="weinberg-collocations"] { --viz-reserve-block: 728px; }
 [data-viz-reserve="weinberg-crew"] { --viz-reserve-block: 437px; }
+[data-viz-reserve="locks-gap"] { --viz-reserve-block: 458px; }
+[data-viz-reserve="locks-sim"] { --viz-reserve-block: 709px; }
+[data-viz-reserve="timezone-clock"] { --viz-reserve-block: 281px; }
+[data-viz-reserve="timezone-wave"] { --viz-reserve-block: 700px; }
+[data-viz-reserve="coastline-ruler"] { --viz-reserve-block: 509px; }
+[data-viz-reserve="coastline-richardson"] { --viz-reserve-block: 489px; }
+[data-viz-reserve="regression-variance"] { --viz-reserve-block: 484px; }
 
 @media (max-width: 600px) {
   [data-viz-reserve="star-naive"] { --viz-reserve-block: 349px; }
@@ -304,6 +311,13 @@ $viz-components: all !default;
   [data-viz-reserve="pockets-gender"] { --viz-reserve-block: 159px; }
   [data-viz-reserve="weinberg-collocations"] { --viz-reserve-block: 710px; }
   [data-viz-reserve="weinberg-crew"] { --viz-reserve-block: 664px; }
+  [data-viz-reserve="locks-gap"] { --viz-reserve-block: 604px; }
+  [data-viz-reserve="locks-sim"] { --viz-reserve-block: 1055px; }
+  [data-viz-reserve="timezone-clock"] { --viz-reserve-block: 313px; }
+  [data-viz-reserve="timezone-wave"] { --viz-reserve-block: 759px; }
+  [data-viz-reserve="coastline-ruler"] { --viz-reserve-block: 455px; }
+  [data-viz-reserve="coastline-richardson"] { --viz-reserve-block: 426px; }
+  [data-viz-reserve="regression-variance"] { --viz-reserve-block: 423px; }
 }
 
 // ---- Generic figure scaffold (stage = a framed canvas surface) ----

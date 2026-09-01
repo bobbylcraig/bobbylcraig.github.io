@@ -8,12 +8,14 @@
  *   <div class="cx-figure" data-chart="gender"     data-src="pockets.json"></div>
  */
 (function () {
-  const nodes = [...document.querySelectorAll(".cx-figure[data-chart]")];
-  if (!nodes.length) return;
+  const chartNodes = [...document.querySelectorAll(".cx-figure[data-chart]")];
+  if (!chartNodes.length) return;
 
   const DPR = Math.min(window.devicePixelRatio || 1, 2);
   const REDUCED = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 
+  // ---- Shared runtime helpers -------------------------------------------
+  // Data loading and canvas scaffolding stay outside the three chart builders.
   const cache = {};
   function load(src) {
     if (!cache[src]) cache[src] = fetch(src).then((r) => r.json());
@@ -30,6 +32,7 @@
     io.observe(node);
   }
 
+  // ---- Shared chart scaffold ---------------------------------------------
   // Shared series palette — the same tokens the line chart and sky figures use.
   function colAll() { return cssVar("--viz-naive", "#9aa0a6"); }
   function colLost() { return cssVar("--brand", "#1b69d1"); }
@@ -304,11 +307,23 @@
 
   const BUILDERS = { timeseries: buildTimeseries, byday: buildByday, gender: buildGender };
 
-  nodes.forEach((node) => {
-    const src = node.dataset.src || "pockets.json";
-    const build = BUILDERS[node.dataset.chart];
-    if (!build) return;
-    load(src).then((d) => { build(node, d); node.dataset.vizReady = "true"; })
-      .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load the data.</p>'; console.error(e); });
-  });
+  // ---- Page lifecycle --------------------------------------------------
+  // These charts build as their shared data arrives. Builders own their final
+  // scaffold; the reserve is released only after that synchronous work is done.
+  function mountCharts(nodes) {
+    nodes.forEach((node) => {
+      const buildChart = BUILDERS[node.dataset.chart];
+      if (!buildChart) return;
+      const src = node.dataset.src || "pockets.json";
+      load(src).then((data) => {
+        buildChart(node, data);
+        node.dataset.vizReady = "true";
+      }).catch((error) => {
+        node.innerHTML = '<p class="vz-caption">Couldn’t load the data.</p>';
+        console.error(error);
+      });
+    });
+  }
+
+  mountCharts(chartNodes);
 })();

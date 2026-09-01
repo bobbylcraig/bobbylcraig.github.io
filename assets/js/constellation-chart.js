@@ -141,7 +141,7 @@
       .addEventListener("change", () => { buildLegend(); draw(); });
 
   const src = root.dataset.src || "stars.json";
-  fetch(src).then((r) => r.json()).then((d) => {
+  window.CX_LOAD_JSON(src).then((d) => {
     curve = d.curve;
     buildLegend();
     resize();
