@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <link href="https://bobbylcraig.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://bobbylcraig.com/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2026-09-01T06:14:47+00:00</updated>
+  <updated>2026-09-01T22:08:18+00:00</updated>
   <id>https://bobbylcraig.com/feed.xml</id>
 
   
@@ -104,7 +104,7 @@
 
 <hr />
 
-<p>So, I went back and looked at what the algorithm was actually getting wrong, instead of what I wanted it to get right.</p>
+<p>So, I went back and looked at what the algorithm was actually getting wrong.</p>
 
 <p>k-means has a distinctive behavior that wasn’t great in this instance: it carves space into round, evenly-sized blobs, because that’s what “nearest centroid” produces. But a real constellation can be a long thin chain (Eridanus, the river) or a fat sprawl (Hydra)… shapes k-means structurally cannot want. And when I looked at <em>which</em> constellations it mangled, they were almost all the big sprawling ones. The compact, bright ones (Crux, Lyra, Gemini) it nailed.</p>
 
