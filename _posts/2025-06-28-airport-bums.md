@@ -12,7 +12,7 @@ published: true
 I first went to Barber Airport when I was about ten, for a [Young Eagles](https://en.wikipedia.org/wiki/Young_Eagles) rally. Forrest, the man who owned and ran the field, took me up himself. I don't remember much about the flight except the feeling: total, instant clarity. I was hooked the minute we slowly left the ground. A few years later I started flight lessons there, and Forrest looked at me like he recognized something. "You'll be seeing a lot of me," he said. His theory was simple. Hang around the airport long enough and the knowledge soaks in by osmosis. So that's what I did. I just kept showing up.
 
 <figure class="cx cx-figure">
-  <img src="/assets/images/posts/2025-06-28-on-2d1/forrest.webp" alt="Bobby wearing a headset smiling from the cockpit of a blue and white airplane, Forrest beside him" loading="lazy" />
+  <img src="/assets/images/posts/2025-06-28-on-2d1/forrest.webp" alt="Bobby wearing a headset smiling from the cockpit of a blue and white airplane, Forrest beside him" width="1100" height="778" loading="lazy" />
 </figure>
 
 I was not a kid who was easy in most rooms. I loved airplanes more than I knew how to talk to people, and I was aware of the gap. I also wasn't a kid with money. Flight lessons were a stretch, and nobody was bankrolling a hobby. So I did what the airport bums did: showed up, made myself useful, and soaked up whatever I could. At Barber, that was enough. Nobody needed me to be charming or well-off. They needed me to hand them the right wrench, hold a flashlight steady, or shut up and listen when someone was telling a story worth hearing. The age difference between me and everyone else was about forty years, and somehow that made it easier. They didn't care that I was quiet. They cared that I cared enough to keep coming back.
@@ -26,7 +26,7 @@ By the time I knew him, his professional flying days were well behind him, but h
 Lunch usually meant a trip to Shorty's, the greasy spoon down the road. The coffee tasted like jet fuel, and nobody seemed to mind. Forrest never met a stranger there. If he didn't know someone, he would by the time the check came. For me those trips were a kind of social education I didn't know I needed. You sit with a handful of old pilots over bad coffee long enough, and you start to learn how to be in a room with people. How to listen. When to talk and when not to.
 
 <figure class="cx cx-figure">
-  <img src="/assets/images/posts/2025-06-28-on-2d1/billy.webp" alt="Bobby in the cockpit of a blue Citabria while Billy leans in to fasten his harness" loading="lazy" />
+  <img src="/assets/images/posts/2025-06-28-on-2d1/billy.webp" alt="Bobby in the cockpit of a blue Citabria while Billy leans in to fasten his harness" width="604" height="453" loading="lazy" />
 </figure>
 
 The immersion happened gradually, in small initiations. With a whole cast of folks. The lessons came from everywhere.
@@ -40,7 +40,7 @@ Ieuan, a sharp Welshman with an engineer's brain, patiently walked me through we
 And then there was Frank, an architect by day, who spent his evenings covered in grease and sweat in his hangar. Under the fluorescent lights, he'd patiently bring classic aircraft back from the dead. He had a Pietenpol Air Camper with a stunning radial engine. Another Pietenpol in his care was a local legend, [famous for its lineage and its purchase price of one dollar](https://www.smithsonianmag.com/air-space-magazine/the-one-dollar-pietenpol-11000788/). The project consuming him at the time was a WACO 9 called "Miss Gilmore." I'd sometimes fabricate reasons to walk by the hangar just to watch him his progress as he'd stretch fabric taut over the wing spars or coax the engine to life. I didn't say much. He didn't seem to mind. I think that's where I learned that you can be in someone's space without filling it, and that quiet attention is its own kind of respect.
 
 <figure class="cx cx-figure">
-  <img src="/assets/images/posts/2025-06-28-on-2d1/navion.webp" alt="General aviation airplanes parked on a grass field in evening light" loading="lazy" />
+  <img src="/assets/images/posts/2025-06-28-on-2d1/navion.webp" alt="General aviation airplanes parked on a grass field in evening light" width="802" height="480" loading="lazy" />
 </figure>
 
 Patty was the airport's conscience. You couldn't understand Barber without her. Her kindness was enormous, but her wit could cut you in half. She'd be giving Forrest a hard time about something one minute, then turning with genuine concern to make sure this perpetually hungry kid had been fed and wasn't about to do something terminally stupid.
@@ -56,7 +56,7 @@ Ryan, a regular from nearby Beach City, was always part of the scenery. Named af
 On the north side of the field, the skydivers ran their own parallel universe. These guys were sun-weathered adrenaline junkies who lived like aviation carnies out of well-traveled RVs, seemingly always arriving from somewhere or leaving for somewhere else, their nights ending with huge bonfires that threw shadows on the hangar walls.
 
 <figure class="cx cx-figure">
-  <img src="/assets/images/posts/2025-06-28-on-2d1/skydiving.webp" alt="A young man in a parachute harness standing in front of a blue and white airplane on grass" loading="lazy" />
+  <img src="/assets/images/posts/2025-06-28-on-2d1/skydiving.webp" alt="A young man in a parachute harness standing in front of a blue and white airplane on grass" width="1100" height="825" loading="lazy" />
 </figure>
 
 To their east, the [Balsa Bees](https://alliancebalsabeesrc.com/a/r/szz/rc/home) had their own strip where RC enthusiasts, mostly dads in jorts and their sons, flew hand-built balsa creations.
@@ -68,7 +68,7 @@ Forrest's father, Al, had been a test pilot for Taylorcraft and carved the airfi
 The old-timers loved telling stories about young Forrest's mischievous streak. His favorite prank was yelling "Contact!" across the field, [making anyone hand-propping an engine jump out of their skin](https://www.gasci.ie/uploads/1/2/9/1/12917568/faa_hand_swing_prop_notes.pdf). The nickname stuck, though the prankster had long since mellowed into the patient instructor I knew. He believed in osmosis, and he was right. Day by day, the airport taught me not just how to fly, but how to exist around other people. How to be useful. How to belong somewhere without performing.
 
 <figure class="cx cx-figure">
-  <img src="/assets/images/posts/2025-06-28-on-2d1/bobby_tc.webp" alt="A young man standing beside two airplanes parked in an open hangar" loading="lazy" />
+  <img src="/assets/images/posts/2025-06-28-on-2d1/bobby_tc.webp" alt="A young man standing beside two airplanes parked in an open hangar" width="1100" height="822" loading="lazy" />
 </figure>
 
 I wrote a brief essay about Barber Airport in high school. Its title was the first word of this essay. Reading it, it all feels so far away... it's easy to forget just how much I loved that airport. And I didn't articulate it super well back then.
@@ -78,7 +78,7 @@ I've lived a bit more now. And what I'd say is simpler. Barber Airport was the f
 Most of the voices from those years have gone quiet. The ones that haven't are older. But the imprint is permanent. How I listen to people, how I show up, how I think about what community actually means: I learned it there, from a collection of pilots and mechanics and storytellers in rusting hangars on a grass field in Ohio. Most of them had no idea they were teaching me anything.
 
 <figure class="cx cx-figure">
-  <img src="/assets/images/posts/2025-06-28-on-2d1/cessna.webp" alt="A man kneeling beside a white Cessna on an airport ramp under a blue sky" loading="lazy" />
+  <img src="/assets/images/posts/2025-06-28-on-2d1/cessna.webp" alt="A man kneeling beside a white Cessna on an airport ramp under a blue sky" width="1100" height="914" loading="lazy" />
 </figure>
 
 I still love planes. I still fly. Maybe someday I'll take my nieces and nephews up and watch their faces from the left seat the way Forrest must have watched mine, that first time the wheels slowly left the grass and the ground just fell away. Maybe when I'm old enough, I'll be the one telling the stories, trying to pass it along. And when I do, I'll know exactly where it started.

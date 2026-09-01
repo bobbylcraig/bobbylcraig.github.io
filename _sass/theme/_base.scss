@@ -72,6 +72,11 @@ figure {
   > img {
     border: 1px solid var(--border);
     border-radius: 4px;
+    // The HTML width/height attributes reserve image geometry before loading.
+    // Keep their width describing the image pixels, not this decorative border,
+    // so adding the attributes does not make natural-size figures shrink by 2px.
+    box-sizing: content-box;
+    max-width: calc(100% - 2px);
   }
 }
 

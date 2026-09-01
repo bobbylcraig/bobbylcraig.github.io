@@ -24,7 +24,7 @@ Students didn't hesitate much when the group was first created in December 2014 
 
 <figure class="cx cx-figure">
   <figcaption class="cx-figure-title">Figure 2 · what students were losing</figcaption>
-  <img src="/assets/images/posts/2017-10-11-a-case-for-bigger-pockets/lost-item-infographic-jpg.webp" alt="Infographic breaking down the most commonly lost items by category" loading="lazy" />
+  <img src="/assets/images/posts/2017-10-11-a-case-for-bigger-pockets/lost-item-infographic-jpg.webp" alt="Infographic breaking down the most commonly lost items by category" width="624" height="312" loading="lazy" />
 </figure>
 
 <div class="cx cx-figure" data-chart="byday" data-src="/assets/data/2017-10-11-a-case-for-bigger-pockets/pockets.json"></div>
