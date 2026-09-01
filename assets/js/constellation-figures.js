@@ -690,12 +690,12 @@
     const src = node.dataset.src || "stars.json";
     const build = BUILDERS[node.dataset.fig];
     if (!build) return;
-    whenVisible(node, () => load(src).then((d) => build(node, d))
+    whenVisible(node, () => load(src).then((d) => { build(node, d); node.dataset.vizReady = "true"; })
       .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load the star data.</p>'; console.error(e); }));
   });
   cleans.forEach((node) => {
     const src = node.dataset.src || "stars.json";
-    whenVisible(node, () => load(src).then((d) => buildClean(node, d))
+    whenVisible(node, () => load(src).then((d) => { buildClean(node, d); node.dataset.vizReady = "true"; })
       .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load data.</p>'; console.error(e); }));
   });
 })();

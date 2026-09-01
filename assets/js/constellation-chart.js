@@ -145,6 +145,7 @@
     curve = d.curve;
     buildLegend();
     resize();
+    root.dataset.vizReady = "true";
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => {
         if (!e.isIntersecting) return;

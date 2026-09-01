@@ -4,6 +4,7 @@ title: "The Fault in Our Star Clustering"
 description: In 2016 I tried to test whether constellations are "real" by clustering stars. The experiment was a little broken. Here's the honest re-run, with a sky you can poke at.
 published: true
 viz: true
+viz_stylesheet: viz-star
 ---
 
 In college I took an astronomy class with Dr. Doty, a wildly entertaining professor known for his half-inch-thick glasses, boundless energy, and habit of explaining the universe through baseball metaphors (as one does). His final project was fantastically liberal arts: write your paper about astronomy, but through the lens of *your* major. A chemistry friend of mine did something with stellar spectra and emission lines. There was, I'm fairly sure, at least one person who turned in a literal book of poems. You get the idea. Sneakily hard, too... you can't hide behind a rubric, because everyone's rubric is different.
@@ -28,7 +29,7 @@ Anyway, the clustering loop itself was fine. The problem was never the loop. It 
 
 The first is that **I took an easy shortcut with the geometry.** Stars get located by two numbers: right ascension (like longitude, 0 to 24 hours, and it *wraps*, so 23.9h is right next to 0.1h) and declination (like latitude, -90° to +90°). I fed those two numbers straight into k-means as if they were x and y on graph paper. They are not x and y on graph paper. They're coordinates on a sphere. I knew this at the time but treating them as flat was easy, and I was on a deadline, and it mostly worked (lol). The problem showed up at the edges: constellations sitting on the right-ascension seam got torn in half by the flat coordinates, and my fix was (and I quote past me from my paper) to "eliminate any constellations that wrap around the ends." Just... set the wrapping ones aside and don't consider them at all. Which, look, the analysis I *did* run was honest about the stars it looked at. But the seam wasn't a property of those constellations; it was an artifact of pretending a sphere was a sheet of paper. I was patching symptoms instead of fixing the cause and, frankly, I didn't really care, lol.
 
-<div class="cx cx-fig" data-fig="naive" data-src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json"></div>
+{% include viz-mount.html class="cx cx-fig" reserve="star-naive" fig="naive" src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json" %}
 
 The second problem is more subtle, and it took me longer to see. **The question wasn't exactly scientific.** A constellation is, more or less by definition, a bunch of stars that look close together, so "do the stars in a constellation cluster spatially?" is nearly asking whether nearby things are nearby. That's the *duh* from earlier, except here it stops being a self-deprecating aside and quietly becomes the flaw baked into the whole experiment. And the answer came back weirdly mediocre anyway, which should've been a clue that I was missing nuance. The more interesting question, the one I should've been asking, is whether an algorithm would (or could?) carve the sky into the *same* partition a human would: same boundaries, same number of groups, same membership. That version can actually be wrong, which is what makes it worth asking.
 
@@ -51,13 +52,13 @@ def sphere_vectors(stars):
 
 No seam, no pole distortion, no excluding constellations because they're inconvenient. The modern [HYG catalog](https://www.astronexus.com/hyg) also just has a constellation column, so I no longer have to slice characters off a designation string to guess. And the data cleaning is brutal in a way worth seeing... almost the entire catalog is stars no unaided human eye has ever resolved:
 
-<div class="cx cx-fig cx-clean" data-src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json"></div>
+{% include viz-mount.html class="cx cx-fig cx-clean" reserve="star-clean" src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json" %}
 
 Keep every naked-eye star (apparent magnitude ≤ +6, Ptolemy's old visible limit) and you're left with **5,070 stars across all 88 constellations**. No strategic exclusions due to laziness. Cluster those on the sphere and the torn seam from the previous figure heals; same projection, now whole.
 
 Hover over any star to light up just its group (its real constellation, or whatever the algorithm lumped it with) and see how that group wraps across the sky.
 
-<div class="cx cx-fig" data-fig="sphere" data-src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json"></div>
+{% include viz-mount.html class="cx cx-fig" reserve="star-sphere" fig="sphere" src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json" %}
 
 Flip from the real constellations to the algorithm's groups and watch how little the two disagree. Then, under the algorithm's groups, swap between the 2016 way and sphere k-means (the fix).
 
@@ -102,12 +103,12 @@ You can *see* the difference. k-means draws round blobs... linkage weaves paths.
 
 This is the figure to actually play with: drag the slider toward the bright end and watch the reproducibility score climb as the faint noise falls away, or search for a constellation you know to see how intact it came back.
 
-<div class="cx cx-fig" data-fig="chain" data-src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json"></div>
+{% include viz-mount.html class="cx cx-fig" reserve="star-chain" fig="chain" src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json" %}
 
 Push the slider all the way to the bright end and the score jumps. Here's that same climb for all three methods at once, as one picture:
 
 <div class="cx">
-  <div id="cx-chart" data-src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json"></div>
+  {% include viz-mount.html id="cx-chart" class="" reserve="star-chart" src="/assets/data/2026-05-31-the-fault-in-our-star-clustering/stars.json" %}
 </div>
 
 All three clustering methods improve when you only include brighter stars. The chain-following method (orange) pulls ahead once the shapes start to matter. This method moves us from a measly NMI of 0.76 to **0.92**! And the ARI (Adjusted Rand Index, which asks whether pairs of stars that are together in real life land together in the clustering) climbs from a middling 0.4 to **0.65**. Given the right input (bright stars), the algorithm actually draws something close to the map that humans drew thousands of years ago.

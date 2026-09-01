@@ -1,0 +1,6 @@
+---
+---
+// The constellation article's visual rules only. Shared controls live in the
+// imported partial; unrelated visualization namespaces are omitted.
+$viz-components: star;
+@import "theme/viz";

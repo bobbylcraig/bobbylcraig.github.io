@@ -3,6 +3,14 @@
 // toggle: everything tracks dark/light through the shared custom properties.
 // Aesthetic target: clean editorial data-viz (Upshot / 538).
 
+// `assets/viz-*.scss` chooses the route-specific namespaces it needs. The
+// default retains the full sheet for an unpublished or newly-authored post that
+// has not yet declared its component list.
+$viz-components: all !default;
+@function has-viz-component($component) {
+  @return $viz-components == all or index($viz-components, $component);
+}
+
 // Local focus ring (mirrors theme/vars %focus-ring) so this sheet stays additive
 // — importing theme/vars here would duplicate its :root{} block into viz.css.
 @mixin focus-ring { outline: 2px solid var(--brand); outline-offset: 2px; }
@@ -270,7 +278,36 @@
   margin: 2rem 0;
 }
 
+// Empty visualization mounts reserve their measured final block size before
+// deferred data and scripts populate them. JS removes the reservation once the
+// synchronous DOM scaffold exists, leaving the hydrated figure unchanged.
+[data-viz-reserve]:not([data-viz-ready]) { min-height: var(--viz-reserve-block); }
+[data-viz-reserve="star-naive"] { --viz-reserve-block: 495px; }
+[data-viz-reserve="star-clean"] { --viz-reserve-block: 183px; }
+[data-viz-reserve="star-sphere"] { --viz-reserve-block: 508px; }
+[data-viz-reserve="star-chain"] { --viz-reserve-block: 509px; }
+[data-viz-reserve="star-chart"] { --viz-reserve-block: 386px; }
+[data-viz-reserve="pockets-timeseries"],
+[data-viz-reserve="pockets-byday"] { --viz-reserve-block: 422px; }
+[data-viz-reserve="pockets-gender"] { --viz-reserve-block: 149px; }
+[data-viz-reserve="weinberg-collocations"] { --viz-reserve-block: 728px; }
+[data-viz-reserve="weinberg-crew"] { --viz-reserve-block: 437px; }
+
+@media (max-width: 600px) {
+  [data-viz-reserve="star-naive"] { --viz-reserve-block: 349px; }
+  [data-viz-reserve="star-clean"] { --viz-reserve-block: 249px; }
+  [data-viz-reserve="star-sphere"] { --viz-reserve-block: 340px; }
+  [data-viz-reserve="star-chain"] { --viz-reserve-block: 410px; }
+  [data-viz-reserve="star-chart"] { --viz-reserve-block: 245px; }
+  [data-viz-reserve="pockets-timeseries"] { --viz-reserve-block: 341px; }
+  [data-viz-reserve="pockets-byday"] { --viz-reserve-block: 320px; }
+  [data-viz-reserve="pockets-gender"] { --viz-reserve-block: 159px; }
+  [data-viz-reserve="weinberg-collocations"] { --viz-reserve-block: 710px; }
+  [data-viz-reserve="weinberg-crew"] { --viz-reserve-block: 664px; }
+}
+
 // ---- Generic figure scaffold (stage = a framed canvas surface) ----
+@if has-viz-component(star) {
 .cx-stage { @extend %vz-stage; }
 .cx-canvas { display: block; width: 100%; }
 
@@ -412,10 +449,12 @@
 .cx-clean-fill.is-all { background: var(--viz-naive); }
 .cx-clean-fill.is-eye { background: var(--brand); }
 .cx-clean-num { font-size: 0.78rem; font-variant-numeric: tabular-nums; color: var(--text); min-width: 4.5rem; text-align: right; }
+}
 
 // ---- Bar chart (grouped or single series) ----
 // Plain-canvas bars; the canvas reads the same --viz-* tokens, so dark/light and
 // series colors stay consistent with the line chart and constellation figures.
+@if has-viz-component(pockets) {
 .cx-bars { width: 100%; display: block; margin: 0.5rem 0; }
 .cx-figure { margin: 1.6rem 0; }
 
@@ -490,12 +529,14 @@
 }
 .cx-split-label { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em; overflow: hidden; text-overflow: ellipsis; }
 .cx-split-num { font-size: 0.85rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+}
 
 // ---- Ranked collocation leaderboard (Weinbergisms, Fig 1) ----
 // Rank · phrase · bar (length = PMI, color = theme) · score. A .vz-seg--attached
 // header filters by theme, dimming off-theme rows. The frame (.cx-clean-frame)
 // holds the header + list; padding:0 lets the header sit flush, then the list
 // pads itself. Bar/dot colors come from the --cat token via [data-cat].
+@if has-viz-component(weinberg) {
 .wb-coll-frame { padding: 0; overflow: hidden; }
 .wb-coll-inner { display: flex; flex-direction: column; gap: 0.55rem; padding: 1.2rem 1.4rem; }
 .wb-coll-row {
@@ -670,6 +711,7 @@
     .vz-cat-dot { display: none; } // labels alone are clearer at chip size
   }
 }
+}
 
 @media (max-width: 520px) {
   .cx-score { min-width: 128px; padding: 0.45rem 0.55rem; }
@@ -693,6 +735,7 @@
 //  reuse the vz-* design system. Only the framed canvas, the replay button,
 //  and the seg's responsive label swap are post-specific.
 // ====================================================================
+@if has-viz-component(timezone) {
 .tz {
   font-family: var(--chrome);
   margin: 2rem 0;
@@ -822,6 +865,8 @@
   }
 }
 
+}
+
 // ====================================================================
 //  Locking post (lx-*)
 //  A static data grid (a `users` table, like a SQL-client result) ordered
@@ -838,6 +883,7 @@
 //  inserted row), so no absolute positioning or offset math is needed and only
 //  color / opacity animate, on one shared easing curve.
 // ====================================================================
+@if has-viz-component(locks) {
 .lx {
   --lx-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --lx-dur: 0.28s;
@@ -1227,6 +1273,8 @@
   .lx-crumb-sep { font-size: 0.65rem; padding: 0; }
 }
 
+}
+
 // ====================================================================
 //  Coastline post ("The Two-Week Coastline") — cl-* namespace
 //  Two figures: the ruler-walk on a fractal coast (with the coastline /
@@ -1238,6 +1286,7 @@
 // ====================================================================
 // The figure block, like .cx / .tz: symmetric vertical breathing room so the
 // figure (and its caption) doesn't crowd the body paragraphs above and below.
+@if has-viz-component(coastline) {
 .cl {
   font-family: var(--chrome);
   margin: 2rem 0;
@@ -1345,10 +1394,13 @@
   .cl-dim-badge { min-width: 108px; padding: 0.4rem 0.55rem; }
 }
 
+}
+
 // ====================================================================
 //  Regression figures — "Regression to the Mean"
 //  (the variance plot: surviving category spread over time, human vs AI)
 // ====================================================================
+@if has-viz-component(regression) {
 .rg {
   font-family: var(--chrome);
   margin: 2rem 0;
@@ -1369,4 +1421,5 @@
 .rg-variance .vz-caption { min-height: 3.5rem; }
 @media (max-width: 600px) {
   .rg-variance .vz-caption { min-height: 5.5rem; }
+}
 }

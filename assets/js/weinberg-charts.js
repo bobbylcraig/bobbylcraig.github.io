@@ -240,7 +240,7 @@
     const src = node.dataset.src || "weinberg.json";
     const build = BUILDERS[node.dataset.chart];
     if (!build) return;
-    load(src).then((d) => build(node, d))
+    load(src).then((d) => { build(node, d); node.dataset.vizReady = "true"; })
       .catch((e) => { node.innerHTML = '<p class="vz-caption">Couldn’t load the data.</p>'; console.error(e); });
   });
 })();

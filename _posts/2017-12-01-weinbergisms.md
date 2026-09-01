@@ -5,6 +5,7 @@ author: Bobby Craig
 published: true
 description: A text analysis of 59 of President Adam Weinberg's published writings — the phrases he reaches for again and again, and the thinkers behind them.
 viz: true
+viz_stylesheet: viz-weinberg
 ---
 
 <aside class="note" role="note">⚠️ This post was originally published on <a href="https://onetwentyseven.blog/2017/12/01/weinbergisms/">OneTwentySeven</a>, my university's data blog.</aside>
@@ -17,7 +18,7 @@ A figure of stability, wisdom, and optimism on our campus, President Weinberg ha
 
 **Third** (yes, I just wanted to use three points because Weinberg often does this), let's get to the data.
 
-<div class="cx cx-fig" data-chart="collocations" data-src="/assets/data/2017-12-01-weinbergisms/weinberg.json"></div>
+{% include viz-mount.html class="cx cx-fig" reserve="weinberg-collocations" chart="collocations" src="/assets/data/2017-12-01-weinbergisms/weinberg.json" %}
 
 A cursory look at Figure 1 reveals some very familiar phrases. It's no wonder that "discerning moral agents" and "close mentoring relationships" show up in this list of Weinberg's most common phrases. It probably doesn't surprise you that topics such as the Austin E. Knowlton Center, Gallup-Purdue Index, and Columbus metropolitan region are among Weinberg's most discussed––they're great recruiting topics and/or strategic agenda items that Weinberg has taken on. But why might he mention something like "lost almost 300 games"?
 
@@ -27,7 +28,7 @@ A cursory look at Figure 1 reveals some very familiar phrases. It's no wonder th
 
 Weinberg loves this quote…and rightly so. College is a great time to learn about failure and with these few words Michael Jordan destigmatizes the subject. This is where the number one phrase comes from. Weinberg uses this quote in four different articles, each giving students advice and urging them to embrace failure as a natural part of growth. This quote isn't the only one that he loves. Denison's president repeatedly uses quotes from Dan Chambliss, Christopher Takacs, William Cronon, Harry Boyte, and Alexis de Tocqueville (see Figure 2). This tells us a lot about his philosophy. These authors all write about relationships and/or the liberal arts in some way, and they're likely the driving force behind Weinberg's decisions on campus. Wanna predict Weinberg's next moves? Reading some of these authors' works might give you a leg up.
 
-<div class="cx cx-fig" data-chart="crew" data-src="/assets/data/2017-12-01-weinbergisms/weinberg.json"></div>
+{% include viz-mount.html class="cx cx-fig" reserve="weinberg-crew" chart="crew" src="/assets/data/2017-12-01-weinbergisms/weinberg.json" %}
 
 Another phrase in the top 20 that surprised me was the appearance of "executive order". The phrase can only be found in one article, but is used heavily in that article. Not all of Weinberg's articles can be cheery PR-fodder for Denison; he also needs to address issues which have a great deal of impact on students. For example, look at how Weinberg responded to President Trump's DACA executive order which looked to deport many innocent, unassuming people from the country. Many saw this as antithetical to Denison's values, and Weinberg responded to let students know that they had Denison's support.
 
