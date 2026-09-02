@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <link href="https://bobbylcraig.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://bobbylcraig.com/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2026-09-02T02:09:26+00:00</updated>
+  <updated>2026-09-02T02:21:14+00:00</updated>
   <id>https://bobbylcraig.com/feed.xml</id>
 
   
@@ -486,10 +486,10 @@
 
 <p>Mailchimp was, in a lot of ways, a genuinely weird company. Founded in 2001, bootstrapped the entire way, no board of directors (though there WAS a <a href="https://www.heraldtribune.com/story/business/briefs/2016/10/10/path-to-tech-success-far-from-silicon-valley/25233849007/">board room</a>… walls covered floor-to-ceiling in vintage skateboards that Dan collected):</p>
 
-<blockquote>
-  <p>Visiting <a href="https://twitter.com/Mailchimp">@Mailchimp</a> HQ and I found where they keep all the good boards.</p>
-  <p>— Tony Hawk, <a href="https://twitter.com/tonyhawk/status/974708239911804928">March 16, 2018</a></p>
-</blockquote>
+<figure>
+  <img src="/assets/images/posts/2025-01-04-whose-ship-is-it-anyway/tony-hawk-mailchimp-board-room.webp" alt="A wall in Mailchimp's board room covered floor-to-ceiling with vintage skateboard decks" width="1100" height="825" loading="lazy" />
+  <figcaption>Mailchimp's board room. <a href="https://x.com/katekiefer/status/974654235387334656">Photo by Kate Kiefer Lee</a>, quoted by <a href="https://x.com/tonyhawk/status/974708239911804928">Tony Hawk</a>.</figcaption>
+</figure>
 
 <p>No investors to please, so we could plan more than one quarter ahead. When I joined in 2017, the independence was tangible. People were heavily invested in the company, the brand, the customers. We weren’t always great at serving large customers who’d outgrown us (I’m pretty sure Ben once just told a company that had outgrown Mandrill to go find another transactional email provider) but the people who built the product genuinely cared about the small businesses using it. Things were lax. The vibe was quirky. It was occasionally chaotic. But it was ours. We launched a marketing CRM, a website builder, and at one point we were <a href="https://www.modernostrategies.com/blog/mailchimp-direct-mail-postcards-first-look/">sending physical postcards</a>… yes, actual paper postcards in the mail.</p>
 
