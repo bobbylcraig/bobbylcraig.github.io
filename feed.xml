@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <link href="https://bobbylcraig.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://bobbylcraig.com/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2026-09-01T22:08:18+00:00</updated>
+  <updated>2026-09-02T02:02:36+00:00</updated>
   <id>https://bobbylcraig.com/feed.xml</id>
 
   
@@ -32,6 +32,159 @@
   
   
   
+  
+    
+    <entry>
+      
+
+      <title type="html">The 10-Terabyte Coastline</title>
+      <link href="https://bobbylcraig.com/2026/09/01/the-10-terabyte-coastline.html" rel="alternate" type="text/html" title="The 10-Terabyte Coastline" />
+      <published>2026-09-01T00:00:00+00:00</published>
+      <updated>2026-09-01T00:00:00+00:00</updated>
+      <id>https://bobbylcraig.com/2026/09/01/the-10-terabyte-coastline</id>
+      
+      
+        <content type="html" xml:base="https://bobbylcraig.com/2026/09/01/the-10-terabyte-coastline.html"><![CDATA[<p>I hate software estimation.</p>
+
+<p>Well, I hate what happens after software estimation. The estimating itself is mostly harmless. Six people sit in a room, stare at a paragraph somebody typed into a planning document, talk around the large holes in what we know, and eventually produce a number because a number is what the spreadsheet (and MBAs) accepts.</p>
+
+<p>Then the number gets sent up the rungs, loses every caveat we attached to it, and comes back down as a date. We (the engineers) curse ourselves for not padding it by 50% more.</p>
+
+<p>Someone always says estimates aren’t commitments. Everyone nods. A roadmap gets built around the estimate anyway and, through some organizational alchemy I don’t fully understand despite participating in it for years, it becomes a commitment.</p>
+
+<p>I’ve done my part. I’ve turned guesses into suspiciously specific numbers of engineering weeks because “somewhere between a month and several months… depends what we find” looked bad in the cell. I’ve also gotten annoyed when somebody else’s project took longer than they said it would. We all know estimation is inexact, but I’m not convinced any of us actually behaves as though it is.</p>
+
+<hr />
+
+<p>At a previous company, we had a “contact state table” and a “contact state history table”.</p>
+
+<p>Before I go any further, this was a legacy PHP monolith approaching 20 years old. Setting up new Kafka topics was discouraged until sometime in the early 2020s. Using MySQL to track the state of billions of contacts was not my dream architecture. It was what we had.</p>
+
+<p>The first table stored where a contact was in each workflow. Waiting for a delay. Sitting at a condition. Ready for an email. The history table was its audit trail. Support, reporting, and segmentation used it to see how the contact got there.</p>
+
+<p>Eventually the current table held more than a billion states. Its history passed 150 billion rows and 10 terabytes across our sharded databases. Every day, we upserted roughly 100 million state changes into one table and then did it again in the other. Only opens and clicks grew faster. Yes, we stored those in MySQL too. Please remember the monolith.</p>
+
+<p>The databases were starting to wobble. The fleet cost around $2 million a month.</p>
+
+<p>The job was to save the DBs from doom (and maybe dent the bill while we were at it).</p>
+
+<p>Then a new CDP project brought in Debezium and, apparently, we had change data capture now. Before that, BI tables came from an enormous nightly Airflow job that essentially ran <code class="language-plaintext highlighter-rouge">SELECT *</code> against all of our tables. Lol. We could stop writing the history table and keep the audit trail in BigQuery instead.</p>
+
+<p>I was told I was not allowed to plug directly into the CDC stream. Data Engineering pulled the changes into BigQuery and compacted them. We needed the raw history, so we quietly read the uncompacted source. For some reason, it lagged by as much as eight hours. Fine for some reports. Less fine when support was trying to explain why a contact had not received an email.</p>
+
+<p>We considered partitioning the history by date, keeping recent data in MySQL, and dropping old partitions after BigQuery caught up. The in-house migration engine did not support partitions. I added support, but its new container image would not build, so we could not release it. I no longer remember why. Figures.</p>
+
+<p>Meanwhile, support kept asking for history and the databases kept writing both copies.</p>
+
+<p>From far away, this was one box and one arrow. State changes go to BigQuery. History table goes away. Nobody mentioned the failed approaches, the red tape, or the trifles of doing any of this inside a 20-year-old PHP monolith.</p>
+
+<hr />
+
+<p>Donald Rumsfeld (please keep reading) was unfortunately <a href="https://avalon.law.yale.edu/sept11/dod_brief146.asp">onto something with the known knowns, known unknowns, and unknown unknowns</a>. Even a broken clock is right twice a day. Anyway.</p>
+
+<p>At the beginning of a project, you have <strong>known knowns</strong>. You know roughly what the product should do, the systems it will probably touch, and which team has to build it. Maybe you even know who on the team is available (luxury).</p>
+
+<p>Then there are the <strong>known unknowns</strong>. Who reads the history? How fresh does it need to be? How long does replication take? You know the questions and can do discovery to answer some of them. Read another team’s documentation. Draw boxes and arrows. Ask support what they actually do with the table. Useful stuff.</p>
+
+<p>Eventually you hit the <strong>unknown unknowns</strong>. You cannot use the CDC stream directly. The raw copy you can sneakily use is eight hours behind it. The migration engine cannot create a partitioned table, and the image containing your fix will not build. None of that was visible in the sentence “move the audit history to BigQuery.”</p>
+
+<p>Discovery helps, but there is only so much you can learn before you start really digging into things. If complete knowledge were required before estimating, we could provide beautifully accurate estimates immediately after finishing the work.</p>
+
+<p>All of this depends on how closely you look.</p>
+
+<p>Which brings me, somehow, to the coastline of Britain.</p>
+
+<hr />
+
+<p>How long is the coast of Britain?</p>
+
+<p>It sounds like a boring question with a boring answer. But it’s nuanced! Somebody measured it. Then several other people measured it. AND THEY GOT DIFFERENT NUMBERS.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/Lewis_Fry_Richardson">Lewis Fry Richardson</a> found the same problem while studying whether shared borders made countries more likely to fight. Spain reported that its border with Portugal was 987 kilometers. Portugal said the same border was 1,214 kilometers.</p>
+
+<p>His work appeared posthumously in 1961 as <a href="https://cds.cern.ch/record/434833"><em>The Problem of Contiguity: An Appendix to Statistics of Deadly Quarrels</em></a>. It attracted almost no attention. Then Benoit Mandelbrot came across it, interpreted Richardson’s slopes in terms of dimension, and gave the problem its famous title in 1967: <a href="https://users.math.yale.edu/~bbm3/web_pdfs/howLongIsTheCoastOfBritain.pdf"><em>How Long Is the Coast of Britain? Statistical Self-Similarity and Fractional Dimension</em></a>. Classic Mandelbrot.</p>
+
+<p>Imagine walking a divider along a map of a coastline. Take long strides and you step past bays and inlets. The measurement comes out fairly short. Make the stride smaller and the divider follows some of the bays it skipped. Smaller again and it catches smaller bends, rocks, and whatever else the map can resolve. The measured coast gets longer.</p>
+
+<p>If you keep going, eventually you run into tides, grains of sand, and atoms. There isn’t one useful answer at every possible scale. The length means very little unless you know how it was measured.</p>
+
+<p>Still don’t understand? I’ve created this to help you visualize!</p>
+
+<div class="cl cl-ruler" data-viz-reserve="coastline-ruler" data-src="/assets/data/2026-09-01-the-10-terabyte-coastline/coastline.json"></div>
+
+<p>The history-table project was measured with a long ruler. So are most projects, unless you’re cleaning up spaghetti code everybody already understands (lucky you, honestly). “Put the audit history in BigQuery and delete the table” was one stride. Looked manageable.</p>
+
+<p>Then the ruler got shorter. Who still reads the history? How stale can it be? Can we use the CDC stream directly? Wait, we have a CDC stream now?! What keeps recent history available while BigQuery catches up? Can the migration tool partition the table? Who owns each part once we’re done?</p>
+
+<p>Uncertainty is a tax on work you don’t understand. Leave it out of the estimate and it still shows up later, usually with interest and during a status meeting.</p>
+
+<p>This doesn’t make every early estimate secretly good. Some estimates are lazy. Some are politically convenient. Sometimes an engineer hears a date hidden inside the question and reverse-engineers an answer that won’t make the meeting uncomfortable.</p>
+
+<p>I have certainly never done that.</p>
+
+<hr />
+
+<p>Richardson also noticed that coastlines don’t all react the same way when the ruler shrinks. A fairly smooth one settles down. A jagged one keeps revealing more bends, so its measured length grows much faster.</p>
+
+<div class="cl cl-richardson" data-viz-reserve="coastline-richardson" data-src="/assets/data/2026-09-01-the-10-terabyte-coastline/coastline.json"></div>
+
+<p>Some work stays roughly the same size as you inspect it. A small change in a familiar system, with settled requirements and no new dependencies, might actually be as boring as it looks.</p>
+
+<p>Other work gets bigger fast, like a new integration, a whole new product, or some COBOL written in the 60s and 70s undergirding our entire financial system (or so I’ve heard). The rate depends on the team, the system, the quality bar, and what everyone already knows. The same feature can be smooth for the team that built the platform and an absolute fjord situation for the team meeting it for the first time.</p>
+
+<p>“How uncertain is this for us?” is probably closer to what we need to ask.</p>
+
+<p>Eventually, a project stops. A coastline doesn’t. Once the work is over, we know how long that version took. We still don’t know how long it had to take.</p>
+
+<hr />
+
+<p>Refusing to estimate work is generally unwise. Somebody else will make the guess and now you have an estimate you don’t believe plus no influence over it. Even carefully hedging the estimate has limits. I once tried that with a short-tempered director who needed a number lower than the one I gave. He screamed at me in a meeting. This did not improve the estimate.</p>
+
+<p>So… yeah. Sometimes the spreadsheet gets its number.</p>
+
+<p>Give the spreadsheet a range if it will accept one. Say how closely you’ve looked. Write down the assumptions most likely to blow it up. None of that would have revealed that I was not allowed to use the CDC stream or that the container image would not build. What it can do is leave room to revisit the estimate when the ruler changes.</p>
+
+<p>That last part is where this tends to fall apart. A new estimate should reopen the date, the approach, and the scope. I generally prefer moving the date. Dates have bounds, obviously, and sometimes scope should move instead. But scope cannot move so far that the work stops solving the original problem.</p>
+
+<p>For the history table, each shorter ruler changed the approach. BigQuery was still the destination, but it could not replace the history immediately. Partitioning could help with retention, but our migration tooling could not create the table. Support needed fresh data, but not every old row in MySQL forever.</p>
+
+<p>In 2024, we accepted some delay and some rough edges, moved the audit history onto the CDC path, and deleted the old table.</p>
+
+<p>It was glorious, give or take eight hours.</p>
+
+<script src="/assets/js/coastline-figures.js" defer=""></script>]]></content>
+      
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Bobby Craig</name>
+        
+        
+      </author>
+
+      
+        
+      
+
+      
+
+      
+      
+        <summary type="html"><![CDATA[A 10TB history table looked like a storage problem. Every closer look found something else depending on it. The size of a software project depends on the ruler.]]></summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://bobbylcraig.com/assets/images/bobby.webp" />
+        <media:content medium="image" url="https://bobbylcraig.com/assets/images/bobby.webp" xmlns:media="http://search.yahoo.com/mrss/" />
+      
+    </entry>
   
     
     <entry>
@@ -837,49 +990,6 @@
       
       
         <summary type="html"><![CDATA[A data analysis of lost-item posts in Denison University's student Facebook group — what gets lost, when, and what it says about us.]]></summary>
-      
-
-      
-      
-        
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://bobbylcraig.com/assets/images/bobby.webp" />
-        <media:content medium="image" url="https://bobbylcraig.com/assets/images/bobby.webp" xmlns:media="http://search.yahoo.com/mrss/" />
-      
-    </entry>
-  
-    
-    <entry>
-      
-
-      <title type="html">Im Ausland</title>
-      <link href="https://bobbylcraig.com/im-ausland/" rel="alternate" type="text/html" title="Im Ausland" />
-      <published>2017-06-05T00:00:00+00:00</published>
-      <updated>2017-06-05T00:00:00+00:00</updated>
-      <id>https://bobbylcraig.com/2017/06/05/im-ausland</id>
-      
-      
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Bobby Craig</name>
-        
-        
-      </author>
-
-      
-        
-      
-
-      
-
-      
-      
-        <summary type="html"><![CDATA[A travel log from a semester abroad in Europe, originally published as an interactive storytelling map.]]></summary>
       
 
       
