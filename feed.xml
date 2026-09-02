@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <link href="https://bobbylcraig.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://bobbylcraig.com/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2026-09-02T02:07:16+00:00</updated>
+  <updated>2026-09-02T02:09:26+00:00</updated>
   <id>https://bobbylcraig.com/feed.xml</id>
 
   
@@ -726,7 +726,7 @@
       
         <content type="html" xml:base="https://bobbylcraig.com/2021/05/03/wine-and-walking.html"><![CDATA[<p>I listen to a podcast called <a href="https://jeffersonhour.com/">The Thomas Jefferson Hour</a> where humanities scholar Clay Jenkinson pretends to be Thomas Jefferson and answers listener questions. (Yes, really.) I typed in a question once about Jefferson and wine and it actually got answered on the show: <a href="https://jeffersonhour.com/blog/1305">episode 1305, “Wine and Welshmen”</a>. Weirdly thrilling for something I submitted from my couch at like 10pm. Anyway… I bring this up because Jefferson loved walking. Yes, I know… there are a lot of things about Jefferson that we should absolutely not emulate (to put it extremely mildly). But the man was a genuine polymath on a scale the world arguably hadn’t seen since Da Vinci and maybe hasn’t seen since: architect, inventor, diplomat, farmer, obsessive tinkerer, fluent in like five languages, redesigned his own house constantly, built a functioning clock powered by cannonball weights… the list goes on. He also invented the swivel chair, which is a little ironic given his stance on sitting. His advice to a nephew: “Of all exercises, walking is the best… No one knows, till he tries, how easily a habit of walking is acquired.” He routinely walked for hours. This from a guy who had, by any reasonable measure, more important things to do than pace around Monticello.</p>
 
-<p>Charles Darwin had a dedicated thinking path at his house in England (<a href="https://en.wikipedia.org/wiki/Sandwalk">the Sandwalk</a>) and he’d walk it three times a day, forty-five minutes each. He kept a pile of flint stones at one end (actual rocks, not a family of cavemen running the lap counter for him) and would kick one aside each lap to count his rounds. The man literally counted his walking in rocks. Imagine being that committed to not sitting down.</p>
+<p>Charles Darwin had a dedicated thinking path at his house in England (<a href="https://en.wikipedia.org/wiki/Sandwalk">the Sandwalk</a>) and he’d walk it three times a day, forty-five minutes each. He kept a pile of flint stones at one end (actual rocks, not a family of cavemen running the lap counter for him) and would kick one aside each lap to count his rounds. The man literally counted his walking in rocks.</p>
 
 <p>I am not inventing swivel chairs or writing foundational democratic texts or publishing the origin of species. But I do write software, and I’ve solved more bugs by walking away from my laptop than by staring at logs in Elasticsearch and hitting refresh for the fourth time hoping the answer will materialize. This is annoying, because walking doesn’t feel like work, and your boss almost certainly doesn’t count it as work either, and software engineers are very good at confusing “looking busy” with “making progress.”</p>
 
