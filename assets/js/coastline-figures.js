@@ -112,9 +112,11 @@
     let idx = 0;                        // 0 = coarsest ruler (epic)
     let estimate = false;               // false = coastline km, true = est hours
     let anim = null;
+    const caption = node.querySelector(".vz-caption");
+    caption?.remove();
 
     node.appendChild(el("span", "vz-figure-title",
-      "one coast · the length depends on the ruler"));
+      node.dataset.vizTitle || "one coast · the length depends on the ruler"));
 
     const stage = el("div", "cl-stage");
     const canvas = el("canvas", "cl-canvas");
@@ -155,8 +157,7 @@
     controls.appendChild(toggleField);
     node.appendChild(controls);
 
-    const cap = el("p", "vz-caption");
-    node.appendChild(cap);
+    if (caption) node.appendChild(caption);
 
     const slider = sliderField.querySelector(".cl-slider");
     const sliderLabel = sliderField.querySelector(".cl-slider-label");
@@ -311,25 +312,6 @@
       anim = requestAnimationFrame(frame);
     }
 
-    function setCaption() {
-      const w = walks[idx];
-      const band = fig.bands[w.band];
-      const segDisplay = Math.round(w.steps);
-      if (estimate) {
-        cap.innerHTML =
-          `<b>${band.label}</b> altitude (${band.altitude}): ${band.ruler}. ` +
-          `Estimate from here and the work looks like <b>${Math.round(w.hours)} hours</b>. ` +
-          (idx === 0
-            ? "The clean number you give in the planning meeting."
-            : "Same project. You just looked closer.");
-      } else {
-        cap.innerHTML =
-          `Ruler this long, walked in <b>${segDisplay}</b> straight steps. ` +
-          `Every cove shorter than the ruler gets skipped, so the coast reads ` +
-          `<b>${kmAt(idx).toLocaleString()} km</b>. ` +
-          (idx === 0 ? "Shrink the ruler." : "Shorter ruler, more coves caught, longer coast.");
-      }
-    }
     function setSliderLabel() {
       const w = walks[idx];
       const band = fig.bands[w.band];
@@ -351,7 +333,6 @@
       idx = +slider.value;
       setSliderLabel();
       setSliderAria();
-      setCaption();
       animateTo(idx);
     });
     toggleField.querySelectorAll("[data-m]").forEach((b) =>
@@ -363,7 +344,6 @@
         setSliderLabel();
         setSliderAria();
         setReadout(idx);
-        setCaption();
       }));
 
     window.addEventListener("resize", rafThrottle(size));
@@ -372,7 +352,6 @@
     setSliderLabel();
     setSliderAria();
     setReadout(0);
-    setCaption();
     size();
     node.dataset.vizReady = "true";
   }
@@ -386,9 +365,11 @@
     const coasts = fig.coasts;
     let cIdx = 1;                       // default to the "real coast"
     let reveal = 0;                     // 0..1 line-draw progress
+    const caption = node.querySelector(".vz-caption");
+    caption?.remove();
 
     node.appendChild(el("span", "vz-figure-title",
-      "richardson’s plot · slope is the fractal dimension"));
+      node.dataset.vizTitle || "richardson’s plot · slope is the fractal dimension"));
 
     const stage = el("div", "cl-stage cl-rich-stage");
     const canvas = el("canvas", "cl-canvas");
@@ -418,8 +399,7 @@
     controls.appendChild(seg);
     node.appendChild(controls);
 
-    const cap = el("p", "vz-caption");
-    node.appendChild(cap);
+    if (caption) node.appendChild(caption);
 
     const ctx = canvas.getContext("2d");
     let W = 0, H = 0;
@@ -552,25 +532,18 @@
       if (c.key === "circle") dimBadge.classList.add("is-flat");
       if (c.key === "legacy") dimBadge.classList.add("is-steep");
     }
-    function setCaption() {
-      const c = coasts[cIdx];
-      cap.innerHTML =
-        `<b>${c.name}</b> · ${c.metaphor}. ${c.note}`;
-    }
-
     seg.querySelectorAll("[data-c]").forEach((bb) =>
       bb.addEventListener("click", () => {
         cIdx = +bb.dataset.c;
         seg.querySelectorAll("[data-c]").forEach((x) =>
           x.setAttribute("aria-pressed", String(+x.dataset.c === cIdx)));
-        setBadge(); setCaption(); animateReveal();
+        setBadge(); animateReveal();
       }));
 
     window.addEventListener("resize", rafThrottle(size));
     onThemeChange(draw);
 
     setBadge();
-    setCaption();
     size();
     animateReveal();
     node.dataset.vizReady = "true";
