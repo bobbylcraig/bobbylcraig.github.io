@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <link href="https://bobbylcraig.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://bobbylcraig.com/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2026-09-26T16:18:18+00:00</updated>
+  <updated>2026-09-26T16:27:10+00:00</updated>
   <id>https://bobbylcraig.com/feed.xml</id>
 
   
@@ -37,11 +37,11 @@
     <entry>
       
 
-      <title type="html">The 10-Terabyte Coastline</title>
-      <link href="https://bobbylcraig.com/2026/09/01/the-10-terabyte-coastline.html" rel="alternate" type="text/html" title="The 10-Terabyte Coastline" />
+      <title type="html">Every Estimate Is a Coastline</title>
+      <link href="https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html" rel="alternate" type="text/html" title="Every Estimate Is a Coastline" />
       <published>2026-09-01T00:00:00+00:00</published>
       <updated>2026-09-01T00:00:00+00:00</updated>
-      <id>https://bobbylcraig.com/2026/09/01/the-10-terabyte-coastline</id>
+      <id>https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline</id>
       
 
       
@@ -79,8 +79,8 @@
     <entry>
       
 
-      <title type="html">The Fault in Our Star Clustering</title>
-      <link href="https://bobbylcraig.com/2026/05/31/the-fault-in-our-star-clustering.html" rel="alternate" type="text/html" title="The Fault in Our Star Clustering" />
+      <title type="html">The Fault in My Star Clustering</title>
+      <link href="https://bobbylcraig.com/2026/05/31/the-fault-in-our-star-clustering.html" rel="alternate" type="text/html" title="The Fault in My Star Clustering" />
       <published>2026-05-31T00:00:00+00:00</published>
       <updated>2026-05-31T00:00:00+00:00</updated>
       <id>https://bobbylcraig.com/2026/05/31/the-fault-in-our-star-clustering</id>
@@ -205,8 +205,8 @@
     <entry>
       
 
-      <title type="html">On Scaling Teams</title>
-      <link href="https://bobbylcraig.com/2024/12/29/on-scaling-teams.html" rel="alternate" type="text/html" title="On Scaling Teams" />
+      <title type="html">People per Square Foot of Code</title>
+      <link href="https://bobbylcraig.com/2024/12/29/on-scaling-teams.html" rel="alternate" type="text/html" title="People per Square Foot of Code" />
       <published>2024-12-29T00:00:00+00:00</published>
       <updated>2024-12-29T00:00:00+00:00</updated>
       <id>https://bobbylcraig.com/2024/12/29/on-scaling-teams</id>
