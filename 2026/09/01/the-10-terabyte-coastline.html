@@ -65,7 +65,7 @@
   <div class="post-content">
     <p>I hate software estimation.</p>
 
-<p>Well, I hate what happens after software estimation. The estimating itself is mostly harmless. Six people sit in a room, stare at a paragraph somebody typed into a planning document, talk around the large holes in what we know, and eventually produce a number because a number is what the spreadsheet (and MBAs) accepts.</p>
+<p>Well, I hate what happens after software estimation. The estimating itself is mostly harmless. Six people sit in a room, stare at a paragraph somebody typed into a planning document, talk around the large holes in what we know, and eventually produce a number because a number is what the spreadsheet accepts.</p>
 
 <p>Then the number gets sent up the rungs, loses every caveat we attached to it, and comes back down as a date. We (the engineers) curse ourselves for not padding it by 50% more.</p>
 
@@ -83,7 +83,7 @@
 
 <p>Eventually the current table held more than a billion states. Its history passed 150 billion rows and 10 terabytes across our sharded databases. Every day, we upserted roughly 100 million state changes into one table and then did it again in the other. Only opens and clicks grew faster. Yes, we stored those in MySQL too. Please remember the monolith.</p>
 
-<p>The databases were starting to wobble. The fleet cost around $2 million a month.</p>
+<p>The databases were starting to wobble. The fleet cost a genuinely upsetting amount of money every month.</p>
 
 <p>The job was to save the DBs from doom (and maybe dent the bill while we were at it).</p>
 
@@ -105,11 +105,9 @@
 
 <p>Then there are the <strong>known unknowns</strong>. Who reads the history? How fresh does it need to be? How long does replication take? You know the questions and can do discovery to answer some of them. Read another team’s documentation. Draw boxes and arrows. Ask support what they actually do with the table. Useful stuff.</p>
 
-<p>Eventually you hit the <strong>unknown unknowns</strong>. You cannot use the CDC stream directly. The raw copy you can sneakily use is eight hours behind it. The migration engine cannot create a partitioned table, and the image containing your fix will not build. None of that was visible in the sentence “move the audit history to BigQuery.”</p>
+<p>Eventually you hit the <strong>unknown unknowns</strong>: the CDC stream you’re not allowed to touch, the eight-hour lag, the container image that won’t build. None of that was visible in the sentence “move the audit history to BigQuery.”</p>
 
 <p>Discovery helps, but there is only so much you can learn before you start really digging into things. If complete knowledge were required before estimating, we could provide beautifully accurate estimates immediately after finishing the work.</p>
-
-<p>All of this depends on how closely you look.</p>
 
 <p>Which brings me, somehow, to the coastline of Britain.</p>
 
@@ -127,7 +125,7 @@
 
 <p>If you keep going, eventually you run into tides, grains of sand, and atoms. There isn’t one useful answer at every possible scale. The length means very little unless you know how it was measured.</p>
 
-<p>Still don’t understand? I’ve created this to help you visualize!</p>
+<p>Here’s the same idea with a ruler you can drag:</p>
 
 <div class="cl cl-ruler" data-viz-reserve="coastline-ruler" data-src="/assets/data/2026-09-01-the-10-terabyte-coastline/coastline.json" data-viz-title="same coast, shorter ruler" data-viz-caption="Drag the ruler toward fine and watch the measured length grow. Switch to the software estimate to see the same effect in hours."><p class="vz-caption">Drag the ruler toward fine and watch the measured length grow. Switch to the software estimate to see the same effect in hours.</p></div>
 
@@ -135,7 +133,7 @@
 
 <p>Then the ruler got shorter. Who still reads the history? How stale can it be? Can we use the CDC stream directly? Wait, we have a CDC stream now?! What keeps recent history available while BigQuery catches up? Can the migration tool partition the table? Who owns each part once we’re done?</p>
 
-<p>Uncertainty is a tax on work you don’t understand. Leave it out of the estimate and it still shows up later, usually with interest and during a status meeting.</p>
+<p>Leave the uncertainty out of the estimate and it still shows up later, usually with interest and during a status meeting.</p>
 
 <p>This doesn’t make every early estimate secretly good. Some estimates are lazy. Some are politically convenient. Sometimes an engineer hears a date hidden inside the question and reverse-engineers an answer that won’t make the meeting uncomfortable.</p>
 
@@ -149,9 +147,7 @@
 
 <p>Some work stays roughly the same size as you inspect it. A small change in a familiar system, with settled requirements and no new dependencies, might actually be as boring as it looks.</p>
 
-<p>Other work gets bigger fast, like a new integration, a whole new product, or some COBOL written in the 60s and 70s undergirding our entire financial system (or so I’ve heard). The rate depends on the team, the system, the quality bar, and what everyone already knows. The same feature can be smooth for the team that built the platform and an absolute fjord situation for the team meeting it for the first time.</p>
-
-<p>“How uncertain is this for us?” is probably closer to what we need to ask.</p>
+<p>Other work gets bigger fast, like a new integration, a whole new product, or some COBOL written in the 60s and 70s undergirding our entire financial system (or so I’ve heard). The rate depends on the team, the system, the quality bar, and what everyone already knows. The same feature can be smooth for the team that built the platform and an absolute fjord situation for the team meeting it for the first time. How long the coast is depends a lot on who’s holding the ruler.</p>
 
 <p>Eventually, a project stops. A coastline doesn’t. Once the work is over, we know how long that version took. We still don’t know how long it had to take.</p>
 
