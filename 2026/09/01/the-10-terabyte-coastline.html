@@ -99,15 +99,11 @@
 
 <hr />
 
-<p>Donald Rumsfeld (please keep reading) was unfortunately <a href="https://avalon.law.yale.edu/sept11/dod_brief146.asp">onto something with the known knowns, known unknowns, and unknown unknowns</a>. Even a broken clock is right twice a day. Anyway.</p>
+<p>Donald Rumsfeld (please keep reading) was unfortunately <a href="https://avalon.law.yale.edu/sept11/dod_brief146.asp">onto something with the known knowns, known unknowns, and unknown unknowns</a>. Even a broken clock is right twice a day.</p>
 
-<p>At the beginning of a project, you have <strong>known knowns</strong>. You know roughly what the product should do, the systems it will probably touch, and which team has to build it. Maybe you even know who on the team is available.</p>
+<p>At the start, you know roughly what the project should do and which systems it touches. You know some of the questions too. Who reads the history? How fresh does it need to be? Discovery answers a few of them. But the CDC stream you’re not allowed to touch, the eight-hour lag, the container image that won’t build… none of that was visible in the sentence “move the audit history to BigQuery.”</p>
 
-<p>Then there are the <strong>known unknowns</strong>. Who reads the history? How fresh does it need to be? How long does replication take? You know the questions and can do discovery to answer some of them. Read another team’s documentation. Draw boxes and arrows. Ask support what they actually do with the table. Useful stuff.</p>
-
-<p>Eventually you hit the <strong>unknown unknowns</strong>: the CDC stream you’re not allowed to touch, the eight-hour lag, the container image that won’t build. None of that was visible in the sentence “move the audit history to BigQuery.”</p>
-
-<p>Discovery helps, but there is only so much you can learn before you start really digging into things. If complete knowledge were required before estimating, we could provide beautifully accurate estimates immediately after finishing the work.</p>
+<p>If complete knowledge were required before estimating, we could provide beautifully accurate estimates immediately after finishing the work.</p>
 
 <p>Which brings me, somehow, to the coastline of Britain.</p>
 
@@ -127,7 +123,7 @@
 
 <p>Here’s the same idea with a ruler you can drag:</p>
 
-<div class="cl cl-ruler" data-viz-reserve="coastline-ruler" data-src="/assets/data/2026-09-01-the-10-terabyte-coastline/coastline.json" data-viz-title="same coast, shorter ruler" data-viz-caption="Drag the ruler toward fine and watch the measured length grow. Switch to the software estimate to see the same effect in hours."><p class="vz-caption">Drag the ruler toward fine and watch the measured length grow. Switch to the software estimate to see the same effect in hours.</p></div>
+<div class="cx vz-fig cx-fig cl-ruler" data-viz-reserve="coastline-ruler" data-src="/assets/data/2026-09-01-the-10-terabyte-coastline/coastline.json" data-viz-title="Figure 1 · Same coast, shorter ruler" data-viz-caption="Drag the ruler toward fine and watch the measured length grow."><p class="vz-caption">Drag the ruler toward fine and watch the measured length grow.</p></div>
 
 <p>The history-table project was measured with a long ruler. So are most projects, unless you’re cleaning up spaghetti code everybody already understands (lucky you, honestly). “Put the audit history in BigQuery and delete the table” was one stride. Looked manageable.</p>
 
@@ -143,7 +139,7 @@
 
 <p>Richardson also noticed that coastlines don’t all react the same way when the ruler shrinks. A fairly smooth one settles down. A jagged one keeps revealing more bends, so its measured length grows much faster.</p>
 
-<div class="cl cl-richardson" data-viz-reserve="coastline-richardson" data-src="/assets/data/2026-09-01-the-10-terabyte-coastline/coastline.json" data-viz-title="some coastlines are worse" data-viz-caption="Compare the three lines. The steeper the line, the faster the work grows as the ruler shrinks."><p class="vz-caption">Compare the three lines. The steeper the line, the faster the work grows as the ruler shrinks.</p></div>
+<div class="cx vz-fig cx-fig cl-richardson" data-viz-reserve="coastline-richardson" data-src="/assets/data/2026-09-01-the-10-terabyte-coastline/coastline.json" data-viz-title="Figure 2 · Some coastlines are worse" data-viz-caption="Three of the borders Richardson measured, drawn from his fitted slopes over a 100-fold shrink in the ruler. Finer rulers are to the right. The steeper the line, the faster the length grows as the ruler shrinks."><p class="vz-caption">Three of the borders Richardson measured, drawn from his fitted slopes over a 100-fold shrink in the ruler. Finer rulers are to the right. The steeper the line, the faster the length grows as the ruler shrinks.</p></div>
 
 <p>Some work stays roughly the same size as you inspect it. A small change in a familiar system, with settled requirements and no new dependencies, might actually be as boring as it looks.</p>
 
@@ -153,19 +149,11 @@
 
 <hr />
 
-<p>Refusing to estimate work is generally unwise. Somebody else will make the guess and now you have an estimate you don’t believe plus no influence over it. Even carefully hedging the estimate has limits. I once tried that with a short-tempered director who needed a number lower than the one I gave. He screamed at me in a meeting. This did not improve the estimate.</p>
+<p>Refusing to estimate is generally unwise. Somebody else will make the guess, and now you have an estimate you don’t believe and no say in it. Hedging has limits too. I once tried that with a short-tempered director who needed a number lower than the one I gave. He screamed at me in a meeting. This did not improve the estimate.</p>
 
-<p>So… yeah. Sometimes the spreadsheet gets its number.</p>
+<p>So give the number. Just send the ruler up with it: how closely you’ve looked, and what’s most likely to make it grow. When it grows anyway, reopen the date, the approach, or the scope instead of quietly eating the difference.</p>
 
-<p>Give the spreadsheet a range if it will accept one. Say how closely you’ve looked. Write down the assumptions most likely to blow it up. None of that would have revealed that I was not allowed to use the CDC stream or that the container image would not build. What it can do is leave room to revisit the estimate when the ruler changes.</p>
-
-<p>That last part is where this tends to fall apart. A new estimate should reopen the date, the approach, and the scope. I generally prefer moving the date. Dates have bounds, obviously, and sometimes scope should move instead. But scope cannot move so far that the work stops solving the original problem.</p>
-
-<p>For the history table, each shorter ruler changed the approach. BigQuery was still the destination, but it could not replace the history immediately. Partitioning could help with retention, but our migration tooling could not create the table. Support needed fresh data, but not every old row in MySQL forever.</p>
-
-<p>In 2024, we accepted some delay and some rough edges, moved the audit history onto the CDC path, and deleted the old table.</p>
-
-<p>It was glorious, give or take eight hours.</p>
+<p>We deleted the history table in 2024, later than anyone wanted and with some rough edges. It was supposed to be one box and one arrow. I mean, I guess it still is if you stand far enough away 😉</p>
 
 <script src="/assets/js/coastline-figures.js" defer=""></script>
 
