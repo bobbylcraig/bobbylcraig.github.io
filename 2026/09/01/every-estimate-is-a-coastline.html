@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- Begin Jekyll SEO tag v2.9.0 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- Begin Jekyll SEO tag v2.9.1 -->
 <title>Every Estimate Is a Coastline | Bobby’s Homepage</title>
 <meta name="generator" content="Jekyll v4.4.1" />
 <meta property="og:title" content="Every Estimate Is a Coastline" />
 <meta name="author" content="Bobby Craig" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="A 10TB history table looked like a storage problem. Every closer look found something else depending on it. The size of a software project depends on the ruler." />
-<meta name="twitter:description" property="og:description" content="A 10TB history table looked like a storage problem. Every closer look found something else depending on it. The size of a software project depends on the ruler." />
+<meta name="description" content="Software estimates depend on how closely we look. But discovery needs a stopping point, even when the questions keep coming." />
+<meta name="twitter:description" property="og:description" content="Software estimates depend on how closely we look. But discovery needs a stopping point, even when the questions keep coming." />
 <link rel="canonical" href="https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html" />
 <meta property="og:url" content="https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html" />
 <meta property="og:site_name" content="Bobby’s Homepage" />
@@ -16,13 +16,13 @@
 <meta property="og:image:alt" content="Bobby Craig" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2026-09-01T00:00:00+00:00" />
-<meta property="article:modified_time" content="2026-09-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2026-10-07T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://bobbylcraig.com/assets/images/bobby.webp" />
 <meta name="twitter:image:alt" content="Bobby Craig" />
 <meta name="twitter:title" content="Every Estimate Is a Coastline" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bobby Craig"},"dateModified":"2026-09-01T00:00:00+00:00","datePublished":"2026-09-01T00:00:00+00:00","description":"A 10TB history table looked like a storage problem. Every closer look found something else depending on it. The size of a software project depends on the ruler.","headline":"Every Estimate Is a Coastline","image":{"alt":"Bobby Craig","url":"https://bobbylcraig.com/assets/images/bobby.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html"},"url":"https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bobby Craig"},"dateModified":"2026-10-07T00:00:00+00:00","datePublished":"2026-09-01T00:00:00+00:00","description":"Software estimates depend on how closely we look. But discovery needs a stopping point, even when the questions keep coming.","headline":"Every Estimate Is a Coastline","image":{"alt":"Bobby Craig","url":"https://bobbylcraig.com/assets/images/bobby.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html"},"url":"https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)" />
@@ -59,49 +59,26 @@
   <header class="post-header">
     <h1 class="post-title">Every Estimate Is a Coastline</h1>
     <div class="post-meta">
-      <time datetime="2026-09-01T00:00:00+00:00">Sep 1, 2026</time></div>
+      <time datetime="2026-09-01T00:00:00+00:00">Sep 1, 2026</time><span class="sep">·</span>
+      <time datetime="2026-10-07T00:00:00+00:00">Updated Oct 7, 2026</time></div>
   </header>
 
   <div class="post-content">
     <p>I hate software estimation.</p>
 
-<p>Well, I hate what happens after software estimation. The estimating itself is mostly harmless. Six people sit in a room, stare at a paragraph somebody typed into a planning document, talk around the large holes in what we know, and eventually produce a number because a number is what the spreadsheet accepts.</p>
+<p>We have to plan. I get that. But we usually need an estimate before we know much about the work, and “I don’t know yet” rarely gets us very far.</p>
 
-<p>Then the number gets sent up the rungs, loses every caveat we attached to it, and comes back down as a date. We (the engineers) curse ourselves for not padding it by 50% more.</p>
+<p>Then the number gets sent up the rungs, loses every caveat attached to it, and comes back down as a date. The engineers curse themselves for not padding it by 50% more.</p>
 
-<p>Someone always says estimates aren’t commitments. Everyone nods. A roadmap gets built around the estimate anyway and, through some organizational alchemy I don’t fully understand despite participating in it for years, it becomes a commitment.</p>
+<p>Someone always says estimates aren’t commitments. Everyone nods. A roadmap gets built around the estimate anyway and, through some organizational alchemy I don’t fully understand, it becomes a commitment.</p>
 
-<p>I’ve done my part. I’ve turned guesses into suspiciously specific numbers of engineering weeks because “somewhere between a month and several months… depends what we find” looked bad in the cell. I’ve also gotten annoyed when somebody else’s project took longer than they said it would. We all know estimation is inexact, but I’m not convinced any of us actually behaves as though it is.</p>
-
-<hr />
-
-<p>At a previous company, we had a “contact state table” and a “contact state history table”.</p>
-
-<p>Before I go any further, this was a legacy PHP monolith approaching 20 years old. Setting up new Kafka topics was discouraged until sometime in the early 2020s. Using MySQL to track the state of billions of contacts was not my dream architecture. It was what we had.</p>
-
-<p>The first table stored where a contact was in each workflow. Waiting for a delay. Sitting at a condition. Ready for an email. The history table was its audit trail. Support, reporting, and segmentation used it to see how the contact got there.</p>
-
-<p>Eventually the current table held more than a billion states. Its history passed 150 billion rows and 10 terabytes across our sharded databases. Every day, we upserted roughly 100 million state changes into one table and then did it again in the other. Only opens and clicks grew faster. Yes, we stored those in MySQL too. Please remember the monolith.</p>
-
-<p>The databases were starting to wobble. The fleet cost a genuinely upsetting amount of money every month.</p>
-
-<p>The job was to save the DBs from doom (and maybe dent the bill while we were at it).</p>
-
-<p>Then a new CDP project brought in Debezium and, apparently, we had change data capture now. Before that, BI tables came from an enormous nightly Airflow job that essentially ran <code class="language-plaintext highlighter-rouge">SELECT *</code> against all of our tables. Lol. We could stop writing the history table and keep the audit trail in BigQuery instead.</p>
-
-<p>I was told I was not allowed to plug directly into the CDC stream. Data Engineering pulled the changes into BigQuery and compacted them. We needed the raw history, so we quietly read the uncompacted source. For some reason, it lagged by as much as eight hours. Fine for some reports. Less fine when support was trying to explain why a contact had not received an email.</p>
-
-<p>We considered partitioning the history by date, keeping recent data in MySQL, and dropping old partitions after BigQuery caught up. The in-house migration engine did not support partitions. I added support, but its new container image would not build, so we could not release it. I no longer remember why. Figures.</p>
-
-<p>Meanwhile, support kept asking for history and the databases kept writing both copies.</p>
-
-<p>From far away, this was one box and one arrow. State changes go to BigQuery. History table goes away. Nobody mentioned the failed approaches, the red tape, or the trifles of doing any of this inside a 20-year-old PHP monolith.</p>
+<p>“Somewhere between a month and several months… depends what we find” looks bad in the cell. We all know estimation is inexact, but I’m not convinced any of us actually behaves as though it is.</p>
 
 <hr />
 
 <p>Donald Rumsfeld (please keep reading) was unfortunately <a href="https://avalon.law.yale.edu/sept11/dod_brief146.asp">onto something with the known knowns, known unknowns, and unknown unknowns</a>. Even a broken clock is right twice a day.</p>
 
-<p>At the start, you know roughly what the project should do and which systems it touches. You know some of the questions too. Who reads the history? How fresh does it need to be? Discovery answers a few of them. But the CDC stream you’re not allowed to touch, the eight-hour lag, the container image that won’t build… none of that was visible in the sentence “move the audit history to BigQuery.”</p>
+<p>At the start, you know roughly what the project should do. You know some of the questions too. Discovery answers a few of them and introduces you to several others you hadn’t thought to ask. Very considerate of it.</p>
 
 <p>If complete knowledge were required before estimating, we could provide beautifully accurate estimates immediately after finishing the work.</p>
 
@@ -115,7 +92,7 @@
 
 <p><a href="https://en.wikipedia.org/wiki/Lewis_Fry_Richardson">Lewis Fry Richardson</a> found the same problem while studying whether shared borders made countries more likely to fight. Spain reported that its border with Portugal was 987 kilometers. Portugal said the same border was 1,214 kilometers.</p>
 
-<p>His work appeared posthumously in 1961 as <a href="https://cds.cern.ch/record/434833"><em>The Problem of Contiguity: An Appendix to Statistics of Deadly Quarrels</em></a>. It attracted almost no attention. Then Benoit Mandelbrot came across it, interpreted Richardson’s slopes in terms of dimension, and gave the problem its famous title in 1967: <a href="https://users.math.yale.edu/~bbm3/web_pdfs/howLongIsTheCoastOfBritain.pdf"><em>How Long Is the Coast of Britain? Statistical Self-Similarity and Fractional Dimension</em></a>. Classic Mandelbrot.</p>
+<p>Richardson’s work appeared posthumously in 1961 as <a href="https://cds.cern.ch/record/434833"><em>The Problem of Contiguity</em></a>. Benoit Mandelbrot later interpreted it in terms of fractional dimension in his 1967 paper, <a href="https://users.math.yale.edu/~bbm3/web_pdfs/howLongIsTheCoastOfBritain.pdf"><em>How Long Is the Coast of Britain?</em></a>. Classic Mandelbrot.</p>
 
 <p>Imagine walking a divider along a map of a coastline. Take long strides and you step past bays and inlets. The measurement comes out fairly short. Make the stride smaller and the divider follows some of the bays it skipped. Smaller again and it catches smaller bends, rocks, and whatever else the map can resolve. The measured coast gets longer.</p>
 
@@ -125,15 +102,13 @@
 
 <div class="cx vz-fig cx-fig cl-ruler" data-viz-reserve="coastline-ruler" data-src="/assets/data/2026-09-01-every-estimate-is-a-coastline/coastline.json" data-viz-title="Figure 1 · Same coast, shorter ruler" data-viz-caption="Drag the ruler toward fine and watch the measured length grow."><p class="vz-caption">Drag the ruler toward fine and watch the measured length grow.</p></div>
 
-<p>The history-table project was measured with a long ruler. So are most projects, unless you’re cleaning up spaghetti code everybody already understands (lucky you, honestly). “Put the audit history in BigQuery and delete the table” was one stride. Looked manageable.</p>
+<p>Most projects start with a long ruler. “Add an export button” is one stride. It sounds simple enough.</p>
 
-<p>Then the ruler got shorter. Who still reads the history? How stale can it be? Can we use the CDC stream directly? Wait, we have a CDC stream now?! What keeps recent history available while BigQuery catches up? Can the migration tool partition the table? Who owns each part once we’re done?</p>
+<p>Then the ruler gets shorter. Export which records? Can everyone see the same fields? What happens when the file is too big for the request to finish? Does it need to reflect the data when the user clicked the button or when the export finally runs? The button itself may be the easiest part.</p>
 
 <p>Leave the uncertainty out of the estimate and it still shows up later, usually with interest and during a status meeting.</p>
 
 <p>This doesn’t make every early estimate secretly good. Some estimates are lazy. Some are politically convenient. Sometimes an engineer hears a date hidden inside the question and reverse-engineers an answer that won’t make the meeting uncomfortable.</p>
-
-<p>I have certainly never done that.</p>
 
 <hr />
 
@@ -143,17 +118,29 @@
 
 <p>Some work stays roughly the same size as you inspect it. A small change in a familiar system, with settled requirements and no new dependencies, might actually be as boring as it looks.</p>
 
-<p>Other work gets bigger fast, like a new integration, a whole new product, or some COBOL written in the 60s and 70s undergirding our entire financial system (or so I’ve heard). The rate depends on the team, the system, the quality bar, and what everyone already knows. The same feature can be smooth for the team that built the platform and an absolute fjord situation for the team meeting it for the first time. How long the coast is depends a lot on who’s holding the ruler.</p>
+<p>Other work gets bigger fast: a new integration, a whole new product, or some COBOL undergirding our entire financial system (or so I’ve heard). The same feature can be easy to estimate for the team that built the platform and much harder for a team still learning how it works. How long the coast is depends a lot on who’s holding the ruler.</p>
 
 <p>Eventually, a project stops. A coastline doesn’t. Once the work is over, we know how long that version took. We still don’t know how long it had to take.</p>
 
 <hr />
 
-<p>Refusing to estimate is generally unwise. Somebody else will make the guess, and now you have an estimate you don’t believe and no say in it. Hedging has limits too. I once tried that with a short-tempered director who needed a number lower than the one I gave. He screamed at me in a meeting. This did not improve the estimate.</p>
+<aside class="note" role="note">Added October 7, 2026. A recent experience got me thinking about a question I'd skipped over when I first wrote this.</aside>
 
-<p>So give the number. Just send the ruler up with it: how closely you’ve looked, and what’s most likely to make it grow. When it grows anyway, reopen the date, the approach, or the scope instead of quietly eating the difference.</p>
+<p>That leaves an awkward question. If looking closer keeps revealing more work, when do we stop looking? One discovery ticket produces several more. The board gets very organized. The thing still doesn’t exist.</p>
 
-<p>We deleted the history table in 2024, later than anyone wanted and with some rough edges. It was supposed to be one box and one arrow. I mean, I guess it still is if you stand far enough away 😉</p>
+<p>“Understand the project” is a lot to ask of a ticket. I’d rather know what decision we’re trying to make. Can this approach handle the expected volume? Do we need a different data model? Give the investigation a budget and a point to decide what comes next. Reaching Friday doesn’t mean we know enough. It means we have to decide whether another week is worth spending.</p>
+
+<p>More questions can still be progress. Ruling out an approach that would have failed is useful. But finding something doesn’t automatically make it part of the project. Is it necessary for the outcome we’re promising? Can it wait? Somebody has to choose, or the scope grows every time anyone learns anything.</p>
+
+<p>Some questions need an answer before we build. Others are cheaper to answer by building a small piece. We need enough confidence to take a next step whose consequences we can tolerate if we’re wrong. We can budget that step even if the whole project is still hard to estimate. If we can’t find one, perhaps the work needs narrowing or the approach needs changing.</p>
+
+<p>And whoever asks a team to proceed with unanswered questions has to let the answers change the plan. Tell people to get started, then hold them to a date that assumes no surprises, and you’ve given them a pretty good reason to keep discovering things until retirement.</p>
+
+<hr />
+
+<p>Refusing to estimate is generally unwise. Somebody else will make the guess, and now you have an estimate you don’t believe and no say in it.</p>
+
+<p>So give the estimate. Just send the ruler up with it: how closely you’ve looked, and what’s most likely to make it grow. Decide what is worth looking at next. When the work grows anyway, reopen the date, the approach, or the scope instead of quietly eating the difference.</p>
 
 <script src="/assets/js/coastline-figures.js" defer=""></script>
 
