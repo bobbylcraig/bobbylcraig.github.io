@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
   <link href="https://bobbylcraig.com/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://bobbylcraig.com/" rel="alternate" type="text/html" hreflang="en" />
-  <updated>2026-11-17T03:38:35+00:00</updated>
+  <updated>2026-11-17T05:25:54+00:00</updated>
   <id>https://bobbylcraig.com/feed.xml</id>
 
   
@@ -37,10 +37,52 @@
     <entry>
       
 
+      <title type="html">Phantom of the Index</title>
+      <link href="https://bobbylcraig.com/2026/10/31/phantom-of-the-index.html" rel="alternate" type="text/html" title="Phantom of the Index" />
+      <published>2026-10-31T00:00:00+00:00</published>
+      <updated>2026-10-31T00:00:00+00:00</updated>
+      <id>https://bobbylcraig.com/2026/10/31/phantom-of-the-index</id>
+      
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>Bobby Craig</name>
+        
+        
+      </author>
+
+      
+        
+      
+
+      
+
+      
+      
+        <summary type="html"><![CDATA[A MySQL update can match no rows and still block an insert. How InnoDB gap locks make different keys wait on each other, and when READ COMMITTED helps.]]></summary>
+      
+
+      
+      
+        
+        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://bobbylcraig.com/assets/images/bobby.webp" />
+        <media:content medium="image" url="https://bobbylcraig.com/assets/images/bobby.webp" xmlns:media="http://search.yahoo.com/mrss/" />
+      
+    </entry>
+  
+    
+    <entry>
+      
+
       <title type="html">Every Estimate Is a Coastline</title>
       <link href="https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline.html" rel="alternate" type="text/html" title="Every Estimate Is a Coastline" />
       <published>2026-09-01T00:00:00+00:00</published>
-      <updated>2026-10-07T00:00:00+00:00</updated>
+      <updated>2026-09-01T00:00:00+00:00</updated>
       <id>https://bobbylcraig.com/2026/09/01/every-estimate-is-a-coastline</id>
       
 
@@ -205,11 +247,11 @@
     <entry>
       
 
-      <title type="html">People per Square Foot of Code</title>
-      <link href="https://bobbylcraig.com/2024/12/29/people-per-square-foot-of-code.html" rel="alternate" type="text/html" title="People per Square Foot of Code" />
+      <title type="html">Contention</title>
+      <link href="https://bobbylcraig.com/2024/12/29/contention.html" rel="alternate" type="text/html" title="Contention" />
       <published>2024-12-29T00:00:00+00:00</published>
       <updated>2024-12-29T00:00:00+00:00</updated>
-      <id>https://bobbylcraig.com/2024/12/29/people-per-square-foot-of-code</id>
+      <id>https://bobbylcraig.com/2024/12/29/contention</id>
       
 
       
@@ -289,11 +331,11 @@
     <entry>
       
 
-      <title type="html">Rubber Ducking with the Sidewalk</title>
-      <link href="https://bobbylcraig.com/2021/05/03/rubber-ducking-with-the-sidewalk.html" rel="alternate" type="text/html" title="Rubber Ducking with the Sidewalk" />
+      <title type="html">Walk It Off</title>
+      <link href="https://bobbylcraig.com/2021/05/03/walk-it-off.html" rel="alternate" type="text/html" title="Walk It Off" />
       <published>2021-05-03T00:00:00+00:00</published>
       <updated>2021-05-03T00:00:00+00:00</updated>
-      <id>https://bobbylcraig.com/2021/05/03/rubber-ducking-with-the-sidewalk</id>
+      <id>https://bobbylcraig.com/2021/05/03/walk-it-off</id>
       
 
       
@@ -401,48 +443,6 @@
       
       
         <summary type="html"><![CDATA[A text analysis of 59 of President Adam Weinberg's published writings — the phrases he reaches for again and again, and the thinkers behind them.]]></summary>
-      
-
-      
-      
-        
-        <media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://bobbylcraig.com/assets/images/bobby.webp" />
-        <media:content medium="image" url="https://bobbylcraig.com/assets/images/bobby.webp" xmlns:media="http://search.yahoo.com/mrss/" />
-      
-    </entry>
-  
-    
-    <entry>
-      
-
-      <title type="html">A Case For Bigger Pockets</title>
-      <link href="https://bobbylcraig.com/2017/10/11/a-case-for-bigger-pockets.html" rel="alternate" type="text/html" title="A Case For Bigger Pockets" />
-      <published>2017-10-11T00:00:00+00:00</published>
-      <updated>2017-10-11T00:00:00+00:00</updated>
-      <id>https://bobbylcraig.com/2017/10/11/a-case-for-bigger-pockets</id>
-      
-
-      
-      
-      
-      
-      
-
-      <author>
-          <name>Bobby Craig</name>
-        
-        
-      </author>
-
-      
-        
-      
-
-      
-
-      
-      
-        <summary type="html"><![CDATA[A data analysis of lost-item posts in Denison University's student Facebook group — what gets lost, when, and what it says about us.]]></summary>
       
 
       

@@ -2,15 +2,15 @@
 <html lang="en"><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" /><!-- Begin Jekyll SEO tag v2.9.1 -->
-<title>People per Square Foot of Code | Bobby’s Homepage</title>
+<title>Contention | Bobby’s Homepage</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="People per Square Foot of Code" />
+<meta property="og:title" content="Contention" />
 <meta name="author" content="Bobby Craig" />
 <meta property="og:locale" content="en" />
 <meta name="description" content="Brooks’ Law remains undefeated. Throwing people at a late project just makes it later." />
 <meta name="twitter:description" property="og:description" content="Brooks’ Law remains undefeated. Throwing people at a late project just makes it later." />
-<link rel="canonical" href="https://bobbylcraig.com/2024/12/29/people-per-square-foot-of-code.html" />
-<meta property="og:url" content="https://bobbylcraig.com/2024/12/29/people-per-square-foot-of-code.html" />
+<link rel="canonical" href="https://bobbylcraig.com/2024/12/29/contention.html" />
+<meta property="og:url" content="https://bobbylcraig.com/2024/12/29/contention.html" />
 <meta property="og:site_name" content="Bobby’s Homepage" />
 <meta property="og:image" content="https://bobbylcraig.com/assets/images/bobby.webp" />
 <meta property="og:image:alt" content="Bobby Craig" />
@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://bobbylcraig.com/assets/images/bobby.webp" />
 <meta name="twitter:image:alt" content="Bobby Craig" />
-<meta name="twitter:title" content="People per Square Foot of Code" />
+<meta name="twitter:title" content="Contention" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bobby Craig"},"dateModified":"2024-12-29T00:00:00+00:00","datePublished":"2024-12-29T00:00:00+00:00","description":"Brooks’ Law remains undefeated. Throwing people at a late project just makes it later.","headline":"People per Square Foot of Code","image":{"alt":"Bobby Craig","url":"https://bobbylcraig.com/assets/images/bobby.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bobbylcraig.com/2024/12/29/people-per-square-foot-of-code.html"},"url":"https://bobbylcraig.com/2024/12/29/people-per-square-foot-of-code.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bobby Craig"},"dateModified":"2024-12-29T00:00:00+00:00","datePublished":"2024-12-29T00:00:00+00:00","description":"Brooks’ Law remains undefeated. Throwing people at a late project just makes it later.","headline":"Contention","image":{"alt":"Bobby Craig","url":"https://bobbylcraig.com/assets/images/bobby.webp","@type":"imageObject"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bobbylcraig.com/2024/12/29/contention.html"},"url":"https://bobbylcraig.com/2024/12/29/contention.html"}</script>
 <!-- End Jekyll SEO tag -->
 <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#fdfdfd" media="(prefers-color-scheme: light)" />
@@ -57,7 +57,7 @@
         <div class="wrapper">
           <article class="post">
   <header class="post-header">
-    <h1 class="post-title">People per Square Foot of Code</h1>
+    <h1 class="post-title">Contention</h1>
     <div class="post-meta">
       <time datetime="2024-12-29T00:00:00+00:00">Dec 29, 2024</time></div>
   </header>
@@ -67,27 +67,27 @@
 
 <p>I’ve been the person doing the explaining. I know where some of the bodies are buried. I’ve also been the one who buried a few… unrealistic deadline, tight scope, “we’ll come back and clean this up” (we did not come back).</p>
 
-<p>Yes, this is a Brooks’ Law post. “Adding manpower to a late software project makes it later,” from <a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month">The Mythical Man-Month</a>, 1975. Everyone in software has heard it and nobody in management seems to have internalized it, which is maybe the definition of a cliché that still needs saying. I’m not going to re-derive it. Brooks did the communication-channel math fifty years ago (two people have one channel, ten have forty-five), and Coda Hale did the modern version in <a href="https://codahale.com/work-is-work/">Work Is Work</a>: coherence costs grow quadratically as you add people, while work capacity grows linearly at best. Read it in full if you want the math behind why your twelve-person standup accomplishes nothing.</p>
+<p>Yes, this is a Brooks’ Law post. “Adding manpower to a late software project makes it later.” Fred Brooks wrote that in <a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month">The Mythical Man-Month</a> back in 1975, everyone in software has heard it, and somehow it still needs saying every couple of years. I’m not going to redo the math. The short version is that two people have one line of communication between them and ten people have forty-five, so the coordination piles up way faster than the actual work does. Coda Hale wrote a much better (and much more recent) version in <a href="https://codahale.com/work-is-work/">Work Is Work</a> if you want the real numbers… or if you just want to know why your twelve-person standup accomplishes nothing.</p>
 
-<p>What I want to add is the part the usual telling skips, because it’s the part that actually bit us.</p>
+<p>But there’s a part of this I don’t hear about as much, and it’s the part that actually bit us.</p>
 
 <p>We had a project to build an AI-powered automation template. Internally we call these PBJs 🍞 (pre-built journeys… and yes, the acronym <em>and emoji use</em> is real). The mandate came down from leadership, fully formed, without much input from the people who’d actually be writing the code. This is how it goes… someone three or four levels up decides it’s a priority and it lands on your sprint board and now it’s your problem.</p>
 
 <p>The issue wasn’t headcount. We had enough engineers. The issue was that everyone needed to write code in the same small part of the codebase at the same time, and the deadline was yesterday.</p>
 
-<p>Brooks’ Law usually gets told as a people problem: ramp-up time, meetings, channels. That’s all real, and it’s a cost you can at least see coming and budget for. What nobody budgets for is <em>density</em>. Call it people per square foot of code. Ten engineers spread across ten services is a team. Ten engineers in the same three files is a mosh pit. You can’t onboard your way out of six open PRs touching the same function.</p>
+<p>When people talk about Brooks’ Law it’s usually about the people… ramp-up time, more meetings, more channels. That’s all real, but at least you can see it coming (and maybe even budget for it). What got us was more like density. People per square foot of code, if you will. Ten engineers spread across ten services is mostly fine. Ten engineers crammed into the same three files is a mosh pit, and no amount of onboarding docs is going to fix six open PRs touching the same function.</p>
 
-<p>And when you put that kind of density on a tight area of code with a short fuse, people stop building within abstractions. They stop reading the existing patterns. They (or their AI IDE) just start throwing spaghetti at the wall. Of course they do. Nobody gave them the time to do it right. That’s an organizational failure, not an engineering one.</p>
+<p>Pack that many people into that little code with a deadline breathing down their necks and they stop building within the abstractions. Nobody’s reading the existing patterns. Everyone (or their AI IDE) is just throwing spaghetti at the wall. And honestly… of course they are. Nobody gave them time to do it right, and that’s more on the org than on any of the engineers.</p>
 
 <p>Merge conflicts everywhere. Conditionals nesting inside conditionals. Someone accidentally reverts a change from a PR that merged two hours ago because there’s no time to review properly and nobody can keep track of what landed where. You open a PR and it’s 400 lines of diff across files that three other open PRs also touch and you just… stare at it.</p>
 
 <p>And it’s not like Slack helps. Forty-five communication channels turn into forty-five threads, twelve of which are in channels nobody monitors, three of which contain decisions that’ll surprise someone in two weeks, and fifteen backchannel DMs you may or may not be part of, because who needs open communication anyway.</p>
 
-<p>By the time things stabilized, the deadline had passed and everyone was quietly exhausted. The people who’d been pulled onto the project ended up being solid contributors… <em>after</em> the pressure dropped, <em>after</em> they’d had time to build context organically. The ramp worked. It just didn’t work on the timeline that mattered.</p>
+<p>By the time things stabilized, the deadline had passed and everyone was quietly exhausted. The people who’d been pulled onto the project ended up being solid contributors… <em>after</em> the pressure dropped, <em>after</em> they’d had time to actually learn the code. So the ramp-up did work. Just not in time for the deadline we were ramping up for.</p>
 
-<p>Which is why I don’t think “never add people” is the lesson. Adding people works fine when there’s somewhere for them to stand: early in a project, when tasks split cleanly, or when they’re picking up peripheral work that frees the core team. Adding people to one hot spot mostly adds collisions. So before anyone “adds headcount,” I’d ask a dumber question than “how many?” Ask where they’re all going to be typing.</p>
+<p>I don’t think the lesson is “never add people,” though. Adding people is fine when there’s somewhere for them to stand… early in a project, when the work splits up cleanly, or when they can pick up the stuff around the edges so the core team can focus. It’s piling everyone onto the same hot spot that hurts. So next time someone wants to “add headcount,” maybe skip “how many?” and ask the dumber question first. Where are they all going to be typing?</p>
 
-<p>And sometimes the right move when a project is late is to cut scope and protect the people who can fix it from the people who want to help. That’s a hard sell in a room full of people who believe effort is fungible… or when you truly don’t have a say in the deadline or scope and you’re just set up for failure. Brooks would say you can’t have nine women produce a baby in one month (his metaphor, not mine… and no, it hasn’t aged well). My addendum is less poetic: nine engineers in the same three files won’t ship the PBJ in one month either.</p>
+<p>And sometimes the right move when a project is late is to cut scope and protect the people who can fix it from the people who want to help. That’s a hard sell in a room full of people who think every engineer-hour is interchangeable… or when you truly don’t have a say in the deadline or scope and you’re just set up for failure. Brooks would say you can’t have nine women produce a baby in one month (his metaphor, not mine… and no, it hasn’t aged well). My addendum is less poetic: nine engineers in the same three files won’t ship the PBJ in one month either.</p>
 
   </div>
 </article>
