@@ -68,79 +68,51 @@
 
 <p>We have to plan. I get that. But we usually need an estimate before we know much about the work, and “I don’t know yet” rarely gets us very far.</p>
 
-<p>Then the number gets sent up the rungs, loses every caveat attached to it, and comes back down as a date. The engineers curse themselves for not padding it by 50% more.</p>
+<p>Then the number gets sent up the rungs, loses every caveat attached to it, and comes back down as a date. The engineers curse themselves for not padding it another 50%. Someone always says estimates aren’t commitments. Everyone nods. A roadmap gets built around the estimate anyway and, through some organizational alchemy I don’t fully understand, it becomes a commitment.</p>
 
-<p>Someone always says estimates aren’t commitments. Everyone nods. A roadmap gets built around the estimate anyway and, through some organizational alchemy I don’t fully understand, it becomes a commitment.</p>
+<p>“Somewhere between a month and several months… depends what we find” looks bad in a spreadsheet cell. We all know estimation is inexact, but I’m not convinced any of us actually behaves as though it is.</p>
 
-<p>“Somewhere between a month and several months… depends what we find” looks bad in the cell. We all know estimation is inexact, but I’m not convinced any of us actually behaves as though it is.</p>
+<p>Donald Rumsfeld (please keep reading) was unfortunately <a href="https://avalon.law.yale.edu/sept11/dod_brief146.asp">onto something with the known knowns, known unknowns, and unknown unknowns</a>. At the start, you know roughly what the project should do. You know some of the questions too. Discovery answers a few of them and introduces you to several others you hadn’t thought to ask. Very considerate of it.</p>
 
-<hr />
+<p>If complete knowledge were required before estimating, we could provide beautifully accurate estimates immediately after finishing the work. Which brings me, somehow, to the coastline of Britain.</p>
 
-<p>Donald Rumsfeld (please keep reading) was unfortunately <a href="https://avalon.law.yale.edu/sept11/dod_brief146.asp">onto something with the known knowns, known unknowns, and unknown unknowns</a>. Even a broken clock is right twice a day.</p>
+<p>How long is the coast of Britain? It sounds like a boring question with a boring answer. But it’s nuanced! Somebody measured it. Then several other people measured it. AND THEY GOT DIFFERENT NUMBERS.</p>
 
-<p>At the start, you know roughly what the project should do. You know some of the questions too. Discovery answers a few of them and introduces you to several others you hadn’t thought to ask. Very considerate of it.</p>
+<p><a href="https://en.wikipedia.org/wiki/Lewis_Fry_Richardson">Lewis Fry Richardson</a> found the same problem while studying whether shared borders made countries more likely to fight. Spain reported that its border with Portugal was 987 kilometers. Portugal said the same border was 1,214 kilometers. Richardson’s work appeared posthumously in 1961 as <a href="https://cds.cern.ch/record/434833"><em>The Problem of Contiguity</em></a>. Benoit Mandelbrot later interpreted it in terms of fractional dimension in his 1967 paper, <a href="https://users.math.yale.edu/~bbm3/web_pdfs/howLongIsTheCoastOfBritain.pdf"><em>How Long Is the Coast of Britain?</em></a>. Classic Mandelbrot… Spain and Portugal do all the arguing and he names the paper after Britain.</p>
 
-<p>If complete knowledge were required before estimating, we could provide beautifully accurate estimates immediately after finishing the work.</p>
+<p>Imagine flipping a ruler end over end along a map of a coastline. Use a yardstick (or a meter stick, if you’re from one of the many countries that has its act together) and you step right past bays and inlets. The measurement comes out fairly short. Switch to one of those foot-long rulers from elementary school and you start catching some of the bays you skipped. Go smaller again and you catch smaller bends, rocks, and whatever else the map can resolve. The measured coast gets longer.</p>
 
-<p>Which brings me, somehow, to the coastline of Britain.</p>
-
-<hr />
-
-<p>How long is the coast of Britain?</p>
-
-<p>It sounds like a boring question with a boring answer. But it’s nuanced! Somebody measured it. Then several other people measured it. AND THEY GOT DIFFERENT NUMBERS.</p>
-
-<p><a href="https://en.wikipedia.org/wiki/Lewis_Fry_Richardson">Lewis Fry Richardson</a> found the same problem while studying whether shared borders made countries more likely to fight. Spain reported that its border with Portugal was 987 kilometers. Portugal said the same border was 1,214 kilometers.</p>
-
-<p>Richardson’s work appeared posthumously in 1961 as <a href="https://cds.cern.ch/record/434833"><em>The Problem of Contiguity</em></a>. Benoit Mandelbrot later interpreted it in terms of fractional dimension in his 1967 paper, <a href="https://users.math.yale.edu/~bbm3/web_pdfs/howLongIsTheCoastOfBritain.pdf"><em>How Long Is the Coast of Britain?</em></a>. Classic Mandelbrot.</p>
-
-<p>Imagine walking a divider along a map of a coastline. Take long strides and you step past bays and inlets. The measurement comes out fairly short. Make the stride smaller and the divider follows some of the bays it skipped. Smaller again and it catches smaller bends, rocks, and whatever else the map can resolve. The measured coast gets longer.</p>
-
-<p>If you keep going, eventually you run into tides, grains of sand, and atoms. There isn’t one useful answer at every possible scale. The length means very little unless you know how it was measured.</p>
-
-<p>Here’s the same idea with a ruler you can drag:</p>
+<p>If you keep going, eventually you run into tides, grains of sand, and atoms. There’s no length independent of the ruler. The number means very little unless you know how it was measured. Here’s the same idea with a ruler you can drag.</p>
 
 <div class="cx vz-fig cx-fig cl-ruler" data-viz-reserve="coastline-ruler" data-src="/assets/data/2026-09-01-every-estimate-is-a-coastline/coastline.json" data-viz-title="Figure 1 · Same coast, shorter ruler" data-viz-caption="Drag the ruler toward fine and watch the measured length grow."><p class="vz-caption">Drag the ruler toward fine and watch the measured length grow.</p></div>
 
-<p>Most projects start with a long ruler. “Add an export button” is one stride. It sounds simple enough.</p>
+<p>Most projects start with a yardstick. “Add an export button” fits in one length of it. It sounds simple enough. Then somebody hands you the elementary school ruler. Export which records? Can everyone see the same fields? What happens when the file is too big for the request to finish? Does it need to reflect the data when the user clicked the button or when the export finally runs? The button itself may be the easiest part.</p>
 
-<p>Then the ruler gets shorter. Export which records? Can everyone see the same fields? What happens when the file is too big for the request to finish? Does it need to reflect the data when the user clicked the button or when the export finally runs? The button itself may be the easiest part.</p>
-
-<p>Leave the uncertainty out of the estimate and it still shows up later, usually with interest and during a status meeting.</p>
-
-<p>This doesn’t make every early estimate secretly good. Some estimates are lazy. Some are politically convenient. Sometimes an engineer hears a date hidden inside the question and reverse-engineers an answer that won’t make the meeting uncomfortable.</p>
-
-<hr />
+<p>Leave the uncertainty out of the estimate and it still shows up later, usually with interest and during a status meeting. None of this makes every early estimate secretly good, though. The coastline explains some misses, not all of them. Some estimates are lazy. Some are politically convenient. Sometimes an engineer hears a date hidden inside the question and reverse-engineers an answer that won’t make the meeting uncomfortable.</p>
 
 <p>Richardson also noticed that coastlines don’t all react the same way when the ruler shrinks. A fairly smooth one settles down. A jagged one keeps revealing more bends, so its measured length grows much faster.</p>
 
-<div class="cx vz-fig cx-fig cl-richardson" data-viz-reserve="coastline-richardson" data-src="/assets/data/2026-09-01-every-estimate-is-a-coastline/coastline.json" data-viz-title="Figure 2 · Some coastlines are worse" data-viz-caption="Three of the borders Richardson measured, drawn at one scale from modern outlines (Natural Earth) and walked with the same divider. Shorten the ruler and Britain nearly triples, while South Africa barely moves."><p class="vz-caption">Three of the borders Richardson measured, drawn at one scale from modern outlines (Natural Earth) and walked with the same divider. Shorten the ruler and Britain nearly triples, while South Africa barely moves.</p></div>
+<div class="cx vz-fig cx-fig cl-richardson" data-viz-reserve="coastline-richardson" data-src="/assets/data/2026-09-01-every-estimate-is-a-coastline/coastline.json" data-viz-title="Figure 2 · Some coastlines are worse" data-viz-caption="Three of the borders Richardson measured, drawn at one scale from modern outlines (Natural Earth) and walked with the same ruler. Shorten the ruler and Britain nearly triples, while South Africa barely moves."><p class="vz-caption">Three of the borders Richardson measured, drawn at one scale from modern outlines (Natural Earth) and walked with the same ruler. Shorten the ruler and Britain nearly triples, while South Africa barely moves.</p></div>
 
-<p>Some work stays roughly the same size as you inspect it. A small change in a familiar system, with settled requirements and no new dependencies, might actually be as boring as it looks.</p>
-
-<p>Other work gets bigger fast: a new integration, a whole new product, or some COBOL undergirding our entire financial system (or so I’ve heard). The same feature can be easy to estimate for the team that built the platform and much harder for a team still learning how it works. How long the coast is depends a lot on who’s holding the ruler.</p>
+<p>Some work stays roughly the same size as you inspect it. A small change in a familiar system, with settled requirements and no new dependencies, might actually be as boring as it looks. Other work gets bigger fast, like a new integration, a whole new product, or some COBOL undergirding our entire financial system (or so I’ve heard). The same feature can be easy to estimate for the team that built the platform and much harder for a team still learning how it works. A coast you’ve already walked a hundred times has a lot fewer surprises.</p>
 
 <p>Eventually, a project stops. A coastline doesn’t. Once the work is over, we know how long that version took. We still don’t know how long it had to take.</p>
-
-<hr />
-
-<aside class="note" role="note">Added October 7, 2026. A recent experience got me thinking about a question I'd skipped over when I first wrote this.</aside>
 
 <p>That leaves an awkward question. If looking closer keeps revealing more work, when do we stop looking? One discovery ticket produces several more. The board gets very organized. The thing still doesn’t exist.</p>
 
 <p>“Understand the project” is a lot to ask of a ticket. I’d rather know what decision we’re trying to make. Can this approach handle the expected volume? Do we need a different data model? Give the investigation a budget and a point to decide what comes next. Reaching Friday doesn’t mean we know enough. It means we have to decide whether another week is worth spending.</p>
 
+<p>I’ve had a few spikes get to the end of the week and come back asking for more time. Sometimes I didn’t think the research should take that long, and I really didn’t want it quietly spilling into the time we’d set aside to build the thing. So I said no. Which, I realized a little too late, sounded a lot like “please stop learning things.”</p>
+
+<p>That isn’t what I meant (and it’s a strange position for someone who just spent several paragraphs explaining that looking closer always finds more coast). More time is fine when there are specific questions we need answered before we build. What I actually wanted was a stopping point. Close out the spike with what we learned, then open a <em>new</em> ticket with the questions that are left, which decisions they affect, and how long we think they’ll take. Maybe it’s the same amount of work. But now somebody chose to spend that week, instead of the original ticket just… getting bigger.</p>
+
 <p>More questions can still be progress. Ruling out an approach that would have failed is useful. But finding something doesn’t automatically make it part of the project. Is it necessary for the outcome we’re promising? Can it wait? Somebody has to choose, or the scope grows every time anyone learns anything.</p>
 
-<p>Some questions need an answer before we build. Others are cheaper to answer by building a small piece. We need enough confidence to take a next step whose consequences we can tolerate if we’re wrong. We can budget that step even if the whole project is still hard to estimate. If we can’t find one, perhaps the work needs narrowing or the approach needs changing.</p>
+<p>We’ll always have some unknowns going into implementation. Some questions need an answer before we build. Others are cheaper to answer by building a small piece. We need enough confidence to take a next step whose consequences we can tolerate if we’re wrong. We can budget that step even if the whole project is still hard to estimate. If we can’t find one, perhaps the work needs narrowing or the approach needs changing.</p>
 
 <p>And whoever asks a team to proceed with unanswered questions has to let the answers change the plan. Tell people to get started, then hold them to a date that assumes no surprises, and you’ve given them a pretty good reason to keep discovering things until retirement.</p>
 
-<hr />
-
-<p>Refusing to estimate is generally unwise. Somebody else will make the guess, and now you have an estimate you don’t believe and no say in it.</p>
-
-<p>So give the estimate. Just send the ruler up with it: how closely you’ve looked, and what’s most likely to make it grow. Decide what is worth looking at next. When the work grows anyway, reopen the date, the approach, or the scope instead of quietly eating the difference.</p>
+<p>None of this gets me out of estimating, unfortunately. If I won’t guess, somebody else will, and then I’m stuck with an estimate I don’t believe and no say in it. So I give the estimate, along with how closely we’ve actually looked (the size of the ruler, if you’re still with me on the coastline thing) and what’s most likely to make it grow. Then we decide what’s worth looking at next. And when the work grows anyway (it will), we reopen the date, the approach, or the scope instead of quietly eating the difference.</p>
 
 <script src="/assets/js/coastline-figures.js" defer=""></script>
 
